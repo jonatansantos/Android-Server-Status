@@ -1,0 +1,103 @@
+package com.msi.mannig;
+
+import android.app.Activity;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class PrototipoGPSActivity extends Activity {
+	
+	LocationManager miLocationManager;
+	Location miLocation;
+	MyLocationListener miLocationListener;
+	
+	TextView latitud;
+	TextView longitud;
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        latitud = (TextView) findViewById(R.id.latitud);
+        longitud = (TextView) findViewById(R.id.longitud);
+        
+		Button buscarPosicion = (Button) findViewById(R.id.buscarPosicion);
+		buscarPosicion.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                obtenerPosicion();
+            }
+          
+        });
+        
+    }
+	
+	private void obtenerPosicion(){
+	
+		miLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+		
+		if (miLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {	
+			miLocationListener = new MyLocationListener();
+			
+			miLocationManager.requestLocationUpdates(
+	                LocationManager.GPS_PROVIDER, 0, 0, miLocationListener);
+		} else {
+            Toast.makeText(getBaseContext(), 
+                    getResources().getString(R.string.gps_signal_not_found), 
+                    Toast.LENGTH_LONG).show();            
+		}
+	
+	}
+    
+    private void setLocation(Location loc) {
+    	miLocation = loc;
+    }
+    
+	private Handler handler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			miLocationManager.removeUpdates(miLocationListener);
+	    	if (miLocation!=null) {
+	    		latitud.setText("Latitude: " + miLocation.getLatitude());
+	    		longitud.setText("Longitude: " + miLocation.getLongitude());
+	    	}
+		}
+	};
+	
+    private class MyLocationListener implements LocationListener 
+    {
+        @Override
+        public void onLocationChanged(Location loc) {
+            if (loc != null) {
+                setLocation(loc);
+                handler.sendEmptyMessage(0);
+            }
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+            // TODO Auto-generated method stub
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+            // TODO Auto-generated method stub
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, 
+            Bundle extras) {
+            // TODO Auto-generated method stub
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">LocationGPS, prueba de localización</string>
+    <string name="app_name">LocationGPS</string>
+<string name="gps_signal_not_found">Señal de GPS no encontrada. Compruebe el estado del GPS</string>
+<string name="gps_signal_found">Señal de GPS encontrada correctamente</string>
+<string name="search">Buscando...</string>
+<string name="search_signal_gps">Buscando señal GPS</string>
+<string name="buscar">Buscar posicion GPS</string>
+<string name="mapa">Posicionar en mapa</string>
+</resources>
