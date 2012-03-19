@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EvenNotification
+Bundle-SymbolicName: EvenNotification
+Bundle-Version: 1.0.0.qualifier
