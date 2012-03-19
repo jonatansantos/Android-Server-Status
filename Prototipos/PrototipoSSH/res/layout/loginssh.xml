@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
      android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
 
     <TextView
@@ -78,12 +78,11 @@
             android:layout_weight="50"
             android:text="Disconnect" />
     </LinearLayout>
-
+
     <ViewSwitcher
         android:id="@+id/vSwicher"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" >
+        android:layout_height="181dp" >
 
         <ImageView
             android:id="@+id/imageView1"
