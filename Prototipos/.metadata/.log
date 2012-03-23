@@ -11884,3 +11884,42 @@ org.xml.sax.SAXParseException: Open quote is expected for attribute "android:nam
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2012-03-19 19:58:33.799 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2012-03-19 20:00:12.759
+!MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY org.eclipse.equinox.p2.touchpoint.natives 2 0 2012-03-19 20:20:33.342
+!MESSAGE Could not remove temporary backup directory (it is safe to manually delete it and its contents): C:\Users\david\AppData\Local\Temp\SDKProfile_26c58ce9ef40_c0a800c0fd99
+!SESSION 2012-03-19 20:21:37.338 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2012-03-19 22:20:17.514
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-03-21 16:51:24.951 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2012-03-21 16:53:31.571
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-03-21 16:56:50.178 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2012-03-21 16:59:48.108
+!MESSAGE Invalid preference page path: XML Syntax

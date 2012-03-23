@@ -25,4 +25,5 @@
 <fullyQualifiedTypeName name="org.ksoap2.SoapEnvelope"/>
 <fullyQualifiedTypeName name="org.ksoap2.transport.HttpTransportSE"/>
 <fullyQualifiedTypeName name="org.ksoap2.serialization.SoapPrimitive"/>
+<fullyQualifiedTypeName name="ubu.inf.R.drawable"/>
 </qualifiedTypeNameHistroy>
