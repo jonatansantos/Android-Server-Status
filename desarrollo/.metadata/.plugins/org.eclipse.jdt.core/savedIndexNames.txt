@@ -1,0 +1,7 @@
+INDEX VERSION 1.126+C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\.metadata\.plugins\org.eclipse.jdt.core
+4199450294.index
+311523485.index
+1332220411.index
+2339845296.index
+3923556367.index
+4015519139.index

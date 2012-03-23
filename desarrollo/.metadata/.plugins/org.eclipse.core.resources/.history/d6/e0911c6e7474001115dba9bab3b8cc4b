@@ -1,0 +1,18 @@
+package ubu.itig;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Context;
+import android.widget.ArrayAdapter;
+
+public class ArrayAdapterServidor extends ArrayAdapter<Servidor>{
+	private Activity context;
+
+	public ArrayAdapterServidor(Activity context,ArrayList<Servidor> datos) {
+		super(context, R.layout.list_servers,datos);
+		// TODO Auto-generated constructor stub
+		this.context=context;
+	}
+
+}

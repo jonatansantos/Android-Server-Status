@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ShowViewDialog">
+		<item value="311" key="DIALOG_WIDTH"/>
+		<item value="com.android.ide.eclipse.ddms.views.HeapView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="80" key="DIALOG_Y_ORIGIN"/>
+		<item value="438" key="DIALOG_HEIGHT"/>
+		<item value="536" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui"/>
+			<item value="com.android.ide.eclipse.ddms.views.category"/>
+			<item value="org.eclipse.ant.ui.views"/>
+			<item value="org.eclipse.pde.api.tools.ui.views.apitooling.view.category"/>
+			<item value="org.eclipse.team.ccvs.ui"/>
+			<item value="org.eclipse.debug.ui"/>
+			<item value="org.eclipse.help.ui"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java.browsing"/>
+			<item value="org.eclipse.pde.ui"/>
+			<item value="org.eclipse.team.ui"/>
+			<item value="org.eclipse.wb.core.category"/>
+			<item value="org.eclipse.wst.xml"/>
+		</list>
+	</section>
+</section>
