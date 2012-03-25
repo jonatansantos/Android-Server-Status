@@ -3,17 +3,17 @@ package ubu.itig;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
-public class Conexion {
-	private static Conexion MyConexion;
+public class SingletonConexion {
+	private static SingletonConexion MyConexion;
 	private Session sesion;
 	private JSch jsch;
 
-	private Conexion(){
+	private SingletonConexion(){
 		
 	}
-	public static Conexion getConexion(){
+	public static SingletonConexion getConexion(){
 		if(MyConexion==null){
-			MyConexion = new Conexion();
+			MyConexion = new SingletonConexion();
 		}
 		return MyConexion;
 	}

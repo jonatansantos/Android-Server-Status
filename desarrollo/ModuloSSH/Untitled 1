@@ -1,0 +1,29 @@
+Override
+   public boolean onOptionsItemSelected(MenuItem item) {
+           switch (item.getItemId()) {
+                   case R.id.añadirVarios: 
+                           añadirVarios();
+                           return true;
+                   case R.id.reconectar:
+                           reconectar();
+                           return true;
+                   case R.id.añadirUltimo:
+                           añadirUltimo();
+                           return true;
+                   case R.id.borrar:
+                           borrar();
+                           return true;
+                   case R.id.ejecutarFavorito:
+                           ejecutarFavorito();
+                           return true;
+                   case R.id.cerrar:
+                           finish();
+                           return true;
+                   default:
+                           return false;
+           }
+   }
+con ese switch lo tienes
+te faltaria despues implementar cada metodo
+(metes el cierre del ssh en el metodo finish) y te sirve para las dos cosas
+cerrar la conexion y la aplicacion

@@ -9,9 +9,9 @@
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-
+
         <ImageButton
-            android:id="@+id/imageButton1"
+            android:id="@+id/ib_main_fav_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_input_add" />
@@ -24,9 +24,9 @@
         android:layout_height="wrap_content"
         android:text="@string/Selecciona"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
     <ListView
-        android:id="@+id/lv_servidores"
+        android:id="@+id/lv_main_fav_servidores"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 

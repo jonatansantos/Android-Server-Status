@@ -21,6 +21,7 @@
         <activity android:name="PestanaMainManual"></activity>
         <activity android:name="PestanaMainFav"></activity>
         <activity android:name="Consola"></activity>
+        <activity android:name="Formulario"></activity>
     </application>
  
 </manifest>

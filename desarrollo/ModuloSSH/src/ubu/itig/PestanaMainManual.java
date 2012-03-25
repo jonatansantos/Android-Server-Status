@@ -1,6 +1,7 @@
 package ubu.itig;
 
 import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UserInfo;
 
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PestanaMainManual extends Activity {
 	private Button conectar;
@@ -55,11 +57,12 @@ public class PestanaMainManual extends Activity {
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
 			
-			if (jsch == null && session == null) {
+			if (jsch == null || session == null) {
 				try {
 					int p = Integer.parseInt(puerto.getText().toString());
 					
 					jsch = new JSch();
+					
 					barra.setProgress(10);
 					session = jsch.getSession(usuario.getText().toString(), ip
 							.getText().toString(), p);
@@ -73,25 +76,28 @@ public class PestanaMainManual extends Activity {
 					session.connect();
 					barra.setProgress(100);
 					
-
+					enviaIntent();
 					
 					// System.out.println("------ FIN");
-				} catch (Exception e) {
-					// TODO: handle exception
-
+				} catch (JSchException e) {
+					Toast.makeText(PestanaMainManual.this, "ERROR,compruebe los datos", Toast.LENGTH_LONG).show();
+					session=null;
+					jsch=null;
+					barra.setProgress(0);
 				}
 			}else{
-				enviaIntent();
+				Intent intent = new Intent(PestanaMainManual.this,Consola.class);
+				startActivity(intent);
 			}
 			
 		}
 
 	}
-	public void enviaIntent(){
+	private void enviaIntent(){
 		Intent intent = new Intent(PestanaMainManual.this,Consola.class);
 		
-		Conexion.getConexion().setSesion(session);
-		Conexion.getConexion().setJsch(jsch);
+		SingletonConexion.getConexion().setSesion(session);
+		SingletonConexion.getConexion().setJsch(jsch);
 		
 		startActivity(intent);
 	}

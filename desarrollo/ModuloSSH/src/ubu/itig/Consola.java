@@ -40,8 +40,8 @@ public class Consola  extends Activity{
 		result = (EditText) findViewById(R.id.et_consola_resultado);
 		run = (ImageButton) findViewById(R.id.ib_consola_run);
 	
-		session= Conexion.getConexion().getSesion();
-		jsch = Conexion.getConexion().getJsch();
+		session= SingletonConexion.getConexion().getSesion();
+		jsch = SingletonConexion.getConexion().getJsch();
 		run.setOnClickListener(new listenerComando());
 	}
 	
