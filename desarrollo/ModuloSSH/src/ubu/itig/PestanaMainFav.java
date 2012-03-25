@@ -104,18 +104,39 @@ public boolean onContextItemSelected(MenuItem item) {
  
     switch (item.getItemId()) {
        case R.id.CtxLstFavBorrar:
-    	   fachada.deleteServidor(datos, datos.get(info.position).getId());
-           adapter.notifyDataSetChanged();
+    	   borrar(info);
+    	   
             return true;
         case R.id.CtxLstFavEdit:
-        	Intent i = new Intent(PestanaMainFav.this,Formulario.class);
-        	idedit=datos.get(info.position).getId();
-   	     	PestanaMainFav.this.startActivityForResult(i, REQUEST_TEXT2);
+        	editar(info);
+        	
             return true;
         default:
             return super.onContextItemSelected(item);
     }
 }
+
+private void editar(AdapterContextMenuInfo info) {
+	Intent i = new Intent(PestanaMainFav.this,Formulario.class);
+	i.putExtra("host", datos.get(info.position).getIp().toString());
+    i.putExtra("user", datos.get(info.position).getUsuario().toString());
+    i.putExtra("pass", datos.get(info.position).getContraseña().toString());
+    i.putExtra("port", datos.get(info.position).getPuerto().toString());
+    i.putExtra("desc", datos.get(info.position).getDescripcion().toString());
+	
+	
+	idedit=datos.get(info.position).getId();
+    	PestanaMainFav.this.startActivityForResult(i, REQUEST_TEXT2);
+	
+}
+
+private void borrar(AdapterContextMenuInfo info) {
+	// TODO Auto-generated method stub
+	fachada.deleteServidor(datos, datos.get(info.position).getId());
+    adapter.notifyDataSetChanged();
+}
+
+
 
 
 private class ListenerListView implements OnItemClickListener{
@@ -123,7 +144,7 @@ private class ListenerListView implements OnItemClickListener{
 	public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 		
 		Servidor serv = datos.get(position);
-		if (jsch == null || session == null) {
+		if (SingletonConexion.getConexion().getJsch() == null || SingletonConexion.getConexion().getSesion() == null) {
 			try {
 				int p = Integer.parseInt(serv.getPuerto());
 				

@@ -21,6 +21,16 @@ public class Formulario extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.formulario);
 		inicializa();
+		//miramos si nos han enviado información
+		if(getIntent().getExtras()!=null){
+			Bundle b = getIntent().getExtras();
+			host.setText(b.getString("host"));
+			user.setText(b.getString("user"));
+			pass.setText(b.getString("pass"));
+			port.setText(b.getString("port"));
+			desc.setText(b.getString("desc"));
+			
+		}
 	}
 
 	private void inicializa() {

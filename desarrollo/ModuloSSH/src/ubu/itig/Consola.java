@@ -13,6 +13,9 @@ import com.jcraft.jsch.Session;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -38,11 +41,73 @@ public class Consola  extends Activity{
 	public void inicializa(){
 		comando = (EditText) findViewById(R.id.et_consola_comando);
 		result = (EditText) findViewById(R.id.et_consola_resultado);
+		result.setKeyListener(null);
 		run = (ImageButton) findViewById(R.id.ib_consola_run);
 	
 		session= SingletonConexion.getConexion().getSesion();
 		jsch = SingletonConexion.getConexion().getJsch();
 		run.setOnClickListener(new listenerComando());
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menucomandos, menu);
+	    return true;
+	}
+	@Override
+	   public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+                case R.id.anadirVarios: 
+                        añadirVarios();
+                        return true;
+                case R.id.reconectar:
+                        reconectar();
+                        return true;
+                case R.id.anadirUltimo:
+                        añadirUltimo();
+                        return true;
+                case R.id.borrar:
+                        borrar();
+                        return true;
+                case R.id.ejecutarFavorito:
+                        ejecutarFavorito();
+                        return true;
+                case R.id.cerrar:
+                	
+                	session.disconnect(); 
+                	SingletonConexion.getConexion().setJsch(null);
+                	SingletonConexion.getConexion().setSesion(null);
+                        finish();
+                        return true;
+                default:
+                        return false;
+        }
+}
+	private void ejecutarFavorito() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void borrar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void añadirUltimo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void reconectar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void añadirVarios() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	private class listenerComando implements View.OnClickListener{

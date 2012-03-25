@@ -57,7 +57,7 @@ public class PestanaMainManual extends Activity {
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
 			
-			if (jsch == null || session == null) {
+			if (SingletonConexion.getConexion().getJsch() == null || SingletonConexion.getConexion().getSesion() == null) {
 				try {
 					int p = Integer.parseInt(puerto.getText().toString());
 					
