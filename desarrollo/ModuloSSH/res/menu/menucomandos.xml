@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/anadirVarios"
+        android:title="Añadir Varios"
+        android:icon="@drawable/ic_menu_friendslist"
+    />
+    <item android:id="@+id/reconectar"
+        android:title="Reconectar"
+        android:icon="@drawable/ic_menu_refresh"
+    />
+    <item android:id="@+id/anadirUltimo"
+        android:title="Añadir ultimo"
+        android:icon="@drawable/ic_menu_sort_by_size"
+    />
+    <item android:id="@+id/borrar"
+        android:title="Borrar"
+        android:icon="@drawable/ic_menu_stop"
+    />
+
+    <item android:id="@+id/ejecutarFavorito"
+        android:title="Ejecutar Favorito"
+        android:icon="@drawable/ic_menu_account_list"
+    />
+        <item android:id="@+id/cerrar"
+        android:title="Cerrar"
+        android:icon="@drawable/ic_lock_power_off"
+    />
+    
+</menu>

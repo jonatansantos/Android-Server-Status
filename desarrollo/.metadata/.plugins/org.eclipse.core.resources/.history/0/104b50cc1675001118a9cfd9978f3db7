@@ -1,0 +1,15 @@
+package ubu.itig;
+
+public class Conexion {
+	private static Conexion MyConexion;
+
+	private Conexion(){
+		
+	}
+	public static Conexion getConexion(){
+		if(MyConexion==null){
+			MyConexion = new Conexion();
+		}
+		return MyConexion;
+	}
+}
