@@ -3,8 +3,10 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
  
 <item android:id="@+id/CtxLstFavBorrar"
-    android:title="Borrar"></item>
+    android:title="Borrar"
+    android:icon="@drawable/ic_menu_delete"></item>
 <item android:id="@+id/CtxLstFavEdit"
-    android:title="Editar"></item>
+    android:title="Editar"
+    android:icon="@drawable/ic_menu_edit"></item>
  
 </menu>

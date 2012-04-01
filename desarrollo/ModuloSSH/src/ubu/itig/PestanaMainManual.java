@@ -8,6 +8,8 @@ import com.jcraft.jsch.UserInfo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,12 +26,15 @@ public class PestanaMainManual extends Activity {
 	private TextView contrasena;
 	private TextView puerto;
 	private ProgressBar barra;
-	private JSch jsch=null;
-	private Session session=null;
-	
-	
-	
-	
+	private JSch jsch = null;
+	private Session session = null;
+
+	// Handler handler = new Handler(){
+	// @Override
+	// public void handleMessage(Message msg){
+	// barra.incrementProgressBy(5);
+	// }
+	// };
 
 	/** Called when the activity is first created. */
 	@Override
@@ -48,57 +53,81 @@ public class PestanaMainManual extends Activity {
 		puerto = (TextView) findViewById(R.id.etPort);
 		barra = (ProgressBar) findViewById(R.id.progressBar1);
 		conectar.setOnClickListener(new listenerConectar());
-		
-		
+
 	}
 
 	private class listenerConectar implements View.OnClickListener {
 
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
-			
-			if (SingletonConexion.getConexion().getJsch() == null || SingletonConexion.getConexion().getSesion() == null) {
-				try {
-					int p = Integer.parseInt(puerto.getText().toString());
-					
-					jsch = new JSch();
-					
-					barra.setProgress(10);
-					session = jsch.getSession(usuario.getText().toString(), ip
-							.getText().toString(), p);
-					barra.setProgress(40);
-					UserInfo ui = new SUserInfo(contrasena.getText().toString(), null);
-					barra.setProgress(60);
-					session.setUserInfo(ui);
-					barra.setProgress(65);
-					session.setPassword(contrasena.getText().toString());
-					barra.setProgress(85);
-					session.connect();
-					barra.setProgress(100);
-					
-					enviaIntent();
-					
-					// System.out.println("------ FIN");
-				} catch (JSchException e) {
-					Toast.makeText(PestanaMainManual.this, "ERROR,compruebe los datos", Toast.LENGTH_LONG).show();
-					session=null;
-					jsch=null;
-					barra.setProgress(0);
-				}
-			}else{
-				Intent intent = new Intent(PestanaMainManual.this,Consola.class);
+
+			if (SingletonConexion.getConexion().getJsch() == null
+					|| SingletonConexion.getConexion().getSesion() == null) {
+				conecta();
+			} else {
+				Intent intent = new Intent(PestanaMainManual.this,
+						Consola.class);
 				startActivity(intent);
 			}
-			
+
 		}
 
 	}
-	private void enviaIntent(){
-		Intent intent = new Intent(PestanaMainManual.this,Consola.class);
-		
+
+	private void conecta() {
+		try {
+
+			// barra.setProgress(0);
+			// Thread background = new Thread(new Runnable(){
+			// public void run(){
+			// try{
+			// for(int i=0; i<15; i++){
+			// Thread.sleep(1000);
+			// handler.sendMessage(handler.obtainMessage());
+			// }
+			// }catch(Throwable t){
+			// //Termina el thread en background
+			// }
+			// session=null;
+			// }
+			// });
+			// background.start();
+
+			int p = Integer.parseInt(puerto.getText().toString());
+
+			jsch = new JSch();
+
+			session = jsch.getSession(usuario.getText().toString(), ip
+					.getText().toString(), p);
+			barra.setProgress(50);
+			UserInfo ui = new SUserInfo(contrasena.getText().toString(), null);
+
+			session.setUserInfo(ui);
+
+			session.setPassword(contrasena.getText().toString());
+
+			session.connect();
+			barra.setProgress(100);
+
+			enviaIntent();
+
+			// System.out.println("------ FIN");
+		} catch (JSchException e) {
+			Toast.makeText(PestanaMainManual.this,
+					"ERROR,compruebe los datos o la conexión",
+					Toast.LENGTH_LONG).show();
+			session = null;
+			jsch = null;
+			barra.setProgress(0);
+		}
+	}
+
+	private void enviaIntent() {
+		Intent intent = new Intent(PestanaMainManual.this, Consola.class);
+
 		SingletonConexion.getConexion().setSesion(session);
 		SingletonConexion.getConexion().setJsch(jsch);
-		
+
 		startActivity(intent);
 	}
 }

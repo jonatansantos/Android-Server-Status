@@ -10,12 +10,14 @@ import android.util.Log;
 
 
 public class FachadaServidores {
+	Context context;
 	ServidoresSQLiteHelper Helperservidores ;
 	SQLiteDatabase DBservidores;
 	private static FachadaServidores myFachada;
 	
 	
 	private FachadaServidores(Context context){
+		this.context=context;
 		Log.i("mssh", "ya tenemos la fachada, ahora a por el helper");
 		Helperservidores = new ServidoresSQLiteHelper(context,"DBservidores", null, 1);
 		Log.i("mssh", "helper creado correctamente");
@@ -23,6 +25,7 @@ public class FachadaServidores {
 	}
 	
 	public static FachadaServidores getInstance(Context context){
+		
 		Log.i("mssh", "entramos en getInstance");
 		if(myFachada==null){
 			Log.i("mssh","my fachada vale null");
@@ -166,5 +169,28 @@ public class FachadaServidores {
 		}
 		
 	}
-
+	public void borraTabla(){
+		String sql = "DROP TABLE IF EXISTS servidores";
+		String sqlCreate = "CREATE TABLE servidores (id INTEGER PRIMARY KEY,host TEXT,port TEXT,user TEXT,pass TEXT,descripcion TEXT)";
+		DBservidores = Helperservidores.getWritableDatabase();
+		if(DBservidores!=null){
+			 Log.i("mssh", "hemos conseguido la base de datos");
+			 try{
+			 DBservidores.execSQL(sql);
+			 Log.i("mssh", "hemos borrado, ahora a crearla" );
+			 DBservidores.execSQL(sqlCreate);
+			 Log.i("mssh", "se ha creado de nuevo la tabla" );
+						 
+			 }catch (SQLException e) {
+				 Log.e("mssh", "error al borrar la tabla" );
+			}
+			 Log.i("mssh", "cerramos la base de datos");
+			 DBservidores.close();			
+		}else{
+		 Log.i("mssh", "no hemos conseguido la base, retornamos null");
+		}
+		myFachada=null;
+		Helperservidores = new ServidoresSQLiteHelper(context,"DBservidores", null, 1);
+	}
 }
+

@@ -2,7 +2,7 @@
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/anadirVarios"
-        android:title="Añadir Varios"
+        android:title="Ultimos ejecutados"
         android:icon="@drawable/ic_menu_friendslist"
     />
     <item android:id="@+id/reconectar"
