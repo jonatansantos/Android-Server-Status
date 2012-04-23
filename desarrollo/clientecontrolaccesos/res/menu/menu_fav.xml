@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+<item android:id="@+id/CtxLstFavBorrar"
+    android:title="Borrar"
+    android:icon="@drawable/ic_menu_delete"></item>
+<item android:id="@+id/CtxLstFavEdit"
+    android:title="Editar"
+    android:icon="@drawable/ic_menu_edit"></item>
+ 
+</menu>

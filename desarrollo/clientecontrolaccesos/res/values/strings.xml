@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">Clientecontrolaccesos</string>
+    <string name="IP">IP:</string>
+    <string name="numero">1</string>
+    <string name="descripcion">Descripción:</string>
+    <string name="servicio">Servicio:</string>
+    <string name="arrancar">Inicar siempre?</string>
+    <string name="arrancar2">Iniciar al encender</string>
+    <string name="coloractual">Color actual :</string>
+    <string name="ok">OK</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="notified">Notificacion nueva</string>
+
+</resources>

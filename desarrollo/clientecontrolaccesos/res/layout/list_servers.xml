@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv_listservers_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:text="@string/numero"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_listservers_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_listservers_id"
+            android:text="@string/IP"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_listservers_ip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_listservers_ip"
+            android:text="TextView"
+            android:textColor="#0000FF" />
+
+        <TextView
+            android:id="@+id/tv_listservers_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_listservers_ip"
+            android:layout_toRightOf="@+id/tv_listservers_id"
+            android:text="@string/descripcion"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_listservers_desc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_listservers_desc"
+            android:layout_alignBottom="@+id/tv_listservers_desc"
+            android:layout_toRightOf="@+id/tv_listservers_desc"
+            android:text="desc"
+            android:textColor="#0000FF" />
+
+        <TextView
+            android:id="@+id/tv_listservers_estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="TextView" />
+
+        <ToggleButton
+            android:id="@+id/tb_listservers_servicio"
+            android:focusable="false"
+            android:clickable="true"
+            android:textOn=""
+            android:textOff=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_listservers_id"
+            android:layout_alignBottom="@+id/tv_listservers_id"
+            android:layout_alignLeft="@+id/tv_listservers_desc"
+            android:height="30px"
+            android:width="106px" />
+
+    </RelativeLayout>
+
+</LinearLayout>
