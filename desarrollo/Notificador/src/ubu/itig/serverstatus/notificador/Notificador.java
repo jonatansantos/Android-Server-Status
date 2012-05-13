@@ -15,7 +15,7 @@ import java.util.Calendar;
 public class Notificador {
 
 	//Datos de la conexión con la base de datos
-	private static Connection conexion;
+	private Connection conexion;
 	private String bd="android_server_status";
 	private String user="jonatan";
 	private String password="prueba";
@@ -56,7 +56,7 @@ public class Notificador {
 	 * 
 	 * @param linea String con la linea del fichero.
 	 */
-	private static void analizarLinea(String linea){
+	private void analizarLinea(String linea){
 		
 		String mensaje;
 		Calendar fecha;
@@ -92,7 +92,7 @@ public class Notificador {
 	 * @param mensaje String con el mensaje del aviso.
 	 * @return int Tipo de mensaje: -1 Mensaje no notificable, 1 Conexión fallida, 2 Intento de robo de claves, 3 Conexión con exito.
 	 */
-	private static int obtenerUrgenciaSSH(String mensaje){
+	private int obtenerUrgenciaSSH(String mensaje){
 		int tipo = -1;
 		
 		//Comprobamos si es uno de los mensajes a notificar
@@ -113,7 +113,7 @@ public class Notificador {
 	 * @param mensaje String con el mensaje del aviso.
 	 * @return int Tipo de mensaje: -1 Mensaje no notificable, 1 Conexión con el servidor fallida, 2 Correo enviado con exito.
 	 */
-	private static int obtenerUrgenciaCorreo(String mensaje){
+	private int obtenerUrgenciaCorreo(String mensaje){
 		int tipo = -1;
 		
 		//Comprobamos si es uno de los mensajes a notificar
@@ -132,7 +132,7 @@ public class Notificador {
 	 * @param lineaComprobar String con la linea del fichero.
 	 * @return Calendar con la fecha y hora que se produjo la linea.
 	 */
-	private static Calendar obtenerFecha(String lineaComprobar) {
+	private Calendar obtenerFecha(String lineaComprobar) {
 		
 		Calendar calendario = Calendar.getInstance();
 		
@@ -170,7 +170,7 @@ public class Notificador {
 	 * @param cadenaMes String Abreviatura del mes.
 	 * @return int Con el numero de mes correspondiente a la cadena pasada.
 	 */
-	private static int obtenerMes(String cadenaMes) {
+	private int obtenerMes(String cadenaMes) {
 		
 		int mes = -1;
 		
@@ -211,7 +211,7 @@ public class Notificador {
 	 * @param int tipoMensaje Tipo de mensaje por el que se pregunta si hay notificaciones.
 	 * @return int con el numero de notificaciones.
 	 */
-	public static int hayNotificaciones(String idDispositivo, int tipoMensaje){
+	public int hayNotificaciones(String idDispositivo, int tipoMensaje){
 		
 		try {
 			
@@ -272,14 +272,13 @@ public class Notificador {
 	 * 
 	 * @return ArrayList<ArrayList<String>> Contiene toda la información de las notificaciones.
 	 */
-	public static ArrayList<ArrayList<String>> obtenerNotificaciones(String idDispositivo, int tipoMensaje, int numeroNotificaciones){
-		
+	public String[][] obtenerNotificaciones(String idDispositivo, int tipoMensaje, int numeroNotificaciones){
 		
 		try {
 			int ultimaNotificacion = 0;
 			String columnaAModificar = null;
-			ArrayList<ArrayList<String>> notificaciones = new ArrayList<ArrayList<String>>();
-			ArrayList<String> notificacion;
+			String[][]notificaciones = new String[numeroNotificaciones][4];
+			int numeroNotificacion = 0;
 			
 			// Crear el objeto Statement.
 			Statement st = conexion.createStatement();
@@ -296,19 +295,18 @@ public class Notificador {
 			
 			//Recorrer las notificaciones y añadirlas al array
 			while(rsNotificaciones.next()){
-				notificacion = new ArrayList<String>();
 				
 				if(ultimaNotificacion == 0){
 					ultimaNotificacion = rsNotificaciones.getInt("id_Notificacion");
 				}
 				
 				//Introducir informacion de la notificacion en el array
-				notificacion.add(rsNotificaciones.getTimestamp("fecha").toString());
-				notificacion.add("" +rsNotificaciones.getInt("tipo_Mensaje"));
-				notificacion.add("" +rsNotificaciones.getInt("urgencia"));
-				notificacion.add(rsNotificaciones.getString("mensaje"));
+				notificaciones[numeroNotificacion][0] = rsNotificaciones.getTimestamp("fecha").toString();
+				notificaciones[numeroNotificacion][1] = "" + rsNotificaciones.getInt("tipo_Mensaje");
+				notificaciones[numeroNotificacion][2] = "" + rsNotificaciones.getInt("urgencia");
+				notificaciones[numeroNotificacion][3] = rsNotificaciones.getString("mensaje");
 				
-				notificaciones.add(notificacion);
+				numeroNotificacion += 1;
 			}
 			
 			//Actualizar la ultimaNotificacion para el dispositivo
@@ -331,7 +329,7 @@ public class Notificador {
 	 * 
 	 * @param linea String con la linea del fichero
 	 */
-	private static void grabarNotificacion(Calendar fecha, int tipoMensaje, int urgencia, String mensaje){
+	private void grabarNotificacion(Calendar fecha, int tipoMensaje, int urgencia, String mensaje){
 		
 		java.sql.Timestamp horaSql = new java.sql.Timestamp(fecha.getTime().getTime());
 		
