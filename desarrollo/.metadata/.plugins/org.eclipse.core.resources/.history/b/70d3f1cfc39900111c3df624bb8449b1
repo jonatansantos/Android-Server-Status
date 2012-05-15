@@ -1,0 +1,52 @@
+package ubu.inf.logica;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.telephony.SmsMessage;
+
+/**
+ * Clase que se encarga de leer los sms recibidos y comprueba si contienen el
+ * mensaje de emergencia, si es así lanza el ServicioGPS que se encargará de
+ * obtener la posición actual.
+ * 
+ * @author David Herrero de la Peña
+ * @author Jonatan Santos Barrios
+ * 
+ * @version 1.0
+ * 
+ * @see BroadcastReceiver
+ * @see ServicioGPS
+ */
+public class LectorSMS extends BroadcastReceiver {
+
+	static final String ACTION = "android.provider.Telephony.SMS_RECEIVED";
+
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		if(intent.getAction().equals(ACTION)){//se ha recibido un sms
+			StringBuilder buf = new StringBuilder();
+			Bundle bundle = intent.getExtras();
+			if(bundle!=null){
+				SmsMessage[] messages = Telephony.Sms.Intents.getMessagesFromIntent(intent);
+				
+				                for (int i = 0; i &lt; messages.length; i++) {
+				
+				                    SmsMessage message = messages[i];
+				
+				                    buf.append("Received SMS from  ");
+				
+				                    buf.append(message.getDisplayOriginatingAddress());
+				
+				                    buf.append(" - ");
+				
+				                    buf.append(message.getDisplayMessageBody());
+				
+				                }
+
+			}
+		}
+		
+	}
+}

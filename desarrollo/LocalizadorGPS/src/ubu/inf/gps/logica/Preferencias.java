@@ -1,0 +1,26 @@
+package ubu.inf.gps.logica;
+
+import ubu.inf.gps.R;
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
+
+/**
+ * Clase que extiende de PreferenceActivity y sirve para establecer las
+ * prefrencias de la aplicación.
+ * 
+ * @author David Herrero de la Peña
+ * @author Jonatan Santos Barrio
+ * @version 1.0
+ * @see PreferenceActivity
+ * 
+ */
+public class Preferencias extends PreferenceActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		addPreferencesFromResource(R.xml.preferencias);
+	}
+
+}

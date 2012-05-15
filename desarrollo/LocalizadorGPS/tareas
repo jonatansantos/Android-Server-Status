@@ -1,0 +1,4 @@
+1º-IntentReceiver , mirará el contenido del sms y el que lo envia, y si es necesario, lanzará el servicio GPS
+2º-la actividad solo podrá desactivar el servicio, también lo podrá activar
+3º- el servicio es el encargado de tomar los datos del GPS cada 30 segundos y guardarlos en la base de datos
+	- cada X tiempo , si hay conexión , se descargará la base de datos para enviarla por http

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SingletonConexion.java&apos; to &apos;clientecontrolaccesos/src/ubu.inf.modelo&apos;&#x0D;&#x0A;- Original project: &apos;ModuloSSH&apos;&#x0D;&#x0A;- Destination element: &apos;clientecontrolaccesos/src/ubu.inf.modelo&apos;&#x0D;&#x0A;- Original element: &apos;ubu.itig.modelo.SingletonConexion.java&apos;" description="Copy compilation unit" destination="=clientecontrolaccesos/src&lt;ubu.inf.modelo" element1="/src&lt;ubu.itig.modelo{SingletonConexion.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1335211562560" units="1" version="1.0"/>
+</session>

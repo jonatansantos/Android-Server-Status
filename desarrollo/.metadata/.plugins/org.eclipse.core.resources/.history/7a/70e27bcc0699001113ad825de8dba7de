@@ -1,0 +1,250 @@
+package ubu.inf.logica;
+
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+import android.provider.Settings.Secure;
+
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.PropertyInfo;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
+
+import ubu.inf.R;
+import ubu.inf.modelo.Servidor;
+import ubu.inf.modelo.SingletonEmail;
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Binder;
+import android.os.IBinder;
+import android.preference.PreferenceManager;
+import android.util.Log;
+
+/**
+ * Servicio que se encarga de comprobar si hay notificaciones relacionadas con
+ * el Email en los distintos servidores que se han elegido desde la aplicación.
+ * 
+ * @author David Herrero
+ * @author Jonatan Santos
+ * 
+ * @version 1.0
+ * @see Service
+ */
+public class ServicioEmail extends Service {
+
+	/**
+	 * id del dispositivo
+	 */
+	
+	String id_dispositivo;
+	
+	/**
+	 * Segundos que transcurren entre una llamada y la siguiente.
+	 */
+	private int segundos = 20;
+	public static final int APP_ID_NOTIFICATION_EMAIL = 1;
+	public static final int APP_ID_NOTIFICATION_ERROR_EMAIL = 3;
+
+	private NotificationManager mManager;
+	/**
+	 * Timer que se usa para que se efectuen las llamadas de forma periódica.
+	 */
+	private Timer timer = new Timer();
+	private final IBinder mBinder = new MyBinder();
+	/**
+	 * NAMESPACE
+	 */
+	private final String NAMESPACE = "http://tempuri.org/";
+	/**
+	 * URL donde se encuentra el web service.
+	 */
+	private final String URL = "http://www.w3schools.com/webservices/tempconvert.asmx";
+	/**
+	 * NAMESPACE+METHOD.
+	 */
+	private final String SOAPACTION = "http://tempuri.org/FahrenheitToCelsius";
+	/**
+	 * METHOD,nombre del método a usar.
+	 */
+	private final String METHOD = "FahrenheitToCelsius";
+
+	private String resultado;
+
+	/**
+	 * Metodo del hilo asincrono.
+	 */
+	private void ejecutar() {
+		Log.i("control", "servicio Email ejecutar");
+		resultado = "";
+
+		// obtenemos el SoapObject
+		SoapObject request = new SoapObject(NAMESPACE, METHOD);
+
+		// objeto de propiedades
+		PropertyInfo FahrenheitProp = new PropertyInfo();
+		// nombre
+		FahrenheitProp.setName("Fahrenheit");
+		// valor que
+		FahrenheitProp.setValue(10);
+		// tipo de valor
+		FahrenheitProp.setType(String.class);
+
+		// añadimos las propiedades a la pregunta
+		request.addProperty(FahrenheitProp);
+
+		final SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+				SoapEnvelope.VER11);
+
+		envelope.dotNet = true;
+
+		envelope.setOutputSoapObject(request);
+		// creamos el objeto http para conectarnos con el webservice
+		final HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+
+		Log.i("control", "servicio Email antes timer");
+		timer.scheduleAtFixedRate(new TimerTask() {
+
+			@Override
+			public void run() {
+
+				try
+
+				{
+//hacer la primera petición par aver is hay notificaciones(con id y dispositivo), si hay enviar la notificación,
+//en el intent enviar cantidad y el servidor.
+					androidHttpTransport.call(SOAPACTION, envelope);
+
+					SoapPrimitive response = (SoapPrimitive) envelope
+							.getResponse();
+
+					resultado = response.toString();
+					Log.e("alarmChecker", "resultado email: " + resultado);
+					for (int i = 0; i < SingletonEmail.getConexion().getHosts()
+							.size(); ++i) {
+						Log.i("control", "mmiramos el desde email "
+								+ SingletonEmail.getConexion().getHosts()
+										.get(i).getIp());
+					}
+					Notificar();
+
+				} catch (Exception e)
+
+				{
+
+					e.printStackTrace();
+					NotificarError();
+				}
+			}
+		}, 0, segundos * 1000);
+
+	}
+
+	/**
+	 * Función para notificar cuando ha ocurrido un error de comunicación con el
+	 * web service.
+	 */
+	private void NotificarError() {
+
+		// Prepara la actividad que se abrira cuando el usuario pulse la
+		// notificacion
+		Intent intentNot = new Intent(this, Main.class);
+
+		// Prepara la notificacion
+		Notification notification = new Notification(R.drawable.ic_alert,
+				"Error al conectarse con el servidor",
+				System.currentTimeMillis());
+		notification.setLatestEventInfo(this, getString(R.string.app_name),
+				getString(R.string.notified), PendingIntent.getActivity(
+						this.getBaseContext(), 0, intentNot,
+						PendingIntent.FLAG_CANCEL_CURRENT));
+
+		// Le añade sonido
+		notification.defaults |= Notification.DEFAULT_SOUND;
+		// Le añade vibraci—n
+		notification.defaults |= Notification.DEFAULT_VIBRATE;
+
+		// Le añade luz mediante LED
+		notification.defaults |= Notification.DEFAULT_LIGHTS;
+
+		// La notificacion se detendr‡ cuando el usuario pulse en ella
+		notification.flags = Notification.FLAG_AUTO_CANCEL;
+
+		// Lanza la notificaci—n
+		mManager.notify(APP_ID_NOTIFICATION_ERROR_EMAIL, notification);
+
+	}
+
+	/**
+	 * Función para notificar cuando se han encontrado nuevas notificaciones
+	 * para descargar.
+	 */
+	private void Notificar() {
+
+		// Prepara la actividad que se abrira cuando el usuario pulse la
+		// notificacion
+		Intent intentNot = new Intent(this, PestanaMainNotificaciones.class);
+
+		// Prepara la notificacion
+		Notification notification = new Notification(R.drawable.ic_email,
+				resultado, System.currentTimeMillis());
+		notification.setLatestEventInfo(this, getString(R.string.app_name),
+				getString(R.string.notified), PendingIntent.getActivity(
+						this.getBaseContext(), 0, intentNot,
+						PendingIntent.FLAG_CANCEL_CURRENT));
+
+		// Le añade sonido
+		notification.defaults |= Notification.DEFAULT_SOUND;
+		// Le añade vibraci—n
+		notification.defaults |= Notification.DEFAULT_VIBRATE;
+
+		// Le añade luz mediante LED
+		notification.defaults |= Notification.DEFAULT_LIGHTS;
+
+		// La notificacion se detendr‡ cuando el usuario pulse en ella
+		notification.flags = Notification.FLAG_AUTO_CANCEL;
+
+		// Lanza la notificacion
+		mManager.notify(APP_ID_NOTIFICATION_EMAIL, notification);
+
+	}
+
+	@Override
+	public void onCreate() {
+		id_dispositivo= Secure.getString(getBaseContext().getContentResolver(), Secure.ANDROID_ID);
+		SharedPreferences pref = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		String aux = pref.getString("segundos", "10");
+		segundos = Integer.parseInt(aux);
+		Log.i("control", "servicio Email");
+		
+		mManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		ejecutar();
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (timer != null) {
+			timer.cancel();
+		}
+	}
+
+	public class MyBinder extends Binder {
+		ServicioEmail getService() {
+			return ServicioEmail.this;
+		}
+	}
+
+	@Override
+	public IBinder onBind(Intent arg0) {
+		return mBinder;
+	}
+}

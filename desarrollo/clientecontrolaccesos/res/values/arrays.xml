@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipo">
+        <item >Ninguno</item>
+        <item >ID</item>
+        <item >Tipo</item>
+        <item >Fecha</item>
+        <item >Urgencia</item>
+    </string-array>
+    <string-array name="asc">
+        <item >Asc</item>
+        <item >Des</item>
+    </string-array>
+     <string-array name="tipo_filtro">
+        <item >Ninguno</item>
+        <item >SSH</item>
+        <item >Email</item>
+    </string-array>
+    <string-array name="urgencia_filtro">
+        <item >Ninguno</item>
+        <item >Grave</item>
+        <item >Medio</item>
+         <item >Info</item>
+    </string-array>
+    
+</resources>

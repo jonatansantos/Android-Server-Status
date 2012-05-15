@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="General">
+        <EditTextPreference 
+          android:key="segundos" 
+          android:title="Segundos" 
+          android:summary="Segundos para comprobar el servidor" 
+          android:dialogTitle="Introduce un número" />
+    </PreferenceCategory>
+  <PreferenceCategory android:title="Auto Arranque">
+      <CheckBoxPreference 
+          android:key="autoemail"
+          android:title="Email"
+          android:summary="Activar autoarranque servicio Email"/>
+      <CheckBoxPreference 
+          android:key="autoessh"
+          android:title="SSH"
+          android:summary="Activar autoarranque servicio SSH"/>
+  </PreferenceCategory>  
+  <PreferenceCategory android:title="Email">
+      <EditTextPreference 
+          android:key="spam" 
+          android:title="Cantidad emails" 
+          android:summary="Cantidad de correos que se considera SPAM" 
+          android:dialogTitle="Introduce un número"
+          ></EditTextPreference>
+  </PreferenceCategory>
+
+</PreferenceScreen>

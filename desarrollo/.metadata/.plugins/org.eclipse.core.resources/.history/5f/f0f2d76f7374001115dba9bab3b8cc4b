@@ -1,7 +1,0 @@
-package ubu.itig;
-
-import android.widget.ArrayAdapter;
-
-public class ArrayAdapterServidor extends ArrayAdapter{
-
-}

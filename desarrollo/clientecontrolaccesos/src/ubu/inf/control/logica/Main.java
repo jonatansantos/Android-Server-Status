@@ -1,0 +1,93 @@
+package ubu.inf.control.logica;
+
+import ubu.inf.control.R;
+import ubu.inf.control.R.layout;
+
+import android.app.Activity;
+import android.app.TabActivity;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.widget.DigitalClock;
+import android.widget.TabHost;
+
+/**
+ * Clase principal que contiene las dos pestañas principales de la aplicación.
+ * 
+ * @author David Herrero
+ * @author Jonatan Santos
+ * 
+ *@version 1.0
+ *
+ */
+public class Main extends TabActivity {
+	/**
+	 * TabHost que se usará.
+	 */
+	private TabHost tabHost;
+	/**
+	 * Recursos de la aplicación.
+	 */
+	private Resources res;
+    /** Called when the activity is first created. */
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        //obtenemos la referencia al tabhost
+        tabHost = getTabHost();
+        //obtenemos la referencia a los recursos
+        res = getResources(); 
+       
+        creaTabFav();
+        creaTabEmail();
+        creaTabManual();
+      
+    }
+    /**
+     * Función que crea la pestaña de favoritos, se encarga de crear el intent y de añadirlo al tabhost.
+     * @see PestanaMainFav
+     */
+    private void creaTabFav(){
+  	  TabHost.TabSpec spec;
+        Intent intent;
+  	 //pestaña favoritos
+     //creamos el intent específico para esa activity
+      intent = new Intent().setClass(this, PestanaMainFav.class);
+      //creamos las especificaciones, nombre e icono
+      spec = tabHost.newTabSpec("pestanamainfav").setIndicator("SSH", res.getDrawable(R.drawable.pestanamainfav));
+      //añadimos las especificaciones al intent
+      spec.setContent(intent);
+      //finalemte añadirmos las especificaciones al tabhost para crear la pestaña
+      tabHost.addTab(spec);
+  	 
+  }
+    private void creaTabEmail(){   	
+    	  TabHost.TabSpec spec;
+          Intent intent;
+    	 //pestaña favoritos
+       //creamos el intent específico para esa activity
+        intent = new Intent().setClass(this, PestanaMainEmail.class);
+        //creamos las especificaciones, nombre e icono
+        spec = tabHost.newTabSpec("pestanamainemail").setIndicator("EMAIL", res.getDrawable(R.drawable.pestanamainemail));
+        //añadimos las especificaciones al intent
+        spec.setContent(intent);
+        //finalemte añadirmos las especificaciones al tabhost para crear la pestaña
+        tabHost.addTab(spec);
+    	 
+    }
+  private void creaTabManual(){
+  	TabHost.TabSpec spec;
+      Intent intent;
+	 //pestaña manual
+      //creamos el intent específico para esa activity
+    intent = new Intent().setClass(this, PestanaMainNotificaciones.class);
+    //creamos las especificaciones, nombre e icono
+    spec = tabHost.newTabSpec("pestanamainnot").setIndicator("notificaciones", res.getDrawable(R.drawable.pestanamainnot));
+    //añadimos las especificaciones al intent
+    spec.setContent(intent);
+    //finalemte añadirmos las especificaciones al tabhost para crear la pestaña
+    tabHost.addTab(spec);
+  }
+  
+}

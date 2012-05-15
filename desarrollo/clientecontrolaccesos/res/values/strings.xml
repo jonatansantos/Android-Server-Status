@@ -13,5 +13,12 @@
     <string name="ok">OK</string>
     <string name="cancelar">Cancelar</string>
     <string name="notified">Notificacion nueva</string>
+    <string name="servicios">Servicios :</string>
+    <string name="tipo">"Tipo: "</string>
+    <string name="fecha">Fecha :</string>
+    <string name="vacio"></string>
+    <string name="hora">Hora :</string>
+    <string name="id">ID</string>
+    <string name="urgencia">Urgencia :</string>
 
 </resources>

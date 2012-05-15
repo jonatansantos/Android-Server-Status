@@ -1,0 +1,346 @@
+package ubu.inf.logica;
+
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.PropertyInfo;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
+
+import ubu.inf.R;
+import ubu.inf.modelo.Servidor;
+import ubu.inf.modelo.SingletonServicios;
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Binder;
+
+import android.os.IBinder;
+import android.preference.PreferenceManager;
+import android.provider.Settings.Secure;
+import android.util.Log;
+
+/**
+ * Servicio que se encarga de comprobar si hay notificaciones relacionadas con
+ * el SSH en los distintos servidores que se han elegido desde la aplicación.
+ * 
+ * @author David Herrero
+ * @author Jonatan Santos
+ * 
+ * @version 1.0
+ * @see Service
+ */
+public class ServicioSSH extends Service {
+	/**
+	 * id del dispositivo
+	 */
+
+	String id_dispositivo;
+	/**
+	 * Segundos que transcurren entre una llamada y la siguiente.
+	 */
+	private int segundos = 20;
+	public static final int APP_ID_NOTIFICATION_SSH = 0;
+	public static final int APP_ID_NOTIFICATION_ERROR_SSH = 2;
+	protected static final int MSG_KEY_ES_PAR = 1;
+	private NotificationManager mManager;
+	/**
+	 * Timer que se usa para que se efectuen las llamadas de forma periódica.
+	 */
+	private Timer timer = new Timer();
+	private final IBinder mBinder = new MyBinder();
+	/**
+	 * NAMESPACE
+	 */
+	private String NAMESPACE = "http://tempuri.org/";
+	/**
+	 * URL donde se encuentra el web service.
+	 */
+	private String URL = "http://www.w3schools.com/webservices/tempconvert.asmx";
+	/**
+	 * NAMESPACE+METHOD.
+	 */
+	private String SOAPACTION = "http://tempuri.org/FahrenheitToCelsius";
+	/**
+	 * METHOD1,nombre del método a usar para comprobar que hay notificaciones.
+	 */
+	private String METHOD = "FahrenheitToCelsius";
+
+	private String resultado;
+
+	private void ejecutar() {
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				for (int i = 0; i < SingletonServicios.getConexion().getHosts()
+						.size(); ++i) {
+					Log.i("control", "mmiramos el desde ssh "
+							+ SingletonServicios.getConexion().getHosts()
+									.get(i).getIp());
+					conectaServidor(SingletonServicios.getConexion().getHosts()
+							.get(i));
+
+				}
+			}
+		}, 0, segundos * 1000);
+	}
+
+	/**
+	 * Metodo del hilo asincrono.
+	 */
+	// private void ejecutar() {
+	// resultado = "";
+	//
+	// // obtenemos el SoapObject
+	// SoapObject request = new SoapObject(NAMESPACE, METHOD);
+	//
+	//
+	// // objeto de propiedades
+	// PropertyInfo FahrenheitProp = new PropertyInfo();
+	// // nombre
+	// FahrenheitProp.setName("Fahrenheit");
+	// // valor que
+	// FahrenheitProp.setValue(10);
+	// // tipo de valor
+	// FahrenheitProp.setType(String.class);
+	//
+	// // añadimos las propiedades a la pregunta
+	// request.addProperty(FahrenheitProp);
+	// // creamos el objeto http para conectarnos con el webservice
+	// final SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+	// SoapEnvelope.VER11);
+	//
+	// envelope.dotNet = true;
+	//
+	// envelope.setOutputSoapObject(request);
+	//
+	// final HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+	//
+	// timer.scheduleAtFixedRate(new TimerTask() {
+	//
+	// @Override
+	// public void run() {
+	//
+	// try
+	//
+	// {
+	// //hacer la primera petición par aver is hay notificaciones(con id y
+	// dispositivo), si hay enviar la notificación,
+	// //en el intent enviar cantidad y el servidor.
+	// androidHttpTransport.call(SOAPACTION, envelope);
+	//
+	// SoapPrimitive response = (SoapPrimitive) envelope
+	// .getResponse();
+	//
+	// resultado = response.toString();
+	// Log.e("alarmChecker", "resultado ssh: " + resultado);
+	// for (int i = 0; i < SingletonServicios.getConexion()
+	// .getHosts().size(); ++i) {
+	// Log.i("control", "mmiramos el desde ssh "
+	// + SingletonServicios.getConexion().getHosts()
+	// .get(i).getIp());
+	// conectaServidor(SingletonServicios.getConexion().getHosts().get(i));
+	//
+	//
+	// }
+	// Notificar();
+	//
+	// } catch (Exception e) {
+	//
+	// e.printStackTrace();
+	// NotificarError();
+	//
+	// }
+	// }
+	// }, 0, segundos * 1000);
+	//
+	// }
+	/**
+	 * Función para notificar cuando ha ocurrido un error de comunicación con el
+	 * web service.
+	 * @param s 
+	 */
+	private void NotificarError(Servidor s) {
+
+		// Prepara la actividad que se abrira cuando el usuario pulse la
+		// notificacion
+		Intent intentNot = new Intent(this, Main.class);
+
+		// Prepara la notificacion
+		Notification notification = new Notification(R.drawable.ic_alert,
+				"ERROR", System.currentTimeMillis());
+		notification.setLatestEventInfo(this, "Servicio SSH",
+				"Error al conectarse al servidor "+s.getIp(), PendingIntent.getActivity(
+						this.getBaseContext(), 0, intentNot,
+						PendingIntent.FLAG_CANCEL_CURRENT));
+
+		// Le a–ade sonido
+		notification.defaults |= Notification.DEFAULT_SOUND;
+		// Le a–ade vibraci—n
+		notification.defaults |= Notification.DEFAULT_VIBRATE;
+
+		// Le a–ade luz mediante LED
+		notification.defaults |= Notification.DEFAULT_LIGHTS;
+
+		// La notificaci—n se detendr‡ cuando el usuario pulse en ella
+		notification.flags = Notification.FLAG_AUTO_CANCEL;
+
+		// Lanza la notificaci—n
+		mManager.notify(APP_ID_NOTIFICATION_ERROR_SSH, notification);
+
+	}
+
+	/**
+	 * Función que se encarga de llamar a los distintos métodos del webService.
+	 * 
+	 * @param s
+	 *            Servidor al que consultar.
+	 */
+	private void conectaServidor(Servidor s) {
+		resultado = "";
+
+		// obtenemos el SoapObject
+		SoapObject request = new SoapObject(NAMESPACE, METHOD);
+
+		// objeto de propiedades
+		PropertyInfo FahrenheitProp = new PropertyInfo();
+		// nombre
+		FahrenheitProp.setName("Fahrenheit");//aqui sería el id_dispositivo
+		// valor que
+		FahrenheitProp.setValue(10);//y el id
+		// tipo de valor
+		FahrenheitProp.setType(String.class);
+
+		// añadimos las propiedades a la pregunta
+		request.addProperty(FahrenheitProp);
+		//TODO
+		//request.addProperty("tipo", 0);//añadimos el tipo
+		
+		// creamos el objeto http para conectarnos con el webservice
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+				SoapEnvelope.VER11);
+
+		envelope.dotNet = true;
+
+		envelope.setOutputSoapObject(request);
+
+		//aqui pondríamos la Ip del servidor
+	 HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+
+		try
+
+		{
+			// hacer la primera petición par aver is hay notificaciones(con id y
+			// dispositivo), si hay enviar la notificación,
+			// en el intent enviar cantidad y el servidor.
+			androidHttpTransport.call(SOAPACTION, envelope);
+
+			//utilizamos SoapPrimitive porque esperamos un valor simple
+			SoapPrimitive response = (SoapPrimitive) envelope.getResponse();
+			
+			resultado = response.toString();
+			if(!resultado.equals("0")){
+				//TODO
+				//SingletonServicios.getConexion().setCantidad(Integer.parseInt(resultado));
+				Notificar(s,resultado);
+				
+			}
+			Log.e("alarmChecker", "resultado ssh: " + resultado);
+
+			
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			NotificarError(s);
+
+		}
+	}
+
+	/**
+	 * Función para notificar cuando se han encontrado nuevas notificaciones
+	 * para descargar.
+	 * @param s 
+	 * @param resultado2 
+	 */
+	private void Notificar(Servidor s, String resultado2) {
+
+		// Prepara la actividad que se abrira cuando el usuario pulse la
+		// notificacion
+		Intent intentNot = new Intent(this, PestanaMainNotificaciones.class);
+
+		//ponemos como extra la cantidad , hacer Integer.parseInt(resultado2)
+		intentNot.putExtra("cantidad",resultado2);
+		// Prepara la notificacion
+		Notification notification = new Notification(R.drawable.ic_ssh,
+				resultado+" nuevos avisos", System.currentTimeMillis());
+		notification.setLatestEventInfo(this, "Servicio SSH",
+				"Hay "+resultado2+" nuevos avisos de"+s.getIp(), PendingIntent.getActivity(
+						this.getBaseContext(), 0, intentNot,
+						PendingIntent.FLAG_CANCEL_CURRENT));
+
+		// Le a–ade sonido
+		notification.defaults |= Notification.DEFAULT_SOUND;
+		// Le a–ade vibraci—n
+		notification.defaults |= Notification.DEFAULT_VIBRATE;
+
+		// Le a–ade luz mediante LED
+		notification.defaults |= Notification.DEFAULT_LIGHTS;
+
+		// La notificaci—n se detendr‡ cuando el usuario pulse en ella
+		notification.flags = Notification.FLAG_AUTO_CANCEL;
+
+		// Lanza la notificaci—n
+		mManager.notify(APP_ID_NOTIFICATION_SSH, notification);
+
+	}
+
+	@Override
+	public void onCreate() {
+		// TODO Auto-generated method stub
+		// Toast.makeText(this, "MyAlarmService.onCreate()",
+		// Toast.LENGTH_LONG).show();
+
+		Log.i("control", "servicio SSH on create");
+		id_dispositivo = Secure.getString(
+				getBaseContext().getContentResolver(), Secure.ANDROID_ID);
+
+		SharedPreferences pref = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		String aux = pref.getString("segundos", "10");
+		segundos = Integer.parseInt(aux);
+
+		mManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		Log.i("control", "servicio SSH");
+		ejecutar();
+
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (timer != null) {
+			timer.cancel();
+		}
+	}
+
+	public class MyBinder extends Binder {
+		ServicioSSH getService() {
+			return ServicioSSH.this;
+		}
+	}
+
+	@Override
+	public IBinder onBind(Intent arg0) {
+		return mBinder;
+	}
+}

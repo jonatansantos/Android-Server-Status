@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="Servicio de GPS">
+          <CheckBoxPreference 
+          android:key="seguirencencido"
+          android:title="Seguir activo siempre"
+          android:summary="El servicio seguirá activo aunque se apague el teléfono"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Escucha de mensajes">
+        <EditTextPreference 
+          android:key="textoarranque" 
+          android:title="Texto arranque" 
+          android:summary="Texto que debe contener el sms para activar el servicio" 
+          android:dialogTitle="Introduce el texto"
+          android:defaultValue="arrancar" />
+        <EditTextPreference 
+          android:key="textoparada" 
+          android:title="Texto parada" 
+          android:summary="Texto que debe contener el sms para detener el servicio" 
+          android:dialogTitle="Introduce el texto"
+          android:defaultValue="parada" />
+    </PreferenceCategory>
+  <PreferenceCategory android:title="Envio de avisos sms">
+      <CheckBoxPreference 
+          android:key="avisosms"
+          android:title="Aviso por sms"
+          android:summary="Activar aviso por sms de las coordenadas"/>
+      <EditTextPreference 
+          android:key="avisosmstiempo" 
+          android:title="Minutos para enviar" 
+          android:summary="Minutos que pasan entre un sms y el siguiente a enviar" 
+          android:dialogTitle="Introduce los minutos"
+          android:defaultValue="30" />
+      <EditTextPreference 
+          android:key="avisosmsnumero" 
+          android:title="Teléfono de destino" 
+          android:summary="Número de teléfono a quien enviar los sms" 
+          android:dialogTitle="Introduce el teléfono"
+          android:defaultValue="666666666" />
+      
+  </PreferenceCategory>  
+  
+
+</PreferenceScreen>

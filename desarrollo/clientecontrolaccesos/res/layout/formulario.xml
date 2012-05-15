@@ -74,31 +74,6 @@
         android:layout_below="@+id/seekBar1"
         android:layout_marginTop="15dp"
         android:text="@string/coloractual" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tv_formulario_coloractual"
-        android:layout_marginTop="20dp"
-        android:weightSum="2" >
-
-        <Button
-            android:id="@+id/bt_formulario_ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-          android:layout_weight="1"
-            android:text="@string/ok" />
-
-        <Button
-            android:id="@+id/bt_formulario_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             android:layout_weight="1"
-            android:text="@string/cancelar" />
-
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/iv_formulario_coloractual"
@@ -108,5 +83,28 @@
         android:layout_alignBottom="@+id/tv_formulario_coloractual"
         android:layout_marginLeft="14dp"
         android:layout_toRightOf="@+id/tv_formulario_coloractual" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/bt_formulario_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/bt_formulario_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancelar" />
+    </LinearLayout>
 
 </RelativeLayout>

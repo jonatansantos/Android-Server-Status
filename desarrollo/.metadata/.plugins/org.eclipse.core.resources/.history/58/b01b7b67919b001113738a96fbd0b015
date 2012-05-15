@@ -1,0 +1,72 @@
+package ubu.inf.logica;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.app.NotificationManager;
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.IBinder;
+import android.preference.PreferenceManager;
+import android.provider.Settings.Secure;
+import android.util.Log;
+
+/**
+ * Servicio que se encarga de enviar un sms con las últimas posiciones de GPS guardadas en 
+ * la base de datos cada x minutos.
+ * 
+ * @author David Herrero
+ * @author Jonatan Santos
+ * 
+ * @version 1.0
+ * @see Service
+ */
+public class ServicioEnvioSMS extends Service {
+	/**
+	 * id del dispositivo.
+	 */
+	String id_dispositivo;
+	/**
+	 * Teléfono al que enviar el sms.
+	 */
+	int telefono;
+	/**
+	 * Minutos entre un sms y el siguiente.
+	 */
+	int minutos;
+	
+	Timer timer = new Timer();
+	@Override
+	public IBinder onBind(Intent arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void onCreate() {
+		
+		id_dispositivo= Secure.getString(getBaseContext().getContentResolver(), Secure.ANDROID_ID);
+		SharedPreferences pref = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		String aux = pref.getString("avisosmsnumero", "666666666");
+		telefono = Integer.parseInt(aux);
+		String aux1 = pref.getString("avisosmstiempo", "30");
+		minutos = Integer.parseInt(aux1);
+		Log.i("gps", "enviamos a ");
+		
+		
+	}
+	
+	private void ejecutar(){
+		timer.scheduleAtFixedRate(new TimerTask() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
+			}
+		}, 0, minutos*60*1000);
+	}
+}

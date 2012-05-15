@@ -1,0 +1,22 @@
+
+2º-cuando cargue las notificaciones, añadir a mano los ID
+
+4º-mirar como cargar las notificaciones , los métodos necesarios
+
+---------------------------------------
+el servicioEmail pregunta si hay notificaciones, para un servidor en concreto
+pero en PestanaMainNotificaciones se descargarán de todos los servidores que estén en SingletonEmail.
+solo se descargarán las de email, o email + ssh?
+
+en el onStart??
+
+
+
+
+metodos:
+
+int hayNotificaciones(String iddispositivo, int tipo)
+//-1 no hay conexion con la base de datos
+//numero de notificaciones
+
+ArrayList<ArrayList<String>> obtenerNotificaciones(String id,in tipo,int numero)

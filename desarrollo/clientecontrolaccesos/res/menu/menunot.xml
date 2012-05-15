@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/filtro" android:title="Filtro" android:icon="@drawable/ic_filter"></item>
+     <item android:id="@+id/re_filtro" android:title="Quitar filtro" android:icon="@android:drawable/ic_menu_revert"></item>
+<item android:id="@+id/ajustes_not" android:title="Ajustes" android:icon="@android:drawable/ic_menu_preferences"></item>
+<item android:id="@+id/actualizar_not" android:title="Actualiar" android:icon="@drawable/ic_menu_refresh"></item>
+    
+</menu>

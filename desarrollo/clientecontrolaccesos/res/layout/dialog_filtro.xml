@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="417dp"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/id" />
+
+        <Spinner
+            android:id="@+id/sp_filtro_tipo"
+			
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/sp_filtro_tipo"
+            android:layout_toLeftOf="@+id/sp_filtro_tipo"
+            android:text="@string/tipo" />
+
+        <EditText
+            android:id="@+id/et_filtro_id"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/sp_filtro_tipo"
+            android:layout_toRightOf="@+id/textView1"
+            android:inputType="number" />
+
+        <CheckBox
+            android:id="@+id/cb_filtro_desde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_below="@+id/et_filtro_id"
+            android:text="Desde :" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/cb_filtro_desde"
+            android:layout_margin="5dp"
+            android:weightSum="2" >
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_filtro_hasta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/linearLayout1"
+            android:text="Hasta :" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/cb_filtro_hasta"
+            android:layout_margin="5dp"
+            android:weightSum="2" >
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginTop="5dp"
+            android:text="@string/urgencia" />
+
+        <Spinner
+            android:id="@+id/sp_filtro_urgencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_toRightOf="@+id/textView3" />
+
+</RelativeLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/id" />
+
+        <Spinner
+            android:id="@+id/sp_filtro_tipo"
+			
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/sp_filtro_tipo"
+            android:layout_toLeftOf="@+id/sp_filtro_tipo"
+            android:text="@string/tipo" />
+
+        <EditText
+            android:id="@+id/et_filtro_id"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/sp_filtro_tipo"
+            android:layout_toRightOf="@+id/textView1"
+            android:inputType="number" />
+
+        <CheckBox
+            android:id="@+id/cb_filtro_desde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_below="@+id/et_filtro_id"
+            android:layout_marginTop="20dp"
+            android:text="Desde :" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/cb_filtro_desde"
+            android:layout_margin="5dp"
+            android:weightSum="2" >
+
+            <CheckedTextView
+                android:id="@+id/ctv_filtro_desde_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:textSize="30dp"
+                android:text="00/00/0000" />
+
+            <CheckedTextView
+                android:id="@+id/ctv_filtro_desde_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:clickable="true"
+                android:textSize="30dp"
+                android:text="00:00" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_filtro_hasta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_marginTop="20dp"
+            android:text="Hasta :" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/cb_filtro_hasta"
+            android:layout_margin="5dp"
+            android:weightSum="2" >
+
+            <CheckedTextView
+                android:id="@+id/ctv_filtro_hasta_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:textSize="30dp"
+                android:text="00/00/0000" />
+
+            <CheckedTextView
+                android:id="@+id/ctv_filtro_hasta_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:clickable="true"
+                android:textSize="30dp"
+                android:text="00:00" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginTop="20dp"
+            android:text="@string/urgencia" />
+
+        <Spinner
+            android:id="@+id/sp_filtro_urgencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/textView3" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+           
+            android:weightSum="2" >
+
+            <Button
+                android:id="@+id/bt_filtro_OK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ok" />
+
+            <Button
+                android:id="@+id/bt_filtro_Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancelar" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
