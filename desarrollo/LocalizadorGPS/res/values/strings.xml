@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, LocalizadorGPSActivity!</string>
     <string name="app_name">LocalizadorGPS</string>
+    <string name="desconocido">desconocido</string>
 
 </resources>

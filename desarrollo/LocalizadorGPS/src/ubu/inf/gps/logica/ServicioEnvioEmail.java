@@ -96,14 +96,15 @@ public class ServicioEnvioEmail extends Service{
 				String mensaje = "";
 				mensaje+="id:"+id_dispositivo;	
 				mensaje+='\n';
-				FachadaCoordenadas.getInstance(ServicioEnvioEmail.this).loadCoordenadas(10, ID, longitud, latitud, fecha);
+				FachadaCoordenadas.getInstance(ServicioEnvioEmail.this).loadCoordenadas(ID, longitud, latitud, fecha);
 				for(int i =0 ;i< ID.size();++i){
 				
 				
 				aux=new Date(fecha.get(i));
 				
-				mensaje+=" long: "+longitud.get(i);	
+				
 				mensaje+=" lat: "+latitud.get(i);	
+				mensaje+=" long: "+longitud.get(i);	
 				mensaje+=" fecha: "+aux.toGMTString();	
 				mensaje+='\n';
 				}
@@ -113,6 +114,7 @@ public class ServicioEnvioEmail extends Service{
 					sender.sendMail("Posición GPS", mensaje, origen, destino);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
+					Log.e("gps","No había conexión para enviar el email");
 					e.printStackTrace();
 				}
 			}

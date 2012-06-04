@@ -16,7 +16,8 @@ import ubu.inf.control.modelo.ComparatorTipo;
 import ubu.inf.control.modelo.ComparatorUrgencia;
 import ubu.inf.control.modelo.Notificacion;
 import ubu.inf.control.modelo.Servidor;
-
+import ubu.inf.control.modelo.SingletonEmail;
+import ubu.inf.control.modelo.SingletonServicios;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -28,6 +29,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings.Secure;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -36,8 +38,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -62,12 +66,20 @@ import android.widget.ToggleButton;
  * 
  */
 public class PestanaMainNotificaciones extends Activity {
+	
+	private static final String SOAPACTION = "http://notificador.serverstatus.itig.ubu/obtenerNotificaciones";
+	private static final String METHOD = "obtenerNotificaciones";
+	private static final String NAMESPACE = "http://notificador.serverstatus.itig.ubu";
+	
 	/**
 	 * id del dispositivo
 	 */
 
-	String id_dispositivo ;
+	String id_dispositivo;
 	private static final int RESULT_FILTRO = 1;
+	/**
+	 * Array con todas las notificaciones a mostrar.
+	 */
 	private ArrayList<Notificacion> datos;
 	private Stack<ArrayList<Notificacion>> pila;
 	private ListView lista;
@@ -84,8 +96,8 @@ public class PestanaMainNotificaciones extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pestanamainnot);
-		id_dispositivo= Secure.getString(getBaseContext()
-				.getContentResolver(), Secure.ANDROID_ID);
+		id_dispositivo = Secure.getString(
+				getBaseContext().getContentResolver(), Secure.ANDROID_ID);
 		inicializa();
 	}
 
@@ -95,9 +107,9 @@ public class PestanaMainNotificaciones extends Activity {
 		// aqui se podría hacer la carga de las notificaciones, ya que si se
 		// hace en
 		// onResume se haría demasiadas veces
-		if(getIntent().getExtras()!=null){
+		if (getIntent().getExtras() != null) {
 			Bundle b = getIntent().getExtras();
-		
+
 			Log.i("control", "han llamado a la pestaña desde una notificacion");
 			actualizar();
 		}
@@ -141,6 +153,37 @@ public class PestanaMainNotificaciones extends Activity {
 	}
 
 	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+
+		MenuInflater inflater = getMenuInflater();
+
+		menu.setHeaderTitle("Opciones");
+
+		inflater.inflate(R.menu.menu_not, menu);
+
+	}
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+
+		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
+				.getMenuInfo();
+
+		switch (item.getItemId()) {
+		case R.id.CtxNotBorrar:
+
+			borrarNotificacion(info);
+
+			return true;
+
+		default:
+			return super.onContextItemSelected(item);
+		}
+	}
+
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch (requestCode) {
 		case RESULT_FILTRO:
@@ -168,12 +211,12 @@ public class PestanaMainNotificaciones extends Activity {
 		// ejemplo
 		Servidor s = new Servidor("10.170.1.1", "escripcion", false, 1,
 				Color.RED);
-		datos.add(new Notificacion("hola", new Date(), 0, 0, s));
-		datos.add(new Notificacion("hola1", new Date(), 1, 1, s));
-		datos.add(new Notificacion("hola2", new Date(), 1, 2, s));
-		datos.add(new Notificacion("hola3", new Date(), 1, 0, s));
-		datos.add(new Notificacion("hola4", new Date(), 0, 1, s));
-		datos.add(new Notificacion("hola5", new Date(), 0, 2, s));
+		datos.add(new Notificacion("hola", new Date(), 0, 0, s, 1));
+		datos.add(new Notificacion("hola1", new Date(), 1, 1, s, 2));
+		datos.add(new Notificacion("hola2", new Date(), 1, 2, s, 3));
+		datos.add(new Notificacion("hola3", new Date(), 1, 0, s, 4));
+		datos.add(new Notificacion("hola4", new Date(), 0, 1, s, 5));
+		datos.add(new Notificacion("hola5", new Date(), 0, 2, s, 6));
 
 		// metiendo los datos en los spiner
 		ordenTipo = (Spinner) findViewById(R.id.sp_pestananot_criterio);
@@ -386,12 +429,62 @@ public class PestanaMainNotificaciones extends Activity {
 	}
 
 	/**
-	 * Función que actualiza las notificaciones por si hay alguna nueva.
+	 * Función que actualiza las notificaciones por si hay alguna nueva. Solo se
+	 * puede hacer si no hay ningún filtro puesto, por eso vaciamos la pila.
 	 */
 	private void actualizar() {
 		// TODO
-		
-		//un nuevo thread para descargar todas las notificaciones, y al final cambiar el adapter.
+		pila.clear();
+		Thread hilo = new Thread(){
+			@Override
+			public void run(){
+				//obtenemos todos los servidores de los que hay que obtener notificaciones
+				ArrayList<Servidor> email = SingletonEmail.getConexion().getHosts();
+				ArrayList<Servidor> ssh = SingletonServicios.getConexion().getHosts();
+				datos.clear();//vaciamos el array list con notificaciones
+				
+				
+			}
+		};
+		hilo.start();
+		// un nuevo thread para descargar todas las notificaciones, y al final
+		// cambiar el adapter.
+	}
+
+	/**
+	 * Función que descarga las notificaciones guardadas en los servidores. Solo
+	 * se puede hacer si no hay ningún filtro puesto.
+	 */
+	private void descargarGuardados() {
+		// TODO
+		if (pila.isEmpty()) {
+
+		} else {
+			Toast.makeText(
+					this,
+					"No se pueden descargar nuevas notificaciones si hay filtros aplicados,eliminelos.",
+					Toast.LENGTH_LONG).show();
+		}
+		// un nuevo thread para descargar todas las notificaciones, y al final
+		// cambiar el adapter.
+	}
+
+	/**
+	 * Función para borrar una notificacion de la lista y de la base de datos
+	 * del servidor.
+	 * 
+	 * @param info
+	 */
+	private void borrarNotificacion(AdapterContextMenuInfo info) {
+		if (pila.isEmpty()) {
+
+		} else {
+			Toast.makeText(
+					this,
+					"No se pueden borrar notificaciones si hay filtros aplicados,eliminelos.",
+					Toast.LENGTH_LONG).show();
+		}
+
 	}
 
 	/**

@@ -18,7 +18,13 @@
           android:title="Texto parada" 
           android:summary="Texto que debe contener el sms para detener el servicio" 
           android:dialogTitle="Introduce el texto"
-          android:defaultValue="parada" />
+          android:defaultValue="parar" />
+         <EditTextPreference 
+          android:key="textoborrado" 
+          android:title="Texto borrado" 
+          android:summary="Texto que debe contener el sms para borrar todos lo datos" 
+          android:dialogTitle="Introduce el texto"
+          android:defaultValue="borrar" />
     </PreferenceCategory>
   <PreferenceCategory android:title="Envio de avisos sms">
       <CheckBoxPreference 

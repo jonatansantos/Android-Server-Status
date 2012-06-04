@@ -90,13 +90,15 @@ public class ServicioEnvioSMS extends Service {
 				 mensaje = "";
 				 aux=new Date(fecha.get(0));
 				mensaje+="id:"+id_dispositivo;	
-				mensaje+=" long: "+longitud.get(0);	
+				
 				mensaje+=" lat: "+latitud.get(0);	
+				mensaje+=" long: "+longitud.get(0);	
 				mensaje+=" fecha: "+aux.toGMTString();	
 				
 				sendSMS(telefono, mensaje);	
 				}else{
 					Log.i("gps", "envio sms , no hay datos");
+					sendSMS(telefono, "No hay ninguna locacizacion,puede que no esté activado el GPS");	
 				}
 			}
 		}, 0, minutos*60*1000);

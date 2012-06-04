@@ -1,0 +1,31 @@
+package ubu.inf;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class FalsaActividad extends Activity{
+
+	private ImageView google;
+	private ImageView market;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.falsa);
+		inicializa();
+	}
+
+	/**
+	 * Función para iniciar todos los componentes de la aplicación.
+	 */
+	private void inicializa(){
+		google = (ImageView) findViewById(R.id.iv_falsa_google);
+		market = (ImageView) findViewById(R.id.iv_falsa_play);
+		Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("URL"));
+		startActivity(intent);
+	}
+	
+}

@@ -258,10 +258,12 @@ public class ServicioEmail extends Service {
 
 	@Override
 	public void onDestroy() {
-		super.onDestroy();
+		Log.i("control", "onDestroy servicioEmail");
 		if (timer != null) {
 			timer.cancel();
 		}
+		super.onDestroy();
+		
 	}
 
 	public class MyBinder extends Binder {

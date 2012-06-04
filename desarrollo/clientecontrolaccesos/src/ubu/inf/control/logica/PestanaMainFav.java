@@ -70,6 +70,7 @@ public class PestanaMainFav extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pestanamainfav);
+		Log.i("control", "onCreate ssh");
 		inicializa();
 	}
 
@@ -111,7 +112,7 @@ public class PestanaMainFav extends Activity {
 		// ponemos el adapter al ListView
 		adapter = new ArrayAdapterServidor(this, datos);
 		list.setAdapter(adapter);
-		// miramos si el servicio Email está corriendo.
+		// miramos si el servicio SSH está corriendo.
 		if (isMyServiceRunning()) {
 			run.setChecked(true);
 		}
@@ -146,7 +147,7 @@ public class PestanaMainFav extends Activity {
 				cantidad.setText("servicios :"
 						+ SingletonServicios.getConexion().getHosts().size());
 
-			} else if (isMyServiceRunning()) {// apagamos
+			} else if (!estado && isMyServiceRunning()) {// apagamos
 
 				Intent myIntent = new Intent(PestanaMainFav.this,
 						ServicioSSH.class);

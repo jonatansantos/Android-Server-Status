@@ -36,6 +36,10 @@ public class Notificacion {
 	private int urgencia;
 
 	/**
+	 * ID de la notificacion.
+	 */
+	private int id;
+	/**
 	 * Constructor de la clase.
 	 * 
 	 * @param texto
@@ -45,14 +49,23 @@ public class Notificacion {
 	 * @param serv
 	 */
 	public Notificacion(String texto, Date fecha, int tipo, int urgencia,
-			Servidor serv) {
+			Servidor serv,int id) {
 		super();
 		this.texto = texto;
 		this.fecha = fecha;
 		this.tipo = tipo;
 		this.urgencia = urgencia;
 		this.serv = serv;
+		this.id=id;
 
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Servidor getServ() {

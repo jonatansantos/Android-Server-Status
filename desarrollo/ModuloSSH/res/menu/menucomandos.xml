@@ -26,5 +26,9 @@
         android:title="Cerrar"
         android:icon="@drawable/ic_lock_power_off"
     />
+        <item android:id="@+id/terminar"
+        android:title="Enviar Ctrl+C"
+       
+    />
     
 </menu>

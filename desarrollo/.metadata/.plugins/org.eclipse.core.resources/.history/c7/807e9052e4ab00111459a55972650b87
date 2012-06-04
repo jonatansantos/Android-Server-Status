@@ -1,0 +1,134 @@
+package ubu.inf;
+
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningServiceInfo;
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class Main extends Activity {
+	private Button terminal;
+	private Button gps;
+	private Button control;
+	private TextView estadogps;
+	private TextView estadossh;
+	private TextView estadoemail;
+    /** Called when the activity is first created. */	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.main);
+        inicializa();
+    }
+    
+    private void inicializa(){
+    	//encuentro los botones
+    	terminal= (Button) findViewById(R.id.bt_menu_terminal);
+    	gps= (Button) findViewById(R.id.bt_menu_gps);
+    	control= (Button) findViewById(R.id.bt_menu_servidor);
+    	//añadimos listeners
+    	control.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+
+				try{
+				Intent intent = new Intent(Intent.ACTION_MAIN);
+				intent.setComponent(new ComponentName("ubu.inf.control","ubu.inf.control.logica.Main"));
+				startActivity(intent);	
+				}catch (ActivityNotFoundException e) {
+					e.printStackTrace();
+					Toast.makeText(Main.this, "Cliente control de accesos no instalado", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+    	gps.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				try{
+				Intent intent = new Intent(Intent.ACTION_MAIN);
+				intent.setComponent(new ComponentName("ubu.inf.gps","ubu.inf.gps.logica.LocalizadorGPSActivity"));
+				startActivity(intent);	
+				}catch (ActivityNotFoundException e) {
+					e.printStackTrace();
+					Toast.makeText(Main.this, "Localizados GPS no instalado", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+    	terminal.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				try{
+				Intent intent = new Intent(Intent.ACTION_MAIN);
+				intent.setComponent(new ComponentName("ubu.inf.terminal","ubu.inf.terminal.logica.MainSSH"));
+				startActivity(intent);	
+				}catch (ActivityNotFoundException e) {
+					e.printStackTrace();
+					Toast.makeText(Main.this, "Terminal no instalado", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+    	
+    }
+    
+    /**
+	 * Función para saber si el ServicioGPS está funcionando.
+	 * 
+	 * @return true si está funcionando, false si no lo está haciendo.
+	 */
+	private boolean isMyServiceRunningGPS() {
+		ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+		for (RunningServiceInfo service : manager
+				.getRunningServices(Integer.MAX_VALUE)) {
+			if ("ubu.inf.gps.logica.ServicioGPS".equals(service.service
+					.getClassName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	/**
+	 * Función para saber si el ServicioEmail está funcionando.
+	 * 
+	 * @return true si está funcionando, false si no lo está haciendo.
+	 */
+	private boolean isMyServiceRunningEmail() {
+		ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+		for (RunningServiceInfo service : manager
+				.getRunningServices(Integer.MAX_VALUE)) {
+			if ("ubu.inf.control.logica.ServicioEmail".equals(service.service
+					.getClassName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	/**
+	 * Función para saber si el ServicioSSH está funcionando.
+	 * 
+	 * @return true si está funcionando, false si no lo está haciendo.
+	 */
+	private boolean isMyServiceRunningSSH() {
+		ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+		for (RunningServiceInfo service : manager
+				.getRunningServices(Integer.MAX_VALUE)) {
+			if ("ubu.inf.control.logica.ServicioSSH".equals(service.service
+					.getClassName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

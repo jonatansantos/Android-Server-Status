@@ -148,7 +148,7 @@ public class PestanaMainEmail extends Activity {
 						+ SingletonEmail.getConexion().getHosts().size());
 				// TODO
 				// compruebaActivados();
-			} else if (isMyServiceRunning()) {// apagamos
+			} else if (!estado && isMyServiceRunning()) {// apagamos
 
 				Intent myIntent = new Intent(PestanaMainEmail.this,
 						ServicioEmail.class);
@@ -314,7 +314,7 @@ public class PestanaMainEmail extends Activity {
 		ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
 		for (RunningServiceInfo service : manager
 				.getRunningServices(Integer.MAX_VALUE)) {
-			if ("ubu.inf.logica.control.ServicioEmail".equals(service.service
+			if ("ubu.inf.control.logica.ServicioEmail".equals(service.service
 					.getClassName())) {
 				return true;
 			}

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/ajustes" android:title="Ajustes" android:icon="@android:drawable/ic_menu_preferences"></item>
-    <item android:id="@+id/clear" android:title="Borrar BD" android:icon="@android:drawable/ic_delete"></item>
-    <item android:id="@+id/sms" android:title="Enviar sms" android:icon="@android:drawable/ic_menu_send"></item>
-    <item android:id="@+id/email" android:title="Enviar email" android:icon="@android:drawable/ic_dialog_email"></item>
-
-</menu>

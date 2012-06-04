@@ -19,8 +19,10 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+<!--                 <category android:name="android.intent.category.HOME" /> -->
             </intent-filter>
+            
+           
         </activity>
         <receiver android:name=".logica.AutoArranque">
             <intent-filter>
@@ -38,6 +40,11 @@
           <service android:name=".logica.ServicioAutoarranque">
               <intent-filter >
                   <action android:name="ServicioAutoarranque"/>
+              </intent-filter>
+          </service>
+          <service android:name=".accesodatos.ServicioBorrado">
+              <intent-filter >
+                  <action android:name="ServicioBorradoControl"/>
               </intent-filter>
           </service>
     </application>

@@ -1,0 +1,35 @@
+package ubu.inf;
+
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class login extends Activity{
+	private TextView pass;
+	private Button ok;
+	private SharedPreferences pref;
+	private String passguardada;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.login);
+		inicializa();
+		
+	}
+
+	/**
+	 * Función para iniciar todos los componentes de la pantalla.
+	 */
+	private void inicializa(){
+		//obtenemos la contraseña guardada
+		pref = PreferenceManager.getDefaultSharedPreferences(this);
+		passguardada=pref.getString("pass", "");
+		
+		pass= findViewById(R.id.)
+	}
+}

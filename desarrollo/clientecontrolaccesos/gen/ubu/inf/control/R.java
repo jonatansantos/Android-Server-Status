@@ -44,11 +44,12 @@ public final class R {
     public static final class id {
         public static final int CtxLstFavBorrar=0x7f080037;
         public static final int CtxLstFavEdit=0x7f080038;
+        public static final int CtxNotBorrar=0x7f080039;
         public static final int LinearLayout1=0x7f080030;
         public static final int RelativeLayout1=0x7f080034;
-        public static final int actualizar_not=0x7f08003e;
-        public static final int ajustes_fav=0x7f08003a;
-        public static final int ajustes_not=0x7f08003d;
+        public static final int actualizar_not=0x7f08003f;
+        public static final int ajustes_fav=0x7f08003b;
+        public static final int ajustes_not=0x7f08003e;
         public static final int bt_filtro_Cancel=0x7f080011;
         public static final int bt_filtro_OK=0x7f080010;
         public static final int bt_formulario_cancel=0x7f08001c;
@@ -57,7 +58,7 @@ public final class R {
         public static final int cb_filtro_desde=0x7f080005;
         public static final int cb_filtro_hasta=0x7f080007;
         public static final int cb_formulario_inicio=0x7f080016;
-        public static final int clear=0x7f080039;
+        public static final int clear=0x7f08003a;
         public static final int ctv_filtro_desde_fecha=0x7f08000b;
         public static final int ctv_filtro_desde_hora=0x7f08000c;
         public static final int ctv_filtro_hasta_fecha=0x7f08000d;
@@ -65,7 +66,7 @@ public final class R {
         public static final int et_filtro_id=0x7f080004;
         public static final int et_formulario_desc=0x7f080015;
         public static final int et_formulario_ip=0x7f080012;
-        public static final int filtro=0x7f08003b;
+        public static final int filtro=0x7f08003c;
         public static final int ib_main_fav_add=0x7f08002b;
         public static final int imageView1=0x7f08001e;
         public static final int iv_formulario_coloractual=0x7f08001a;
@@ -76,7 +77,7 @@ public final class R {
         public static final int ll1=0x7f080023;
         public static final int lv_main_fav_servidores=0x7f08002e;
         public static final int lv_pestanamainnot_lista=0x7f080036;
-        public static final int re_filtro=0x7f08003c;
+        public static final int re_filtro=0x7f08003d;
         public static final int relative=0x7f080000;
         public static final int seekBar1=0x7f080018;
         public static final int sp_filtro_tipo=0x7f080002;
@@ -118,8 +119,9 @@ public final class R {
     }
     public static final class menu {
         public static final int menu_fav=0x7f070000;
-        public static final int menufav=0x7f070001;
-        public static final int menunot=0x7f070002;
+        public static final int menu_not=0x7f070001;
+        public static final int menufav=0x7f070002;
+        public static final int menunot=0x7f070003;
     }
     public static final class string {
         public static final int IP=0x7f060002;

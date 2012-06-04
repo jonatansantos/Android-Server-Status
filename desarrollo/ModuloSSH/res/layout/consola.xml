@@ -10,12 +10,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:orientation="horizontal" >
-
+
         <EditText
             android:id="@+id/et_consola_comando"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:singleLine="true" >
 
             <requestFocus />
         </EditText>
