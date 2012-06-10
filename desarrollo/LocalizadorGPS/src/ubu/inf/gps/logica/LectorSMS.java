@@ -11,20 +11,21 @@ import android.util.Log;
 import android.widget.Toast;
 
 /**
- * Clase que se encarga de leer los sms recibidos y comprueba si contienen el
- * mensaje de emergencia, si es así lanza el ServicioGPS que se encargará de
- * obtener la posición actual.
- * 
- * @author David Herrero de la Peña
- * @author Jonatan Santos Barrios
- * 
- * @version 1.0
- * 
+ * Clase que se encarga de leer los sms recibidos y comprueba si contienen el mensaje de emergencia, si es así lanza el ServicioGPS que se encargará de obtener la posición actual.
+ * @author       David Herrero de la Peña
+ * @author       Jonatan Santos Barrios
+ * @version       1.0
  * @see BroadcastReceiver
  * @see ServicioGPS
+ * @uml.dependency   supplier="ubu.inf.gps.logica.ServicioEnvioEmail"
+ * @uml.dependency   supplier="ubu.inf.gps.logica.ServicioEnvioSMS"
+ * @uml.dependency   supplier="ubu.inf.gps.logica.ServicioGPS"
  */
 public class LectorSMS extends BroadcastReceiver {
 
+	/**
+	 * String con la acción de recibir un SMS.
+	 */
 	static final String ACTION = "android.provider.Telephony.SMS_RECEIVED";
 
 	@Override

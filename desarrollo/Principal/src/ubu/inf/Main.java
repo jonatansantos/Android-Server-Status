@@ -20,12 +20,36 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Actividad pinripal , desde la que se lanzarán el resto de módulos de la aplicación.
+ * @author     David Herrerod de la Peña
+ * @author     Jonatan Santos Barrios
+ * @uml.dependency   supplier="ubu.inf.Preferencias"
+ */
 public class Main extends Activity {
+	/**
+	 * Boton para acceder al terminal ssh.
+	 */
 	private Button terminal;
+	/**
+	 * Boton para acceder al localizador GPS.
+	 */
 	private Button gps;
+	/**
+	 * Boton para acceder al control de accesos.
+	 */
 	private Button control;
+	/**
+	 * Texto para indicar el estado del servicio de localización gps.
+	 */
 	private TextView estadogps;
+	/**
+	 * Texto para indicar el estado del servicio de control ssh.
+	 */
 	private TextView estadossh;
+	/**
+	 * Texto para indicar el estado del servicio de control de emails.
+	 */
 	private TextView estadoemail;
 
 	/** Called when the activity is first created. */
@@ -76,6 +100,9 @@ public class Main extends Activity {
 	}
 
 
+	/**
+	 * Función para iniciar todos los componentes de la actividad.
+	 */
 	private void inicializa() {
 		// encuentro los textview
 		estadogps = (TextView) findViewById(R.id.tv_estado_gps);
@@ -192,6 +219,10 @@ public class Main extends Activity {
 		return false;
 	}
 
+	/**
+	 * Función para comprobar el estado de los 3 servicios y cambiar el texto acorde 
+	 * a los resultados.
+	 */
 	private void compruebaServicios() {
 		if (isMyServiceRunningEmail()) {
 			

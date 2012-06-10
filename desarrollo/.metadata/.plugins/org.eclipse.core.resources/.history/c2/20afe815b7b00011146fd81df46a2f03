@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1036,834" id="ubu.inf.gps.logica" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030204C6F63616C697A61646F724750532F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" name="AutoArranque" location="484,603" size="173,67" id="ubu.inf.gps.logica/AutoArranque" runTimeClassModel="onReceive(Landroid.content.Context;Landroid.content.Intent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="150,18">
+      <children xsi:type="editmodel:MethodEditModel" name="onReceive" id="ubu.inf.gps.logica/AutoArranque#onReceive(Landroid.content.Context;Landroid.content.Intent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="LectorSMS" location="261,603" size="173,85" id="ubu.inf.gps.logica/LectorSMS" runTimeClassModel="onReceive(Landroid.content.Context;Landroid.content.Intent;),aCTION">
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="aCTION" id="ubu.inf.gps.logica/LectorSMS#aCTION"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="150,18">
+      <children xsi:type="editmodel:MethodEditModel" name="onReceive" id="ubu.inf.gps.logica/LectorSMS#onReceive(Landroid.content.Context;Landroid.content.Intent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="LocalizadorGPSActivity" location="346,50" size="252,409" id="ubu.inf.gps.logica/LocalizadorGPSActivity" runTimeClassModel="tfecha,tlongitud,isMyServiceRunningSMS(),onCreateOptionsMenu(Landroid.view.Menu;),fecha,sendSMS(),onOptionsItemSelected(Landroid.view.MenuItem;),onCreate(Landroid.os.Bundle;),iD,inicializar(),sender,id_dispositivo,isMyServiceRunning(),clear(),tlatitud,latitud,isMyServiceRunningEmail(),sendEmail(),longitud,pref,preferencias()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="151,162">
+      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="ubu.inf.gps.logica/LocalizadorGPSActivity#fecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="iD" id="ubu.inf.gps.logica/LocalizadorGPSActivity#iD"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id_dispositivo" id="ubu.inf.gps.logica/LocalizadorGPSActivity#id_dispositivo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="latitud" id="ubu.inf.gps.logica/LocalizadorGPSActivity#latitud"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="longitud" id="ubu.inf.gps.logica/LocalizadorGPSActivity#longitud"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pref" id="ubu.inf.gps.logica/LocalizadorGPSActivity#pref"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tfecha" id="ubu.inf.gps.logica/LocalizadorGPSActivity#tfecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tlatitud" id="ubu.inf.gps.logica/LocalizadorGPSActivity#tlatitud"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tlongitud" id="ubu.inf.gps.logica/LocalizadorGPSActivity#tlongitud"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="229,198">
+      <children xsi:type="editmodel:MethodEditModel" name="clear" id="ubu.inf.gps.logica/LocalizadorGPSActivity#clear()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inicializar" id="ubu.inf.gps.logica/LocalizadorGPSActivity#inicializar()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isMyServiceRunning" id="ubu.inf.gps.logica/LocalizadorGPSActivity#isMyServiceRunning()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isMyServiceRunningEmail" id="ubu.inf.gps.logica/LocalizadorGPSActivity#isMyServiceRunningEmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isMyServiceRunningSMS" id="ubu.inf.gps.logica/LocalizadorGPSActivity#isMyServiceRunningSMS()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.gps.logica/LocalizadorGPSActivity#onCreate(Landroid.os.Bundle;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreateOptionsMenu" id="ubu.inf.gps.logica/LocalizadorGPSActivity#onCreateOptionsMenu(Landroid.view.Menu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onOptionsItemSelected" id="ubu.inf.gps.logica/LocalizadorGPSActivity#onOptionsItemSelected(Landroid.view.MenuItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="preferencias" id="ubu.inf.gps.logica/LocalizadorGPSActivity#preferencias()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sendEmail" id="ubu.inf.gps.logica/LocalizadorGPSActivity#sendEmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sendSMS" id="ubu.inf.gps.logica/LocalizadorGPSActivity#sendSMS()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Preferencias" location="707,603" size="130,67" id="ubu.inf.gps.logica/Preferencias" runTimeClassModel="onCreate(Landroid.os.Bundle;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="107,18">
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.gps.logica/Preferencias#onCreate(Landroid.os.Bundle;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ServicioEnvioEmail" location="648,50" size="165,229" id="ubu.inf.gps.logica/ServicioEnvioEmail" runTimeClassModel="ejecutar(),destino,minutos,sender,id_dispositivo,onCreate(),onBind(Landroid.content.Intent;),timer,onDestroy(),origen,pass">
+    <children xsi:type="editmodel:CompartmentEditModel" size="118,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="destino" id="ubu.inf.gps.logica/ServicioEnvioEmail#destino"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id_dispositivo" id="ubu.inf.gps.logica/ServicioEnvioEmail#id_dispositivo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="minutos" id="ubu.inf.gps.logica/ServicioEnvioEmail#minutos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="origen" id="ubu.inf.gps.logica/ServicioEnvioEmail#origen"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pass" id="ubu.inf.gps.logica/ServicioEnvioEmail#pass"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="timer" id="ubu.inf.gps.logica/ServicioEnvioEmail#timer"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,72">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ubu.inf.gps.logica/ServicioEnvioEmail#ejecutar()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onBind" id="ubu.inf.gps.logica/ServicioEnvioEmail#onBind(Landroid.content.Intent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.gps.logica/ServicioEnvioEmail#onCreate()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onDestroy" id="ubu.inf.gps.logica/ServicioEnvioEmail#onDestroy()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ServicioEnvioSMS" location="50,603" size="161,211" id="ubu.inf.gps.logica/ServicioEnvioSMS" runTimeClassModel="ejecutar(),minutos,id_dispositivo,onCreate(),onBind(Landroid.content.Intent;),timer,onDestroy(),sendSMS(Ljava.lang.String;Ljava.lang.String;),telefono">
+    <children xsi:type="editmodel:CompartmentEditModel" size="118,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="id_dispositivo" id="ubu.inf.gps.logica/ServicioEnvioSMS#id_dispositivo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="minutos" id="ubu.inf.gps.logica/ServicioEnvioSMS#minutos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="telefono" id="ubu.inf.gps.logica/ServicioEnvioSMS#telefono"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="timer" id="ubu.inf.gps.logica/ServicioEnvioSMS#timer"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="138,90">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ubu.inf.gps.logica/ServicioEnvioSMS#ejecutar()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onBind" id="ubu.inf.gps.logica/ServicioEnvioSMS#onBind(Landroid.content.Intent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.gps.logica/ServicioEnvioSMS#onCreate()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onDestroy" id="ubu.inf.gps.logica/ServicioEnvioSMS#onDestroy()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sendSMS" id="ubu.inf.gps.logica/ServicioEnvioSMS#sendSMS(Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ServicioGPS" location="50,50" size="270,539" id="ubu.inf.gps.logica/ServicioGPS" runTimeClassModel="ubu.inf.gps.logica.ServicioGPS.MiLocationListener3G,hilo,onCreate(),setCurrentLocation(Landroid.location.Location;),ubu.inf.gps.logica.ServicioGPS.MiLocationListenerGPS,miLocationGPS,miLocationManager3G,miLocationManagerGPS,miLocationListener3G,onBind(Landroid.content.Intent;),onDestroy(),localizacion,conectado,miLocation3G,miLocationListenerGPS">
+    <children xsi:type="editmodel:CompartmentEditModel" size="247,162">
+      <children xsi:type="editmodel:AttributeEditModel" name="conectado" id="ubu.inf.gps.logica/ServicioGPS#conectado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hilo" id="ubu.inf.gps.logica/ServicioGPS#hilo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="localizacion" id="ubu.inf.gps.logica/ServicioGPS#localizacion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="miLocation3G" id="ubu.inf.gps.logica/ServicioGPS#miLocation3G"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="miLocationGPS" id="ubu.inf.gps.logica/ServicioGPS#miLocationGPS"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="miLocationListener3G" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListener3G@miLocationListener3G+ubu.inf.gps.logica/ServicioGPS@|ubu.inf.gps.logica/ServicioGPS$MiLocationListener3G#miLocationListener3G"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="miLocationListenerGPS" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListenerGPS@miLocationListenerGPS+ubu.inf.gps.logica/ServicioGPS@|ubu.inf.gps.logica/ServicioGPS$MiLocationListenerGPS#miLocationListenerGPS"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="miLocationManager3G" id="ubu.inf.gps.logica/ServicioGPS#miLocationManager3G"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="miLocationManagerGPS" id="ubu.inf.gps.logica/ServicioGPS#miLocationManagerGPS"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="163,72">
+      <children xsi:type="editmodel:MethodEditModel" name="onBind" id="ubu.inf.gps.logica/ServicioGPS#onBind(Landroid.content.Intent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.gps.logica/ServicioGPS#onCreate()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onDestroy" id="ubu.inf.gps.logica/ServicioGPS#onDestroy()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCurrentLocation" id="ubu.inf.gps.logica/ServicioGPS#setCurrentLocation(Landroid.location.Location;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="223,246">
+      <children xsi:type="editmodel:ClassEditModel" name="MiLocationListener3G" size="223,121" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListener3G" runTimeClassModel="onStatusChanged(Ljava.lang.String;ILandroid.os.Bundle;),onProviderEnabled(Ljava.lang.String;),onProviderDisabled(Ljava.lang.String;),onLocationChanged(Landroid.location.Location;)">
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <children xsi:type="editmodel:CompartmentEditModel" size="200,72">
+          <children xsi:type="editmodel:MethodEditModel" name="onLocationChanged" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListener3G#onLocationChanged(Landroid.location.Location;)"/>
+          <children xsi:type="editmodel:MethodEditModel" name="onProviderDisabled" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListener3G#onProviderDisabled(Ljava.lang.String;)"/>
+          <children xsi:type="editmodel:MethodEditModel" name="onProviderEnabled" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListener3G#onProviderEnabled(Ljava.lang.String;)"/>
+          <children xsi:type="editmodel:MethodEditModel" name="onStatusChanged" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListener3G#onStatusChanged(Ljava.lang.String;ILandroid.os.Bundle;)"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+      </children>
+      <children xsi:type="editmodel:ClassEditModel" name="MiLocationListenerGPS" size="223,121" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListenerGPS" runTimeClassModel="onStatusChanged(Ljava.lang.String;ILandroid.os.Bundle;),onProviderEnabled(Ljava.lang.String;),onProviderDisabled(Ljava.lang.String;),onLocationChanged(Landroid.location.Location;)">
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <children xsi:type="editmodel:CompartmentEditModel" size="200,72">
+          <children xsi:type="editmodel:MethodEditModel" name="onLocationChanged" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListenerGPS#onLocationChanged(Landroid.location.Location;)"/>
+          <children xsi:type="editmodel:MethodEditModel" name="onProviderDisabled" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListenerGPS#onProviderDisabled(Ljava.lang.String;)"/>
+          <children xsi:type="editmodel:MethodEditModel" name="onProviderEnabled" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListenerGPS#onProviderEnabled(Ljava.lang.String;)"/>
+          <children xsi:type="editmodel:MethodEditModel" name="onStatusChanged" id="ubu.inf.gps.logica/ServicioGPS$MiLocationListenerGPS#onStatusChanged(Ljava.lang.String;ILandroid.os.Bundle;)"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+      </children>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -19,11 +19,11 @@ public class ServidoresSQLiteHelper extends SQLiteOpenHelper {
 	/**
 	 * Cadena para crear la tabla servidores.
 	 */
-	private String sqlCreate = "CREATE TABLE servidores (id INTEGER PRIMARY KEY,host TEXT,inicio INTEGER,color INTEGER,descripcion TEXT)";
+	private String sqlCreate = "CREATE TABLE servidores (id INTEGER PRIMARY KEY,host TEXT,inicio INTEGER,color INTEGER,descripcion TEXT,puerto INTEGER)";
 	/**
 	 * Cadena para crear la tabla email.
 	 */
-	private String sqlCreate2 = "CREATE TABLE email (id INTEGER PRIMARY KEY,host TEXT,inicio INTEGER,color INTEGER,descripcion TEXT)";
+	private String sqlCreate2 = "CREATE TABLE email (id INTEGER PRIMARY KEY,host TEXT,inicio INTEGER,color INTEGER,descripcion TEXT,puerto INTEGER)";
 	/**
 	 * Constructor para crear el Helper.
 	 * @param context contexto desde el que se llama.

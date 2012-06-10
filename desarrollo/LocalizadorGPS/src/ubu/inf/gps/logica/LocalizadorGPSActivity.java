@@ -36,6 +36,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+/**
+ * @author      david
+ * @uml.dependency   supplier="ubu.inf.gps.logica.Preferencias"
+ * @uml.dependency   supplier="ubu.inf.gps.logica.ServicioGPS"
+ */
 public class LocalizadorGPSActivity extends Activity {
 	/**
 	 * id del dispositivo.
@@ -43,6 +48,8 @@ public class LocalizadorGPSActivity extends Activity {
 	String id_dispositivo;
 	/**
 	 * Sender para enviar emails.
+	 * @uml.property  name="sender"
+	 * @uml.associationEnd  
 	 */
 	private GMailSender sender;
 	/**
@@ -79,6 +86,9 @@ public class LocalizadorGPSActivity extends Activity {
 		inicializar();
 	}
 
+	/**
+	 * Función que inica todos los componentes de la interfaz.
+	 */
 	private void inicializar() {
 		ID = new ArrayList<Integer>();
 		longitud = new ArrayList<Double>();

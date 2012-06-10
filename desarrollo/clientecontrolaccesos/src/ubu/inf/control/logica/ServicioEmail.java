@@ -171,7 +171,7 @@ public class ServicioEmail extends Service {
 		envelope.dotNet = false;
 
 		envelope.setOutputSoapObject(request);
-		URL ="http://"+s.getIp()+":8080/axis2/services/Notificador.NotificadorHttpSoap12Endpoint/";
+		URL ="http://"+s.getIp()+":"+s.getPuerto()+"/axis2/services/Notificador.NotificadorHttpSoap12Endpoint/";
 		//aqui pondríamos la Ip del servidor
 	 HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
 

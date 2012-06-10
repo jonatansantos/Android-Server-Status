@@ -23,8 +23,19 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Actividad para conectarse a un servidor de manera manual.
+ * @author       David Herreo de la Peña
+ * @author       Jonatan Santos Barrios
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.SUserInfo"
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.Consola"
+ */
 public class PestanaMainManual extends Activity {
 	private Button conectar;
+	/**
+	 * @uml.property  name="handler"
+	 * @uml.associationEnd  
+	 */
 	private MyHandler handler = new MyHandler();
 	private TextView ip;
 	private TextView usuario;
@@ -35,13 +46,7 @@ public class PestanaMainManual extends Activity {
 	private Session session = null;
 	ProgressDialog dialog ;
 
-	// Handler handler = new Handler(){
-	// @Override
-	// public void handleMessage(Message msg){
-	// barra.incrementProgressBy(5);
-	// }
-	// };
-
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,9 @@ public class PestanaMainManual extends Activity {
 		inicializa();
 	}
 
+	/**
+	 * Función para iniciar todos los componentes de la actividad.
+	 */
 	private void inicializa() {
 		conectar = (Button) findViewById(R.id.btConnect);
 
@@ -61,7 +69,12 @@ public class PestanaMainManual extends Activity {
 		conectar.setOnClickListener(new listenerConectar());
 
 	}
-
+	/**Listener del botón conectar.
+	 * 
+	 * @author David Herreo de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 */
 	private class listenerConectar implements View.OnClickListener {
 
 		public void onClick(View arg0) {
@@ -79,7 +92,12 @@ public class PestanaMainManual extends Activity {
 		}
 
 	}
-
+	/**Handler para manejar los mensajes del hilo asíncrono.
+	 * 
+	 * @author David Herreo de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 */
 	private class MyHandler extends Handler{
 		@Override
 		public void handleMessage(Message msg){
@@ -90,25 +108,12 @@ public class PestanaMainManual extends Activity {
 			barra.setProgress(0);
 		}
 	}
+	
+	/**
+	 * Función para conectarse a un servidor mediantes ssh.
+	 */
 	private void conecta() {
 		
-		
-
-			// barra.setProgress(0);
-			// Thread background = new Thread(new Runnable(){
-			// public void run(){
-			// try{
-			// for(int i=0; i<15; i++){
-			// Thread.sleep(1000);
-			// handler.sendMessage(handler.obtainMessage());
-			// }
-			// }catch(Throwable t){
-			// //Termina el thread en background
-			// }
-			// session=null;
-			// }
-			// });
-			// background.start();
 		 dialog = ProgressDialog.show(this, "", "Conectando...", true);
 
 			Thread hilo = new Thread(){
@@ -151,7 +156,10 @@ public class PestanaMainManual extends Activity {
 			
 	}
 
-	
+	/**
+	 * Función para abrir la consola de comandos.
+	 * @see Consola
+	 */
 	private void enviaIntent() {
 		Intent intent = new Intent(PestanaMainManual.this, Consola.class);
 

@@ -3,6 +3,12 @@ package ubu.inf.gps.modelo;
 import java.security.AccessController;
 import java.security.Provider;
 
+/**
+ * Clase que implementa Provider para adaptarlo a nuestras necesidades.
+ * @author David Herrero de la Peña
+ * @author Jonatan Santos Barrios
+ *
+ */
 public final class JSSEProvider extends Provider {
 
     public JSSEProvider() {

@@ -9,11 +9,30 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-
+/**
+ * Actividad en la que introducir la contraseña para poder entrar en la aplicación.
+ * @author     David Herrero de la Peña
+ * @author     Jonatan Santos Barrios
+ * @uml.dependency   supplier="ubu.inf.FalsaActividad"
+ * @uml.dependency   supplier="ubu.inf.Main"
+ * @uml.dependency   supplier="ubu.inf.Preferencias"
+ */
 public class Login extends Activity{
+	/**
+	 * Campo donde introducir la contraseña.
+	 */
 	private TextView pass;
+	/**
+	 * Boton para aceptar.
+	 */
 	private Button ok;
+	/**
+	 * Preferencias de la aplicación,donde está guardada la contraseña.
+	 */
 	private SharedPreferences pref;
+	/**
+	 * Contraseña guardada.
+	 */
 	private String passguardada;
 
 	@Override

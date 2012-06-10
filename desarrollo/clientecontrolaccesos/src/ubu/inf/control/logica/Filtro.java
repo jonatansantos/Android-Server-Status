@@ -100,13 +100,13 @@ public class Filtro extends Activity {
 
 	private Date datedesde;
 	private Date datehasta;
-	
+	//conjunto de  variables para guardar la fecha desde la que filtrar.
 	private int mDay_desde = 1;
 	private int mMes_desde = 0;
 	private int mYear_desde = 100;
 	private int mHora_desde = 13;
 	private int mMinuto_desde = 30;
-
+	//conjunto de variables para guardar la fehca hasta la que filtrar.
 	private int mDay_hasta;
 	private int mMes_hasta;
 	private int mYear_hasta;

@@ -15,17 +15,15 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 /**
- * Servicio que se inicia al encender el teléfono y comprueba si es necesario
- * lanzar los otros dos servicios que se encargan de comprobar si hay
- * notificaciones.
- * 
- * @author David Herrero
- * @author Jonatan Santos
- * 
- * @version 1.0
+ * Servicio que se inicia al encender el teléfono y comprueba si es necesario lanzar los otros dos servicios que se encargan de comprobar si hay notificaciones.
+ * @author     David Herrero
+ * @author     Jonatan Santos
+ * @version     1.0
  * @see Service
  * @see ServicioEmail
  * @see ServicioSSH
+ * @uml.dependency   supplier="ubu.inf.control.logica.ServicioSSH"
+ * @uml.dependency   supplier="ubu.inf.control.logica.ServicioEmail"
  */
 public class ServicioAutoarranque extends Service {
 

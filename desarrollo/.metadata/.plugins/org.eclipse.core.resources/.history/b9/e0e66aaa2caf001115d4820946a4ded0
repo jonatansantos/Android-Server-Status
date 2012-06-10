@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <EditText
+        android:id="@+id/et_formulario_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tv_formulario_ip" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tv_formulario_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_formulario_ip"
+        android:layout_alignBottom="@+id/et_formulario_ip"
+        android:layout_alignParentLeft="true"
+        android:text="@string/IP" />
+
+    <TextView
+        android:id="@+id/tv_formulario_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_formulario_ip"
+        android:layout_below="@+id/et_formulario_ip"
+        android:text="@string/descripcion" />
+
+    <EditText
+        android:id="@+id/et_formulario_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_formulario_desc"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_formulario_desc" />
+
+    <CheckBox
+        android:id="@+id/cb_formulario_inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/et_formulario_desc"
+        android:layout_marginTop="10dp"
+        android:text="@string/arrancar2" />
+
+    <TextView
+        android:id="@+id/tv_formulario_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cb_formulario_inicio"
+        android:layout_marginTop="10dp"
+        android:text="Elige color identificativo:" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_formulario_color"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/tv_formulario_coloractual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/seekBar1"
+        android:layout_marginTop="15dp"
+        android:text="@string/coloractual" />
+
+    <ImageView
+        android:id="@+id/iv_formulario_coloractual"
+        android:layout_width="40px"
+        android:layout_height="20px"
+        android:background="#00FF00"
+        android:layout_alignBottom="@+id/tv_formulario_coloractual"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/tv_formulario_coloractual" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/bt_formulario_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/bt_formulario_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancelar" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_formulario_coloractual"
+        android:layout_marginTop="29dp"
+        android:text="@string/descripcion" />
+
+</RelativeLayout>

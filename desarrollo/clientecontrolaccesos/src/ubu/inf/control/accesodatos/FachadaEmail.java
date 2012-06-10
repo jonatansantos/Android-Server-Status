@@ -12,16 +12,11 @@ import android.graphics.Color;
 import android.util.Log;
 
 /**
- * Clase que utiliza la aplicación para acceder a la BD de forma simplificada,
- * contiene métodos para modificar la BD de forma transparente. Usa patron de
- * diseño Fachada y Singleton.
- * 
- * @author David Herrero de la Peña
- * @author Jonatan Santos Barrios
- * 
- * @version 1.0
- * @see ServidoresSQLiteHelper
- * 
+ * Clase que utiliza la aplicación para acceder a la BD de forma simplificada, contiene métodos para modificar la BD de forma transparente. Usa patron de diseño Fachada y Singleton.
+ * @author  David Herrero de la Peña
+ * @author  Jonatan Santos Barrios
+ * @version  1.0
+ * @see  ServidoresSQLiteHelper
  */
 public class FachadaEmail {
 	/**
@@ -30,6 +25,8 @@ public class FachadaEmail {
 	Context context;
 	/**
 	 * SQLite helper que se usa para crear la estructura básica de la BD.
+	 * @uml.property  name="helperEmail"
+	 * @uml.associationEnd  
 	 */
 	ServidoresSQLiteHelper helperEmail;
 	/**
@@ -38,6 +35,8 @@ public class FachadaEmail {
 	SQLiteDatabase DBservidores;
 	/**
 	 * Referencia a si misma.
+	 * @uml.property  name="myFachada"
+	 * @uml.associationEnd  
 	 */
 	private static FachadaEmail myFachada;
 
@@ -112,8 +111,9 @@ public class FachadaEmail {
 
 				int id = c.getInt(0);
 				int color = c.getInt(3);
-
-				Servidor serv = new Servidor(ip, descripcion, inicio, id, color);
+				int puerto = c.getInt(5);
+				Log.i("control", "puerto es :" +puerto);
+				Servidor serv = new Servidor(ip, descripcion, inicio, id, color,puerto);
 				lista.add(serv);
 
 			} while (c.moveToNext());
@@ -134,9 +134,10 @@ public class FachadaEmail {
 	 */
 	public void insertServidor(ArrayList<Servidor> ant, Servidor serv) {
 		int id = 0;
-
+		Log.i("control", "guardamos servidor con puerto : "+ serv.getPuerto());
 		String ip = serv.getIp();
 		String desc = serv.getDescripcion();
+		int puerto = serv.getPuerto();
 		int color = serv.getColor();
 		boolean inicio = serv.isInicio();
 		int aux;
@@ -151,13 +152,13 @@ public class FachadaEmail {
 
 			try {
 				DBservidores
-						.execSQL("INSERT INTO email(id,host,inicio,color,descripcion) "
+						.execSQL("INSERT INTO email(id,host,inicio,color,descripcion,puerto) "
 								+ "VALUES (NULL,'"
 								+ ip
 								+ "',"
 								+ aux
 								+ ","
-								+ color + ",'" + desc + "')");
+								+ color + ",'" + desc + "',"+puerto+")");
 				Cursor c = DBservidores.rawQuery("SELECT last_insert_rowid();",
 						null);
 				if (c.moveToFirst()) {
@@ -166,7 +167,7 @@ public class FachadaEmail {
 				serv.setId(id);
 				ant.add(serv);
 			} catch (SQLException e) {
-
+				e.printStackTrace();
 			}
 
 			DBservidores.close();
@@ -222,6 +223,7 @@ public class FachadaEmail {
 		String ip = serv.getIp();
 		String desc = serv.getDescripcion();
 		int color = serv.getColor();
+		int puerto = serv.getPuerto();
 		boolean inicio = serv.isInicio();
 		int aux;
 		if (inicio) {
@@ -231,7 +233,7 @@ public class FachadaEmail {
 		}
 
 		String sql = "UPDATE email SET host='" + ip + "' ,color=" + color
-				+ " ,inicio=" + aux + " ,descripcion='" + desc + "' WHERE id="
+				+ " ,inicio=" + aux + " ,descripcion='" + desc + "' ,puerto="+puerto+" WHERE id="
 				+ id + ";";
 
 		DBservidores = helperEmail.getWritableDatabase();
@@ -245,6 +247,7 @@ public class FachadaEmail {
 
 						ant.get(i).setDescripcion(desc);
 						ant.get(i).setIp(ip);
+						ant.get(i).setPuerto(puerto);
 						ant.get(i).setColor(color);
 						ant.get(i).setInicio(inicio);
 						break;
@@ -267,7 +270,7 @@ public class FachadaEmail {
 	 */
 	public void borraTabla() {
 		String sql = "DROP TABLE IF EXISTS email";
-		String sqlCreate = "CREATE TABLE email (id INTEGER PRIMARY KEY,host TEXT,inicio INTEGER,color INTEGER,descripcion TEXT)";
+		String sqlCreate = "CREATE TABLE email (id INTEGER PRIMARY KEY,host TEXT,inicio INTEGER,color INTEGER,descripcion TEXT,puerto INTEGER)";
 		DBservidores = helperEmail.getWritableDatabase();
 		if (DBservidores != null) {
 

@@ -43,7 +43,7 @@
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="false" key="notree"/>
 		<item value="true" key="splitindex"/>
-		<item value="javadoc -d  doc\javadoc -author -version -private -sourcepath .\src -subpackages dominio interfaces serviciosaccesosdatos" key="javadoc_command_history"/>
+		<item value="C:\jdk6.0\bin\javadoc.exe;javadoc -d  doc\javadoc -author -version -private -sourcepath .\src -subpackages dominio interfaces serviciosaccesosdatos" key="javadoc_command_history"/>
 		<item value="true" key="use"/>
 		<item value="false" key="nonavbar"/>
 		<item value="package" key="access"/>
@@ -61,18 +61,23 @@
 		<section name="projects">
 			<section name="LocalizadorGPS">
 				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\LocalizadorGPS\doc" key="destdir"/>
-				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\LocalizadorGPS\javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\LocalizadorGPS\javadoc.xml" key="antpath"/>
+			</section>
+			<section name="Principal">
+				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\Principal\doc" key="destdir"/>
+				<item value="" key="href"/>
+				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\Principal\javadoc.xml" key="antpath"/>
 			</section>
 			<section name="ModuloSSH">
 				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\ModuloSSH\doc" key="destdir"/>
-				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\ModuloSSH\javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\ModuloSSH\javadoc.xml" key="antpath"/>
 			</section>
 			<section name="clientecontrolaccesos">
 				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\clientecontrolaccesos\doc" key="destdir"/>
-				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\clientecontrolaccesos\javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="C:\Users\david\Desktop\universidad\PFC\repositorio\Android-Server-Status\desarrollo\clientecontrolaccesos\javadoc.xml" key="antpath"/>
 			</section>
 		</section>
 	</section>
@@ -135,9 +140,9 @@
 	</section>
 	<section name="JavadocWizardDialog">
 		<item value="616" key="DIALOG_WIDTH"/>
-		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="56" key="DIALOG_Y_ORIGIN"/>
 		<item value="615" key="DIALOG_HEIGHT"/>
-		<item value="61" key="DIALOG_X_ORIGIN"/>
+		<item value="275" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

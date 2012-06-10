@@ -17,14 +17,11 @@ import android.provider.Settings.Secure;
 import android.util.Log;
 
 /**
- * Servicio que se encarga de enviar un email con las últimas posiciones de GPS guardadas en 
- * la base de datos cada x minutos.
- * 
- * @author David Herrero
- * @author Jonatan Santos
- * 
- * @version 1.0
- * @see Service
+ * Servicio que se encarga de enviar un email con las últimas posiciones de GPS guardadas en  la base de datos cada x minutos.
+ * @author  David Herrero
+ * @author  Jonatan Santos
+ * @version  1.0
+ * @see  Service
  */
 public class ServicioEnvioEmail extends Service{
 	/**
@@ -50,6 +47,8 @@ public class ServicioEnvioEmail extends Service{
 	
 	/**
 	 * Sender para  enviar emails.
+	 * @uml.property  name="sender"
+	 * @uml.associationEnd  
 	 */
 	private GMailSender sender ;
 	
@@ -83,6 +82,10 @@ public class ServicioEnvioEmail extends Service{
 		
 	}
 	
+	/**
+	 * Tarea asíncrona que se ejecuta cada x minutos para enviar un email, si no tiene conexión 
+	 * maneja la excepción para volver a intentarlo más tarde.
+	 */
 	private void ejecutar(){
 		timer.scheduleAtFixedRate(new TimerTask() {
 			

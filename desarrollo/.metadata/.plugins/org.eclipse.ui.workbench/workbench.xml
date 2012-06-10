@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="929" x="360" y="-24">
+<window height="728" maximized="true" width="929" x="-3" y="-22">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
 </fastViewData>
@@ -15,6 +15,7 @@
 <coolItem id="adt.actionSet.avdManager" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="adt.actionSet.lint" itemType="typeToolBarContribution" x="53" y="22"/>
 <coolItem id="adt.actionSet.wizards" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="com.soyatec.uml.UMLElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
@@ -24,6 +25,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.soyatec.uml.ClassDiagramEditor" itemType="typePlaceholder" x="287" y="22"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -47,45 +49,31 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/src/ubu/inf/Main.java" title="Main.java" tooltip="Principal/src/ubu/inf/Main.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/src/ubu/inf/Main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1171" selectionTopPixel="630"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainEmail.java" partName="PestanaMainEmail.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java" title="PestanaMainEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="menuprincipal.xml" partName="menuprincipal.xml" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/res/menu/menuprincipal.xml" title="menuprincipal.xml" tooltip="Principal/res/menu/menuprincipal.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/res/menu/menuprincipal.xml"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaEmail.java" partName="FachadaEmail.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaEmail.java" title="FachadaEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaEmail.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaEmail.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2811" selectionTopPixel="1485"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="preferencias.xml" partName="preferencias.xml" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/res/xml/preferencias.xml" title="preferencias.xml" tooltip="Principal/res/xml/preferencias.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/res/xml/preferencias.xml"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServidoresSQLiteHelper.java" partName="ServidoresSQLiteHelper.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java" title="ServidoresSQLiteHelper.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java"/>
+<editorState selectionHorizontalPixel="286" selectionLength="0" selectionOffset="1957" selectionTopPixel="143"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="Principal Manifest" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/AndroidManifest.xml" title="Principal Manifest" tooltip="Principal/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/AndroidManifest.xml"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaServidores.java" partName="FachadaServidores.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaServidores.java" title="FachadaServidores.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaServidores.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaServidores.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2793" selectionTopPixel="1470"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="login.xml" partName="login.xml" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/res/layout/login.xml" title="login.xml" tooltip="Principal/res/layout/login.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/res/layout/login.xml"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" partName="Login.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/src/ubu/inf/Login.java" title="Login.java" tooltip="Principal/src/ubu/inf/Login.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/src/ubu/inf/Login.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="689" selectionTopPixel="270"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FalsaActividad.java" partName="FalsaActividad.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/src/ubu/inf/FalsaActividad.java" title="FalsaActividad.java" tooltip="Principal/src/ubu/inf/FalsaActividad.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/src/ubu/inf/FalsaActividad.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1229" selectionTopPixel="506"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="falsa.xml" partName="falsa.xml" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/res/layout/falsa.xml" title="falsa.xml" tooltip="Principal/res/layout/falsa.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/res/layout/falsa.xml"/>
+<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity.xml" partName="activity.xml" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/LocalizadorGPS/res/layout/activity.xml" title="activity.xml" tooltip="LocalizadorGPS/res/layout/activity.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocalizadorGPS/res/layout/activity.xml"/>
 </editor>
 </editors>
 <views>
-<view id="org.eclipse.team.ui.GenericHistoryView" partName="History">
-<viewState/>
-</view>
 <view id="org.eclipse.ui.views.ProgressView" partName="Progress">
 <viewState/>
 </view>
@@ -101,11 +89,11 @@
 <view id="org.eclipse.pde.runtime.LogView" partName="Error Log">
 <viewState activate="true" allSessions="true" column2="333" column3="251" column4="150" error="true" groupBy="0" info="true" limit="50" ok="true" orderType="2" orderValue="-1" show_filter_text="true" useLimit="true" warning="true"/>
 </view>
-<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints"/>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
@@ -123,8 +111,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (90 items)"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings (87 items)"/>
+<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="184" org.eclipse.ui.ide.markerType="267" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="496"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -169,14 +158,8 @@
 <view id="com.android.ide.eclipse.ddms.views.EmulatorControlView" partName="Emulator Control">
 <viewState/>
 </view>
-<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
-<viewState/>
-</view>
-<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
-<viewState/>
-</view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="com.android.ide.eclipse.editors.CommonXmlEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -198,6 +181,10 @@
 <alwaysOnActionSet id="adt.actionSet.refactorings"/>
 <alwaysOnActionSet id="adt.actionSet.avdManager"/>
 <alwaysOnActionSet id="adt.actionSet.lint"/>
+<alwaysOnActionSet id="register"/>
+<alwaysOnActionSet id="com.soyatec.uml.UMLElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.gmf.examples.runtime.common.service.client.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.gmf.examples.runtime.diagram.actionSet"/>
 <show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
 <show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <show_view_action id="org.eclipse.jdt.ui.SourceView"/>
@@ -237,15 +224,10 @@
 <perspective_action id="com.android.ide.eclipse.hierarchyviewer.TreeViewPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.ui.views.ProblemView"/>
-<view id="org.eclipse.jdt.ui.JavadocView"/>
-<view id="org.eclipse.jdt.ui.SourceView"/>
-<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
 <view id="org.eclipse.pde.runtime.LogView"/>
 <view id="org.eclipse.ui.views.ProgressView"/>
-<view id="org.eclipse.team.ui.GenericHistoryView"/>
-<view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
@@ -274,31 +256,12 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.19483395" ratioLeft="264" ratioRight="1091" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.58870965" ratioLeft="365" ratioRight="255" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
-<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
-<page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
-<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
-<page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
-<page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
-<page content="org.eclipse.team.ui.GenericHistoryView" label="History"/>
-<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="bottom" ratio="0.77903223" ratioLeft="483" ratioRight="137" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
 <page content="com.android.ide.eclipse.ddms.views.HeapView" label="LabelNotFound"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="right" ratio="0.7907834" ratioLeft="858" ratioRight="227" relationship="2" relative="org.eclipse.ui.editorss">
@@ -311,7 +274,28 @@
 </presentation>
 </folder>
 </info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@57730f82" ratio="0.6451613" ratioLeft="400" ratioRight="220" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
+<page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
 </mainWindow>
+<hiddenWindow height="370" width="1091" x="142" y="95">
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.team.ui.GenericHistoryView"/>
+</hiddenWindow>
 </layout>
 </perspective>
 <perspective editorAreaTrimState="2" editorAreaVisible="0" fixed="0" version="0.016">
@@ -505,6 +489,10 @@
 <alwaysOnActionSet id="adt.actionSet.refactorings"/>
 <alwaysOnActionSet id="adt.actionSet.avdManager"/>
 <alwaysOnActionSet id="adt.actionSet.lint"/>
+<alwaysOnActionSet id="register"/>
+<alwaysOnActionSet id="org.eclipse.gmf.examples.runtime.common.service.client.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.gmf.examples.runtime.diagram.actionSet"/>
+<alwaysOnActionSet id="com.soyatec.uml.UMLElementCreationActionSet"/>
 <show_view_action id="com.android.ide.eclipse.ddms.views.DeviceView"/>
 <show_view_action id="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
 <show_view_action id="com.android.ide.eclipse.ddms.views.HeapView"/>
@@ -525,45 +513,64 @@
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.android.ide.eclipse.ddms.views.DeviceView"/>
 <view id="com.android.ide.eclipse.ddms.views.EmulatorControlView"/>
 <view id="com.android.ide.eclipse.ddms.views.ThreadView"/>
 <view id="com.android.ide.eclipse.ddms.views.HeapView"/>
 <view id="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
 <fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="devices">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.DeviceView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.DeviceView" label="Devices"/>
+<layout>
+<mainWindow>
+<info folder="true" part="devices">
+<folder activePageID="com.android.ide.eclipse.ddms.views.DeviceView" appearance="2" expanded="2">
+<page content="com.android.ide.eclipse.ddms.views.DeviceView" label="Devices"/>
 <page content="com.android.ide.eclipse.ddms.views.DeviceView:*" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="devices">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="devices">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="logcat" ratio="0.61935484" ratioLeft="384" ratioRight="236" relationship="4" relative="devices">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<info folder="true" part="logcat" ratio="0.61935484" ratioLeft="384" ratioRight="236" relationship="4" relative="devices">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView:*" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.29970545" ratioLeft="407" ratioRight="951" relationship="2" relative="devices"/>
-<info folder="true" part="ddms-detail" ratio="0.49947423" ratioLeft="475" ratioRight="476" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.ThreadView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.ThreadView" label="Threads"/>
+<info folder="true" part="ddms-detail" ratio="0.49947423" ratioLeft="475" ratioRight="476" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="com.android.ide.eclipse.ddms.views.FileExplorerView" appearance="2" expanded="2">
+<page content="com.android.ide.eclipse.ddms.views.ThreadView" label="Threads"/>
 <page content="com.android.ide.eclipse.ddms.views.HeapView" label="Heap"/>
 <page content="com.android.ide.eclipse.ddms.views.FileExplorerView" label="File Explorer"/>
 <page content="com.android.ide.eclipse.ddms.views.AllocTrackerView" label="LabelNotFound"/>
 <page content="com.android.ide.eclipse.ddms.views.NetworkStatsView" label="LabelNotFound"/>
 <page content="com.android.ide.eclipse.ddms.views.ThreadView:*" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="emulator" ratio="0.5" ratioLeft="249" ratioRight="249" relationship="4" relative="devices">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.EmulatorControlView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.EmulatorControlView" label="Emulator Control"/>
+<info folder="true" part="emulator" ratio="0.5" ratioLeft="249" ratioRight="249" relationship="4" relative="devices">
+<folder activePageID="com.android.ide.eclipse.ddms.views.EmulatorControlView" appearance="2" expanded="2">
+<page content="com.android.ide.eclipse.ddms.views.EmulatorControlView" label="Emulator Control"/>
 <page content="com.android.ide.eclipse.ddms.views.EmulatorControlView:*" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
@@ -574,129 +581,67 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Principal/res/xml/preferencias.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/Principal/AndroidManifest.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Principal/res/layout/login.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Principal/res/drawable/borde.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Principal/gen/ubu/inf/R.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Principal/res/values/strings.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Principal/src/ubu/inf/login.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioEmail.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Principal/src/ubu/inf/Login.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Principal/src/ubu/inf/FalsaActividad.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Principal/res/layout/falsa.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaEmail.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaServidores.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LocalizadorGPS/res/layout/activity.xml"/>
 </editors>
-<item historyLabel="borde.xml" index="4"/>
-<item historyLabel="login.xml" index="3"/>
-<item historyLabel="borde.xml" index="4"/>
-<item historyLabel="login.xml" index="3"/>
-<item historyLabel="borde.xml" index="4"/>
-<item historyLabel="login.xml" index="3"/>
-<item historyLabel="R.java" index="5">
-<position info="not_deleted" x="2122" y="0"/>
+<item historyLabel="PestanaMainEmail.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="borde.xml" index="4"/>
-<item historyLabel="login.xml" index="3"/>
-<item historyLabel="R.java" index="5">
-<position info="not_deleted" x="2122" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="strings.xml" index="6"/>
-<item historyLabel="login.xml" index="3"/>
-<item historyLabel="R.java" index="5">
-<position info="not_deleted" x="2122" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="2294" y="14"/>
 </item>
-<item historyLabel="borde.xml" index="4"/>
-<item historyLabel="login.xml" index="3"/>
-<item historyLabel="R.java" index="5">
-<position info="not_deleted" x="2175" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="2859" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="369" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="2857" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="683" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="2851" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="677" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="3283" y="14"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="1343" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="3427" y="0"/>
 </item>
-<item historyLabel="PestanaMainEmail.java" index="1">
-<position info="not_deleted" x="8716" y="4"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="3966" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="1343" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="1283" y="0"/>
 </item>
-<item historyLabel="ServicioEmail.java" index="8">
-<position info="not_deleted" x="7374" y="6"/>
+<item historyLabel="ServidoresSQLiteHelper.java" index="2">
+<position info="not_deleted" x="1957" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="927" y="1"/>
+<item historyLabel="PestanaMainEmail.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="preferencias.xml" index="0"/>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="927" y="1"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="1283" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="2352" y="0"/>
 </item>
-<item historyLabel="login.xml" index="3"/>
-<item historyLabel="login.java" index="7">
-<position/>
+<item historyLabel="ServidoresSQLiteHelper.java" index="2">
+<position info="not_deleted" x="1957" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="1343" y="0"/>
+<item historyLabel="FachadaEmail.java" index="1">
+<position info="not_deleted" x="2811" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="1226" y="0"/>
+<item historyLabel="FachadaServidores.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="login.java" index="7">
-<position info="not_deleted" x="1216" y="0"/>
+<item historyLabel="FachadaServidores.java" index="3">
+<position info="not_deleted" x="2315" y="14"/>
 </item>
-<item historyLabel="Login.java" index="9">
-<position info="not_deleted" x="1300" y="0"/>
-</item>
-<item historyLabel="Principal Manifest" index="2"/>
-<item historyLabel="Login.java" index="9">
-<position info="not_deleted" x="1300" y="0"/>
-</item>
-<item historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
-<item historyLabel="Principal Manifest" index="2"/>
-<item historyLabel="Login.java" index="9">
-<position info="not_deleted" x="689" y="0"/>
-</item>
-<item historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
-<item historyLabel="falsa.xml" index="11"/>
-<item historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
-<item historyLabel="falsa.xml" index="11"/>
-<item historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
-<item historyLabel="falsa.xml" index="11"/>
-<item historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
-<item historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
-<item historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
-<item historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
-<item historyLabel="Principal Manifest" index="2"/>
-<item active="true" historyLabel="FalsaActividad.java" index="10">
-<position/>
-</item>
+<item active="true" historyLabel="activity.xml" index="4"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -714,50 +659,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="falsa.xml" tooltip="Principal/res/layout/falsa.xml">
-<persistable path="/Principal/res/layout/falsa.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity.xml" tooltip="LocalizadorGPS/res/layout/activity.xml">
+<persistable path="/LocalizadorGPS/res/layout/activity.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FalsaActividad.java" tooltip="Principal/src/ubu/inf/FalsaActividad.java">
-<persistable path="/Principal/src/ubu/inf/FalsaActividad.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaServidores.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaServidores.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaServidores.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/ServicioEmail.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioEmail.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServidoresSQLiteHelper.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaEmail.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/FachadaEmail.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java">
 <persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="login.java" tooltip="Principal/src/ubu/inf/login.java">
-<persistable path="/Principal/src/ubu/inf/login.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.terminal.logica.ucd" tooltip="ModuloSSH/ubu.inf.terminal.logica.ucd">
+<persistable path="/ModuloSSH/ubu.inf.terminal.logica.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="Principal/res/values/strings.xml">
-<persistable path="/Principal/res/values/strings.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.terminal.modelo.ucd" tooltip="ModuloSSH/ubu.inf.terminal.modelo.ucd">
+<persistable path="/ModuloSSH/ubu.inf.terminal.modelo.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="R.java" tooltip="Principal/gen/ubu/inf/R.java">
-<persistable path="/Principal/gen/ubu/inf/R.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.terminal.accesodatos.ucd" tooltip="ModuloSSH/ubu.inf.terminal.accesodatos.ucd">
+<persistable path="/ModuloSSH/ubu.inf.terminal.accesodatos.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="borde.xml" tooltip="Principal/res/drawable/borde.xml">
-<persistable path="/Principal/res/drawable/borde.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.ucd" tooltip="Principal/ubu.inf.ucd">
+<persistable path="/Principal/ubu.inf.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="login.xml" tooltip="Principal/res/layout/login.xml">
-<persistable path="/Principal/res/layout/login.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.gps.modelo.ucd" tooltip="LocalizadorGPS/ubu.inf.gps.modelo.ucd">
+<persistable path="/LocalizadorGPS/ubu.inf.gps.modelo.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="Principal/AndroidManifest.xml">
-<persistable path="/Principal/AndroidManifest.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.gps.logica.ucd" tooltip="LocalizadorGPS/ubu.inf.gps.logica.ucd">
+<persistable path="/LocalizadorGPS/ubu.inf.gps.logica.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LectorSMS.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/logica/LectorSMS.java">
-<persistable path="/LocalizadorGPS/src/ubu/inf/gps/logica/LectorSMS.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.gps.accesodatos.ucd" tooltip="LocalizadorGPS/ubu.inf.gps.accesodatos.ucd">
+<persistable path="/LocalizadorGPS/ubu.inf.gps.accesodatos.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="preferencias.xml" tooltip="Principal/res/xml/preferencias.xml">
-<persistable path="/Principal/res/xml/preferencias.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.control.accesodatos.ucd" tooltip="clientecontrolaccesos/ubu.inf.control.accesodatos.ucd">
+<persistable path="/clientecontrolaccesos/ubu.inf.control.accesodatos.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Preferencias.java" tooltip="Principal/src/ubu/inf/Preferencias.java">
-<persistable path="/Principal/src/ubu/inf/Preferencias.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.control.modelo.ucd" tooltip="clientecontrolaccesos/ubu.inf.control.modelo.ucd">
+<persistable path="/clientecontrolaccesos/ubu.inf.control.modelo.ucd"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="menunot.xml" tooltip="clientecontrolaccesos/res/menu/menunot.xml">
-<persistable path="/clientecontrolaccesos/res/menu/menunot.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Preferencias.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/Preferencias.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/Preferencias.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.control.logica_notificaciones.ucd" tooltip="clientecontrolaccesos/ubu.inf.control.logica_notificaciones.ucd">
+<persistable path="/clientecontrolaccesos/ubu.inf.control.logica_notificaciones.ucd"/>
 </file>
 </mruList>
 </workbench>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="825,468" id="ubu.inf.gps.modelo" metadata="uml2-1.0" initialized="true" scrolledY="37" tag="1000" key="32303037303533312D31303030204C6F63616C697A61646F724750532F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" name="GMailSender" location="30,195" size="312,398" id="ubu.inf.gps.modelo/GMailSender" runTimeClassModel="getPasswordAuthentication(),session,sendMail(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),GMailSender(Ljava.lang.String;Ljava.lang.String;),user,password,ubu.inf.gps.modelo.GMailSender.ByteArrayDataSource,mailhost">
+    <children xsi:type="editmodel:CompartmentEditModel" size="103,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="mailhost" id="ubu.inf.gps.modelo/GMailSender#mailhost"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="password" id="ubu.inf.gps.modelo/GMailSender#password"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="session" id="ubu.inf.gps.modelo/GMailSender#session"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="user" id="ubu.inf.gps.modelo/GMailSender#user"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="289,54">
+      <children xsi:type="editmodel:MethodEditModel" name="GMailSender" id="ubu.inf.gps.modelo/GMailSender#GMailSender(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPasswordAuthentication" id="ubu.inf.gps.modelo/GMailSender#getPasswordAuthentication()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sendMail" id="ubu.inf.gps.modelo/GMailSender#sendMail(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="221,213">
+      <children xsi:type="editmodel:ClassEditModel" name="ByteArrayDataSource" size="221,211" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource" runTimeClassModel="getName(),getOutputStream(),ByteArrayDataSource([BLjava.lang.String;),getContentType(),data,ByteArrayDataSource([B),type,setType(Ljava.lang.String;),getInputStream()">
+        <children xsi:type="editmodel:CompartmentEditModel" size="98,36">
+          <children xsi:type="editmodel:AttributeEditModel" name="data" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#data"/>
+          <children xsi:type="editmodel:AttributeEditModel" name="type" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#type"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="198,126">
+          <children xsi:type="editmodel:MethodEditModel" name="ByteArrayDataSource" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#ByteArrayDataSource([B)"/>
+          <children xsi:type="editmodel:MethodEditModel" name="ByteArrayDataSource" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#ByteArrayDataSource([BLjava.lang.String;)"/>
+          <children xsi:type="editmodel:MethodEditModel" name="getContentType" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#getContentType()"/>
+          <children xsi:type="editmodel:MethodEditModel" name="getInputStream" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#getInputStream()"/>
+          <children xsi:type="editmodel:MethodEditModel" name="getName" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#getName()"/>
+          <children xsi:type="editmodel:MethodEditModel" name="getOutputStream" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#getOutputStream()"/>
+          <children xsi:type="editmodel:MethodEditModel" name="setType" id="ubu.inf.gps.modelo/GMailSender$ByteArrayDataSource#setType(Ljava.lang.String;)"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+      </children>
+    </children>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="javax.mail/Authenticator&lt;-ubu.inf.gps.modelo/GMailSender" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="83,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,43"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.gps.modelo/GMailSender-Standard::Instantiate->ubu.inf.gps.modelo/JSSEProvider" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="312,33" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,33"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1" name="JSSEProvider" location="450,195" size="129,67" id="ubu.inf.gps.modelo/JSSEProvider" runTimeClassModel="JSSEProvider()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,18">
+      <children xsi:type="editmodel:MethodEditModel" name="JSSEProvider" id="ubu.inf.gps.modelo/JSSEProvider#JSSEProvider()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="java.security/Provider&lt;-ubu.inf.gps.modelo/JSSEProvider" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="47,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="47,43"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="Authenticator" location="50,50" size="127,43" id="javax.mail/Authenticator" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="Provider" location="450,60" size="96,43" id="java.security/Provider" runTimeClassModel="java.security.Provider.Service">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

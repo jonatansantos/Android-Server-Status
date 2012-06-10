@@ -23,14 +23,14 @@
         android:layout_alignBottom="@+id/et_formulario_ip"
         android:layout_alignParentLeft="true"
         android:text="@string/IP" />
-
+
     <TextView
         android:id="@+id/tv_formulario_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tv_formulario_ip"
         android:layout_below="@+id/et_formulario_ip"
-        android:text="@string/descripcion" />
+        android:text="@string/puerto" />
 
     <EditText
         android:id="@+id/et_formulario_desc"
@@ -106,5 +106,23 @@
             android:layout_weight="1"
             android:text="@string/cancelar" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_formulario_coloractual"
+        android:layout_marginTop="29dp"
+        android:text="@string/descripcion" />
+
+    <EditText
+        android:id="@+id/et_formulario_descverdadera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:ems="10" />
 
 </RelativeLayout>

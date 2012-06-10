@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * Actividad para crear un nuevo servidor, tiene la forma de un formulario estándar.
+ * @author david
+ *
+ */
 public class Formulario extends Activity {
 	private EditText host;
 	private EditText user;
@@ -35,6 +40,9 @@ public class Formulario extends Activity {
 		}
 	}
 
+	/**
+	 * Función para iniciar todos los componentes de la actividad.
+	 */
 	private void inicializa() {
 		host = (EditText) findViewById(R.id.et_formulario_Host);
 		user = (EditText) findViewById(R.id.et_formulario_User);
@@ -48,6 +56,12 @@ public class Formulario extends Activity {
 
 	}
 
+	/**
+	 * Listener del boton OK.
+	 * @author David Herrero de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 */
 	private class listenerOK implements View.OnClickListener {
 
 		public void onClick(View arg0) {
@@ -62,7 +76,12 @@ public class Formulario extends Activity {
         } 
 		
 	}
-
+	/**
+	 * Listener del boton cancelar.
+	 * @author David Herrero de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 */
 	private class listenerCancelar implements View.OnClickListener {
 
 		public void onClick(View arg0) {

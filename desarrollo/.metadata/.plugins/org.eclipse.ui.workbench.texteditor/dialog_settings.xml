@@ -13,18 +13,19 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Shared" key="selection"/>
+		<item value="" key="selection"/>
 		<list key="findhistory">
+			<item value="SingletonEmail"/>
+			<item value="SingletonServicios"/>
+			<item value="miLocationManager"/>
+			<item value="putExtra"/>
+			<item value="register"/>
+			<item value="hand"/>
 			<item value="shared"/>
 			<item value="pre"/>
-			<item value="pref"/>
-			<item value="cancelamos"/>
-			<item value="Toast"/>
-			<item value="linea"/>
-			<item value="fromServer"/>
-			<item value="fecha"/>
 		</list>
 		<list key="replacehistory">
+			<item value="miLocationManagerGPS"/>
 			<item value="Coordenadas"/>
 			<item value="gps"/>
 			<item value="CoordenadasSQLiteHelper"/>
@@ -32,7 +33,6 @@
 			<item value="ServidoresSQLiteHelper"/>
 			<item value="FachadaEmail"/>
 			<item value="email"/>
-			<item value="helperEmail"/>
 		</list>
 	</section>
 </section>

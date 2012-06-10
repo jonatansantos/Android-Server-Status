@@ -20,5 +20,6 @@
     <string name="hora">Hora :</string>
     <string name="id">ID</string>
     <string name="urgencia">Urgencia :</string>
+    <string name="puerto">Puerto :</string>
 
 </resources>

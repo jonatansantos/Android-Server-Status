@@ -28,6 +28,7 @@ import android.widget.Toast;
 public class Formulario extends Activity {
 	
 	private EditText host;
+	private EditText puerto;
 	private CheckBox inicio;
 	private SeekBar barracolor;
 	private ImageView color;
@@ -46,6 +47,8 @@ public class Formulario extends Activity {
 			Bundle aux = getIntent().getExtras();
 			host.setText(aux.getString("host"));
 			desc.setText(aux.getString("desc"));
+			Integer a = aux.getInt("puerto");
+			puerto.setText(a.toString());
 			inicio.setChecked(aux.getBoolean("inicio"));
 			actual = aux.getInt("color");
 			color.setBackgroundColor(actual);
@@ -58,8 +61,9 @@ public class Formulario extends Activity {
 	 */
 	private void inicializa() {
 		//referencias a todos los componentes
+		desc=(EditText) findViewById(R.id.et_formulario_descverdadera);
 		host=(EditText) findViewById(R.id.et_formulario_ip);
-		desc=(EditText) findViewById(R.id.et_formulario_desc);
+		puerto=(EditText) findViewById(R.id.et_formulario_desc);
 		OK = (Button) findViewById(R.id.bt_formulario_ok);
 		cancel = (Button) findViewById(R.id.bt_formulario_cancel);		
 		inicio = (CheckBox) findViewById(R.id.cb_formulario_inicio);
@@ -120,13 +124,22 @@ public class Formulario extends Activity {
 
 		public void onClick(View arg0) {
 			Intent resultData = new Intent();
-			resultData.putExtra("host", host.getText().toString());
-			resultData.putExtra("desc", desc.getText().toString());
-			resultData.putExtra("inicio", inicio.isChecked());
-			resultData.putExtra("color", actual);
-          
-			setResult(Activity.RESULT_OK, resultData);
-            finish();
+			
+			try{
+				resultData.putExtra("host", host.getText().toString());
+				resultData.putExtra("desc", desc.getText().toString());
+				resultData.putExtra("inicio", inicio.isChecked());
+				resultData.putExtra("color", actual);
+				Integer.parseInt(puerto.getText().toString());
+				resultData.putExtra("puerto", puerto.getText().toString());
+		          
+				setResult(Activity.RESULT_OK, resultData);
+	            finish();
+			}catch(Exception e){
+				e.printStackTrace();
+				Toast.makeText(Formulario.this, "El puerto deber ser un número", Toast.LENGTH_SHORT).show();
+			}
+			
         } 
 		
 	}

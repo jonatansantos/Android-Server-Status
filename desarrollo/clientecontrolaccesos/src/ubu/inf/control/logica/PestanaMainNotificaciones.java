@@ -7,6 +7,14 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Stack;
+import java.util.Vector;
+
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.PropertyInfo;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
 
 import ubu.inf.control.R;
 import ubu.inf.control.R.id;
@@ -18,15 +26,17 @@ import ubu.inf.control.modelo.Notificacion;
 import ubu.inf.control.modelo.Servidor;
 import ubu.inf.control.modelo.SingletonEmail;
 import ubu.inf.control.modelo.SingletonServicios;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.Settings.Secure;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -58,19 +68,32 @@ import android.widget.ToggleButton;
 
 /**
  * Clase que implementa la funcionalidad de la pestana de notificaciones.
- * 
- * @author David Herrero
- * @author Jonatan Santos
- * 
- * @version 1.0
- * 
+ * @author        David Herrero
+ * @author        Jonatan Santos
+ * @version        1.0
+ * @uml.dependency   supplier="ubu.inf.control.logica.Preferencias"
+ * @uml.dependency   supplier="ubu.inf.control.logica.Filtro"
  */
 public class PestanaMainNotificaciones extends Activity {
-	
+	/**
+	 * Handler para manejar los eventos que crean los hilos asíncronos.
+	 */
+	private Handler handler = new MyHandler();
+	/**
+	 * Barra de progreso de la descarga de notificaciones.
+	 */
+	private ProgressDialog barra;
+	private static final String SOAPACTIONBORRAR = "http://notificador.serverstatus.itig.ubu/borrarNotificacion";
+	private static final String METHODBORRAR = "borrarNotificacion";
+	private static final String SOAPACTIONTODAS = "http://notificador.serverstatus.itig.ubu/obtenerTodasNotificaciones";
+	private static final String METHODTODAS = "obtenerTodasNotificaciones";
 	private static final String SOAPACTION = "http://notificador.serverstatus.itig.ubu/obtenerNotificaciones";
 	private static final String METHOD = "obtenerNotificaciones";
 	private static final String NAMESPACE = "http://notificador.serverstatus.itig.ubu";
-	
+	/**
+	 * URL donde se encuentra el web service.
+	 */
+	private String URL = "";
 	/**
 	 * id del dispositivo
 	 */
@@ -81,8 +104,19 @@ public class PestanaMainNotificaciones extends Activity {
 	 * Array con todas las notificaciones a mostrar.
 	 */
 	private ArrayList<Notificacion> datos;
+	/**
+	 * Pila donde se guardan arrays de notificaciones cuando se usan filtros.
+	 */
 	private Stack<ArrayList<Notificacion>> pila;
+	/**
+	 * Lista donde se encuentran todos los elementos.
+	 */
 	private ListView lista;
+	/**
+	 * Adapter para llenar la lista con los elementos.
+	 * @uml.property  name="adapter3"
+	 * @uml.associationEnd  
+	 */
 	private ArrayAdapterNot adapter3;
 
 	private Spinner ordenTipo;
@@ -145,6 +179,10 @@ public class PestanaMainNotificaciones extends Activity {
 			// showDialog(DIALOG_FILTRO);
 			actualizar();
 			break;
+		case R.id.descargar_not:
+			// showDialog(DIALOG_FILTRO);
+			descargarGuardados();
+			break;
 
 		default:
 			break;
@@ -205,12 +243,17 @@ public class PestanaMainNotificaciones extends Activity {
 	 * datos iniciales.
 	 */
 	private void inicializa() {
+		//creamos la barra de progreso
+		barra = new ProgressDialog(this);
+		barra.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		barra.setMessage("Descargando notificaciones...");
+		barra.setCancelable(false);
 		// creamos el array y la pila.
 		datos = new ArrayList<Notificacion>();
 		pila = new Stack<ArrayList<Notificacion>>();
 		// ejemplo
 		Servidor s = new Servidor("10.170.1.1", "escripcion", false, 1,
-				Color.RED);
+				Color.RED,8080);
 		datos.add(new Notificacion("hola", new Date(), 0, 0, s, 1));
 		datos.add(new Notificacion("hola1", new Date(), 1, 1, s, 2));
 		datos.add(new Notificacion("hola2", new Date(), 1, 2, s, 3));
@@ -234,6 +277,7 @@ public class PestanaMainNotificaciones extends Activity {
 		Button ok = (Button) findViewById(R.id.bt_pestanamainnot_ok);
 		// lista
 		lista = (ListView) findViewById(R.id.lv_pestanamainnot_lista);
+		registerForContextMenu(lista);
 		lista.setOnItemClickListener(new ListenerListView());
 		adapter3 = new ArrayAdapterNot(this, datos);
 		lista.setAdapter(adapter3);
@@ -375,7 +419,7 @@ public class PestanaMainNotificaciones extends Activity {
 	}
 
 	/**
-	 * Función para ordenar las Notificaciones.
+	 * Función para ordenar las Notificaciones mediantes distintos criterios.
 	 */
 	private void ordena() {
 		switch (criterio) {
@@ -430,25 +474,251 @@ public class PestanaMainNotificaciones extends Activity {
 
 	/**
 	 * Función que actualiza las notificaciones por si hay alguna nueva. Solo se
-	 * puede hacer si no hay ningún filtro puesto, por eso vaciamos la pila.
+	 * puede hacer si no hay ningún filtro puesto.
 	 */
 	private void actualizar() {
-		// TODO
+		
+		datos.clear();// vaciamos el array list con notificaciones
 		pila.clear();
-		Thread hilo = new Thread(){
+		//calculamos la cantidad de servidores
+		int max = SingletonEmail.getConexion()
+				.getHosts().size()+SingletonServicios.getConexion()
+				.getHosts().size();
+		//creamos la barra de progreso y la mostramos
+		barra.setMax(max);
+		barra.show();
+		Thread hilo = new Thread() {
 			@Override
-			public void run(){
-				//obtenemos todos los servidores de los que hay que obtener notificaciones
-				ArrayList<Servidor> email = SingletonEmail.getConexion().getHosts();
-				ArrayList<Servidor> ssh = SingletonServicios.getConexion().getHosts();
-				datos.clear();//vaciamos el array list con notificaciones
+			public void run() {
 				
-				
+				// obtenemos todos los servidores de los que hay que obtener
+				// notificaciones
+				ArrayList<Servidor> email = SingletonEmail.getConexion()
+						.getHosts();
+				ArrayList<Servidor> ssh = SingletonServicios.getConexion()
+						.getHosts();
+
+				Log.i("control", "hemos vaciado el array");
+				// //////////////
+				int i;
+				for ( i = 0; i < email.size(); ++i) {
+					obtenerNotificaiones(email.get(i),1);
+					barra.setProgress(i);
+				}
+				for (int j = 0; j < ssh.size(); ++j) {
+					obtenerNotificaiones(ssh.get(j),0);
+					barra.setProgress(i+j);
+				}
+				// //////////////
+				Log.i("control", "notificamos que los datos han cambiado");
+//				adapter3 = new ArrayAdapterNot(PestanaMainNotificaciones.this, datos);
+//				lista.setAdapter(adapter3);
+				barra.dismiss();
+				handler.sendEmptyMessage(0);
+
 			}
 		};
 		hilo.start();
-		// un nuevo thread para descargar todas las notificaciones, y al final
-		// cambiar el adapter.
+		
+	}
+
+	/**
+	 * Función que realiza la conexión con el servidor para obtener las notificaciones guardadas.
+	 * @param s Servidor al que conectarse
+	 * @param tipo tipo de notificación , 0 ssh , 1 email
+	 */
+	private void obtenerTodasNotificaiones(Servidor s,int tipo) {
+		Log.i("control", "Obtenemos las notificaciones de "+ s.getIp()+ "tipo "+ tipo);
+		SoapObject notificacion = null;
+		Notificacion aux = null;
+		// obtenemos el SoapObject
+		SoapObject request = new SoapObject(NAMESPACE, METHODTODAS);
+
+		// objeto de propiedades
+		PropertyInfo FahrenheitProp = new PropertyInfo();
+		// nombre
+		FahrenheitProp.setName("idDispositivo");
+		// valor que
+		FahrenheitProp.setValue(id_dispositivo);
+		// tipo de valor
+		FahrenheitProp.setType(String.class);
+		request.addProperty(FahrenheitProp);
+
+		PropertyInfo FahrenheitProp1 = new PropertyInfo();
+		FahrenheitProp1.setName("tipoMensaje");
+		// valor que
+		FahrenheitProp1.setValue(tipo);
+		// tipo de valor
+		FahrenheitProp1.setType(Integer.class);
+
+		// añadimos las propiedades a la pregunta
+		request.addProperty(FahrenheitProp1);
+		// creamos el objeto http para conectarnos con el webservice
+		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+				SoapEnvelope.VER11);
+
+		envelope.dotNet = false;
+
+		envelope.setOutputSoapObject(request);
+		
+		URL = "http://"
+				+ s.getIp()
+				+ ":"+s.getPuerto()
+				+"/axis2/services/Notificador.NotificadorHttpSoap12Endpoint/";
+		// aqui pondríamos la Ip del servidor
+		HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+
+		try
+
+		{
+			// hacer la primera petición para ver is hay notificaciones(con tipo
+			// y
+			// dispositivo), si hay enviar la notificación,
+			// en el intent enviar cantidad y el servidor.
+			androidHttpTransport.call(SOAPACTIONTODAS, envelope);
+			Log.i("control", "hacemos la llamada");
+			// utilizamos SoapPrimitive porque esperamos un valor simple
+			Log.i("control", "intentamos obtener la respuesta");
+			Vector response = (Vector) envelope.getResponse();
+			Log.i("control", "hemos obtenido la respuesta");
+			
+			for (int i = 0; i < response.size(); ++i) {
+				Log.i("control", "creamos las notificaciones");
+				notificacion = (SoapObject) response.get(i);
+				
+				SoapPrimitive aux2;
+				aux2 = (SoapPrimitive) notificacion
+						.getProperty(0);
+				Integer id = Integer.parseInt(aux2.toString());
+				if(id==-1){//yo na hay mas notificaciones 
+					break;
+				}
+				
+				Log.i("control", notificacion.toString());
+				SoapPrimitive mensaje = (SoapPrimitive) notificacion.getProperty(4);
+				aux2 = (SoapPrimitive) notificacion
+				.getProperty(1);
+				Long fecha = Long.parseLong(aux2.toString());
+				aux2=(SoapPrimitive) notificacion.getProperty(2);
+				Integer tipos = Integer.parseInt(aux2.toString());
+				aux2 = (SoapPrimitive) notificacion.getProperty(3);
+				Integer urgencia = Integer.parseInt(aux2.toString());
+				
+				aux = new Notificacion(mensaje.toString(),
+						new Date(fecha),
+						tipos,
+						urgencia,
+						s,id );
+				
+				datos.add(aux);
+			}
+			
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
+	}
+	
+	/**
+	 * Función que realiza la conexión con el servidor para obtener las nuevas notificaciones.
+	 * @param s Servidor al que conectarse
+	 * @param tipo tipo de notificación , 0 ssh , 1 email
+	 */
+	private void obtenerNotificaiones(Servidor s,int tipo) {
+		Log.i("control", "Obtenemos las notificaciones de "+ s.getIp()+ "tipo "+ tipo);
+		SoapObject notificacion = null;
+		Notificacion aux = null;
+		// obtenemos el SoapObject
+		SoapObject request = new SoapObject(NAMESPACE, METHOD);
+
+		// objeto de propiedades
+		PropertyInfo FahrenheitProp = new PropertyInfo();
+		// nombre
+		FahrenheitProp.setName("idDispositivo");
+		// valor que
+		FahrenheitProp.setValue(id_dispositivo);
+		// tipo de valor
+		FahrenheitProp.setType(String.class);
+		request.addProperty(FahrenheitProp);
+
+		PropertyInfo FahrenheitProp1 = new PropertyInfo();
+		FahrenheitProp1.setName("tipoMensaje");
+		// valor que
+		FahrenheitProp1.setValue(tipo);
+		// tipo de valor
+		FahrenheitProp1.setType(Integer.class);
+
+		// añadimos las propiedades a la pregunta
+		request.addProperty(FahrenheitProp1);
+		// creamos el objeto http para conectarnos con el webservice
+		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+				SoapEnvelope.VER11);
+
+		envelope.dotNet = false;
+
+		envelope.setOutputSoapObject(request);
+		
+		URL = "http://"
+				+ s.getIp()
+				+ ":"+s.getPuerto()
+				+"/axis2/services/Notificador.NotificadorHttpSoap12Endpoint/";
+		// aqui pondríamos la Ip del servidor
+		HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+
+		try
+
+		{
+			// hacer la primera petición para ver is hay notificaciones(con tipo
+			// y
+			// dispositivo), si hay enviar la notificación,
+			// en el intent enviar cantidad y el servidor.
+			androidHttpTransport.call(SOAPACTION, envelope);
+			Log.i("control", "hacemos la llamada");
+			// utilizamos SoapPrimitive porque esperamos un valor simple
+			Log.i("control", "intentamos obtener la respuesta");
+			Vector response = (Vector) envelope.getResponse();
+			Log.i("control", "hemos obtenido la respuesta");
+			if(response != null){
+			for (int i = 0; i < response.size(); ++i) {
+				Log.i("control", "creamos las notificaciones");
+				notificacion = (SoapObject) response.get(i);
+				
+				SoapPrimitive aux2;
+				aux2 = (SoapPrimitive) notificacion
+						.getProperty(0);
+				Integer id = Integer.parseInt(aux2.toString());
+				if(id==-1){//yo na hay mas notificaciones 
+					break;
+				}
+				
+				Log.i("control", notificacion.toString());
+				SoapPrimitive mensaje = (SoapPrimitive) notificacion.getProperty(4);
+				aux2 = (SoapPrimitive) notificacion
+				.getProperty(1);
+				Long fecha = Long.parseLong(aux2.toString());
+				aux2=(SoapPrimitive) notificacion.getProperty(2);
+				Integer tipos = Integer.parseInt(aux2.toString());
+				aux2 = (SoapPrimitive) notificacion.getProperty(3);
+				Integer urgencia = Integer.parseInt(aux2.toString());
+				
+				aux = new Notificacion(mensaje.toString(),
+						new Date(fecha),
+						tipos,
+						urgencia,
+						s,id );
+				
+				datos.add(aux);
+			}//for
+			}//if
+			
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
 	}
 
 	/**
@@ -456,9 +726,50 @@ public class PestanaMainNotificaciones extends Activity {
 	 * se puede hacer si no hay ningún filtro puesto.
 	 */
 	private void descargarGuardados() {
-		// TODO
-		if (pila.isEmpty()) {
 
+		if (pila.isEmpty()) {
+			datos.clear();// vaciamos el array list con notificaciones
+			
+			//calculamos la cantidad de servidores
+			int max = SingletonEmail.getConexion()
+					.getHosts().size()+SingletonServicios.getConexion()
+					.getHosts().size();
+			//creamos la barra de progreso y la mostramos
+			barra.setMax(max);
+			barra.show();
+			Thread hilo = new Thread() {
+				@Override
+				public void run() {
+					
+					// obtenemos todos los servidores de los que hay que obtener
+					// notificaciones
+					ArrayList<Servidor> email = SingletonEmail.getConexion()
+							.getHosts();
+					ArrayList<Servidor> ssh = SingletonServicios.getConexion()
+							.getHosts();
+
+					Log.i("control", "hemos vaciado el array");
+					// //////////////
+					int i;
+					for ( i = 0; i < email.size(); ++i) {
+						obtenerTodasNotificaiones(email.get(i),1);
+						barra.setProgress(i);
+					}
+					for (int j = 0; j < ssh.size(); ++j) {
+						obtenerTodasNotificaiones(ssh.get(j),0);
+						barra.setProgress(i+j);
+					}
+					// //////////////
+					Log.i("control", "notificamos que los datos han cambiado");
+//					adapter3 = new ArrayAdapterNot(PestanaMainNotificaciones.this, datos);
+//					lista.setAdapter(adapter3);
+					barra.dismiss();
+					handler.sendEmptyMessage(0);
+
+				}
+			};
+			hilo.start();
+			
 		} else {
 			Toast.makeText(
 					this,
@@ -473,11 +784,70 @@ public class PestanaMainNotificaciones extends Activity {
 	 * Función para borrar una notificacion de la lista y de la base de datos
 	 * del servidor.
 	 * 
-	 * @param info
+	 * @param info información del elemento pulsado.
 	 */
 	private void borrarNotificacion(AdapterContextMenuInfo info) {
 		if (pila.isEmpty()) {
 
+			// obtenemos el SoapObject
+			SoapObject request = new SoapObject(NAMESPACE, METHODBORRAR);
+
+			// objeto de propiedades
+			PropertyInfo FahrenheitProp = new PropertyInfo();
+			// nombre
+			FahrenheitProp.setName("idDispositivo");
+			// valor que
+			FahrenheitProp.setValue(id_dispositivo);
+			// tipo de valor
+			FahrenheitProp.setType(String.class);
+			request.addProperty(FahrenheitProp);
+
+			PropertyInfo FahrenheitProp1 = new PropertyInfo();
+			FahrenheitProp1.setName("idNotificacion");
+			// valor que
+			FahrenheitProp1.setValue(datos.get(info.position).getId());
+			// tipo de valor
+			FahrenheitProp1.setType(Integer.class);
+
+			// añadimos las propiedades a la pregunta
+			request.addProperty(FahrenheitProp1);
+			// creamos el objeto http para conectarnos con el webservice
+			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+					SoapEnvelope.VER11);
+
+			envelope.dotNet = false;
+
+			envelope.setOutputSoapObject(request);
+			
+			URL = "http://"
+					+ datos.get(info.position).getServ().getIp()
+					+ ":"+datos.get(info.position).getServ().getPuerto()
+					+"/axis2/services/Notificador.NotificadorHttpSoap12Endpoint/";
+			// aqui pondríamos la Ip del servidor
+			HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+
+			try
+
+			{
+				// hacer la primera petición para ver is hay notificaciones(con tipo
+				// y
+				// dispositivo), si hay enviar la notificación,
+				// en el intent enviar cantidad y el servidor.
+				androidHttpTransport.call(SOAPACTIONBORRAR, envelope);
+				Log.i("control", "hacemos la llamada");
+				// utilizamos SoapPrimitive porque esperamos un valor simple
+				Log.i("control", "intentamos obtener la respuesta");
+				SoapPrimitive response = (SoapPrimitive) envelope.getResponse();
+				Log.i("control", "hemos obtenido la respuesta " + response.toString());
+				
+				datos.remove(info.position);
+				adapter3.notifyDataSetChanged();
+			} catch (Exception e) {
+
+				e.printStackTrace();
+
+			}
+			
 		} else {
 			Toast.makeText(
 					this,
@@ -520,7 +890,7 @@ public class PestanaMainNotificaciones extends Activity {
 					.findViewById(R.id.tv_listnot_urgencia);
 			ImageView tipo = (ImageView) item.findViewById(R.id.imageView1);
 			// ponemos la IP
-			ip.setText(datos.get(position).getServ().getIp());
+			ip.setText(datos.get(position).getServ().getIp()+":"+datos.get(position).getServ().getPuerto());
 			// ponemos el ID
 			id.setText("" + datos.get(position).getServ().getId());
 			// ponemos el color identificativo
@@ -532,7 +902,7 @@ public class PestanaMainNotificaciones extends Activity {
 				tipo.setBackgroundResource(R.drawable.ic_email);
 			}
 			// construimos la cadena con la fecha
-			String stringfecha = datos.get(position).getFecha().getDay() + "/"
+			String stringfecha = datos.get(position).getFecha().getDate() + "/"
 					+ (datos.get(position).getFecha().getMonth() + 1) + "/"
 					+ (datos.get(position).getFecha().getYear() + 1900);
 			fecha.setText(stringfecha);
@@ -591,4 +961,10 @@ public class PestanaMainNotificaciones extends Activity {
 		}
 	}
 
+	private class MyHandler extends Handler{
+		@Override
+		public void handleMessage(Message msg){
+			adapter3.notifyDataSetChanged();
+		}
+	}
 }

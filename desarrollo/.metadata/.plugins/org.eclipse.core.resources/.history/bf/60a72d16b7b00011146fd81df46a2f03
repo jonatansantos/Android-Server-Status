@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="825,488" id="ubu.inf.gps.accesodatos" metadata="uml2-1.0" initialized="true" scrolledY="161" tag="1000" key="32303037303533312D31303030204C6F63616C697A61646F724750532F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" name="CoordenadasSQLiteHelper" location="50,347" size="344,121" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper" runTimeClassModel="sqlCreate1,onCreate(Landroid.database.sqlite.SQLiteDatabase;),CoordenadasSQLiteHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I),onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="sqlCreate1" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#sqlCreate1"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="321,54">
+      <children xsi:type="editmodel:MethodEditModel" name="CoordenadasSQLiteHelper" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#CoordenadasSQLiteHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#onCreate(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onUpgrade" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="FachadaCoordenadas" location="50,50" size="520,247" id="ubu.inf.gps.accesodatos/FachadaCoordenadas" runTimeClassModel="insertCoordenadas(Ljava.lang.Double;Ljava.lang.Double;Ljava.lang.Long;),deleteComando(I),getInstance(Landroid.content.Context;),dBCoordenadas,helpercoordenadas,FachadaCoordenadas(Landroid.content.Context;),myFachada,closeFachada(),borraTabla(),loadCoordenadas(ILjava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;),context,loadCoordenadas(Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;),getCantidad()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="182,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="context" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#context"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dBCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#dBCoordenadas"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="497,162">
+      <children xsi:type="editmodel:MethodEditModel" name="FachadaCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#FachadaCoordenadas(Landroid.content.Context;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borraTabla" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#borraTabla()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="closeFachada" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#closeFachada()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteComando" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#deleteComando(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCantidad" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#getCantidad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#getInstance(Landroid.content.Context;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#insertCoordenadas(Ljava.lang.Double;Ljava.lang.Double;Ljava.lang.Long;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="loadCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#loadCoordenadas(Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="loadCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#loadCoordenadas(ILjava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

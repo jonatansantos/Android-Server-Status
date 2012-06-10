@@ -7,8 +7,19 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TabHost;
 
+/**
+ * Actividad principal que contiene todas las pestañas para el funcionamiento de la aplicación.
+ * @author     David Herrero de la Peña
+ * @author     Jonatan Santos Barrios
+ * @see TabActivity
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.PestanaMainFav"
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.PestanaMainManual"
+ */
 public class MainSSH extends TabActivity{
   
+	/**
+	 * TabHost que contiene las pestañas.
+	 */
 	private TabHost tabHost;
 	private Resources res;
 	  /** Called when the activity is first created. */
@@ -24,6 +35,9 @@ public class MainSSH extends TabActivity{
        
         
     }
+    /**
+     * Crea la pestaña de servidores favoritos.
+     */
     private void creaTabFav(){
     	  TabHost.TabSpec spec;
           Intent intent;
@@ -34,6 +48,9 @@ public class MainSSH extends TabActivity{
         tabHost.addTab(spec);
     	 
     }
+    /**
+     * Crea la pestaña de conexión manual.
+     */
     private void creaTabManual(){
     	TabHost.TabSpec spec;
         Intent intent;

@@ -4,5 +4,6 @@
      <item android:id="@+id/re_filtro" android:title="Quitar filtro" android:icon="@android:drawable/ic_menu_revert"></item>
 <item android:id="@+id/ajustes_not" android:title="Ajustes" android:icon="@android:drawable/ic_menu_preferences"></item>
 <item android:id="@+id/actualizar_not" android:title="Actualiar" android:icon="@drawable/ic_menu_refresh"></item>
+<item android:id="@+id/descargar_not" android:title="Descargar todo" android:icon="@drawable/ic_menu_download"></item>
     
 </menu>

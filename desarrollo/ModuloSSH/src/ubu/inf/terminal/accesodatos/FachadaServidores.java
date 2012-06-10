@@ -10,14 +10,32 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-
+/**
+ * Clase que utiliza la aplicación para acceder a la BD de forma simplificada, contiene métodos para modificar la BD de forma transparente. Usa patron de diseño Fachada y Singleton.
+ * @author   David Herrero de la Peña
+ * @author   Jonatan Santos Barrios
+ * @version   1.0
+ * @see  ServidoresSQLiteHelper
+ */
 public class FachadaServidores {
 	Context context;
+	/**
+	 * @uml.property  name="helperservidores"
+	 * @uml.associationEnd  
+	 */
 	ServidoresSQLiteHelper Helperservidores ;
 	SQLiteDatabase DBservidores;
+	/**
+	 * @uml.property  name="myFachada"
+	 * @uml.associationEnd  
+	 */
 	private static FachadaServidores myFachada;
 	
-	
+
+	/**
+	 * Contructor privado de la clase.
+	 * @param context
+	 */
 	private FachadaServidores(Context context){
 		this.context=context;
 		Log.i("mssh", "ya tenemos la fachada, ahora a por el helper");
@@ -25,7 +43,11 @@ public class FachadaServidores {
 		Log.i("mssh", "helper creado correctamente");
 	
 	}
-	
+	/**
+	 * Método estático para obtener la única instacia de la fachada.
+	 * @param context
+	 * @return referencia a la fachada única.
+	 */
 	public static FachadaServidores getInstance(Context context){
 		
 		Log.i("mssh", "entramos en getInstance");
@@ -35,13 +57,18 @@ public class FachadaServidores {
 		}
 		return myFachada;
 	}
-	
+	/**
+	 * Función para cerrar la fachada y la base de datos.
+	 */
 	public void closeFachada(){
 		Log.i("mssh", "closeFachada,cerramos el helper");
 		Helperservidores.close();
 		myFachada=null;
 	}
-	
+	/**
+	 * Función para obtener todos los Servidores guardados en la base de datos.
+	 * @return ArrayList con todos los servidores de la base de datos.
+	 */
 	public ArrayList<Servidor> loadServidores(){
 		Log.i("mssh", "loadServidores,creamos el array");
 		ArrayList<Servidor> lista = new ArrayList<Servidor>();
@@ -71,7 +98,11 @@ public class FachadaServidores {
 		DBservidores.close();
 		return lista;
 	}
-	
+	/**
+	 * Función para añadir un nuevo Servidor a la base de datos.
+	 * @param ant ArrayList en el que se va a introducir también el Servidor nuevo.
+	 * @param serv Servidor a introducir.
+	 */
 	public void insertServidor(ArrayList<Servidor> ant, Servidor serv){
 		int id=0;
 		String ip = serv.getIp();
@@ -106,7 +137,11 @@ public class FachadaServidores {
 		
 		
 	}
-	
+	/**
+	 * Borra el servidor de la base de datos dado el identificador.
+	 * @param ant ArrayList de donte también se va a borrar si se puede.
+	 * @param id identificador del servidor a borrar.
+	 */
 	public void deleteServidor(ArrayList<Servidor> ant,int id){
 		 Log.i("mssh", "vamos a borrar");
 		String sql = "DELETE FROM servidores WHERE id="+id;
@@ -133,6 +168,11 @@ public class FachadaServidores {
 		}
 	}
 
+	/**
+	 * Función para editar los datos de un Servidor almacenado en la base de datos.
+	 * @param ant
+	 * @param serv
+	 */
 	public void editServidor(ArrayList<Servidor> ant, Servidor serv) {
 		int id = serv.getId();
 		String ip = serv.getIp();
@@ -171,6 +211,9 @@ public class FachadaServidores {
 		}
 		
 	}
+	/**
+	 * Función para borrar las tablas y volver a crearlas de nuevo .
+	 */
 	public void borraTabla(){
 		String sql = "DROP TABLE IF EXISTS servidores";
 		String sqlCreate = "CREATE TABLE servidores (id INTEGER PRIMARY KEY,host TEXT,port TEXT,user TEXT,pass TEXT,descripcion TEXT)";

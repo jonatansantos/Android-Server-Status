@@ -8,9 +8,21 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+/**
+ * Actividad falsa que se muestra cuando el usuario introduce una contraseña de acceso incorrecta. Tiene enlaces a google y a google play.
+ * @author   David Herrero de la Peña.
+ * @author   Jonatan Santos Barrios.
+ * @uml.dependency   supplier="ubu.inf.Preferencias"
+ */
 public class FalsaActividad extends Activity {
 
+	/**
+	 * Imagen con el logo de google.
+	 */
 	private ImageView google;
+	/**
+	 * Imagen con el logo de google play.
+	 */
 	private ImageView market;
 
 	@Override
@@ -50,5 +62,33 @@ public class FalsaActividad extends Activity {
 
 		
 	}
+
+	/**
+	 * @uml.property  name="preferencias"
+	 * @uml.associationEnd  inverse="falsaActividad:ubu.inf.Preferencias"
+	 * @uml.association  name="<call>"
+	 */
+	private Preferencias preferencias;
+
+	/**
+	 * Getter of the property <tt>preferencias</tt>
+	 * @return  Returns the preferencias.
+	 * @uml.property  name="preferencias"
+	 */
+	public Preferencias getPreferencias() {
+		return preferencias;
+	}
+
+	/**
+	 * Setter of the property <tt>preferencias</tt>
+	 * @param preferencias  The preferencias to set.
+	 * @uml.property  name="preferencias"
+	 */
+	public void setPreferencias(Preferencias preferencias) {
+		this.preferencias = preferencias;
+	}
+
+		
+		
 
 }

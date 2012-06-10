@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="104" key="DIALOG_Y_ORIGIN"/>
+		<item value="43" key="DIALOG_Y_ORIGIN"/>
 		<item value="217" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="com.soyatec.uml.ClassDiagramNewWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="com.soyatec.uml"/>
+		</list>
 	</section>
 	<section name="ZipFileExportWizard">
 		<item value="true" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
@@ -13,7 +19,7 @@
 	</section>
 	<section name="ShowViewDialog">
 		<item value="311" key="DIALOG_WIDTH"/>
-		<item value="org.eclipse.ui.console.ConsoleView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="com.android.ide.eclipse.ddms.views.LogCatView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
 		<item value="80" key="DIALOG_Y_ORIGIN"/>
 		<item value="536" key="DIALOG_X_ORIGIN"/>
 		<item value="438" key="DIALOG_HEIGHT"/>

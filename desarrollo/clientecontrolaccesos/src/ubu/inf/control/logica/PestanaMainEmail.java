@@ -44,12 +44,12 @@ import android.widget.ToggleButton;
 
 /**
  * Clase que implementa la funcionalidad de la pestana de emails.
- * 
- * @author David Herrero
- * @author Jonatan Santos
- * 
- * @version 1.0
- * 
+ * @author        David Herrero
+ * @author        Jonatan Santos
+ * @version        1.0
+ * @uml.dependency   supplier="ubu.inf.control.logica.ServicioEmail"
+ * @uml.dependency   supplier="ubu.inf.control.logica.Formulario"
+ * @uml.dependency   supplier="ubu.inf.control.logica.Preferencias"
  */
 public class PestanaMainEmail extends Activity {
 	
@@ -62,8 +62,16 @@ public class PestanaMainEmail extends Activity {
 	private ListView list;
 	private ImageButton add;
 	private TextView cantidad;
+	/**
+	 * @uml.property  name="fachada"
+	 * @uml.associationEnd  
+	 */
 	private FachadaEmail fachada;
 
+	/**
+	 * @uml.property  name="adapter"
+	 * @uml.associationEnd  
+	 */
 	private ArrayAdapterEmail adapter;
 
 	private Boolean estabaactivo;
@@ -187,6 +195,7 @@ public class PestanaMainEmail extends Activity {
 		i.putExtra("desc", datos.get(info.position).getDescripcion());
 		i.putExtra("inicio", datos.get(info.position).isInicio());
 		i.putExtra("color", datos.get(info.position).getColor());
+		i.putExtra("puerto", datos.get(info.position).getPuerto());
 		idaux = datos.get(info.position).getId();
 		// quitamos del Singleton , por si luego cambia
 		estabaactivo = SingletonEmail.getConexion().getHosts()
@@ -203,13 +212,13 @@ public class PestanaMainEmail extends Activity {
 	 */
 	private void borrar(AdapterContextMenuInfo info) {
 
-		fachada.deleteServidor(datos, datos.get(info.position).getId());
+		
 		SingletonEmail.getConexion().getHosts()
 				.remove(datos.get(info.position));
-
+		fachada.deleteServidor(datos, datos.get(info.position).getId());
 		adapter.notifyDataSetChanged();
 		cantidad.setText("servicios :"
-				+ SingletonServicios.getConexion().getHosts().size());
+				+ SingletonEmail.getConexion().getHosts().size());
 	}
 
 	@Override
@@ -338,14 +347,15 @@ public class PestanaMainEmail extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_FORMULARIO) {
 			if (resultCode == Activity.RESULT_OK) {
-
+				Log.i("control", "estamos en añadir nuevo");
 				Bundle bundle = data.getExtras();
 				Servidor serv = new Servidor(bundle.getString("host"),
 						bundle.getString("desc"), bundle.getBoolean("inicio"),
-						0, bundle.getInt("color"));
+						0, bundle.getInt("color"),Integer.parseInt(bundle.getString("puerto")));
 				fachada.insertServidor(datos, serv);
 
 				adapter.notifyDataSetChanged();
+				Log.i("control", "hay nuevo servidor total =" + datos.size());
 			}
 		} else {
 			if (requestCode == REQUEST_CONTEXT) {
@@ -356,7 +366,7 @@ public class PestanaMainEmail extends Activity {
 					Servidor serv = new Servidor(bundle.getString("host"),
 							bundle.getString("desc"),
 							bundle.getBoolean("inicio"), idaux,
-							bundle.getInt("color"));
+							bundle.getInt("color"),Integer.parseInt(bundle.getString("puerto")));
 					// Log.i("control", "nuevo nombre =" + serv.getIp());
 
 					fachada.editServidor(datos, serv);
@@ -439,7 +449,7 @@ public class PestanaMainEmail extends Activity {
 			ID.setBackgroundColor(datos.get(position).getColor());
 
 			TextView ip = (TextView) item.findViewById(R.id.tv_listservers_ip2);
-			ip.setText(datos.get(position).getIp());
+			ip.setText(datos.get(position).getIp()+":"+datos.get(position).getPuerto());
 			TextView desc = (TextView) item
 					.findViewById(R.id.tv_listservers_desc2);
 

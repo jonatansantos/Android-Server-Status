@@ -240,7 +240,7 @@ public class ServicioSSH extends Service {
 
 		envelope.setOutputSoapObject(request);
 
-		URL ="http://"+s.getIp()+":8080/axis2/services/Notificador.NotificadorHttpSoap12Endpoint/";
+		URL ="http://"+s.getIp()+":"+s.getPuerto()+"/axis2/services/Notificador.NotificadorHttpSoap12Endpoint/";
 		Log.i("control", "peticion a "+URL);
 		//aqui pondríamos la Ip del servidor
 	 HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);

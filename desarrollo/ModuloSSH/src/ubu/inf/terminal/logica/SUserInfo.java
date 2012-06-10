@@ -1,9 +1,16 @@
 package ubu.inf.terminal.logica;
  
 import com.jcraft.jsch.UserInfo;
- 
+/**
+ * Clase auxsiliar para el funcionamiento de Jsch.
+ * @author   David Herreo de la Peña
+ * @author   Jonatan Santos Barrios
+ */
 public class SUserInfo implements UserInfo {
  
+    /**
+	 * @uml.property  name="password"
+	 */
     private String password;
     private String passPhrase;
  
@@ -16,6 +23,10 @@ public class SUserInfo implements UserInfo {
         return passPhrase;
     }
  
+    /**
+	 * @return
+	 * @uml.property  name="password"
+	 */
     public String getPassword() {
         return password;
     }

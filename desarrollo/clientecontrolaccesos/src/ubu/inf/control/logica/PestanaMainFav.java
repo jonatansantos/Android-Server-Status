@@ -42,12 +42,12 @@ import android.widget.ToggleButton;
 
 /**
  * Clase que implementa la funcionalidad de la pestana de favoritos.
- * 
- * @author David Herrero
- * @author Jonatan Santos
- * 
- * @version 1.0
- * 
+ * @author        David Herrero
+ * @author        Jonatan Santos
+ * @version        1.0
+ * @uml.dependency   supplier="ubu.inf.control.logica.ServicioSSH"
+ * @uml.dependency   supplier="ubu.inf.control.logica.Formulario"
+ * @uml.dependency   supplier="ubu.inf.control.logica.Preferencias"
  */
 public class PestanaMainFav extends Activity {
 	private static final int REQUEST_FORMULARIO = 0;
@@ -59,8 +59,16 @@ public class PestanaMainFav extends Activity {
 	private ListView list;
 	private ImageButton add;
 	private TextView cantidad;
+	/**
+	 * @uml.property  name="fachada"
+	 * @uml.associationEnd  
+	 */
 	private FachadaServidores fachada;
 
+	/**
+	 * @uml.property  name="adapter"
+	 * @uml.associationEnd  
+	 */
 	private ArrayAdapterServidor adapter;
 
 	private Boolean estabaactivo;
@@ -179,6 +187,8 @@ public class PestanaMainFav extends Activity {
 	 * @param info
 	 */
 	private void editar(AdapterContextMenuInfo info) {
+		
+		
 
 		Intent i = new Intent(PestanaMainFav.this, Formulario.class);
 
@@ -186,6 +196,7 @@ public class PestanaMainFav extends Activity {
 		i.putExtra("desc", datos.get(info.position).getDescripcion());
 		i.putExtra("inicio", datos.get(info.position).isInicio());
 		i.putExtra("color", datos.get(info.position).getColor());
+		i.putExtra("puerto", datos.get(info.position).getPuerto());
 		idaux = datos.get(info.position).getId();
 		// quitamos de Singleton la IP , por si luego cambia
 		estabaactivo = SingletonServicios.getConexion().getHosts()
@@ -341,7 +352,7 @@ public class PestanaMainFav extends Activity {
 				Bundle bundle = data.getExtras();
 				Servidor serv = new Servidor(bundle.getString("host"),
 						bundle.getString("desc"), bundle.getBoolean("inicio"),
-						0, bundle.getInt("color"));
+						0, bundle.getInt("color"),Integer.parseInt(bundle.getString("puerto")));
 				fachada.insertServidor(datos, serv);
 				adapter.notifyDataSetChanged();
 				Log.i("control", "hay nuevo servidor total =" + datos.size());
@@ -356,7 +367,8 @@ public class PestanaMainFav extends Activity {
 					Servidor serv = new Servidor(bundle.getString("host"),
 							bundle.getString("desc"),
 							bundle.getBoolean("inicio"), idaux,
-							bundle.getInt("color"));
+							bundle.getInt("color"),
+							Integer.parseInt(bundle.getString("puerto")));
 					// Log.i("control", "nuevo nombre =" + serv.getIp());
 
 					fachada.editServidor(datos, serv);
@@ -441,7 +453,7 @@ public class PestanaMainFav extends Activity {
 			ID.setBackgroundColor(datos.get(position).getColor());
 
 			TextView ip = (TextView) item.findViewById(R.id.tv_listservers_ip2);
-			ip.setText(datos.get(position).getIp());
+			ip.setText(datos.get(position).getIp()+":"+datos.get(position).getPuerto());
 			TextView desc = (TextView) item
 					.findViewById(R.id.tv_listservers_desc2);
 

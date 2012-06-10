@@ -15,23 +15,30 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
-/**Servicio que se encarga de obtener las posiciones del GPS y guardarlas en una base de datos interna.
- * Además puede borrar todos los datos de los servidores y notificaciones de las otras aplicaciones.
- * 
- * @author David Herrero de la Peña
- * @author Jonatan Santos Barrios
- * 
- * @version 1.0
- * 
- * @see Service
+/**
+ * Servicio que se encarga de obtener las posiciones del GPS y guardarlas en una base de datos interna. Además puede borrar todos los datos de los servidores y notificaciones de las otras aplicaciones.
+ * @author  David Herrero de la Peña
+ * @author  Jonatan Santos Barrios
+ * @version  1.0
+ * @see  Service
  */
 public class ServicioGPS extends Service{
 	boolean conectado = false;
 	Thread hilo;
-	LocationManager miLocationManager;
-	Location miLocation;
-	MiLocationListener miLocationListener;
-	
+	LocationManager miLocationManagerGPS;
+	LocationManager miLocationManager3G;
+	Location miLocationGPS;
+	Location miLocation3G;
+	/**
+	 * @uml.property  name="miLocationListenerGPS"
+	 * @uml.associationEnd  
+	 */
+	MiLocationListenerGPS miLocationListenerGPS;
+	/**
+	 * @uml.property  name="miLocationListener3G"
+	 * @uml.associationEnd  
+	 */
+	MiLocationListener3G miLocationListener3G;
 	Location localizacion = null;
 
 	@Override
@@ -46,23 +53,25 @@ public class ServicioGPS extends Service{
 	public void onCreate() {
 		super.onCreate();
 		Log.i("gps","onCreate ServicioGPS");
-		miLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+		miLocationManagerGPS = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+		miLocationManager3G = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 		
-		if (miLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {//si hay gps
+		if (miLocationManagerGPS.isProviderEnabled(LocationManager.GPS_PROVIDER)) {//si hay gps
 			Log.i("gps","gps conectado, nos suscribimos");
 			conectado=true;
-			miLocationListener = new MiLocationListener();
+			miLocationListenerGPS = new MiLocationListenerGPS();
 			//TODO demasiado poco tiempo (asa,tiempo minimo en milis,distancia minima en metros,)
-			miLocationManager.requestLocationUpdates(
-	                LocationManager.GPS_PROVIDER, 2*60*1000, 0, miLocationListener);			
-		}else if(miLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
+			miLocationManagerGPS.requestLocationUpdates(
+	                LocationManager.GPS_PROVIDER, 5*60*1000, 0, miLocationListenerGPS);			
+		}
+		if(miLocationManager3G.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
 			
 			Log.i("gps","3G conectado, nos suscribimos");
 			conectado=true;
-			miLocationListener = new MiLocationListener();
+			miLocationListener3G = new MiLocationListener3G();
 			//TODO demasiado poco tiempo (asa,tiempo minimo en milis,distancia minima en metros,)
-			miLocationManager.requestLocationUpdates(
-	                LocationManager.NETWORK_PROVIDER,  2*60*1000, 0, miLocationListener);
+			miLocationManager3G.requestLocationUpdates(
+	                LocationManager.NETWORK_PROVIDER,  5*60*1000, 0, miLocationListener3G);
 			
 		}else{
 			Log.e("gps", "servicioGPS,gps no activado, se cierra el servicio");
@@ -75,28 +84,50 @@ public class ServicioGPS extends Service{
 		
 		if(conectado){
 			Log.i("gps","servicioGps,eliminamos la suscripcion");
-		miLocationManager.removeUpdates(miLocationListener);
+		miLocationManagerGPS.removeUpdates(miLocationListenerGPS);
+		miLocationManager3G.removeUpdates(miLocationListener3G);
 		conectado=false;
 		}
 		super.onDestroy();
 	}
 
-	
+	/**
+	 * Función para guardar la localización actual en la base de datos.
+	 * @param loc localización a guardar.
+	 */
 	 private void setCurrentLocation(Location loc) {
-		    Date fecha = new Date();
+		    
 		   
 	    	localizacion = loc;
-	    	Log.i("gps","cambio de posicion long= "+loc.getLongitude()+" lati= "+loc.getLatitude()+" fecha:" + fecha.toLocaleString());
-	    	FachadaCoordenadas.getInstance(this).insertCoordenadas(loc.getLongitude(), loc.getLatitude(), fecha.getTime());
+	    	Log.i("gps","cambio de posicion long= "+loc.getLongitude()+" lati= "+loc.getLatitude()+" fecha:" + new Date(loc.getTime()).toLocaleString() + "nos lo envia "+loc.getProvider());
+	    	FachadaCoordenadas.getInstance(this).insertCoordenadas(loc.getLongitude(), loc.getLatitude(), loc.getTime());
 	    }
 	
-	private class MiLocationListener implements LocationListener 
+	 /**
+	  * Clase que implemente a LocationListener para realizar las acciones necesarias cuando se 
+	  * obtiene una nueva posición.
+	  * @author David Herrero de la Peña
+	  * @author Jonatan Santos Barrios
+	  * @see LocationListener
+	  *
+	  */
+	private class MiLocationListenerGPS implements LocationListener 
     {
         @Override
         public void onLocationChanged(Location loc) {
+        	miLocationGPS = loc;
+        	
             if (loc != null) {
+                 
+            	if(miLocation3G!=null){//ya hay una de 3g
+            		if(miLocation3G.getAccuracy()<loc.getAccuracy()){//si la precisión de 3g es menos que de gps
+            			setCurrentLocation(loc);
+            		}
+            		
+            	}else{//no hay ninguna de 3g, guardamos la del gps
+            		setCurrentLocation(loc);
+            	}
                 
-                setCurrentLocation(loc);
                
             }
         }
@@ -117,5 +148,50 @@ public class ServicioGPS extends Service{
             // TODO Auto-generated method stub
         }
     }
+	 /**
+	  * Clase que implemente a LocationListener para realizar las acciones necesarias cuando se 
+	  * obtiene una nueva posición.
+	  * @author David Herrero de la Peña
+	  * @author Jonatan Santos Barrios
+	  * @see LocationListener
+	  *
+	  */
+	private class MiLocationListener3G implements LocationListener 
+   {
+       @Override
+       public void onLocationChanged(Location loc) {
+    	   miLocation3G = loc;
+       	
+           if (loc != null) {
+                
+           	if(miLocationGPS!=null){//ya hay una de gps
+           		if(miLocationGPS.getAccuracy()<loc.getAccuracy()){//si la precisión de gps es menos que de 3g
+           			setCurrentLocation(loc);
+           		}
+           		
+           	}else{//no hay ninguna de gps, guardamos la del 3g
+           		setCurrentLocation(loc);
+           	}
+               
+              
+           }
+       }
+
+       @Override
+       public void onProviderDisabled(String provider) {
+           // TODO Auto-generated method stub
+       }
+
+       @Override
+       public void onProviderEnabled(String provider) {
+           // TODO Auto-generated method stub
+       }
+
+       @Override
+       public void onStatusChanged(String provider, int status, 
+           Bundle extras) {
+           // TODO Auto-generated method stub
+       }
+   }
 	
 }

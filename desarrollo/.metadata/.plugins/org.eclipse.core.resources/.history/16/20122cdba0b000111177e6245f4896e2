@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1852,562" id="ubu.inf.terminal.accesodatos" metadata="uml2-1.0" initialized="true" scrolledX="722" scrolledY="115" tag="1000" key="32303037303533312D31303030204D6F64756C6F5353482F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="ComandosSQLiteHelper" location="645,375" size="330,157" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper" runTimeClassModel="onOpen(Landroid.database.sqlite.SQLiteDatabase;),sqlCreate1,onCreate(Landroid.database.sqlite.SQLiteDatabase;),ComandosSQLiteHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I),sqlCreate2,onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="sqlCreate1" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper#sqlCreate1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sqlCreate2" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper#sqlCreate2"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="307,72">
+      <children xsi:type="editmodel:MethodEditModel" name="ComandosSQLiteHelper" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper#ComandosSQLiteHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper#onCreate(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onOpen" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper#onOpen(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onUpgrade" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper#onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="android.database.sqlite/SQLiteOpenHelper&lt;-ubu.inf.terminal.accesodatos/ComandosSQLiteHelper" source="//@children.0" target="//@children.5" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="232,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="97,189"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0" name="FachadaComandos" location="380,77" size="266,247" id="ubu.inf.terminal.accesodatos/FachadaComandos" runTimeClassModel="FachadaComandos(Landroid.content.Context;),closeFachada(),borraTabla(),deleteComando(I),dBcomandos,getInstance(Landroid.content.Context;),helpercomandos,context,loadComandos(),insertComandos(Ljava.lang.String;ILjava.util.ArrayList;),myFachada">
+    <children xsi:type="editmodel:CompartmentEditModel" size="219,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="context" id="ubu.inf.terminal.accesodatos/FachadaComandos#context"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dBcomandos" id="ubu.inf.terminal.accesodatos/FachadaComandos#dBcomandos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="helpercomandos" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper@helpercomandos+ubu.inf.terminal.accesodatos/FachadaComandos@|ubu.inf.terminal.accesodatos/ComandosSQLiteHelper#helpercomandos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myFachada" id="ubu.inf.terminal.accesodatos/FachadaComandos@myFachada+ubu.inf.terminal.accesodatos/FachadaComandos@|ubu.inf.terminal.accesodatos/FachadaComandos#myFachada"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="243,126">
+      <children xsi:type="editmodel:MethodEditModel" name="FachadaComandos" id="ubu.inf.terminal.accesodatos/FachadaComandos#FachadaComandos(Landroid.content.Context;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borraTabla" id="ubu.inf.terminal.accesodatos/FachadaComandos#borraTabla()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="closeFachada" id="ubu.inf.terminal.accesodatos/FachadaComandos#closeFachada()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteComando" id="ubu.inf.terminal.accesodatos/FachadaComandos#deleteComando(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="ubu.inf.terminal.accesodatos/FachadaComandos#getInstance(Landroid.content.Context;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertComandos" id="ubu.inf.terminal.accesodatos/FachadaComandos#insertComandos(Ljava.lang.String;ILjava.util.ArrayList;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="loadComandos" id="ubu.inf.terminal.accesodatos/FachadaComandos#loadComandos()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper@helpercomandos+ubu.inf.terminal.accesodatos/FachadaComandos@" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="256,247" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper@helpercomandos+ubu.inf.terminal.accesodatos/FachadaComandos@|ubu.inf.terminal.accesodatos/FachadaComandos#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="helpercomandos" location="0,10" id="ubu.inf.terminal.accesodatos/ComandosSQLiteHelper@helpercomandos+ubu.inf.terminal.accesodatos/FachadaComandos@|ubu.inf.terminal.accesodatos/ComandosSQLiteHelper#helpercomandos" multiplicityLabel="//@children.1/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ helpercomandos" location="546,392" size="92,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="620,364" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.1" name="FachadaServidores" location="1320,79" size="266,265" id="ubu.inf.terminal.accesodatos/FachadaServidores" runTimeClassModel="deleteServidor(Ljava.util.ArrayList;I),FachadaServidores(Landroid.content.Context;),editServidor(Ljava.util.ArrayList;Lubu.inf.terminal.modelo.Servidor;),borraTabla(),closeFachada(),dBservidores,getInstance(Landroid.content.Context;),loadServidores(),insertServidor(Ljava.util.ArrayList;Lubu.inf.terminal.modelo.Servidor;),context,helperservidores,myFachada">
+    <children xsi:type="editmodel:CompartmentEditModel" size="223,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="context" id="ubu.inf.terminal.accesodatos/FachadaServidores#context"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dBservidores" id="ubu.inf.terminal.accesodatos/FachadaServidores#dBservidores"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="helperservidores" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper@helperservidores+ubu.inf.terminal.accesodatos/FachadaServidores@|ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper#helperservidores"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myFachada" id="ubu.inf.terminal.accesodatos/FachadaServidores@myFachada+ubu.inf.terminal.accesodatos/FachadaServidores@|ubu.inf.terminal.accesodatos/FachadaServidores#myFachada"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="243,144">
+      <children xsi:type="editmodel:MethodEditModel" name="FachadaServidores" id="ubu.inf.terminal.accesodatos/FachadaServidores#FachadaServidores(Landroid.content.Context;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borraTabla" id="ubu.inf.terminal.accesodatos/FachadaServidores#borraTabla()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="closeFachada" id="ubu.inf.terminal.accesodatos/FachadaServidores#closeFachada()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteServidor" id="ubu.inf.terminal.accesodatos/FachadaServidores#deleteServidor(Ljava.util.ArrayList;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="editServidor" id="ubu.inf.terminal.accesodatos/FachadaServidores#editServidor(Ljava.util.ArrayList;Lubu.inf.terminal.modelo.Servidor;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="ubu.inf.terminal.accesodatos/FachadaServidores#getInstance(Landroid.content.Context;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertServidor" id="ubu.inf.terminal.accesodatos/FachadaServidores#insertServidor(Ljava.util.ArrayList;Lubu.inf.terminal.modelo.Servidor;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="loadServidores" id="ubu.inf.terminal.accesodatos/FachadaServidores#loadServidores()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper@helperservidores+ubu.inf.terminal.accesodatos/FachadaServidores@" source="//@children.2" target="//@children.4" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,255" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper@helperservidores+ubu.inf.terminal.accesodatos/FachadaServidores@|ubu.inf.terminal.accesodatos/FachadaServidores#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="helperservidores" location="322,0" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper@helperservidores+ubu.inf.terminal.accesodatos/FachadaServidores@|ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper#helperservidores" multiplicityLabel="//@children.2/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.2/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ helperservidores" location="1196,354" size="94,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1304,354" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ServicioBorrado" location="857,0" size="151,85" id="ubu.inf.terminal.accesodatos/ServicioBorrado" runTimeClassModel="onCreate(),onBind(Landroid.content.Intent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,36">
+      <children xsi:type="editmodel:MethodEditModel" name="onBind" id="ubu.inf.terminal.accesodatos/ServicioBorrado#onBind(Landroid.content.Intent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.terminal.accesodatos/ServicioBorrado#onCreate()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.terminal.accesodatos/ServicioBorrado-Standard::Call->ubu.inf.terminal.accesodatos/FachadaComandos" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,80" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="266,3"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.terminal.accesodatos/ServicioBorrado-Standard::Call->ubu.inf.terminal.accesodatos/FachadaServidores" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="151,81" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,2"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="android.app/Service&lt;-ubu.inf.terminal.accesodatos/ServicioBorrado" source="//@children.3" target="//@children.6" targetEnd="//@children.3/@sourceConnections.2/@children.1" sourceEnd="//@children.3/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,21" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,21"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0" name="ServidoresSQLiteHelper" location="975,375" size="332,121" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper" runTimeClassModel="ServidoresSQLiteHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I),onCreate(Landroid.database.sqlite.SQLiteDatabase;),sqlCreate,onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="sqlCreate" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper#sqlCreate"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="309,54">
+      <children xsi:type="editmodel:MethodEditModel" name="ServidoresSQLiteHelper" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper#ServidoresSQLiteHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper#onCreate(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onUpgrade" id="ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper#onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="android.database.sqlite/SQLiteOpenHelper&lt;-ubu.inf.terminal.accesodatos/ServidoresSQLiteHelper" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="54,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="249,189"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.0/@sourceConnections.0" name="SQLiteOpenHelper" location="780,120" size="305,189" id="android.database.sqlite/SQLiteOpenHelper" runTimeClassModel="onOpen(Landroid.database.sqlite.SQLiteDatabase;),getReadableDatabase(),SQLiteOpenHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I),close(),onCreate(Landroid.database.sqlite.SQLiteDatabase;),getWritableDatabase(),onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="282,126">
+      <children xsi:type="editmodel:MethodEditModel" name="SQLiteOpenHelper" id="android.database.sqlite/SQLiteOpenHelper#SQLiteOpenHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="close" id="android.database.sqlite/SQLiteOpenHelper#close()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getReadableDatabase" id="android.database.sqlite/SQLiteOpenHelper#getReadableDatabase()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWritableDatabase" id="android.database.sqlite/SQLiteOpenHelper#getWritableDatabase()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="android.database.sqlite/SQLiteOpenHelper#onCreate(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onOpen" id="android.database.sqlite/SQLiteOpenHelper#onOpen(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onUpgrade" id="android.database.sqlite/SQLiteOpenHelper#onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.2" name="Service" location="570,0" size="90,43" id="android.app/Service" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

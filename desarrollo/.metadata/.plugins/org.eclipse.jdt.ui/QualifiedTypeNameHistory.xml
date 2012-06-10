@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.jcraft.jsch.ChannelShell"/>
-<fullyQualifiedTypeName name="java.io.OutputStream"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="android.view.View.OnKeyListener"/>
-<fullyQualifiedTypeName name="ubu.inf.logica.Consola.ListenerKey"/>
-<fullyQualifiedTypeName name="android.view.KeyEvent"/>
-<fullyQualifiedTypeName name="android.app.AlertDialog"/>
-<fullyQualifiedTypeName name="android.app.AlertDialog.Builder"/>
-<fullyQualifiedTypeName name="android.widget.EditText"/>
-<fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
-<fullyQualifiedTypeName name="android.app.Service"/>
-<fullyQualifiedTypeName name="ubu.inf.control.accesodatos.FachadaServidores"/>
-<fullyQualifiedTypeName name="ubu.inf.control.accesodatos.FachadaEmail"/>
 <fullyQualifiedTypeName name="ubu.inf.accesodatos.FachadaComandos"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="ubu.inf.gps.accesodatos.FachadaCoordenadas"/>
@@ -32,8 +18,6 @@
 <fullyQualifiedTypeName name="ubu.inf.control.modelo.Servidor"/>
 <fullyQualifiedTypeName name="ubu.inf.control.modelo.SingletonEmail"/>
 <fullyQualifiedTypeName name="ubu.inf.control.modelo.SingletonServicios"/>
-<fullyQualifiedTypeName name="ubu.inf.control.modelo.Notificacion"/>
-<fullyQualifiedTypeName name="org.ksoap2.serialization.SoapObject"/>
 <fullyQualifiedTypeName name="org.ksoap2.serialization.PropertyInfo"/>
 <fullyQualifiedTypeName name="org.ksoap2.serialization.SoapSerializationEnvelope"/>
 <fullyQualifiedTypeName name="android.content.ComponentName"/>
@@ -43,10 +27,8 @@
 <fullyQualifiedTypeName name="ubu.inf.terminal.accesodatos.FachadaServidores"/>
 <fullyQualifiedTypeName name="ubu.inf.terminal.modelo.SingletonConexion"/>
 <fullyQualifiedTypeName name="android.content.ActivityNotFoundException"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="ubu.inf.R.id"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
@@ -59,5 +41,23 @@
 <fullyQualifiedTypeName name="android.net.Uri"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="java.util.Vector"/>
+<fullyQualifiedTypeName name="ubu.inf.control.modelo.Notificacion"/>
+<fullyQualifiedTypeName name="org.ksoap2.serialization.SoapObject"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="ubu.inf.control.logica.PestanaMainNotificaciones.ArrayAdapterNot"/>
+<fullyQualifiedTypeName name="ubu.inf.control.logica.PestanaMainNotificaciones"/>
+<fullyQualifiedTypeName name="android.os.Handler"/>
+<fullyQualifiedTypeName name="ubu.inf.control.logica.PestanaMainNotificaciones.MyHandler"/>
+<fullyQualifiedTypeName name="org.ksoap2.serialization.SoapPrimitive"/>
+<fullyQualifiedTypeName name="android.app.ProgressDialog"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.app.Service"/>
+<fullyQualifiedTypeName name="android.location.LocationListener"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemClickListener"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.app.TabActivity"/>
+<fullyQualifiedTypeName name="ubu.inf.terminal.logica.Consola"/>
 </qualifiedTypeNameHistroy>

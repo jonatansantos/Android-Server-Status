@@ -13,12 +13,12 @@ import android.widget.TabHost;
 
 /**
  * Clase principal que contiene las dos pestañas principales de la aplicación.
- * 
- * @author David Herrero
- * @author Jonatan Santos
- * 
- *@version 1.0
- *
+ * @author         David Herrero
+ * @author         Jonatan Santos
+ * @version         1.0
+ * @uml.dependency   supplier="ubu.inf.control.logica.PestanaMainFav"
+ * @uml.dependency   supplier="ubu.inf.control.logica.PestanaMainEmail"
+ * @uml.dependency   supplier="ubu.inf.control.logica.PestanaMainNotificaciones"
  */
 public class Main extends TabActivity {
 	/**
@@ -41,11 +41,11 @@ public class Main extends TabActivity {
        
         creaTabFav();
         creaTabEmail();
-        creaTabManual();
+        creaTabNotificaciones();
       
     }
     /**
-     * Función que crea la pestaña de favoritos, se encarga de crear el intent y de añadirlo al tabhost.
+     * Función que crea la pestaña de  servidores favoritos ssh, se encarga de crear el intent y de añadirlo al tabhost.
      * @see PestanaMainFav
      */
     private void creaTabFav(){
@@ -62,6 +62,10 @@ public class Main extends TabActivity {
       tabHost.addTab(spec);
   	 
   }
+    /**
+     * Función que crea la pestaña de servidores favoritos email, se encarga de crear el intent y de añadirlo al tabhost.
+     * @see PestanaMainFav
+     */
     private void creaTabEmail(){   	
     	  TabHost.TabSpec spec;
           Intent intent;
@@ -76,7 +80,11 @@ public class Main extends TabActivity {
         tabHost.addTab(spec);
     	 
     }
-  private void creaTabManual(){
+    /**
+     * Función que crea la pestaña de notificaciones, se encarga de crear el intent y de añadirlo al tabhost.
+     * @see PestanaMainFav
+     */
+  private void creaTabNotificaciones(){
   	TabHost.TabSpec spec;
       Intent intent;
 	 //pestaña manual

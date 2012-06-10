@@ -2,6 +2,7 @@ package ubu.inf.terminal.accesodatos;
 
 import java.util.ArrayList;
 
+
 import ubu.inf.terminal.modelo.Script;
 
 import android.content.Context;
@@ -9,13 +10,31 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
+/**
+ * Clase que utiliza la aplicación para acceder a la BD de forma simplificada, contiene métodos para modificar la BD de forma transparente. Usa patron de diseño Fachada y Singleton.
+ * @author   David Herrero de la Peña
+ * @author   Jonatan Santos Barrios
+ * @version   1.0
+ * @see  ServidoresSQLiteHelper
+ */
 public class FachadaComandos {
 	Context context;
+	/**
+	 * @uml.property  name="helpercomandos"
+	 * @uml.associationEnd  
+	 */
 	ComandosSQLiteHelper Helpercomandos;
 	SQLiteDatabase DBcomandos;
+	/**
+	 * @uml.property  name="myFachada"
+	 * @uml.associationEnd  
+	 */
 	private static FachadaComandos myFachada;
 
+	/**
+	 * Contructor privado de la clase.
+	 * @param context
+	 */
 	private FachadaComandos(Context context) {
 		this.context = context;
 		Log.i("mssh",
@@ -26,6 +45,11 @@ public class FachadaComandos {
 
 	}
 
+	/**
+	 * Método estático para obtener la única instacia de la fachada.
+	 * @param context
+	 * @return referencia a la fachada única.
+	 */
 	public static FachadaComandos getInstance(Context context) {
 
 		Log.i("mssh", "entramos en getInstance");
@@ -36,12 +60,19 @@ public class FachadaComandos {
 		return myFachada;
 	}
 
+	/**
+	 * Función para cerrar la fachada y la base de datos.
+	 */
 	public void closeFachada() {
 		Log.i("mssh", "closeFachada,cerramos el helper");
 		Helpercomandos.close();
 		myFachada = null;
 	}
 
+	/**
+	 * Función para obtener todos los Comandos guardados en la base de datos.
+	 * @return ArrayList con todos los scripts de la base de datos.
+	 */
 	public ArrayList<Script> loadComandos() {
 		Log.i("mssh", "loadComandos,creamos el comando");
 		ArrayList<Script> resultado = new ArrayList<Script>();
@@ -81,6 +112,12 @@ public class FachadaComandos {
 		return resultado;
 	}
 
+	/**
+	 * Función para insertar un nuevo comando en la base de datos.
+	 * @param nombre nombre del script.
+	 * @param cantidad cantidad de comandos que contiene.
+	 * @param comandos ArrayList con todos los comandos a introducir.
+	 */
 	public void insertComandos(String nombre, int cantidad,
 			ArrayList<String> comandos) {
 		int id = 0;
@@ -116,6 +153,10 @@ public class FachadaComandos {
 
 	}
 
+	/**
+	 * Borra un comando de la base de datos.
+	 * @param id identificador del script a borrar.
+	 */
 	public void deleteComando(int id) {
 		Log.i("mssh", "vamos a borrar");
 		String sql = "DELETE FROM scripts WHERE idScript=" + id;
@@ -144,6 +185,9 @@ public class FachadaComandos {
 
 	
 
+	/**
+	 * Función para borrar las tablas y volver a crearlas vacías.
+	 */
 	public void borraTabla() {
 		String sql = "DROP TABLE IF EXISTS comandos";
 		String sql2 = "DROP TABLE IF EXISTS scripts";

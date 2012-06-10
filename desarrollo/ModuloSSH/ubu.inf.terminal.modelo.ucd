@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="835,477" id="ubu.inf.terminal.modelo" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030204D6F64756C6F5353482F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" name="Script" location="360,50" size="209,283" id="ubu.inf.terminal.modelo/Script" runTimeClassModel="comandos,setIdScript(I),getIdScript(),setCantidad(I),setNombre(Ljava.lang.String;),getNombre(),idScript,nombre,cantidad,getCantidad(),getComandos(),Script(Ljava.lang.String;II),addComando(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="159,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="cantidad" id="ubu.inf.terminal.modelo/Script#cantidad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="comandos" id="ubu.inf.terminal.modelo/Script#comandos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="idScript" id="ubu.inf.terminal.modelo/Script#idScript"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombre" id="ubu.inf.terminal.modelo/Script#nombre"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="186,162">
+      <children xsi:type="editmodel:MethodEditModel" name="Script" id="ubu.inf.terminal.modelo/Script#Script(Ljava.lang.String;II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addComando" id="ubu.inf.terminal.modelo/Script#addComando(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCantidad" id="ubu.inf.terminal.modelo/Script#getCantidad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getComandos" id="ubu.inf.terminal.modelo/Script#getComandos()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIdScript" id="ubu.inf.terminal.modelo/Script#getIdScript()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNombre" id="ubu.inf.terminal.modelo/Script#getNombre()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCantidad" id="ubu.inf.terminal.modelo/Script#setCantidad(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setIdScript" id="ubu.inf.terminal.modelo/Script#setIdScript(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNombre" id="ubu.inf.terminal.modelo/Script#setNombre(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Servidor" location="50,50" size="275,391" id="ubu.inf.terminal.modelo/Servidor" runTimeClassModel="usuario,Servidor(ILjava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),descripcion,puerto,contraseña,getIp(),setId(I),getDescripcion(),getPuerto(),ip,id,setDescripcion(Ljava.lang.String;),getContraseña(),getId(),setIp(Ljava.lang.String;),setContraseña(Ljava.lang.String;),getUsuario(),setUsuario(Ljava.lang.String;),setPuerto(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="contraseña" id="ubu.inf.terminal.modelo/Servidor#contraseña"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="descripcion" id="ubu.inf.terminal.modelo/Servidor#descripcion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="ubu.inf.terminal.modelo/Servidor#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ip" id="ubu.inf.terminal.modelo/Servidor#ip"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="puerto" id="ubu.inf.terminal.modelo/Servidor#puerto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="usuario" id="ubu.inf.terminal.modelo/Servidor#usuario"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="252,234">
+      <children xsi:type="editmodel:MethodEditModel" name="Servidor" id="ubu.inf.terminal.modelo/Servidor#Servidor(ILjava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getContraseña" id="ubu.inf.terminal.modelo/Servidor#getContraseña()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescripcion" id="ubu.inf.terminal.modelo/Servidor#getDescripcion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="ubu.inf.terminal.modelo/Servidor#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIp" id="ubu.inf.terminal.modelo/Servidor#getIp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPuerto" id="ubu.inf.terminal.modelo/Servidor#getPuerto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUsuario" id="ubu.inf.terminal.modelo/Servidor#getUsuario()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setContraseña" id="ubu.inf.terminal.modelo/Servidor#setContraseña(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDescripcion" id="ubu.inf.terminal.modelo/Servidor#setDescripcion(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="ubu.inf.terminal.modelo/Servidor#setId(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setIp" id="ubu.inf.terminal.modelo/Servidor#setIp(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPuerto" id="ubu.inf.terminal.modelo/Servidor#setPuerto(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setUsuario" id="ubu.inf.terminal.modelo/Servidor#setUsuario(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0" name="SingletonConexion" location="630,90" size="208,211" id="ubu.inf.terminal.modelo/SingletonConexion" runTimeClassModel="getSesion(),SingletonConexion(),setSesion(Lcom.jcraft.jsch.Session;),jsch,getConexion(),sesion,myConexion,setJsch(Lcom.jcraft.jsch.JSch;),getJsch()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="173,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="jsch" id="ubu.inf.terminal.modelo/SingletonConexion#jsch"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myConexion" id="ubu.inf.terminal.modelo/SingletonConexion@myConexion+ubu.inf.terminal.modelo/SingletonConexion@|ubu.inf.terminal.modelo/SingletonConexion#myConexion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sesion" id="ubu.inf.terminal.modelo/SingletonConexion#sesion"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="185,108">
+      <children xsi:type="editmodel:MethodEditModel" name="SingletonConexion" id="ubu.inf.terminal.modelo/SingletonConexion#SingletonConexion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConexion" id="ubu.inf.terminal.modelo/SingletonConexion#getConexion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getJsch" id="ubu.inf.terminal.modelo/SingletonConexion#getJsch()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSesion" id="ubu.inf.terminal.modelo/SingletonConexion#getSesion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setJsch" id="ubu.inf.terminal.modelo/SingletonConexion#setJsch(Lcom.jcraft.jsch.JSch;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSesion" id="ubu.inf.terminal.modelo/SingletonConexion#setSesion(Lcom.jcraft.jsch.Session;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="ubu.inf.terminal.modelo/SingletonConexion@myConexion+ubu.inf.terminal.modelo/SingletonConexion@" source="//@children.2" target="//@children.2" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="myConexion" location="0,17" id="ubu.inf.terminal.modelo/SingletonConexion@myConexion+ubu.inf.terminal.modelo/SingletonConexion@|ubu.inf.terminal.modelo/SingletonConexion#myConexion" anchorKind="FixedAtEdge" attachSource="true" multiplicityLabel="//@children.2/@sourceConnections.0/@children.1/@children.2" roleLabel="//@children.2/@sourceConnections.0/@children.1/@children.0" orderingLabel="//@children.2/@sourceConnections.0/@children.1/@children.1" scopeKind="1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - myConexion" location="554,114" size="69,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="{order}" location="589,86" size="34,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="605,128" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0" id="ubu.inf.terminal.modelo/SingletonConexion@myConexion+ubu.inf.terminal.modelo/SingletonConexion@|ubu.inf.terminal.modelo/SingletonConexion#" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -1,0 +1,68 @@
+package ubu.inf;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+
+/**
+ * Actividad falsa que se muestra cuando el usuario introduce una contraseña
+ * de acceso incorrecta.
+ * Tiene enlaces a google y a google play.
+ * @author David Herrero de la Peña.
+ * @author Jonatan Santos Barrios.
+ *
+ */
+public class FalsaActividad extends Activity {
+
+	/**
+	 * Imagen con el logo de google.
+	 */
+	private ImageView google;
+	/**
+	 * Imagen con el logo de google play.
+	 */
+	private ImageView market;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.falsa);
+		inicializa();
+	}
+
+	/**
+	 * Función para iniciar todos los componentes de la aplicación.
+	 */
+	private void inicializa() {
+		google = (ImageView) findViewById(R.id.iv_falsa_google);
+		market = (ImageView) findViewById(R.id.iv_falsa_play);
+		google.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent("android.intent.action.VIEW", Uri
+						.parse("http://www.google.es"));
+				startActivity(intent);
+
+			}
+		});
+		market.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent("android.intent.action.VIEW", Uri
+						.parse("market://search?q=AndroidServerStatus"));
+				startActivity(intent);
+
+			}
+		});
+
+		
+	}
+
+}

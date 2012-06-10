@@ -40,14 +40,40 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Actividad que contiene los servidores favoritos guardados en la base de datos y que permite conectarse a ellos mediante un click.
+ * @author         David Herreo de la Peña
+ * @author         Jonatan Santos Barrios
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.SUserInfo"
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.Formulario"
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.Consola"
+ */
 public class PestanaMainFav extends Activity {
+	/**
+	 * Handler para manejar los mensajes del hilo asíncrono.
+	 * @uml.property  name="handler"
+	 * @uml.associationEnd  
+	 */
 	private MyHandler handler = new MyHandler();
 	ProgressDialog dialog ;
 	public static final int REQUEST_TEXT = 0;
 	public static final int REQUEST_TEXT2 = 1;
+	/**
+	 * Array con los servidores para añadir a la lista.
+	 */
 	private ArrayList<Servidor> datos;
+	/**
+	 * @uml.property  name="fachada"
+	 * @uml.associationEnd  
+	 */
 	private FachadaServidores fachada;
+	/**
+	 * Adaptador de la lista.
+	 */
 	private ArrayAdapter<Servidor> adapter;
+	/**
+	 * Lista en la que mostrar los elementos.
+	 */
 	private ListView list;
 	private ImageButton add;
 	private JSch jsch = null;
@@ -64,6 +90,9 @@ public class PestanaMainFav extends Activity {
 	}
 
 
+	/**
+	 * Función para iniciar los componentes de la actividad.
+	 */
 	private void inicializa() {
 		datos = new ArrayList<Servidor>();
 		list = (ListView) findViewById(R.id.lv_main_fav_servidores);
@@ -139,6 +168,9 @@ public class PestanaMainFav extends Activity {
 		return true;
 	}
 
+	/**
+	 * Función para borrar todos los servidores de la base de datos y de la lista.
+	 */
 	private void limpiar() {
 		fachada.borraTabla();
 		datos.clear();
@@ -146,6 +178,10 @@ public class PestanaMainFav extends Activity {
 
 	}
 
+	/**
+	 * Función para editar un elemento (Servidor) de la lista.
+	 * @param info información del elemento pulsado.
+	 */
 	private void editar(AdapterContextMenuInfo info) {
 		Intent i = new Intent(PestanaMainFav.this, Formulario.class);
 		i.putExtra("host", datos.get(info.position).getIp().toString());
@@ -159,12 +195,23 @@ public class PestanaMainFav extends Activity {
 
 	}
 
+	/**
+	 * Función para borrar un servidor de la lista y de la base de datos.
+	 * @param info información del elemento pulsado.
+	 */
 	private void borrar(AdapterContextMenuInfo info) {
 		// TODO Auto-generated method stub
 		fachada.deleteServidor(datos, datos.get(info.position).getId());
 		adapter.notifyDataSetChanged();
 	}
 
+	/**Listener de la lista, para efectuar acciones cuando se pulsa uno de 
+	 * sus elementos.
+	 * 
+	 * @author David Herreo de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 */
 	private class ListenerListView implements OnItemClickListener {
 
 		public void onItemClick(AdapterView<?> a, View v, int position, long id) {
@@ -193,6 +240,10 @@ public class PestanaMainFav extends Activity {
 
 		}
 
+		/**
+		 * Función para conectarse mediante ssh a un servidor.
+		 * @param serv servidor al que conectarse.
+		 */
 		private void conectar(final Servidor serv) {
 			 dialog = ProgressDialog.show(PestanaMainFav.this, "", "Conectando...", true);
 			Thread hilo = new Thread(){
@@ -230,7 +281,12 @@ public class PestanaMainFav extends Activity {
 		
 		}
 	}
-
+	/**Listener del boton añadir nuevo servidor.
+	 * 
+	 * @author David Herreo de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 */
 	private class ListenerAdd implements View.OnClickListener {
 
 		public void onClick(View arg0) {
@@ -241,6 +297,10 @@ public class PestanaMainFav extends Activity {
 
 	}
 
+	/**
+	 * Función que se llama tras efectuarse un startActivityForResult.
+	 * 
+	 */
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_TEXT) {
 			if (resultCode == Activity.RESULT_OK) {
@@ -265,7 +325,12 @@ public class PestanaMainFav extends Activity {
 			}
 		}
 	}
-
+	/**Adapter de la lista, se encarga de dibujar cada uno de los elementos de la lista.
+	 * 
+	 * @author David Herreo de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 */
 	private class ArrayAdapterServidor extends ArrayAdapter<Servidor> {
 		private Activity context;
 		private ArrayList<Servidor> datos;
@@ -305,6 +370,10 @@ public class PestanaMainFav extends Activity {
 
 	}
 
+	/**
+	 * Función para llamar a la actividad Consola, se usa tras una conexión existosa con el servidor.
+	 * @see Consola
+	 */
 	private void enviaIntent() {
 		Intent intent = new Intent(PestanaMainFav.this, Consola.class);
 
@@ -313,6 +382,12 @@ public class PestanaMainFav extends Activity {
 
 		startActivity(intent);
 	}
+	/**Handler para manejar los mensajes del hilo asíncrono.
+	 * 
+	 * @author David Herreo de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 */
 	private class MyHandler extends Handler{
 		@Override
 		public void handleMessage(Message msg){

@@ -36,28 +36,66 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Actividad que imita la apariencia de una terminal de comandos para poder comunicarse con el servidor via ssh.
+ * @author           David Herrero de la Peña
+ * @author           Jonatan Santos Barrios
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.ComandosEjecutados"
+ * @uml.dependency   supplier="ubu.inf.terminal.logica.ComandosFavoritos"
+ */
 public class Consola extends Activity {
 
+	/**
+	 * Caja de texto donde introducir el comando.
+	 */
 	private EditText comando;
+	/**
+	 * Caja de texto donde se muestra la respuesta del servidor.
+	 */
 	private EditText result;
+	/**
+	 * Boton para ejecutar un comando.
+	 */
 	private ImageButton run;
 	private Session session;
 	private JSch jsch;
+	/**
+	 * Canal tipo shell para enviar y recibir datos al servidor.
+	 */
 	private ChannelShell channelShell;
+	/**
+	 * Array list con los últimos comandos ejecutados.
+	 */
 	private ArrayList<String> comandos;
 	private EditText nombre;
 	private TextView comandoguardar;
 	private String auxnombre;
+	/**
+	 * Stream de salida hacia el servidor.
+	 */
 	private OutputStream toServer;
+	/**
+	 * Reader para leer la salida del servidor.
+	 */
 	private BufferedReader fromServer;
 
+	/**
+	 * Handler para manejar los mensajes del hilo asíncrono.
+	 * @uml.property  name="handler"
+	 * @uml.associationEnd  
+	 */
 	private MyHandler handler = new MyHandler();
+	/**
+	 * @uml.property  name="lector"
+	 * @uml.associationEnd  
+	 */
 	private LectorBuffered lector;
 	public static final int REQUEST_TEXT3 = 3;
 	private static final int DIALOG_TEXT_ENTRY = 7;
@@ -79,11 +117,16 @@ public class Consola extends Activity {
 		super.onDestroy();
 	}
 
+	/**
+	 * Función para iniciar todos los componentes del a actividad.
+	 */
 	public void inicializa(){
+		//obtenemos referencias a los elementos gráficos
 		comando = (EditText) findViewById(R.id.et_consola_comando);
 		result = (EditText) findViewById(R.id.et_consola_resultado);
 		result.setOnKeyListener(new ListenerKey());
 		run = (ImageButton) findViewById(R.id.ib_consola_run);
+		//iniciamos variables
 		comandos = new ArrayList<String>();
 		session = SingletonConexion.getConexion().getSesion();
 		jsch = SingletonConexion.getConexion().getJsch();
@@ -92,6 +135,7 @@ public class Consola extends Activity {
 		result.setEnabled(false);
 		nombre = (EditText) findViewById(R.id.et_seleccion_nombre);
 		comandoguardar = (TextView) findViewById(R.id.tv_seleccion_comando);
+		//intentamos abrir el canal
 		try {
 			channelShell = (ChannelShell) session.openChannel("shell");
 			toServer = channelShell.getOutputStream();
@@ -119,6 +163,9 @@ public class Consola extends Activity {
 
 	}
 
+	/**
+	 * Función para crear una ventana de dialogo tipo POP-UP.
+	 */
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case DIALOG_TEXT_ENTRY:
@@ -221,6 +268,10 @@ public class Consola extends Activity {
 		}
 	}
 
+	/**Función para terminar la conexión de forma segura, cierra los canales, los streams y 
+	 * todo lo necesario para que no se produzcan fallos.
+	 * 
+	 */
 	private void finalizaConexion(){
 		if(lector!=null)
 		lector.setTerminar(true);
@@ -232,12 +283,19 @@ public class Consola extends Activity {
 		SingletonConexion.getConexion().setSesion(null);
 		finish();
 	}
+	/**
+	 * Función para ir a la pantalla de ejecutar favorito.
+	 */
 	private void ejecutarFavorito() {
 		Intent i = new Intent(this, ComandosFavoritos.class);
 		Consola.this.startActivityForResult(i, REQUEST_TEXT3);
 		
 	}
 
+	/**
+	 * Función que se llama cuando se retorna de una actividad llamada de forma especial,
+	 * con startActivityForResult
+	 */
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_TEXT3) {
 			if (resultCode == Activity.RESULT_OK) {
@@ -280,11 +338,17 @@ public class Consola extends Activity {
 		}
 	}
 
+	/**
+	 * Limpia el texto de la pantalla.
+	 */
 	private void borrar() {
 		result.setText("");
 
 	}
 
+	/**
+	 * Función para añadir el último comando a favoritos.
+	 */
 	private void añadirUltimo() {
 		if (comandos.size() >= 1) {
 
@@ -298,6 +362,9 @@ public class Consola extends Activity {
 
 	}
 
+	/**
+	 * Función para intentar reconectar y establecer de nuevo la conexión.
+	 */
 	private void reconectar() {
 		try {
 			if (!session.isConnected()) {
@@ -317,6 +384,9 @@ public class Consola extends Activity {
 
 	}
 
+	/**
+	 * Función para añadir varios comandos a la base de datos.
+	 */
 	private void añadirVarios() {
 		if (comandos.size() >= 1) {
 			Intent i = new Intent(this, ComandosEjecutados.class);
@@ -329,6 +399,13 @@ public class Consola extends Activity {
 
 	}
 
+	/**
+	 * Clase que implementa el listener para cuando se hace click en el botón de ejecutar el comando.
+	 * @author David Herrero de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 *@see OnClickListener
+	 */
 	private class listenerComando implements View.OnClickListener {
 
 		public void onClick(View arg0) {
@@ -356,7 +433,13 @@ public class Consola extends Activity {
 		}
 
 	}
-
+	/**
+	 * Clase que implementa el listener para cuando se hace click en el boton de teclado ENTER.
+	 * @author David Herrero de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 *@see OnClickListener
+	 */
 	private class ListenerKey implements OnKeyListener {
 
 		public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -379,6 +462,12 @@ public class Consola extends Activity {
 
 	}
 
+	/**
+	 * Función para ejecutar un comando, se añade el coamndo al Stream de salida.
+	 * @param texto texto con el comando a ejecutar
+	 * @throws JSchException
+	 * @throws IOException
+	 */
 	private void ejecutaComando(String texto) throws JSchException, IOException {
 		
 		result.setTextColor(Color.GREEN);
@@ -392,9 +481,17 @@ public class Consola extends Activity {
 
 	}
 
+	/**
+	 * Clase que implementa a Thread, hilo asíncrono para leer la salida del servidor e ir enviando  mensajes al Handler para que los añada a la caja de texto.
+	 * @author   david
+	 */
 	private class LectorBuffered extends Thread {
 		private boolean terminar = false;
 		
+		/**
+		 * @param  a
+		 * @uml.property  name="terminar"
+		 */
 		public void setTerminar(boolean a){
 			terminar = a;
 		}
@@ -419,11 +516,18 @@ public class Consola extends Activity {
 		}
 	}
 
+	/**
+	 * Handler que trata los mensajes que le manda el hilo asíncrono.
+	 * Hace tratamiento de cadena para filtrar patrones y eliminar carácteres innecesarios.
+	 * Además añade el texto a la caja de texto principal.
+	 * @author david
+	 *
+	 */
 	private class MyHandler extends Handler {
 		@Override
 		public void handleMessage(Message msg) {
 			String valor =(String)msg.obj;
-			//TODO está muy mal hecho
+			
 			
 			valor = valor.replaceAll("\\[..;..[A-Z]", "");//eliminamos colores
 			valor = valor.replaceAll("\\[..;..[a-z]", "");

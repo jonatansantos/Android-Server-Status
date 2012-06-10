@@ -12,16 +12,11 @@ import android.graphics.Color;
 import android.util.Log;
 
 /**
- * Clase que utiliza la aplicación para acceder a la BD de forma simplificada,
- * contiene métodos para modificar la BD de forma transparente. Usa patron de
- * diseño Fachada y Singleton.
- * 
- * @author David Herrero de la Peña
- * @author Jonatan Santos Barrios
- * 
- * @version 1.0
- * @see ServidoresSQLiteHelper
- * 
+ * Clase que utiliza la aplicación para acceder a la BD de forma simplificada, contiene métodos para modificar la BD de forma transparente. Usa patron de diseño Fachada y Singleton.
+ * @author  David Herrero de la Peña
+ * @author  Jonatan Santos Barrios
+ * @version  1.0
+ * @see  ServidoresSQLiteHelper
  */
 public class FachadaServidores {
 	/**
@@ -30,6 +25,8 @@ public class FachadaServidores {
 	Context context;
 	/**
 	 * SQLite helper que se usa para crear la estructura básica de la BD.
+	 * @uml.property  name="helperservidores"
+	 * @uml.associationEnd  
 	 */
 	ServidoresSQLiteHelper Helperservidores;
 	/**
@@ -38,6 +35,8 @@ public class FachadaServidores {
 	SQLiteDatabase DBservidores;
 	/**
 	 * Referencia a si misma.
+	 * @uml.property  name="myFachada"
+	 * @uml.associationEnd  
 	 */
 	private static FachadaServidores myFachada;
 
@@ -111,8 +110,8 @@ public class FachadaServidores {
 
 				int id = c.getInt(0);
 				int color = c.getInt(3);
-
-				Servidor serv = new Servidor(ip, descripcion, inicio, id, color);
+				int puerto = c.getInt(5);
+				Servidor serv = new Servidor(ip, descripcion, inicio, id, color,puerto);
 				lista.add(serv);
 
 			} while (c.moveToNext());
@@ -139,6 +138,7 @@ public class FachadaServidores {
 		String ip = serv.getIp();
 		String desc = serv.getDescripcion();
 		int color = serv.getColor();
+		int puerto = serv.getPuerto();
 		boolean inicio = serv.isInicio();
 		int aux;
 		if (inicio) {
@@ -152,13 +152,13 @@ public class FachadaServidores {
 
 			try {
 				DBservidores
-						.execSQL("INSERT INTO servidores(id,host,inicio,color,descripcion) "
+						.execSQL("INSERT INTO servidores(id,host,inicio,color,descripcion,puerto) "
 								+ "VALUES (NULL,'"
 								+ ip
 								+ "',"
 								+ aux
 								+ ","
-								+ color + ",'" + desc + "')");
+								+ color + ",'" + desc + "',"+puerto+")");
 				Cursor c = DBservidores.rawQuery("SELECT last_insert_rowid();",
 						null);
 				//para saber con que ID lo ha introducido
@@ -223,6 +223,7 @@ public class FachadaServidores {
 	 */
 	public void editServidor(ArrayList<Servidor> ant, Servidor serv) {
 		int id = serv.getId();
+		int puerto = serv.getPuerto();
 		String ip = serv.getIp();
 		String desc = serv.getDescripcion();
 		int color = serv.getColor();
@@ -235,7 +236,7 @@ public class FachadaServidores {
 		}
 
 		String sql = "UPDATE servidores SET host='" + ip + "' ,color=" + color
-				+ " ,inicio=" + aux + " ,descripcion='" + desc + "' WHERE id="
+				+ " ,inicio=" + aux + " ,descripcion='" + desc + "',puerto="+puerto+" WHERE id="
 				+ id + ";";
 
 		DBservidores = Helperservidores.getWritableDatabase();
@@ -249,8 +250,10 @@ public class FachadaServidores {
 
 						ant.get(i).setDescripcion(desc);
 						ant.get(i).setIp(ip);
+						ant.get(i).setPuerto(puerto);
 						ant.get(i).setColor(color);
 						ant.get(i).setInicio(inicio);
+						
 						break;
 					}
 				}
@@ -271,7 +274,7 @@ public class FachadaServidores {
 	 */
 	public void borraTabla() {
 		String sql = "DROP TABLE IF EXISTS servidores";
-		String sqlCreate = "CREATE TABLE servidores (id INTEGER PRIMARY KEY,host TEXT,inicio INTEGER,color INTEGER,descripcion TEXT)";
+		String sqlCreate = "CREATE TABLE servidores (id INTEGER PRIMARY KEY,host TEXT,inicio INTEGER,color INTEGER,descripcion TEXT,puerto INTEGER)";
 		DBservidores = Helperservidores.getWritableDatabase();
 		if (DBservidores != null) {
 

@@ -9,16 +9,11 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 /**
- * Clase que utiliza la aplicación para acceder a la BD de forma simplificada,
- * contiene métodos para modificar la BD de forma transparente. Usa patron de
- * diseño Fachada y Singleton.
- * 
- * @author David Herrero de la Peña
- * @author Jonatan Santos Barrios
- * 
- * @version 1.0
- * @see ServidoresSQLiteHelper
- * 
+ * Clase que utiliza la aplicación para acceder a la BD de forma simplificada, contiene métodos para modificar la BD de forma transparente. Usa patron de diseño Fachada y Singleton.
+ * @author  David Herrero de la Peña
+ * @author  Jonatan Santos Barrios
+ * @version  1.0
+ * @see  ServidoresSQLiteHelper
  */
 public class FachadaCoordenadas {
 	/**
@@ -27,6 +22,8 @@ public class FachadaCoordenadas {
 	Context context;
 	/**
 	 * SQLite helper que se usa para crear la estructura básica de la BD.
+	 * @uml.property  name="helpercoordenadas"
+	 * @uml.associationEnd  
 	 */
 	CoordenadasSQLiteHelper Helpercoordenadas;
 	/**
@@ -35,6 +32,8 @@ public class FachadaCoordenadas {
 	SQLiteDatabase DBCoordenadas;
 	/**
 	 * Referencia a si misma.
+	 * @uml.property  name="myFachada"
+	 * @uml.associationEnd  
 	 */
 	private static FachadaCoordenadas myFachada;
 	/**

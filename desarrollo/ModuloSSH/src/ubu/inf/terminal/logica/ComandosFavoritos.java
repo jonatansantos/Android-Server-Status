@@ -31,10 +31,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
+/**
+ * Actividad donde se muestran todos los comandos que han sido guardados en la base de datos.
+ * @author David Herrero de la Peña
+ * @author Jonatan Santos Barrios
+ *
+ */
 public class ComandosFavoritos extends Activity {
+	/**
+	 * ArrayList con todos los scripts.
+	 */
 	private ArrayList<Script> comandos;
+	/**
+	 * Adapter para la lista.
+	 */
 	private ArrayAdapter<Script> adapter;
+	/**
+	 *Lista donde mostrar todos los scripts.
+	 */
 	private ListView list;
+	
 	private int pos;
 
 	@Override
@@ -45,6 +61,9 @@ public class ComandosFavoritos extends Activity {
 
 	}
 
+	/**
+	 * Inicia todos los componentes de la actividad.
+	 */
 	private void inicializa() {
 		list = (ListView) findViewById(R.id.lv_comandos);
 		list.setOnItemClickListener(new ListenerListViewComandos());
@@ -88,6 +107,10 @@ public class ComandosFavoritos extends Activity {
 		}
 	}
 	
+	/**
+	 * Función para borrar un script de la base de datos.
+	 * @param info posición en el array del script a borrar.
+	 */
 	private void borrar(AdapterContextMenuInfo info) {
 		// TODO Auto-generated method stub
 		FachadaComandos.getInstance(ComandosFavoritos.this).deleteComando(comandos.get(info.position).getIdScript());
@@ -108,6 +131,9 @@ public class ComandosFavoritos extends Activity {
 		limpiar();
 		return true;
 	}
+	/**
+	 * Elimina todos los scripts de la base de datos.
+	 */
 	private void limpiar() {
 		FachadaComandos.getInstance(this).borraTabla();
 		comandos.clear();
@@ -116,9 +142,18 @@ public class ComandosFavoritos extends Activity {
 	}
 
 	
-	
+	/**
+	 * Clase que implementa el listener del la lista, para ejecutar
+	 * una acción cuando se pulse en uno de los elementos de la misma.
+	 * @author David Herrero de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 *@see OnItemClickListener
+	 */
 	private class ListenerListViewComandos implements OnItemClickListener {
-		
+		/**
+		 * Acción que se ejecuta al pulsar sobre un elemento de la lista.
+		 */
 		public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 			pos=position;
 			Log.i("mssh", "se ha hecho click");
@@ -161,7 +196,14 @@ public class ComandosFavoritos extends Activity {
 		}
 
 	}
-
+	/**
+	 * Clase que implementa el listener del la lista, para ejecutar
+	 * una acción cuando se pulse en uno de los elementos de la misma.
+	 * @author David Herrero de la Peña
+	 * @author Jonatan Santos Barrios
+	 *
+	 *@see OnItemClickListener
+	 */
 	private class ArrayAdapterComandos extends ArrayAdapter<Script> {
 		private Activity context;
 		private ArrayList<Script> datos;

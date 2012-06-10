@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/**
+/**Clase que implementa el Helper para manejar la base de datos de forma transparente.
  * 
- * @author David Herrero
- * @author Jonatan Santos
+ * @author David Herrero de la Peña
+ * @author Jonatan Santos Barrios
  * 
  * @version
  *
@@ -26,6 +26,13 @@ public class ComandosSQLiteHelper extends SQLiteOpenHelper {
 //			+ "WHERE idScript = new.departamento ) IS NULL) "
 //			+ "THEN RAISE (ABORT,'Foreign Key Violation') " + "END; " + "END ";
 
+	/**
+	 * Construcots de la clase.
+	 * @param context
+	 * @param name
+	 * @param factory
+	 * @param version
+	 */
 	public ComandosSQLiteHelper(Context context, String name,
 			CursorFactory factory, int version) {
 		super(context, name, factory, version);

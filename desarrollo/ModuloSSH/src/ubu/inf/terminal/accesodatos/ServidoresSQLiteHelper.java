@@ -5,10 +5,28 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
+/**
+ * Clase que extiende de SQLiteOpenHelper y que se encarga de crear la base de datos con las tablas necesarias.
+ * 
+ * @author David Herrero de la Peña
+ * @author Jonatan Santos Barrios
+ * 
+ * @version 1.0
+ * @see SQLiteOpenHelper
+ * 
+ */
 public class ServidoresSQLiteHelper extends SQLiteOpenHelper {
-
+	/**
+	 * Cadena para crear la tabla servidores.
+	 */
 	private String sqlCreate = "CREATE TABLE servidores (id INTEGER PRIMARY KEY,host TEXT,port TEXT,user TEXT,pass TEXT,descripcion TEXT)";
+	/**
+	 * Constructor para crear el Helper.
+	 * @param context contexto desde el que se llama.
+	 * @param name nombre de la base de datos.
+	 * @param factory factory para crear la base de datos.
+	 * @param version versión de la base de datos que se desea crear.
+	 */
 	public ServidoresSQLiteHelper(Context context, String name,
 			CursorFactory factory, int version) {
 		super(context, name, factory, version);

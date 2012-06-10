@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="842,488" id="ubu.inf.gps.accesodatos" metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledX="-4" scrolledY="44" tag="1000" key="32303037303533312D31303030204C6F63616C697A61646F724750532F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="CoordenadasSQLiteHelper" location="675,319" size="344,121" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper" runTimeClassModel="sqlCreate1,onCreate(Landroid.database.sqlite.SQLiteDatabase;),CoordenadasSQLiteHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I),onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="sqlCreate1" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#sqlCreate1"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="321,54">
+      <children xsi:type="editmodel:MethodEditModel" name="CoordenadasSQLiteHelper" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#CoordenadasSQLiteHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#onCreate(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onUpgrade" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="android.database.sqlite/SQLiteOpenHelper&lt;-ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="171,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="152,189"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper@helpercoordenadas+ubu.inf.gps.accesodatos/FachadaCoordenadas@" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="helpercoordenadas" location="0,29" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper@helpercoordenadas+ubu.inf.gps.accesodatos/FachadaCoordenadas@|ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#helpercoordenadas" attachSource="true" multiplicityLabel="//@children.0/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.0/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ helpercoordenadas" location="561,327" size="106,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="649,355" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="520,91" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper@helpercoordenadas+ubu.inf.gps.accesodatos/FachadaCoordenadas@|ubu.inf.gps.accesodatos/FachadaCoordenadas#" roleLabel="//@children.0/@sourceConnections.1/@children.2/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="527,337" size="0,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1" name="FachadaCoordenadas" location="0,268" size="520,283" id="ubu.inf.gps.accesodatos/FachadaCoordenadas" runTimeClassModel="insertCoordenadas(Ljava.lang.Double;Ljava.lang.Double;Ljava.lang.Long;),deleteComando(I),getInstance(Landroid.content.Context;),dBCoordenadas,helpercoordenadas,FachadaCoordenadas(Landroid.content.Context;),myFachada,borraTabla(),closeFachada(),loadCoordenadas(ILjava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;),context,loadCoordenadas(Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;),getCantidad()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="247,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="context" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#context"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dBCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#dBCoordenadas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="helpercoordenadas" id="ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper@helpercoordenadas+ubu.inf.gps.accesodatos/FachadaCoordenadas@|ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper#helpercoordenadas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myFachada" id="ubu.inf.gps.accesodatos/FachadaCoordenadas@myFachada+ubu.inf.gps.accesodatos/FachadaCoordenadas@|ubu.inf.gps.accesodatos/FachadaCoordenadas#myFachada"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="497,162">
+      <children xsi:type="editmodel:MethodEditModel" name="FachadaCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#FachadaCoordenadas(Landroid.content.Context;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borraTabla" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#borraTabla()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="closeFachada" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#closeFachada()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteComando" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#deleteComando(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCantidad" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#getCantidad()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#getInstance(Landroid.content.Context;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#insertCoordenadas(Ljava.lang.Double;Ljava.lang.Double;Ljava.lang.Long;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="loadCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#loadCoordenadas(Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="loadCoordenadas" id="ubu.inf.gps.accesodatos/FachadaCoordenadas#loadCoordenadas(ILjava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;Ljava.util.ArrayList;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.gps.accesodatos/FachadaCoordenadas-Standard::Call->ubu.inf.gps.accesodatos/CoordenadasSQLiteHelper" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="520,111" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,60"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="SQLiteOpenHelper" location="694,80" size="305,189" id="android.database.sqlite/SQLiteOpenHelper">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="282,126">
+      <children xsi:type="editmodel:MethodEditModel" name="SQLiteOpenHelper" id="android.database.sqlite/SQLiteOpenHelper#SQLiteOpenHelper(Landroid.content.Context;Ljava.lang.String;Landroid.database.sqlite.SQLiteDatabase.CursorFactory;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="close" id="android.database.sqlite/SQLiteOpenHelper#close()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getReadableDatabase" id="android.database.sqlite/SQLiteOpenHelper#getReadableDatabase()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWritableDatabase" id="android.database.sqlite/SQLiteOpenHelper#getWritableDatabase()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="android.database.sqlite/SQLiteOpenHelper#onCreate(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onOpen" id="android.database.sqlite/SQLiteOpenHelper#onOpen(Landroid.database.sqlite.SQLiteDatabase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onUpgrade" id="android.database.sqlite/SQLiteOpenHelper#onUpgrade(Landroid.database.sqlite.SQLiteDatabase;II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

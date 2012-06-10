@@ -73,7 +73,9 @@ public class ServicioEnvioSMS extends Service {
 			timer.cancel();
 		}
 	}
-	
+	/**
+	 * Función que se encarga de enviar un sms con la última posición de GPS conocida.
+	 */
 	private void ejecutar(){
 		timer.scheduleAtFixedRate(new TimerTask() {
 			

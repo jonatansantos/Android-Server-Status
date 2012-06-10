@@ -15,6 +15,13 @@ import java.io.OutputStream;
 import java.security.Security;   
 import java.util.Properties;   
 
+/**
+ * Clase utilizada para enviar mensajes email desde una cuenta de google sin que sea necesaria
+ * la intervención del usuario.
+ * @author David Herrero de la Peña
+ * @author Jonatan Santos Barrios
+ *
+ */
 public class GMailSender extends javax.mail.Authenticator {   
     private String mailhost = "smtp.gmail.com";   
     private String user;   
@@ -24,7 +31,12 @@ public class GMailSender extends javax.mail.Authenticator {
     static {   
         Security.addProvider(new JSSEProvider());   
     }  
-
+    
+    /**
+     * Función para configurar el sender de emails.
+     * @param user dirección de correo gmail desde la que enviar correos.
+     * @param password contraseña de la dirección de correo.
+     */
     public GMailSender(String user, String password) {   
         this.user = user;   
         this.password = password;   
@@ -43,10 +55,21 @@ public class GMailSender extends javax.mail.Authenticator {
         session = Session.getDefaultInstance(props, this);   
     }   
 
+    /**
+     * Función para crear una nueva autenticación por contraseña.
+     */
     protected PasswordAuthentication getPasswordAuthentication() {   
         return new PasswordAuthentication(user, password);   
     }   
 
+    /**
+     * Función para enviar un email.
+     * @param subject
+     * @param body
+     * @param sender
+     * @param recipients
+     * @throws Exception
+     */
     public synchronized void sendMail(String subject, String body, String sender, String recipients) throws Exception {   
         try{
         MimeMessage message = new MimeMessage(session);   
@@ -64,6 +87,9 @@ public class GMailSender extends javax.mail.Authenticator {
         }
     }   
 
+    /**
+	 * @author  david
+	 */
     public class ByteArrayDataSource implements DataSource {   
         private byte[] data;   
         private String type;   
@@ -79,6 +105,10 @@ public class GMailSender extends javax.mail.Authenticator {
             this.data = data;   
         }   
 
+        /**
+		 * @param type
+		 * @uml.property  name="type"
+		 */
         public void setType(String type) {   
             this.type = type;   
         }   

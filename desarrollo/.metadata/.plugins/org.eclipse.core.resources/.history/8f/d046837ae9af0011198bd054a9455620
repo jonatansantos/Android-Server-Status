@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="825,221" id="ubu.inf" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030205072696E636970616C2F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" name="FalsaActividad" location="258,45" size="135,121" id="ubu.inf/FalsaActividad" runTimeClassModel="inicializa(),market,google,onCreate(Landroid.os.Bundle;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="111,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="google" id="ubu.inf/FalsaActividad#google"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="market" id="ubu.inf/FalsaActividad#market"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="74,36">
+      <children xsi:type="editmodel:MethodEditModel" name="inicializa" id="ubu.inf/FalsaActividad#inicializa()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf/FalsaActividad#onCreate(Landroid.os.Bundle;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Login" location="620,50" size="163,157" id="ubu.inf/Login" runTimeClassModel="inicializa(),onCreate(Landroid.os.Bundle;),passguardada,ok,pref,pass">
+    <children xsi:type="editmodel:CompartmentEditModel" size="140,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="ok" id="ubu.inf/Login#ok"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pass" id="ubu.inf/Login#pass"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="passguardada" id="ubu.inf/Login#passguardada"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pref" id="ubu.inf/Login#pref"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="74,36">
+      <children xsi:type="editmodel:MethodEditModel" name="inicializa" id="ubu.inf/Login#inicializa()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf/Login#onCreate(Landroid.os.Bundle;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Main" location="50,50" size="175,337" id="ubu.inf/Main" runTimeClassModel="estadossh,onCreateOptionsMenu(Landroid.view.Menu;),control,inicializa(),compruebaServicios(),onOptionsItemSelected(Landroid.view.MenuItem;),onCreate(Landroid.os.Bundle;),isMyServiceRunningGPS(),estadoemail,terminal,gps,isMyServiceRunningEmail(),estadogps,onResume(),preferencias(),isMyServiceRunningSSH()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="control" id="ubu.inf/Main#control"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estadoemail" id="ubu.inf/Main#estadoemail"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estadogps" id="ubu.inf/Main#estadogps"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estadossh" id="ubu.inf/Main#estadossh"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="gps" id="ubu.inf/Main#gps"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="terminal" id="ubu.inf/Main#terminal"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="152,180">
+      <children xsi:type="editmodel:MethodEditModel" name="compruebaServicios" id="ubu.inf/Main#compruebaServicios()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inicializa" id="ubu.inf/Main#inicializa()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isMyServiceRunningEmail" id="ubu.inf/Main#isMyServiceRunningEmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isMyServiceRunningGPS" id="ubu.inf/Main#isMyServiceRunningGPS()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isMyServiceRunningSSH" id="ubu.inf/Main#isMyServiceRunningSSH()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf/Main#onCreate(Landroid.os.Bundle;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreateOptionsMenu" id="ubu.inf/Main#onCreateOptionsMenu(Landroid.view.Menu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onOptionsItemSelected" id="ubu.inf/Main#onOptionsItemSelected(Landroid.view.MenuItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onResume" id="ubu.inf/Main#onResume()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="preferencias" id="ubu.inf/Main#preferencias()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Preferencias" location="448,50" size="122,67" id="ubu.inf/Preferencias" runTimeClassModel="onCreate(Landroid.os.Bundle;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="74,18">
+      <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf/Preferencias#onCreate(Landroid.os.Bundle;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -28,12 +28,34 @@ import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.ListView;
 
+/**
+ * Actividad en la que se muestra una lista con los últimos comandos ejecutados.
+ * 
+ * @author David Herrero de la Peña
+ * @author Jonatan Santos Barrios
+ *
+ */
 public class ComandosEjecutados extends Activity{
 
+	/**
+	 * Boton para guardar en la base de datos.
+	 */
 	private Button guardar;
+	/**
+	 * Boton para ejecutar los comandos.
+	 */
 	private Button ejecutar;
+	/**
+	 * Boton para seleccionar todos.
+	 */
 	private Button all;
+	/**
+	 * Lista donde se muestran los comandos.
+	 */
 	private ListView lista;
+	/**
+	 * Array con los comandos ejecutados.
+	 */
 	private String[] com;
 	private boolean bandera = false;
 	
@@ -47,8 +69,11 @@ public class ComandosEjecutados extends Activity{
 		
 	}
 
+	/**
+	 * Función para iniciar todos los componentes de la actividad.
+	 */
 	private void inicializa() {
-		
+		//obtenemos las referencias
 		guardar = (Button) findViewById(R.id.bt_cmd_ejecutados_guardar);
 		
 		ejecutar = (Button) findViewById(R.id.bt_cmd_ejecutados_ejecutar);
@@ -56,8 +81,7 @@ public class ComandosEjecutados extends Activity{
 		all = (Button) findViewById(R.id.bt_cmd_ejecutados_all);
 		
 		lista = (ListView) findViewById(R.id.lv_comandos_ejecutados);
-		
-		lista.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+		//obtnemos los comandos
 		if(getIntent().getExtras()!=null){
 			ArrayList<String> aux = getIntent().getExtras().getStringArrayList("com");
 			
@@ -67,11 +91,12 @@ public class ComandosEjecutados extends Activity{
 				com[i]=aux.get(i);
 			
 		}
-		
+		//configuramos la lista
+		lista.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);		
 		lista.setAdapter(new ArrayAdapter<String>(ComandosEjecutados.this, android.R.layout.simple_list_item_multiple_choice,com));
 		lista.setItemsCanFocus(true);
 		lista.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-		
+		//añadimos los listener
 		guardar.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View arg0) {
@@ -96,6 +121,9 @@ public class ComandosEjecutados extends Activity{
 		
 				
 	}
+	/**
+	 * Función para guardar los comandos seleccionados en la base de datos.
+	 */
 	private void guardar(){
 		final ArrayList<String> comandos = new ArrayList<String>();
 		int count = this.lista.getAdapter().getCount();
@@ -142,6 +170,9 @@ public class ComandosEjecutados extends Activity{
 		
 		
 	}
+	/**
+	 * Función para ejecutar los comandos seleccionados.
+	 */
 	private void ejecutar(){
 		ArrayList<String> comandos2 = new ArrayList<String>();
 		int count = this.lista.getAdapter().getCount();
@@ -158,6 +189,9 @@ public class ComandosEjecutados extends Activity{
 		
 		
 	}
+	/**
+	 * Función para seleccionar todos o des-seleccionar todos los comandos de la lista.
+	 */
 	private void seleccionar(){
 		int count = this.lista.getAdapter().getCount();
 		

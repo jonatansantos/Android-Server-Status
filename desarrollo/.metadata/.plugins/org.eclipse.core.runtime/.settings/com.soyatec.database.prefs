@@ -1,0 +1,6 @@
+com.soyatec.database.edit.when.created=false
+com.soyatec.database.path.relative=true
+com.soyatec.database.save.with.xml.extension=true
+com.soyatec.database.system.path.absolute=false
+com.soyatec.database.workspace.path.relative=false
+eclipse.preferences.version=1

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="825,901" id="ubu.inf.control.modelo" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D3130303020636C69656E7465636F6E74726F6C61636365736F732F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" name="ComparatorFecha" location="545,293" size="230,67" id="ubu.inf.control.modelo/ComparatorFecha" runTimeClassModel="compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="207,18">
+      <children xsi:type="editmodel:MethodEditModel" name="compare" id="ubu.inf.control.modelo/ComparatorFecha#compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ComparatorID" location="330,464" size="230,67" id="ubu.inf.control.modelo/ComparatorID" runTimeClassModel="compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="207,18">
+      <children xsi:type="editmodel:MethodEditModel" name="compare" id="ubu.inf.control.modelo/ComparatorID#compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ComparatorTipo" location="50,581" size="230,67" id="ubu.inf.control.modelo/ComparatorTipo" runTimeClassModel="compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="207,18">
+      <children xsi:type="editmodel:MethodEditModel" name="compare" id="ubu.inf.control.modelo/ComparatorTipo#compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ComparatorUrgencia" location="50,464" size="230,67" id="ubu.inf.control.modelo/ComparatorUrgencia" runTimeClassModel="compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="207,18">
+      <children xsi:type="editmodel:MethodEditModel" name="compare" id="ubu.inf.control.modelo/ComparatorUrgencia#compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Notificacion" location="351,50" size="262,157" id="ubu.inf.control.modelo/Notificacion" runTimeClassModel="id,Notificacion(Ljava.lang.String;Ljava.util.Date;IILubu.inf.control.modelo.Servidor;I),texto,fecha,tipo,urgencia,serv">
+    <children xsi:type="editmodel:CompartmentEditModel" size="78,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="ubu.inf.control.modelo/Notificacion#fecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="ubu.inf.control.modelo/Notificacion#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="texto" id="ubu.inf.control.modelo/Notificacion#texto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="ubu.inf.control.modelo/Notificacion#tipo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="urgencia" id="ubu.inf.control.modelo/Notificacion#urgencia"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="239,18">
+      <children xsi:type="editmodel:MethodEditModel" name="Notificacion" id="ubu.inf.control.modelo/Notificacion#Notificacion(Ljava.lang.String;Ljava.util.Date;IILubu.inf.control.modelo.Servidor;I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Servidor" location="50,50" size="251,193" id="ubu.inf.control.modelo/Servidor" runTimeClassModel="id,inicio,color,descripcion,equals(Ljava.lang.Object;),puerto,Servidor(Ljava.lang.String;Ljava.lang.String;ZIII),ip">
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="color" id="ubu.inf.control.modelo/Servidor#color"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="descripcion" id="ubu.inf.control.modelo/Servidor#descripcion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="ubu.inf.control.modelo/Servidor#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="inicio" id="ubu.inf.control.modelo/Servidor#inicio"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ip" id="ubu.inf.control.modelo/Servidor#ip"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="puerto" id="ubu.inf.control.modelo/Servidor#puerto"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="228,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Servidor" id="ubu.inf.control.modelo/Servidor#Servidor(Ljava.lang.String;Ljava.lang.String;ZIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="equals" id="ubu.inf.control.modelo/Servidor#equals(Ljava.lang.Object;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="SingletonEmail" location="308,293" size="187,103" id="ubu.inf.control.modelo/SingletonEmail" runTimeClassModel="getConexion(),hosts,SingletonEmail(),myConexion">
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="hosts" id="ubu.inf.control.modelo/SingletonEmail#hosts"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,36">
+      <children xsi:type="editmodel:MethodEditModel" name="SingletonEmail" id="ubu.inf.control.modelo/SingletonEmail#SingletonEmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConexion" id="ubu.inf.control.modelo/SingletonEmail#getConexion()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="SingletonServicios" location="50,293" size="208,121" id="ubu.inf.control.modelo/SingletonServicios" runTimeClassModel="cantidad,getConexion(),hosts,SingletonServicios(),myConexion">
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="cantidad" id="ubu.inf.control.modelo/SingletonServicios#cantidad"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hosts" id="ubu.inf.control.modelo/SingletonServicios#hosts"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="185,36">
+      <children xsi:type="editmodel:MethodEditModel" name="SingletonServicios" id="ubu.inf.control.modelo/SingletonServicios#SingletonServicios()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConexion" id="ubu.inf.control.modelo/SingletonServicios#getConexion()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>
