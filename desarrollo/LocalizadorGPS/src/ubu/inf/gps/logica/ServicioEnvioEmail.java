@@ -108,7 +108,7 @@ public class ServicioEnvioEmail extends Service{
 				
 				mensaje+=" lat: "+latitud.get(i);	
 				mensaje+=" long: "+longitud.get(i);	
-				mensaje+=" fecha: "+aux.toGMTString();	
+				mensaje+=" fecha: "+aux.toLocaleString();	
 				mensaje+='\n';
 				}
 				//enviar el email

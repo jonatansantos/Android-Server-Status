@@ -83,13 +83,14 @@ public final class R {
         public static final int ic_menu_week=0x7f020045;
         public static final int ic_menu_zoom=0x7f020046;
         public static final int ic_ordenador2=0x7f020047;
-        public static final int icon=0x7f020048;
-        public static final int pestanamainfav=0x7f020049;
-        public static final int pestanamainmanual=0x7f02004a;
-        public static final int tab_fav_off=0x7f02004b;
-        public static final int tab_fav_on=0x7f02004c;
-        public static final int tab_manual_off=0x7f02004d;
-        public static final int tab_manual_on=0x7f02004e;
+        public static final int ic_terminal=0x7f020048;
+        public static final int icon=0x7f020049;
+        public static final int pestanamainfav=0x7f02004a;
+        public static final int pestanamainmanual=0x7f02004b;
+        public static final int tab_fav_off=0x7f02004c;
+        public static final int tab_fav_on=0x7f02004d;
+        public static final int tab_manual_off=0x7f02004e;
+        public static final int tab_manual_on=0x7f02004f;
     }
     public static final class id {
         public static final int CtxLstFavBorrar=0x7f060042;

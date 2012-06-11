@@ -95,8 +95,8 @@ public class ServicioEnvioSMS extends Service {
 				
 				mensaje+=" lat: "+latitud.get(0);	
 				mensaje+=" long: "+longitud.get(0);	
-				mensaje+=" fecha: "+aux.toGMTString();	
-				
+				mensaje+=" fecha: "+aux.toLocaleString();	
+				Log.i("gps", "enviamos el mensaje desde servicio:"+mensaje);
 				sendSMS(telefono, mensaje);	
 				}else{
 					Log.i("gps", "envio sms , no hay datos");

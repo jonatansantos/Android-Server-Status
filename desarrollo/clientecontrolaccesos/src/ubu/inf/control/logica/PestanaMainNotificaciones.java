@@ -85,10 +85,10 @@ public class PestanaMainNotificaciones extends Activity {
 	private ProgressDialog barra;
 	private static final String SOAPACTIONBORRAR = "http://notificador.serverstatus.itig.ubu/borrarNotificacion";
 	private static final String METHODBORRAR = "borrarNotificacion";
-	private static final String SOAPACTIONTODAS = "http://notificador.serverstatus.itig.ubu/obtenerTodasNotificaciones";
-	private static final String METHODTODAS = "obtenerTodasNotificaciones";
-	private static final String SOAPACTION = "http://notificador.serverstatus.itig.ubu/obtenerNotificaciones";
-	private static final String METHOD = "obtenerNotificaciones";
+	private static final String SOAPACTIONTODAS = "http://notificador.serverstatus.itig.ubu/obtenerNotificacionesAntiguas";
+	private static final String METHODTODAS = "obtenerNotificacionesAntiguas";
+	private static final String SOAPACTION = "http://notificador.serverstatus.itig.ubu/obtenerNotificacionesNuevas";
+	private static final String METHOD = "obtenerNotificacionesNuevas";
 	private static final String NAMESPACE = "http://notificador.serverstatus.itig.ubu";
 	/**
 	 * URL donde se encuentra el web service.
@@ -251,15 +251,7 @@ public class PestanaMainNotificaciones extends Activity {
 		// creamos el array y la pila.
 		datos = new ArrayList<Notificacion>();
 		pila = new Stack<ArrayList<Notificacion>>();
-		// ejemplo
-		Servidor s = new Servidor("10.170.1.1", "escripcion", false, 1,
-				Color.RED,8080);
-		datos.add(new Notificacion("hola", new Date(), 0, 0, s, 1));
-		datos.add(new Notificacion("hola1", new Date(), 1, 1, s, 2));
-		datos.add(new Notificacion("hola2", new Date(), 1, 2, s, 3));
-		datos.add(new Notificacion("hola3", new Date(), 1, 0, s, 4));
-		datos.add(new Notificacion("hola4", new Date(), 0, 1, s, 5));
-		datos.add(new Notificacion("hola5", new Date(), 0, 2, s, 6));
+		
 
 		// metiendo los datos en los spiner
 		ordenTipo = (Spinner) findViewById(R.id.sp_pestananot_criterio);
@@ -599,6 +591,7 @@ public class PestanaMainNotificaciones extends Activity {
 				aux2 = (SoapPrimitive) notificacion
 				.getProperty(1);
 				Long fecha = Long.parseLong(aux2.toString());
+				Log.e("control", "long : "+ fecha);
 				aux2=(SoapPrimitive) notificacion.getProperty(2);
 				Integer tipos = Integer.parseInt(aux2.toString());
 				aux2 = (SoapPrimitive) notificacion.getProperty(3);
@@ -698,6 +691,7 @@ public class PestanaMainNotificaciones extends Activity {
 				aux2 = (SoapPrimitive) notificacion
 				.getProperty(1);
 				Long fecha = Long.parseLong(aux2.toString());
+				
 				aux2=(SoapPrimitive) notificacion.getProperty(2);
 				Integer tipos = Integer.parseInt(aux2.toString());
 				aux2 = (SoapPrimitive) notificacion.getProperty(3);
@@ -902,13 +896,13 @@ public class PestanaMainNotificaciones extends Activity {
 				tipo.setBackgroundResource(R.drawable.ic_email);
 			}
 			// construimos la cadena con la fecha
-			String stringfecha = datos.get(position).getFecha().getDate() + "/"
-					+ (datos.get(position).getFecha().getMonth() + 1) + "/"
-					+ (datos.get(position).getFecha().getYear() + 1900);
+			String fechaaux = datos.get(position).getFecha().toGMTString();
+						
+			String stringfecha = fechaaux.substring(0, 11);
 			fecha.setText(stringfecha);
 			// construimos la cadena con la hora
-			String stringhora = datos.get(position).getFecha().getHours() + ":"
-					+ datos.get(position).getFecha().getMinutes();
+			
+			String stringhora = fechaaux.substring(11);
 			hora.setText(stringhora);
 			// ponemos la urgencia
 			switch (datos.get(position).getUrgencia()) {

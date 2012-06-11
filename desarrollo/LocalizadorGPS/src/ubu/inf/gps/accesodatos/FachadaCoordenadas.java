@@ -95,14 +95,14 @@ public class FachadaCoordenadas {
 		DBCoordenadas = Helpercoordenadas.getReadableDatabase();
 		
 		Cursor c = DBCoordenadas.rawQuery("SELECT * FROM coordenadas", null);
-		if (c.moveToFirst()) {
+		if (c.moveToLast()) {
 			Log.i("gps", "loadCoordenadas,hay datos");
 			do {
 				 id.add(c.getInt(0));
 				 longitud.add(c.getDouble(1));
 				 latitud.add(c.getDouble(2));
 				 fecha.add(c.getLong(3));				
-			} while (c.moveToNext());
+			} while (c.moveToPrevious());
 			c.close();
 		} else {
 			Log.i("gps", "loadCoordenadas,no hay datos en la base de datos");

@@ -73,9 +73,6 @@ public class ServicioGPS extends Service{
 			miLocationManager3G.requestLocationUpdates(
 	                LocationManager.NETWORK_PROVIDER,  5*60*1000, 0, miLocationListener3G);
 			
-		}else{
-			Log.e("gps", "servicioGPS,gps no activado, se cierra el servicio");
-			this.stopSelf();
 		}
 	}
 	
@@ -84,8 +81,13 @@ public class ServicioGPS extends Service{
 		
 		if(conectado){
 			Log.i("gps","servicioGps,eliminamos la suscripcion");
-		miLocationManagerGPS.removeUpdates(miLocationListenerGPS);
-		miLocationManager3G.removeUpdates(miLocationListener3G);
+			if(miLocationListenerGPS!=null){
+				miLocationManagerGPS.removeUpdates(miLocationListenerGPS);
+			}
+			if(miLocationListener3G!=null){
+				miLocationManager3G.removeUpdates(miLocationListener3G);
+			}
+		
 		conectado=false;
 		}
 		super.onDestroy();

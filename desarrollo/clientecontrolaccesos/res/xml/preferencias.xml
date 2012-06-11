@@ -17,13 +17,13 @@
           android:title="SSH"
           android:summary="Activar autoarranque servicio SSH"/>
   </PreferenceCategory>  
-  <PreferenceCategory android:title="Email">
-      <EditTextPreference 
-          android:key="spam" 
-          android:title="Cantidad emails" 
-          android:summary="Cantidad de correos que se considera SPAM" 
-          android:dialogTitle="Introduce un número"
-          ></EditTextPreference>
-  </PreferenceCategory>
+<!--   <PreferenceCategory android:title="Email"> -->
+<!--       <EditTextPreference  -->
+<!--           android:key="spam"  -->
+<!--           android:title="Cantidad emails"  -->
+<!--           android:summary="Cantidad de correos que se considera SPAM"  -->
+<!--           android:dialogTitle="Introduce un número" -->
+<!--           ></EditTextPreference> -->
+<!--   </PreferenceCategory> -->
 
 </PreferenceScreen>

@@ -276,7 +276,7 @@ public class LocalizadorGPSActivity extends Activity {
 			mensaje += " lat: " + latitud.get(0);
 			mensaje += " long: " + longitud.get(0);
 			mensaje += " fecha: " + aux.toLocaleString();
-
+			Log.i("gps", "enviamos el mensaje :"+mensaje);
 			PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(
 					this, ServicioEnvioSMS.class), 0);
 			SmsManager sms = SmsManager.getDefault();

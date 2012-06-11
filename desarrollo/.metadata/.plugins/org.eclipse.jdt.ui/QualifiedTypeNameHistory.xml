@@ -28,7 +28,6 @@
 <fullyQualifiedTypeName name="ubu.inf.terminal.modelo.SingletonConexion"/>
 <fullyQualifiedTypeName name="android.content.ActivityNotFoundException"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="ubu.inf.R.id"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.app.TabActivity"/>
 <fullyQualifiedTypeName name="ubu.inf.terminal.logica.Consola"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
 </qualifiedTypeNameHistroy>
