@@ -11,8 +11,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
 import java.util.Timer;
 import java.util.TimerTask;
+
 import org.apache.commons.daemon.*;
 
 
@@ -45,28 +48,35 @@ public class ScanLog implements Daemon{
 	 * Nombre de la base de datos.
 	 * 
 	 */
-	private String bd="android_server_status";
+	private String bd;
 	
 	/**
 	 * 
 	 * Nombre del usuario de la base de datos.
 	 * 
 	 */
-	private String user="jonatan";
+	private String user;
 	
 	/**
 	 * 
 	 * Contraseña de usuario de la base de datos.
 	 * 
 	 */
-	private String password="prueba";
+	private String password;
 	
 	/**
 	 * 
 	 * Servidor donde se encuantra la base de datos.
 	 * 
 	 */
-	private String server="jdbc:mysql://localhost/"+bd;
+	private String server;
+	
+	/**
+	 * 
+	 * Cadena de conexión para la base de datos.
+	 * 
+	 */
+	private String cadena;
 	
 	/**
 	 * 
@@ -88,6 +98,20 @@ public class ScanLog implements Daemon{
 	 * 
 	 */
 	private Socket client;
+	
+	/**
+	 * 
+	 * Puerto de eschuca de los mensajes.
+	 * 
+	 */
+	private int portIn;
+	
+	/**
+	 * 
+	 * Tiempo de comprobación de nuevos mensajes.
+	 * 
+	 */
+	private static int time;
     
 	/**
 	 * Crea una tarea repetitiva, .
@@ -97,7 +121,7 @@ public class ScanLog implements Daemon{
         //Obtener el tiempo
     	timer = new Timer();
     	//Configurar la tarea repetitiva
-        timer.schedule(new Analisis(conexion, is), 0, 1000);
+        timer.schedule(new Analisis(conexion, is), 0, time);
     }
 
     
@@ -107,29 +131,37 @@ public class ScanLog implements Daemon{
      * @param dc DaemonContext Contexto en el que se ejcutara el demonio.
      */
     @Override
-    public void init(DaemonContext dc)throws Exception {
+    public void init(DaemonContext dc) {
     	 try{
+    		 
+    		 //Leer el fichero de propiedades
+    		 lecturaFicheroPropiedades();
+    		 
      		//Crear la conexion con base de datos
- 	    	conexion = DriverManager.getConnection(server,user,password);
+ 	    	conexion = DriverManager.getConnection(cadena,user,password);
  	    	
  	    	//Crear el servidor socket y el socket de escucha
- 	    	serverSocket = new ServerSocket(5150);
+ 	    	serverSocket = new ServerSocket(portIn);
  	    	client = serverSocket.accept();
  	    	
  	    	//Crear el lector de buffer
- 	    	is = new BufferedReader( new InputStreamReader(client.getInputStream()));
+			is = new BufferedReader( new InputStreamReader(client.getInputStream()));
  	    	
- 	    } catch (Exception e){
- 	    	System.out.println(e.getMessage());
- 	    }
+ 	    	System.out.println(new Date().toString() + " Iniciado el demonio");
+ 	    	
+ 	    } catch (IOException e){
+ 	    	System.err.println(new Date().toString() + " Excepción IO al iniciar el demonio: " + e.getMessage());
+ 	    } catch (SQLException e1) {
+ 	    	System.err.println(new Date().toString() + " Excepción SQL al iniciar el demonio: " + e1.getMessage());
+		}
     }
-    
-    /**
+
+	/**
      * Tareas a realizar al arrancar el demonio.
      * 
      */
 	@Override
-    public void start() throws Exception {
+    public void start() {
         //Crear la tarea repetitiva
         asignarTarea();
     }
@@ -139,8 +171,9 @@ public class ScanLog implements Daemon{
      * 
      */
     @Override
-    public void stop() throws Exception {
-        //Parar el reloj, y con ello la tarea repetitiva
+    public void stop() {
+        try{
+    	//Parar el reloj, y con ello la tarea repetitiva
     	if (timer != null) {
         	timer.cancel();
         }
@@ -149,6 +182,13 @@ public class ScanLog implements Daemon{
         client.close();
         serverSocket.close();
         conexion.close();
+        
+        System.out.println(new Date().toString() + " Parado el demonio");
+        } catch (SQLException e){
+        	System.err.println(new Date().toString() + " Excepción SQL registrada: " + e.getMessage());
+        } catch (IOException e1) {
+        	System.err.println(new Date().toString() + " Excepción IO registrada: " + e1.getMessage());
+		}
     }
 
     /**
@@ -159,6 +199,37 @@ public class ScanLog implements Daemon{
     public void destroy() {
     	
     }
+    
+    /**
+     * Leer el fichero de propiedades y obtiene los parametros de configuración
+     * 
+     */
+    private void lecturaFicheroPropiedades() {
+    	
+    	Properties propiedades = new Properties();
+		
+    	try {
+    		//Leemos el fichero
+    	    propiedades.load(ScanLog.class.getClassLoader().getResourceAsStream("conf.properties"));
+    	    
+    	    //Obtenemos las propiedades
+    	    server = propiedades.getProperty("dataBaseServer");
+    	    bd = propiedades.getProperty("dataBaseName");
+    	    user = propiedades.getProperty("dataBaseUser");
+    	    password = propiedades.getProperty("dataBasePassword");
+    	    
+    	    portIn = Integer.parseInt(propiedades.getProperty("portIn"));
+    	    time = Integer.parseInt(propiedades.getProperty("time"));
+    	    
+    	    cadena="jdbc:mysql://" + server + "/" + bd;
+    	    
+    	    System.out.println(new Date().toString() + " Leido archivo de configuración.");
+    	    
+    	} catch (IOException e) {
+    		System.err.println(new Date().toString() + " Excepción IO al leer el archivo de configuración: " + e.getMessage());
+    	}
+    	
+	}
     
  }
 
@@ -220,7 +291,7 @@ class Analisis extends TimerTask {
 				analizarLinea(linea);
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.err.println(new Date().toString() + " Excepción IO registrada: " + e.getMessage());
 		}
 	}
 
@@ -247,6 +318,7 @@ class Analisis extends TimerTask {
 			//Analizar mensaje ssh
 			urgencia = obtenerUrgenciaSSH(mensaje);
 			if (urgencia != -1){
+				System.out.println(new Date().toString() + " Grabando notificacion: " + linea);
 				grabarNotificacion(fecha, 0, urgencia, mensaje);
 			}
 
@@ -254,6 +326,7 @@ class Analisis extends TimerTask {
 			//Analizar mensaje correo
 			urgencia = obtenerUrgenciaCorreo(mensaje);
 			if (urgencia != -1){
+				System.out.println(new Date().toString() + " Grabando notificacion: " + linea);
 				grabarNotificacion(fecha, 1, urgencia, mensaje);
 			}
 		}		
@@ -348,29 +421,29 @@ class Analisis extends TimerTask {
 		int mes = -1;
 
 		//Comprobar de que mes se trata
-		if(cadenaMes == "Jan"){
+		if(cadenaMes.equals("Jan")){
 			mes = 0;
-		} else if (cadenaMes == "Feb"){
+		} else if (cadenaMes.equals("Feb")){
 			mes = 1;
-		} else if (cadenaMes == "Mar"){
+		} else if (cadenaMes.equals("Mar")){
 			mes = 2;
-		} else if (cadenaMes == "Apr"){
+		} else if (cadenaMes.equals("Apr")){
 			mes = 3;
-		} else if (cadenaMes == "May"){
+		} else if (cadenaMes.equals("May")){
 			mes = 4;
-		} else if (cadenaMes == "Jun"){
+		} else if (cadenaMes.equals("Jun")){
 			mes = 5;
-		} else if (cadenaMes == "Jul"){
+		} else if (cadenaMes.equals("Jul")){
 			mes = 6;
-		} else if (cadenaMes == "Aug"){
+		} else if (cadenaMes.equals("Aug")){
 			mes = 7;
-		} else if (cadenaMes == "Sep"){
+		} else if (cadenaMes.equals("Sep")){
 			mes = 8;
-		} else if (cadenaMes == "Oct"){
+		} else if (cadenaMes.equals("Oct")){
 			mes = 9;
-		} else if (cadenaMes == "Nov"){
+		} else if (cadenaMes.equals("Nov")){
 			mes = 10;
-		} else if (cadenaMes == "Dec"){
+		} else if (cadenaMes.equals("Dec")){
 			mes = 11;
 		}
 
@@ -427,7 +500,7 @@ class Analisis extends TimerTask {
 			st.close();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(new Date().toString() + " Excepción SQL registrada: " + e.getMessage());
 		}
 	}
 }

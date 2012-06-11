@@ -1,11 +1,13 @@
 package ubu.itig.serverstatus.notificador;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.util.Properties;
+import java.util.logging.Logger;
 
 /**
  * Clase correspondiente al WebService Notificador.
@@ -18,6 +20,103 @@ import java.sql.Statement;
 public class Notificador {
 	
 	/**
+	 * 
+	 * Conexión con la base de datos.
+	 * 
+	 */
+	private static Connection conexion;
+	
+	/**
+	 * 
+	 * Nombre de la base de datos.
+	 * 
+	 */
+	private String bd;
+	
+	/**
+	 * 
+	 * Nombre del usuario de la base de datos.
+	 * 
+	 */
+	private String user;
+	
+	/**
+	 * 
+	 * Contraseña de usuario de la base de datos.
+	 * 
+	 */
+	private String password;
+	
+	/**
+	 * 
+	 * Servidor donde se encuantra la base de datos.
+	 * 
+	 */
+	private String server;
+	
+	/**
+	 * 
+	 * Cadena de conexión para la base de datos.
+	 * 
+	 */
+	private String cadena;
+	
+	/**
+	 * 
+	 * Logger
+	 * 
+	 */
+	private Logger logger;
+	
+	
+	/**
+	 * Constructor de la clase, en la que se lee el archivo de configuración.
+	 * 
+	 */
+	public Notificador(){
+		try{
+			if(conexion == null){
+		   		//Leer el fichero de propiedades
+		   		lecturaFicheroPropiedades();
+	   		 
+	    		//Crear la conexion con base de datos
+		    	conexion = DriverManager.getConnection(cadena,user,password);
+		    	
+		    	
+		    	logger = Logger.getLogger(getClass().getName());
+			}
+	    } catch (SQLException e) {
+	    	e.printStackTrace();	    	
+		}
+	}	
+	
+	/**
+     * Leer el fichero de propiedades y obtiene los parametros de configuración
+     * 
+     */
+    private void lecturaFicheroPropiedades() {
+    	
+    	Properties propiedades = new Properties();
+		
+    	try {
+    		//Leemos el fichero
+    	    propiedades.load(Notificador.class.getClassLoader().getResourceAsStream("conf.properties"));
+    	    
+    	    //Obtenemos las propiedades
+    	    server = propiedades.getProperty("dataBaseServer");
+    	    bd = propiedades.getProperty("dataBaseName");
+    	    user = propiedades.getProperty("dataBaseUser");
+    	    password = propiedades.getProperty("dataBasePassword");
+    	    
+    	    cadena="jdbc:mysql://" + server + "/" + bd;
+    	    
+    	} catch (IOException e) {
+    		logger.warning("Error IO al leer el archivo de configuración: " + e);
+    	}
+    	
+	}
+	
+	/**
 	 * Devuelve el numero de notificaciones nuevas que tiene el dispositivo pasado del tipo de pasado.
 	 * 
 	 * @param String idDispositivo Identificador único de dispositivo.
@@ -26,17 +125,7 @@ public class Notificador {
 	 */
 	public String hayNotificaciones(String idDispositivo, Integer tipoMensaje){
 		
-		try {
-			//Datos de la conexión con la base de datos
-			Connection conexion;
-			String bd="android_server_status";
-			String user="jonatan";
-			String password="prueba";
-			String server="jdbc:mysql://localhost/"+bd;
-			
-			//Crear la conexion con la base de datos
-			conexion = DriverManager.getConnection(server,user,password);
-			
+		try {		
 			// Crear los objetos Statement.
 			Statement st = conexion.createStatement();
 			Statement st1 = conexion.createStatement();
@@ -94,14 +183,13 @@ public class Notificador {
 			
 			//Cerrar la conexion
 			st.close();
-			st1.close();
-			conexion.close();			
+			st1.close();		
 			
 			return "" + numeroNotificaciones;
 			
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.warning("Error SQL al comprobar si hay notificaciones nuevas: " + e);
 			return "-1";
 		}
 	}
@@ -116,16 +204,6 @@ public class Notificador {
 	public Object[][] obtenerNotificacionesNuevas(String idDispositivo, Integer tipoMensaje){
 		
 		try {
-			//Datos de la conexión con la base de datos
-			Connection conexion;
-			String bd="android_server_status";
-			String user="jonatan";
-			String password="prueba";
-			String server="jdbc:mysql://localhost/"+bd;
-			
-			//Crear la conexion con la base de datos
-			conexion = DriverManager.getConnection(server,user,password);
-			
 			//Creamos el array de la informacion de las notificaciones
 			String[][]notificaciones = new String[Integer.parseInt(hayNotificaciones(idDispositivo,tipoMensaje))][5];
 			int numeroNotificacion = 0;		
@@ -150,7 +228,6 @@ public class Notificador {
 					"  WHERE descargada = 0 " +
 					"	AND Dispositivos.dispositivo = '" + idDispositivo + "' " +
 					"	AND Notificaciones.tipoMensaje = " + tipoMensaje + ";";		
-			
 			
 			//Obtener las notificaciones
 			ResultSet rsNotificaciones = st.executeQuery(sql);
@@ -203,8 +280,8 @@ public class Notificador {
 			st.close();
 			return notificaciones;
 			
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException e) {
+			logger.warning("Error SQL al obtener las notificaciones nuevas: " + e);
 			return null;
 		}
 
@@ -220,16 +297,6 @@ public class Notificador {
 	public Object[][] obtenerNotificacionesAntiguas(String idDispositivo, Integer tipoMensaje){
 		
 		try {
-			//Datos de la conexión con la base de datos
-			Connection conexion;
-			String bd="android_server_status";
-			String user="jonatan";
-			String password="prueba";
-			String server="jdbc:mysql://localhost/"+bd;
-			
-			//Crear la conexion con la base de datos
-			conexion = DriverManager.getConnection(server,user,password);
-			
 			// Crear el objeto Statement.
 			Statement st = conexion.createStatement();
 			
@@ -310,8 +377,8 @@ public class Notificador {
 			st.close();
 			return notificaciones;
 			
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException e) {
+			logger.warning("Error SQL al obtener las notificaciones antiguas: " + e);
 
 			return null;
 		}
@@ -327,16 +394,6 @@ public class Notificador {
 	 */
 	public String borrarNotificacion(String idDispositivo, Integer idNotificacion){
 		try {
-			//Datos de la conexión con la base de datos
-			Connection conexion;
-			String bd="android_server_status";
-			String user="jonatan";
-			String password="prueba";
-			String server="jdbc:mysql://localhost/"+bd;
-			
-			//Crear la conexion con la base de datos
-			conexion = DriverManager.getConnection(server,user,password);
-			
 			// Crear el objeto Statement.
 			Statement st = conexion.createStatement();
 			
@@ -358,14 +415,12 @@ public class Notificador {
 			
 			//Cerrar la conexion
 			st.close();
-			conexion.close();
 			
 			//Devolver 1, que todo ha ido bien
 			return "" + 1;
 			
 		} catch (SQLException e){
-			e.printStackTrace();
-			//Devolver 0 se ha producido algun error de base de datos
+			logger.warning("Error SQL al borrar notificación: " + e);
 			return "" + 0;
 		}
 			
