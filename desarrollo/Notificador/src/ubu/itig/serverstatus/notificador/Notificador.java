@@ -1,358 +1,377 @@
 package ubu.itig.serverstatus.notificador;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Calendar;
 
+
+/**
+ * Clase correspondiente al WebService Notificador.
+ * 
+ * @author David Herrero de la Peña.
+ * @author Jonatan Santos Barrios.
+ * @version 1.0
+ * 
+ * */
 public class Notificador {
-
-	//Datos de la conexión con la base de datos
-	private Connection conexion;
-	private String bd="android_server_status";
-	private String user="jonatan";
-	private String password="prueba";
-	private String server="jdbc:mysql://localhost/"+bd;
-	
-	public Notificador(){
-				
-		//Crear la conexión
-		try{
-			conexion = DriverManager.getConnection(server,user,password);
-			
-			ServerSocket server = new ServerSocket(5150);
-			Socket client = server.accept();
-			  
-			BufferedReader is = new BufferedReader( new InputStreamReader(client.getInputStream()));
-			  
-			String inputLine;
-			  
-			while ((inputLine = is.readLine())!= null) {
-				String linea;
-				
-				linea = inputLine.substring(inputLine.indexOf(">") + 1);
-
-				analizarLinea(linea);
-			}
-			  
-			is.close();			  
-			client.close();
-			server.close();
-			
-		} catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Analiza la linea para comprobar si es uno de los avisos que se deben notificar.
-	 * 
-	 * @param linea String con la linea del fichero.
-	 */
-	private void analizarLinea(String linea){
-		
-		String mensaje;
-		Calendar fecha;
-		int urgencia;
-		
-		//Obtenemos la fecha de la linea
-		fecha = obtenerFecha(linea);
-		
-		//Obtener la parte del mensaje de la linea
-		mensaje = linea.substring(16);
-		mensaje = mensaje.substring(linea.indexOf(":") + 2);
-		
-		//Comprobar si es un mensaje de la conexión ssh o de email
-		if(linea.indexOf("sshd") > -1){
-			//Analizar mensaje ssh
-			urgencia = obtenerUrgenciaSSH(mensaje);
-			if (urgencia != -1){
-				grabarNotificacion(fecha, 0, urgencia, mensaje);
-			}
-			
-		} else if (linea.indexOf("postfix") > -1) {
-			//Analizar mensaje correo
-			urgencia = obtenerUrgenciaCorreo(mensaje);
-			if (urgencia != -1){
-				grabarNotificacion(fecha, 1, urgencia, mensaje);
-			}
-		}		
-	}
-	
-	/**
-	 * Obtiene la urgencia del mensaje SSH.
-	 * 
-	 * @param mensaje String con el mensaje del aviso.
-	 * @return int Tipo de mensaje: -1 Mensaje no notificable, 1 Conexión fallida, 2 Intento de robo de claves, 3 Conexión con exito.
-	 */
-	private int obtenerUrgenciaSSH(String mensaje){
-		int tipo = -1;
-		
-		//Comprobamos si es uno de los mensajes a notificar
-		if(mensaje.indexOf("Failed password") > -1){
-			tipo = 1;
-		} else if (mensaje.indexOf("POSSIBLE BREAK-IN ATTEMPT!") > -1){
-			tipo = 2;
-		} else if (mensaje.indexOf("Accepted password") > -1){
-			tipo = 3;
-		}
-		
-		return tipo;
-	}
-	
-	/**
-	 * Obtiene la urgencia del mensaje de correo.
-	 * 
-	 * @param mensaje String con el mensaje del aviso.
-	 * @return int Tipo de mensaje: -1 Mensaje no notificable, 1 Conexión con el servidor fallida, 2 Correo enviado con exito.
-	 */
-	private int obtenerUrgenciaCorreo(String mensaje){
-		int tipo = -1;
-		
-		//Comprobamos si es uno de los mensajes a notificar
-		if(mensaje.indexOf("SASL LOGIN authentication failed: authentication failure") > -1){
-			tipo = 1;
-		} else if (mensaje.indexOf("status=sent") > -1){
-			tipo = 2;
-		}
-		
-		return tipo;
-	}
-	
-	/**
-	 * Obtiene la fecha y hora de la cadena de texto de la linea del fichero pasada.
-	 * 
-	 * @param lineaComprobar String con la linea del fichero.
-	 * @return Calendar con la fecha y hora que se produjo la linea.
-	 */
-	private Calendar obtenerFecha(String lineaComprobar) {
-		
-		Calendar calendario = Calendar.getInstance();
-		
-		//Obtener los datos de la cadena
-		String cadenaMes = lineaComprobar.substring(0,3);
-		String cadenaDia = lineaComprobar.substring(4,6);
-		String cadenaHora = lineaComprobar.substring(7,9);
-		String cadenaMinuto = lineaComprobar.substring(10,12);
-		String cadenaSegundo = lineaComprobar.substring(13,15);
-		
-		//Pasar los datos a integer
-		int año = calendario.get(Calendar.YEAR);
-		int mes = obtenerMes(cadenaMes);
-		int dia;
-		//Comprobar si es un dia con un digito o dos
-		if(Character.isDigit(cadenaDia.charAt(0))){
-			dia = Integer.parseInt(cadenaDia);
-		}else{
-			String cadenaDiaAux = cadenaDia.substring(1,2);
-			dia = Integer.parseInt(cadenaDiaAux);
-		}
-		int hora = Integer.parseInt(cadenaHora);
-		int minuto = Integer.parseInt(cadenaMinuto);
-		int segundo = Integer.parseInt(cadenaSegundo);
-		
-		//Establecer fecha y hora de la linea
-		calendario.set(año, mes, dia, hora, minuto, segundo);
-		
-		return calendario;
-	}
-
-	/**
-	 * Transforma la abreviatura de un mes pasado en el integer correspondiente a dicho mes.
-	 * 
-	 * @param cadenaMes String Abreviatura del mes.
-	 * @return int Con el numero de mes correspondiente a la cadena pasada.
-	 */
-	private int obtenerMes(String cadenaMes) {
-		
-		int mes = -1;
-		
-		//Comprobar de que mes se trata
-		if(cadenaMes == "Jan"){
-			mes = 0;
-		} else if (cadenaMes == "Feb"){
-			mes = 1;
-		} else if (cadenaMes == "Mar"){
-			mes = 2;
-		} else if (cadenaMes == "Apr"){
-			mes = 3;
-		} else if (cadenaMes == "May"){
-			mes = 4;
-		} else if (cadenaMes == "Jun"){
-			mes = 5;
-		} else if (cadenaMes == "Jul"){
-			mes = 6;
-		} else if (cadenaMes == "Aug"){
-			mes = 7;
-		} else if (cadenaMes == "Sep"){
-			mes = 8;
-		} else if (cadenaMes == "Oct"){
-			mes = 9;
-		} else if (cadenaMes == "Nov"){
-			mes = 10;
-		} else if (cadenaMes == "Dec"){
-			mes = 11;
-		}
-		
-		return mes;
-	}			
 	
 	/**
 	 * Devuelve el numero de notificaciones nuevas que tiene el dispositivo pasado del tipo de pasado.
 	 * 
 	 * @param String idDispositivo Identificador único de dispositivo.
-	 * @param int tipoMensaje Tipo de mensaje por el que se pregunta si hay notificaciones.
-	 * @return int con el numero de notificaciones.
+	 * @param Integer tipoMensaje Tipo de mensaje por el que se pregunta si hay notificaciones.
+	 * @return String con el numero de notificaciones.
 	 */
-	public int hayNotificaciones(String idDispositivo, int tipoMensaje){
+	public String hayNotificaciones(String idDispositivo, Integer tipoMensaje){
 		
 		try {
+			//Datos de la conexión con la base de datos
+			Connection conexion;
+			String bd="android_server_status";
+			String user="jonatan";
+			String password="prueba";
+			String server="jdbc:mysql://localhost/"+bd;
 			
-			int ultimaNotificacion;
-			String columnaABuscar = null;
+			//Crear la conexion con la base de datos
+			conexion = DriverManager.getConnection(server,user,password);
 			
-			//Segun el tipo de mensaje se obtiene la columna a buscar en la base de datos
-			if(tipoMensaje == 0){
-				columnaABuscar = "ultimaNotificacionSSH";						
-			} else if (tipoMensaje == 1){
-				columnaABuscar = "ultimaNotificacionMail";
-			}
-			
-			// Crear el objeto Statement.
+			// Crear los objetos Statement.
 			Statement st = conexion.createStatement();
+			Statement st1 = conexion.createStatement();
 			
-			//Ejecutar la consulta para saber cual fue la ultima notificación de dicho dispositivo
-			ResultSet rsUltimaNotificacion = st.executeQuery("SELECT " + columnaABuscar +
-					"											FROM Dispositivos " +
-					"											WHERE dispositivo = '" + idDispositivo + "';");
+			//Comprobar si existe el dispositivo
+			String sql = "SELECT * FROM Dispositivos WHERE dispositivo = '" + idDispositivo + "';";
 			
-			//Comprobar si existia el dispositivo
-			if(rsUltimaNotificacion.next()){
-				ultimaNotificacion = rsUltimaNotificacion.getInt("id_Notificacion");
-			} else {
-				//Crear el dispositivo en la base de datos
-				String añadirDispositivo = "INSERT INTO Dispositivo (dispositivo) VALUES ('" + idDispositivo + "')";
+			ResultSet rsDispositivo = st.executeQuery(sql);
+			
+			//Sino existe el dispositivo lo creamos
+			if(!rsDispositivo.next()){
+				//Crear el dispositivo en la tabla dispositivos
+				String sqlCrearDispositivo = "INSERT INTO Dispositivos (dispositivo) VALUES ('" + idDispositivo + "');";
 				
-				int rs = st.executeUpdate(añadirDispositivo);
-				ultimaNotificacion = 0;
+				st.executeUpdate(sqlCrearDispositivo);
+				
+				//Obtener el nuevo id del dispositivo
+				sql = "SELECT MAX(idDispositivo) AS Numero FROM Dispositivos;";
+				
+				ResultSet rsIdDispositivo = st.executeQuery(sql);
+				
+				rsIdDispositivo.next();
+				
+				int idNuevoDispositivo = rsIdDispositivo.getInt("Numero"); 
+				
+				//Obtener las notificaciones
+				sql = "SELECT idNotificacion FROM Notificaciones;";
+				
+				ResultSet rsNotificaciones = st.executeQuery(sql);
+				
+				//Recorrer las notificaciones
+				while(rsNotificaciones.next()){
+					//Crear la relacion DispositivoNotificacion
+					String sqlCrearDispositivoNotificacion = "INSERT INTO DispositivosNotificaciones (idDispositivo, idNotificacion) " +
+							" VALUES (" + idNuevoDispositivo + ", " + rsNotificaciones.getInt("idNotificacion") + ");";
+					
+					st1.executeUpdate(sqlCrearDispositivoNotificacion);
+				}			
 			}
 			
-			//Ejecutar la consulta para saber el numero de notificaciones nuevas
-			ResultSet rsNumeroNotificaciones = st.executeQuery("SELECT COUNT(id_Notificacion) AS Numero " +
-					"							FROM Notificaciones " +
-					"							WHERE id_Notificacion > " + ultimaNotificacion +
-					"							AND tipo_Mensaje = " + tipoMensaje + ";");
+			//Obtener el numero de notificaciones nuevas para ese dispositivo y ese tipo de mensaje
+			sql = "SELECT COUNT(*) AS Numero FROM DispositivosNotificaciones " +
+					"INNER JOIN Dispositivos ON DispositivosNotificaciones.idDispositivo = Dispositivos.idDispositivo " +
+					"INNER JOIN Notificaciones ON DispositivosNotificaciones.idNotificacion = Notificaciones.idNotificacion " +
+					"  WHERE descargada = 0 " +
+					"	AND Dispositivos.dispositivo = '" + idDispositivo + "' " +
+					"	AND Notificaciones.tipoMensaje = " + tipoMensaje + ";";
 			
+			//Ejecutar la consulta para saber el numero de notificacicones sin descargar
+			ResultSet rsNumeroNotificaciones = st.executeQuery(sql);
+
 			rsNumeroNotificaciones.next();
 			
 			int numeroNotificaciones = rsNumeroNotificaciones.getInt("Numero");
 			
+			//Cerrar la conexion
 			st.close();
+			st1.close();
+			conexion.close();			
 			
-			return numeroNotificaciones;
+			return "" + numeroNotificaciones;
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return "-1";
 		}
-	
-		return -1;
 	}
 	
 	/**
-	 * Devuelve en un array de arrays con la información de todas las notificaciones.
-	 * 
-	 * @return ArrayList<ArrayList<String>> Contiene toda la información de las notificaciones.
+	 * Devuelve en un array de arrays con la información de todas las notificaciones no descargadas.
+	 *
+	 * @param String idDispositivo Identificador único de dispositivo.
+	 * @param Integer tipoMensaje Tipo de mensaje del que se quieren obtener las notificaciones.
+	 * @return Object[][] Contiene toda la información de las notificaciones.
 	 */
-	public String[][] obtenerNotificaciones(String idDispositivo, int tipoMensaje, int numeroNotificaciones){
+	public Object[][] obtenerNotificacionesNuevas(String idDispositivo, Integer tipoMensaje){
 		
 		try {
-			int ultimaNotificacion = 0;
-			String columnaAModificar = null;
-			String[][]notificaciones = new String[numeroNotificaciones][4];
-			int numeroNotificacion = 0;
+			//Datos de la conexión con la base de datos
+			Connection conexion;
+			String bd="android_server_status";
+			String user="jonatan";
+			String password="prueba";
+			String server="jdbc:mysql://localhost/"+bd;
+			
+			//Crear la conexion con la base de datos
+			conexion = DriverManager.getConnection(server,user,password);
+			
+			//Creamos el array de la informacion de las notificaciones
+			String[][]notificaciones = new String[Integer.parseInt(hayNotificaciones(idDispositivo,tipoMensaje))][5];
+			int numeroNotificacion = 0;		
 			
 			// Crear el objeto Statement.
 			Statement st = conexion.createStatement();
+			Statement st1 = conexion.createStatement();
+			
+			//Obtener el idDispositivo
+			String sql = "SELECT idDispositivo FROM Dispositivos WHERE dispositivo = '" + idDispositivo + "';";
+			
+			ResultSet rsIdDispositivo = st.executeQuery(sql);
+			
+			rsIdDispositivo.next();
+			
+			int dispositivo = rsIdDispositivo.getInt("idDispositivo");
+			
+			//Consulta para obtener las notificaciones
+			sql = "SELECT Notificaciones.* AS Numero FROM DispositivosNotificaciones " +
+					"INNER JOIN Dispositivos ON DispositivosNotificaciones.idDispositivo = Dispositivos.idDispositivo " +
+					"INNER JOIN Notificaciones ON DispositivosNotificaciones.idNotificacion = Notificaciones.idNotificacion " +
+					"  WHERE descargada = 0 " +
+					"	AND Dispositivos.dispositivo = '" + idDispositivo + "' " +
+					"	AND Notificaciones.tipoMensaje = " + tipoMensaje + ";";		
+			
 			
 			//Obtener las notificaciones
-			ResultSet rsNotificaciones = st.executeQuery("SELECT TOP " + numeroNotificaciones + "* FROM Notificaciones WHERE tipo_Mensaje = " + tipoMensaje + " ORDER BY id_Notificacion DESC;");
-			
-			//Segun el tipo de mensaje se obtiene la columna a modificar en la base de datos
-			if(tipoMensaje == 0){
-				columnaAModificar = "ultimaNotificacionSSH";						
-			} else if (tipoMensaje == 1){
-				columnaAModificar = "ultimaNotificacionMail";
-			}
+			ResultSet rsNotificaciones = st.executeQuery(sql);
 			
 			//Recorrer las notificaciones y añadirlas al array
 			while(rsNotificaciones.next()){
 				
-				if(ultimaNotificacion == 0){
-					ultimaNotificacion = rsNotificaciones.getInt("id_Notificacion");
-				}
+				int idNotificacion = rsNotificaciones.getInt("idNotificacion");
 				
 				//Introducir informacion de la notificacion en el array
-				notificaciones[numeroNotificacion][0] = rsNotificaciones.getTimestamp("fecha").toString();
-				notificaciones[numeroNotificacion][1] = "" + rsNotificaciones.getInt("tipo_Mensaje");
-				notificaciones[numeroNotificacion][2] = "" + rsNotificaciones.getInt("urgencia");
-				notificaciones[numeroNotificacion][3] = rsNotificaciones.getString("mensaje");
+				notificaciones[numeroNotificacion][0] = "" + idNotificacion;
+				notificaciones[numeroNotificacion][1] = "" + rsNotificaciones.getTimestamp("fecha").getTime();
+				notificaciones[numeroNotificacion][2] = "" + rsNotificaciones.getInt("tipoMensaje");
+				notificaciones[numeroNotificacion][3] = "" + rsNotificaciones.getInt("urgencia");
+				notificaciones[numeroNotificacion][4] = rsNotificaciones.getString("mensaje");
+
+				//PActualizar a descargada la notificacion
+				sql = "UPDATE DispositivosNotificaciones SET descargada = 1 " +
+						" WHERE idDispositivo = " + dispositivo +
+						" AND idNotificacion = " + idNotificacion + ";";
+				
+				st1.executeUpdate(sql);
 				
 				numeroNotificacion += 1;
 			}
 			
-			//Actualizar la ultimaNotificacion para el dispositivo
-			int rsActualizarUltimaNotificacion = st.executeUpdate("UPDATE Dispositivos" +
-					"												SET " + columnaAModificar + " = " + ultimaNotificacion +
-					"												WHERE dispositivo = '" + idDispositivo + "';");
-			
-			return notificaciones;
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	
-	/**
-	 * Graba en base de datos la información correspondiente de la notificación.
-	 * 
-	 * @param linea String con la linea del fichero
-	 */
-	private void grabarNotificacion(Calendar fecha, int tipoMensaje, int urgencia, String mensaje){
-		
-		java.sql.Timestamp horaSql = new java.sql.Timestamp(fecha.getTime().getTime());
-		
-		// Creamos el objeto Statement.
-		Statement st;
-		try {
-			st = conexion.createStatement();
-			
-			// Creamos la consulta sql y la ejecutamos con un ResultSet.
-			String sql = "INSERT INTO Notificaciones(tipo_mensaje, urgencia, fecha,  mensaje) VALUES (" + tipoMensaje +  ", " + urgencia + ", '" + horaSql + "', '" + mensaje + "');";
-			int rs = st.executeUpdate(sql);
-			
-			//Controlamos que se haya registrado en la base de datos
-			if(rs == 0){
+			//Comprobar si el array es de longitud 1, para convertirlo en un array de longitud 2, con el ultimo registro vacio
+			// para evitar problemas en el cliente a la hora de tranferir la información por SOAP.
+			if (notificaciones.length == 1){
+				//Crear el array auxiliar
+				String[][] aux = new String[2][5];
 				
+				//Recorrer la información de la notificacion y la guarda en el array auxiliar, junto con el registro vacio
+				for(int i = 0; i < 5; i++){
+					aux[0][i] = notificaciones[0][i];
+					//Poner el idDispositivo del registro vacio a -1 para que el cliente lo descarte
+					if(i == 0){
+						aux [1][i] = "-1" ;
+					} else {
+						aux[1][i] = "";
+					}
+				}
+				
+				//Convertir el array de notificaciones en el auxiliar
+				notificaciones = aux;
 			}
 			
+			//Cerrar la conexion
+			st1.close();
 			st.close();
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			return notificaciones;
+			
+		} catch (Exception e) {
 			e.printStackTrace();
-		}	
-	}
+			return null;
+		}
+
+	}	
 	
+	/**
+	 * Devuelve en un array de arrays con la información de todas las notificaciones descargadas.
+	 *
+	 * @param String idDispositivo Identificador único de dispositivo.
+	 * @param Integer tipoMensaje Tipo de mensaje del que se quieren obtener las notificaciones.
+	 * @return Object[][] Contiene toda la información de las notificaciones.
+	 */
+	public Object[][] obtenerNotificacionesAntiguas(String idDispositivo, Integer tipoMensaje){
+		
+		try {
+			//Datos de la conexión con la base de datos
+			Connection conexion;
+			String bd="android_server_status";
+			String user="jonatan";
+			String password="prueba";
+			String server="jdbc:mysql://localhost/"+bd;
+			
+			//Crear la conexion con la base de datos
+			conexion = DriverManager.getConnection(server,user,password);
+			
+			// Crear el objeto Statement.
+			Statement st = conexion.createStatement();
+			
+			//Obtener el numero de notificaciones ya descargadas
+			String sql = "SELECT COUNT(*) AS Numero FROM DispositivosNotificaciones " +
+					"INNER JOIN Dispositivos ON DispositivosNotificaciones.idDispositivo = Dispositivos.idDispositivo " +
+					"INNER JOIN Notificaciones ON DispositivosNotificaciones.idNotificacion = Notificaciones.idNotificacion " +
+					"  WHERE descargada = 1 " +
+					"	AND Dispositivos.dispositivo = '" + idDispositivo + "' " +
+					"	AND Notificaciones.tipoMensaje = " + tipoMensaje + ";";
+			
+			ResultSet rsNumeroNotificaciones = st.executeQuery(sql);
+
+			rsNumeroNotificaciones.next();
+			
+			int numeroNotificaciones = rsNumeroNotificaciones.getInt("Numero");
+			
+			//Crear el array con la longitud igual al numero de notificaciones obtenidas en la consulta anterior
+			String[][]notificaciones = new String[numeroNotificaciones][5];
+			int numeroNotificacion = 0;		
+			
+			//Obtener el idDispositivo
+			sql = "SELECT idDispositivo FROM Dispositivos WHERE dispositivo = '" + idDispositivo + "';";
+			
+			ResultSet rsIdDispositivo = st.executeQuery(sql);
+			
+			rsIdDispositivo.next();
+			
+			//Consulta para obtener las notificaciones
+			sql = "SELECT Notificaciones.* AS Numero FROM DispositivosNotificaciones " +
+					"INNER JOIN Dispositivos ON DispositivosNotificaciones.idDispositivo = Dispositivos.idDispositivo " +
+					"INNER JOIN Notificaciones ON DispositivosNotificaciones.idNotificacion = Notificaciones.idNotificacion " +
+					"  WHERE descargada = 1 " +
+					"	AND Dispositivos.dispositivo = '" + idDispositivo + "' " +
+					"	AND Notificaciones.tipoMensaje = " + tipoMensaje + ";";		
+			
+			
+			//Obtener las notificaciones
+			ResultSet rsNotificaciones = st.executeQuery(sql);
+			
+			//Recorrer las notificaciones y añadirlas al array
+			while(rsNotificaciones.next()){
+				
+				int idNotificacion = rsNotificaciones.getInt("idNotificacion");
+				
+				//Introducir informacion de la notificacion en el array
+				notificaciones[numeroNotificacion][0] = "" + idNotificacion;
+				notificaciones[numeroNotificacion][1] = "" + rsNotificaciones.getTimestamp("fecha").getTime();
+				notificaciones[numeroNotificacion][2] = "" + rsNotificaciones.getInt("tipoMensaje");
+				notificaciones[numeroNotificacion][3] = "" + rsNotificaciones.getInt("urgencia");
+				notificaciones[numeroNotificacion][4] = rsNotificaciones.getString("mensaje");
+				
+				numeroNotificacion += 1;
+			}
+			
+			//Comprobar si el array es de longitud 1, para convertirlo en un array de longitud 2, con el ultimo registro vacio
+			// para evitar problemas en el cliente a la hora de tranferir la información por SOAP.
+			if (notificaciones.length == 1){
+				//Crear el array auxiliar
+				String[][] aux = new String[2][5];
+				
+				//Recorrer la información de la notificacion y la guarda en el array auxiliar, junto con el registro vacio
+				for(int i = 0; i < 5; i++){
+					aux[0][i] = notificaciones[0][i];
+					//Poner el idDispositivo del registro vacio a -1 para que el cliente lo descarte
+					if(i == 0){
+						aux [1][i] = "-1" ;
+					} else {
+						aux[1][i] = "";
+					}
+				}
+				
+				//Convertir el array de notificaciones en el auxiliar
+				notificaciones = aux;
+			}
+			
+			//Cerrar la conexion
+			st.close();
+			return notificaciones;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+
+			return null;
+		}
+
+	}	
+	
+	/**
+	 * Borrar de la base de datos la relacion entre dispositivo y notificacion.
+	 * 
+	 * @param idDispositivo Identificador unico de dispositivo.
+	 * @param idNotificacion Identificador unico de notificacion.
+	 * @return String con 1 si todo ha salido bien, 0 si se ha producido algun error con la base de datos.
+	 */
+	public String borrarNotificacion(String idDispositivo, Integer idNotificacion){
+		try {
+			//Datos de la conexión con la base de datos
+			Connection conexion;
+			String bd="android_server_status";
+			String user="jonatan";
+			String password="prueba";
+			String server="jdbc:mysql://localhost/"+bd;
+			
+			//Crear la conexion con la base de datos
+			conexion = DriverManager.getConnection(server,user,password);
+			
+			// Crear el objeto Statement.
+			Statement st = conexion.createStatement();
+			
+			//Obtener el idDispositivo
+			String sql = "SELECT idDispositivo FROM Dispositivos WHERE dispositivo = '" + idDispositivo + "';";
+					
+			ResultSet rsIdDispositivo = st.executeQuery(sql);
+						
+			rsIdDispositivo.next();
+						
+			int dispositivo = rsIdDispositivo.getInt("idDispositivo");
+						
+			//Consulta para borrar la relacion
+			sql = "DELETE FROM DispositivosNotificaciones " +
+					" WHERE idDispositivo = " + dispositivo + " " +
+					" AND idNotificacion = " + idNotificacion + ";";
+			
+			st.executeUpdate(sql);
+			
+			//Cerrar la conexion
+			st.close();
+			conexion.close();
+			
+			//Devolver 1, que todo ha ido bien
+			return "" + 1;
+			
+		} catch (SQLException e){
+			e.printStackTrace();
+			//Devolver 0 se ha producido algun error de base de datos
+			return "" + 0;
+		}
+			
+	}
 }
+
+
+
+
