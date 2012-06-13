@@ -13,5 +13,8 @@
     <string name="aceptar">Aceptar</string>
     <string name="estado">Estado :</string>
     <string name="online">ON LINE</string>
+    <string name="david">David Herrero de la Peña</string>
+    <string name="jonatan">Jonatan Santos Barrios</string>
+    <string name="version">Versión 1.0</string>
 
 </resources>

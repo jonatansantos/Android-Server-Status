@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="ubu.inf.control.logica_notificaciones" size="1684,1476" id="ubu.inf.control.logica" metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledY="-27" tag="1000" key="32303037303533312D3130303020636C69656E7465636F6E74726F6C61636365736F732F6461766964">
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="Filtro" location="945,599" size="242,827" id="ubu.inf.control.logica/Filtro" runTimeClassModel="mDateSetListener_02,mMes_hasta,mTimeSetListener4,inicializa(),mDateSetListener_01,onCreate(Landroid.os.Bundle;),urgencia,mYear_desde,mTimeSetListener3,ubu.inf.control.logica.Filtro.listenerOK,mMinuto_desde,datehasta,id,mDay_desde,onCreateDialog(I),mHora_hasta,dATE_DIALOG_ID_02,hasta,mHora_desde,mYear_hasta,tIME_DIALOG_ID_04,tIME_DIALOG_ID_03,datedesde,desde_hora,mMes_desde,mDay_hasta,mMinuto_hasta,desde,updateDisplay(),hasta_hora,tipo,desde_fecha,dATE_DIALOG_ID_01,cancelar,ubu.inf.control.logica.Filtro.listenerCancelar,oK,hasta_fecha">
-    <children xsi:type="editmodel:CompartmentEditModel" size="219,558">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="ubu.inf.control.logica_notificaciones" size="1684,1594" id="ubu.inf.control.logica" metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledY="550" tag="1000" key="32303037303533312D3130303020636C69656E7465636F6E74726F6C61636365736F732F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.7" name="Filtro" location="945,599" size="242,881" id="ubu.inf.control.logica/Filtro" runTimeClassModel="mDateSetListener_02,mMes_hasta,mTimeSetListener4,inicializa(),mDateSetListener_01,onCreate(Landroid.os.Bundle;),urgencia,mYear_desde,cargarDatos(),mTimeSetListener3,ubu.inf.control.logica.Filtro.listenerOK,mMinuto_desde,datehasta,id,mDay_desde,borrados,onCreateDialog(I),mHora_hasta,dATE_DIALOG_ID_02,hasta,mHora_desde,mYear_hasta,tIME_DIALOG_ID_04,tIME_DIALOG_ID_03,datedesde,desde_hora,mMes_desde,mDay_hasta,guardaDatos(),mMinuto_hasta,desde,updateDisplay(),hasta_hora,tipo,desde_fecha,dATE_DIALOG_ID_01,cancelar,ubu.inf.control.logica.Filtro.listenerCancelar,oK,hasta_fecha">
+    <children xsi:type="editmodel:CompartmentEditModel" size="219,576">
       <children xsi:type="editmodel:AttributeEditModel" name="cancelar" id="ubu.inf.control.logica/Filtro#cancelar"/>
       <children xsi:type="editmodel:AttributeEditModel" name="dATE_DIALOG_ID_01" id="ubu.inf.control.logica/Filtro#dATE_DIALOG_ID_01"/>
       <children xsi:type="editmodel:AttributeEditModel" name="dATE_DIALOG_ID_02" id="ubu.inf.control.logica/Filtro#dATE_DIALOG_ID_02"/>
@@ -33,12 +33,15 @@
       <children xsi:type="editmodel:AttributeEditModel" name="tIME_DIALOG_ID_04" id="ubu.inf.control.logica/Filtro#tIME_DIALOG_ID_04"/>
       <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="ubu.inf.control.logica/Filtro#tipo"/>
       <children xsi:type="editmodel:AttributeEditModel" name="urgencia" id="ubu.inf.control.logica/Filtro#urgencia"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="borrados" id="ubu.inf.control.logica/Filtro#borrados"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel" size="149,72">
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,108">
       <children xsi:type="editmodel:MethodEditModel" name="inicializa" id="ubu.inf.control.logica/Filtro#inicializa()"/>
       <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.control.logica/Filtro#onCreate(Landroid.os.Bundle;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="onCreateDialog" id="ubu.inf.control.logica/Filtro#onCreateDialog(I)"/>
       <children xsi:type="editmodel:MethodEditModel" name="updateDisplay" id="ubu.inf.control.logica/Filtro#updateDisplay()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="guardaDatos" id="ubu.inf.control.logica/Filtro#guardaDatos()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="cargarDatos" id="ubu.inf.control.logica/Filtro#cargarDatos()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="146,138">
       <children xsi:type="editmodel:ClassEditModel" name="listenerCancelar" size="146,67" id="ubu.inf.control.logica/Filtro$listenerCancelar" runTimeClassModel="onClick(Landroid.view.View;)">
@@ -60,7 +63,7 @@
     </children>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Main" location="465,-30" size="160,157" id="ubu.inf.control.logica/Main" runTimeClassModel="res,tabHost,creaTabFav(),onCreate(Landroid.os.Bundle;),creaTabNotificaciones(),creaTabEmail()">
+  <children xsi:type="editmodel:ClassEditModel" name="Main" location="465,-30" size="160,157" id="ubu.inf.control.logica/Main" runTimeClassModel="res,tabHost,onCreate(Landroid.os.Bundle;),creaTabFav(),creaTabNotificaciones(),creaTabEmail()">
     <children xsi:type="editmodel:CompartmentEditModel" size="101,36">
       <children xsi:type="editmodel:AttributeEditModel" name="res" id="ubu.inf.control.logica/Main#res"/>
       <children xsi:type="editmodel:AttributeEditModel" name="tabHost" id="ubu.inf.control.logica/Main#tabHost"/>
@@ -72,15 +75,15 @@
       <children xsi:type="editmodel:MethodEditModel" name="onCreate" id="ubu.inf.control.logica/Main#onCreate(Landroid.os.Bundle;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/Main->ubu.inf.control.logica/PestanaMainNotificaciones" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.1" label="//@children.1/@sourceConnections.0/@children.2" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.1" label="//@children.1/@sourceConnections.0/@children.2" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
       <children xsi:type="editmodel:AssociationEndEditModel" location="79,157" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="154,0"/>
       <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="PestanaMainNotificaciones" location="390,238" size="341,968" id="ubu.inf.control.logica/PestanaMainNotificaciones" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),borrarNotificacion(Landroid.widget.AdapterView.AdapterContextMenuInfo;),inicializa(),sOAPACTIONBORRAR,pila,onCreate(Landroid.os.Bundle;),lista,ordenAsc,actualizar(),ubu.inf.control.logica.PestanaMainNotificaciones.ListenerListView,orden,obtenerNotificaiones(Lubu.inf.control.modelo.Servidor;I),id_dispositivo,nAMESPACE,sOAPACTION,criterio,quitarFiltro(),onContextItemSelected(Landroid.view.MenuItem;),descargarGuardados(),mETHODTODAS,mETHODBORRAR,onActivityResult(IILandroid.content.Intent;),preferencias(),ordena(),onOptionsItemSelected(Landroid.view.MenuItem;),uRL,sOAPACTIONTODAS,barra,onStart(),onCreateContextMenu(Landroid.view.ContextMenu;Landroid.view.View;Landroid.view.ContextMenu.ContextMenuInfo;),ordenTipo,obtenerTodasNotificaiones(Lubu.inf.control.modelo.Servidor;I),filtrar(Landroid.content.Intent;),rESULT_FILTRO,mETHOD,datos,adapter3,ubu.inf.control.logica.PestanaMainNotificaciones.ArrayAdapterNot,ubu.inf.control.logica.PestanaMainNotificaciones.MyHandler,handler">
-    <children xsi:type="editmodel:CompartmentEditModel" size="193,342">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="PestanaMainNotificaciones" location="390,238" size="341,1232" id="ubu.inf.control.logica/PestanaMainNotificaciones" runTimeClassModel="onCreate(Landroid.os.Bundle;),borrarNotificacion(Lubu.inf.control.modelo.Notificacion;),actualizar(),ubu.inf.control.logica.PestanaMainNotificaciones.ListenerListView,handlerBorrar,nAMESPACE,id_dispositivo,sOAPACTION,quitarFiltro(),preferencias(),borrarTodasNotificaciones(),onActivityResult(IILandroid.content.Intent;),informacion,onOptionsItemSelected(Landroid.view.MenuItem;),sOAPACTIONTODAS,onStart(),ordenTipo,ubu.inf.control.logica.PestanaMainNotificaciones.MyHandlerBorrarError,rESULT_FILTRO,adapter3,ubu.inf.control.logica.PestanaMainNotificaciones.ArrayAdapterNot,ubu.inf.control.logica.PestanaMainNotificaciones.MyHandler,onCreateOptionsMenu(Landroid.view.Menu;),inicializa(),sOAPACTIONBORRAR,pila,lista,ordenAsc,orden,obtenerNotificaiones(Lubu.inf.control.modelo.Servidor;I),handlerBorrarError,criterio,borrados,onContextItemSelected(Landroid.view.MenuItem;),descargarGuardados(),mETHODTODAS,filtroenviado,dialog,mETHODBORRAR,ordena(),ubu.inf.control.logica.PestanaMainNotificaciones.MyHandlerBorrar,uRL,barra,onCreateContextMenu(Landroid.view.ContextMenu;Landroid.view.View;Landroid.view.ContextMenu.ContextMenuInfo;),obtenerTodasNotificaiones(Lubu.inf.control.modelo.Servidor;I),filtrar(Landroid.content.Intent;),mETHOD,datos,handler">
+    <children xsi:type="editmodel:CompartmentEditModel" size="200,432">
       <children xsi:type="editmodel:AttributeEditModel" name="barra" id="ubu.inf.control.logica/PestanaMainNotificaciones#barra"/>
       <children xsi:type="editmodel:AttributeEditModel" name="criterio" id="ubu.inf.control.logica/PestanaMainNotificaciones#criterio"/>
       <children xsi:type="editmodel:AttributeEditModel" name="datos" id="ubu.inf.control.logica/PestanaMainNotificaciones#datos"/>
@@ -100,10 +103,15 @@
       <children xsi:type="editmodel:AttributeEditModel" name="sOAPACTIONBORRAR" id="ubu.inf.control.logica/PestanaMainNotificaciones#sOAPACTIONBORRAR"/>
       <children xsi:type="editmodel:AttributeEditModel" name="sOAPACTIONTODAS" id="ubu.inf.control.logica/PestanaMainNotificaciones#sOAPACTIONTODAS"/>
       <children xsi:type="editmodel:AttributeEditModel" name="uRL" id="ubu.inf.control.logica/PestanaMainNotificaciones#uRL"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="informacion" id="ubu.inf.control.logica/PestanaMainNotificaciones#informacion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="handlerBorrarError" id="ubu.inf.control.logica/PestanaMainNotificaciones#handlerBorrarError"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="borrados" id="ubu.inf.control.logica/PestanaMainNotificaciones#borrados"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dialog" id="ubu.inf.control.logica/PestanaMainNotificaciones#dialog"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="filtroenviado" id="ubu.inf.control.logica/PestanaMainNotificaciones#filtroenviado"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel" size="318,306">
+    <children xsi:type="editmodel:CompartmentEditModel" size="318,342">
       <children xsi:type="editmodel:MethodEditModel" name="actualizar" id="ubu.inf.control.logica/PestanaMainNotificaciones#actualizar()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="borrarNotificacion" id="ubu.inf.control.logica/PestanaMainNotificaciones#borrarNotificacion(Landroid.widget.AdapterView.AdapterContextMenuInfo;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borrarNotificacion"/>
       <children xsi:type="editmodel:MethodEditModel" name="descargarGuardados" id="ubu.inf.control.logica/PestanaMainNotificaciones#descargarGuardados()"/>
       <children xsi:type="editmodel:MethodEditModel" name="filtrar" id="ubu.inf.control.logica/PestanaMainNotificaciones#filtrar(Landroid.content.Intent;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="inicializa" id="ubu.inf.control.logica/PestanaMainNotificaciones#inicializa()"/>
@@ -119,8 +127,10 @@
       <children xsi:type="editmodel:MethodEditModel" name="ordena" id="ubu.inf.control.logica/PestanaMainNotificaciones#ordena()"/>
       <children xsi:type="editmodel:MethodEditModel" name="preferencias" id="ubu.inf.control.logica/PestanaMainNotificaciones#preferencias()"/>
       <children xsi:type="editmodel:MethodEditModel" name="quitarFiltro" id="ubu.inf.control.logica/PestanaMainNotificaciones#quitarFiltro()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borrarNotificacion" id="ubu.inf.control.logica/PestanaMainNotificaciones#borrarNotificacion(Lubu.inf.control.modelo.Notificacion;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borrarTodasNotificaciones" id="ubu.inf.control.logica/PestanaMainNotificaciones#borrarTodasNotificaciones()"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel" size="288,261">
+    <children xsi:type="editmodel:CompartmentEditModel" size="288,399">
       <children xsi:type="editmodel:ClassEditModel" name="ArrayAdapterNot" size="288,121" id="ubu.inf.control.logica/PestanaMainNotificaciones$ArrayAdapterNot" runTimeClassModel="ArrayAdapterNot(Landroid.app.Activity;Ljava.util.ArrayList;),getView(ILandroid.view.View;Landroid.view.ViewGroup;),context,datos">
         <children xsi:type="editmodel:CompartmentEditModel" size="164,36">
           <children xsi:type="editmodel:AttributeEditModel" name="context" id="ubu.inf.control.logica/PestanaMainNotificaciones$ArrayAdapterNot#context"/>
@@ -149,46 +159,62 @@
         <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
         <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
       </children>
+      <children xsi:type="editmodel:ClassEditModel" name="MyHandlerBorrar" size="173,67" id="ubu.inf.control.logica/PestanaMainNotificaciones$MyHandlerBorrar" runTimeClassModel="handleMessage(Landroid.os.Message;)">
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <children xsi:type="editmodel:CompartmentEditModel" size="150,18">
+          <children xsi:type="editmodel:MethodEditModel" name="handleMessage" id="ubu.inf.control.logica/PestanaMainNotificaciones$MyHandlerBorrar#handleMessage(Landroid.os.Message;)"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+      </children>
+      <children xsi:type="editmodel:ClassEditModel" name="MyHandlerBorrarError" size="181,67" id="ubu.inf.control.logica/PestanaMainNotificaciones$MyHandlerBorrarError" runTimeClassModel="handleMessage(Landroid.os.Message;)">
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <children xsi:type="editmodel:CompartmentEditModel" size="150,18">
+          <children xsi:type="editmodel:MethodEditModel" name="handleMessage" id="ubu.inf.control.logica/PestanaMainNotificaciones$MyHandlerBorrarError#handleMessage(Landroid.os.Message;)"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+      </children>
     </children>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones->ubu.inf.control.logica/Preferencias" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.1" label="//@children.2/@sourceConnections.0/@children.2" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:AssociationEndEditModel" location="170,968" attachSource="true"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.1" label="//@children.2/@sourceConnections.0/@children.2" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="170,1230" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="65,0"/>
       <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones->ubu.inf.control.logica/Filtro" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.1/@children.1" label="//@children.2/@sourceConnections.1/@children.2" sourceEnd="//@children.2/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:AssociationEndEditModel" location="341,664" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,303"/>
-      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
-    </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Call->ubu.inf.control.modelo/SingletonEmail" source="//@children.2" target="//@children.4" targetEnd="//@children.2/@sourceConnections.2/@children.2" label="//@children.2/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Call->ubu.inf.control.modelo/SingletonEmail" source="//@children.2" target="//@children.4" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,76" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="175,76"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="156,76"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Call->ubu.inf.control.modelo/SingletonServicios" source="//@children.2" target="//@children.5" targetEnd="//@children.2/@sourceConnections.3/@children.2" label="//@children.2/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Call->ubu.inf.control.modelo/SingletonServicios" source="//@children.2" target="//@children.5" targetEnd="//@children.2/@sourceConnections.2/@children.2" label="//@children.2/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,284" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="208,103"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Instantiate->ubu.inf.control.modelo/ComparatorID" source="//@children.2" target="//@children.7" targetEnd="//@children.2/@sourceConnections.4/@children.2" label="//@children.2/@sourceConnections.4/@children.0" sourceEnd="//@children.2/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Instantiate->ubu.inf.control.modelo/ComparatorID" source="//@children.2" target="//@children.7" targetEnd="//@children.2/@sourceConnections.3/@children.2" label="//@children.2/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="341,284" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="13,40"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="54,40"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Instantiate->ubu.inf.control.modelo/ComparatorTipo" source="//@children.2" target="//@children.8" targetEnd="//@children.2/@sourceConnections.5/@children.2" label="//@children.2/@sourceConnections.5/@children.0" sourceEnd="//@children.2/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Instantiate->ubu.inf.control.modelo/ComparatorTipo" source="//@children.2" target="//@children.8" targetEnd="//@children.2/@sourceConnections.4/@children.2" label="//@children.2/@sourceConnections.4/@children.0" sourceEnd="//@children.2/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="341,176" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="49,40"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,40"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Instantiate->ubu.inf.control.modelo/ComparatorUrgencia" source="//@children.2" target="//@children.9" targetEnd="//@children.2/@sourceConnections.6/@children.2" label="//@children.2/@sourceConnections.6/@children.0" sourceEnd="//@children.2/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Instantiate->ubu.inf.control.modelo/ComparatorUrgencia" source="//@children.2" target="//@children.9" targetEnd="//@children.2/@sourceConnections.5/@children.2" label="//@children.2/@sourceConnections.5/@children.0" sourceEnd="//@children.2/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="341,72" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="66,40"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="78,40"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Instantiate->ubu.inf.control.modelo/ComparatorFecha" source="//@children.2" target="//@children.6" targetEnd="//@children.2/@sourceConnections.7/@children.2" label="//@children.2/@sourceConnections.7/@children.0" sourceEnd="//@children.2/@sourceConnections.7/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ubu.inf.control.logica/PestanaMainNotificaciones-Standard::Instantiate->ubu.inf.control.modelo/ComparatorFecha" source="//@children.2" target="//@children.6" targetEnd="//@children.2/@sourceConnections.6/@children.2" label="//@children.2/@sourceConnections.6/@children.0" sourceEnd="//@children.2/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="295,-1" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="295,-3" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="-1,54"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.control.logica/PestanaMainNotificaciones->ubu.inf.control.logica/Filtro" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.7/@children.1" label="//@children.2/@sourceConnections.7/@children.2" sourceEnd="//@children.2/@sourceConnections.7/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="341,796" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,435"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
@@ -200,7 +226,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.2" name="SingletonEmail" location="59,238" size="199,153" id="ubu.inf.control.modelo/SingletonEmail">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="SingletonEmail" location="59,238" size="199,153" id="ubu.inf.control.modelo/SingletonEmail" runTimeClassModel="setHosts(Ljava.util.ArrayList;),getConexion(),hosts,SingletonEmail(),myConexion,getHosts()">
     <children xsi:type="editmodel:CompartmentEditModel" size="149,18">
       <children xsi:type="editmodel:AttributeEditModel" name="hosts" id="ubu.inf.control.modelo/SingletonEmail#hosts"/>
     </children>
@@ -210,10 +236,10 @@
       <children xsi:type="editmodel:MethodEditModel" name="getHosts" id="ubu.inf.control.modelo/SingletonEmail#getHosts()"/>
       <children xsi:type="editmodel:MethodEditModel" name="setHosts" id="ubu.inf.control.modelo/SingletonEmail#setHosts(Ljava.util.ArrayList;)"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.3" name="SingletonServicios" location="50,419" size="208,207" id="ubu.inf.control.modelo/SingletonServicios">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.2" name="SingletonServicios" location="50,419" size="208,207" id="ubu.inf.control.modelo/SingletonServicios" runTimeClassModel="setHosts(Ljava.util.ArrayList;),cantidad,getConexion(),setCantidad(I),hosts,SingletonServicios(),myConexion,getCantidad(),getHosts()">
     <children xsi:type="editmodel:CompartmentEditModel" size="149,36">
       <children xsi:type="editmodel:AttributeEditModel" name="cantidad" id="ubu.inf.control.modelo/SingletonServicios#cantidad"/>
       <children xsi:type="editmodel:AttributeEditModel" name="hosts" id="ubu.inf.control.modelo/SingletonServicios#hosts"/>
@@ -226,41 +252,42 @@
       <children xsi:type="editmodel:MethodEditModel" name="setCantidad" id="ubu.inf.control.modelo/SingletonServicios#setCantidad(I)"/>
       <children xsi:type="editmodel:MethodEditModel" name="setHosts" id="ubu.inf.control.modelo/SingletonServicios#setHosts(Ljava.util.ArrayList;)"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.7" name="ComparatorFecha" location="941,150" size="230,81" id="ubu.inf.control.modelo/ComparatorFecha">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.6" name="ComparatorFecha" location="941,150" size="230,81" id="ubu.inf.control.modelo/ComparatorFecha" runTimeClassModel="compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="207,18">
       <children xsi:type="editmodel:MethodEditModel" name="compare" id="ubu.inf.control.modelo/ComparatorFecha#compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.4" name="ComparatorID" location="942,482" size="230,81" id="ubu.inf.control.modelo/ComparatorID">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.3" name="ComparatorID" location="942,482" size="230,81" id="ubu.inf.control.modelo/ComparatorID" runTimeClassModel="compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="207,18">
       <children xsi:type="editmodel:MethodEditModel" name="compare" id="ubu.inf.control.modelo/ComparatorID#compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.5" name="ComparatorTipo" location="942,374" size="230,81" id="ubu.inf.control.modelo/ComparatorTipo">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.4" name="ComparatorTipo" location="942,374" size="230,81" id="ubu.inf.control.modelo/ComparatorTipo" runTimeClassModel="compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="207,18">
       <children xsi:type="editmodel:MethodEditModel" name="compare" id="ubu.inf.control.modelo/ComparatorTipo#compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.6" name="ComparatorUrgencia" location="942,270" size="230,81" id="ubu.inf.control.modelo/ComparatorUrgencia">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.5" name="ComparatorUrgencia" location="942,270" size="230,81" id="ubu.inf.control.modelo/ComparatorUrgencia" runTimeClassModel="compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="207,18">
       <children xsi:type="editmodel:MethodEditModel" name="compare" id="ubu.inf.control.modelo/ComparatorUrgencia#compare(Lubu.inf.control.modelo.Notificacion;Lubu.inf.control.modelo.Notificacion;)"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;Call>>" location="789,1008" size="41,14" fontInfo="Arial-8-0"/>
   <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
   <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
     <leftRuler/>

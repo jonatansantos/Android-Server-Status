@@ -120,9 +120,11 @@ public class Consola extends Activity {
 	/**
 	 * Función para iniciar todos los componentes del a actividad.
 	 */
-	public void inicializa(){
+	private void inicializa(){
 		//obtenemos referencias a los elementos gráficos
 		comando = (EditText) findViewById(R.id.et_consola_comando);
+		//ponemos el listener
+		comando.setOnKeyListener(new ListenerKey());
 		result = (EditText) findViewById(R.id.et_consola_resultado);
 		result.setOnKeyListener(new ListenerKey());
 		run = (ImageButton) findViewById(R.id.ib_consola_run);
@@ -416,7 +418,8 @@ public class Consola extends Activity {
 				try {
 
 					ejecutaComando(comando.getText().toString());
-					//
+					//borramos el editText
+					comando.setText("");
 
 				} catch (JSchException e) {
 					e.printStackTrace();
@@ -448,6 +451,8 @@ public class Consola extends Activity {
 				if (keyCode == KeyEvent.KEYCODE_ENTER) {
 					try {
 						ejecutaComando(comando.getText().toString());
+						comando.setText("");
+						return true;
 					} catch (JSchException e) {
 						
 						e.printStackTrace();

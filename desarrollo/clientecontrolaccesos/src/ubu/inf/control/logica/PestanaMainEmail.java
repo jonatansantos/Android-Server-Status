@@ -489,11 +489,11 @@ public class PestanaMainEmail extends Activity {
 
 			if (datos.get(position).isInicio()) {
 				estado.setTextColor(Color.GREEN);
-				estado.setText("autoarranque SI");
+				estado.setText("auto SI");
 
 			} else {
 				estado.setTextColor(Color.RED);
-				estado.setText("autoarranque NO");
+				estado.setText("auto NO");
 
 			}
 			return (item);

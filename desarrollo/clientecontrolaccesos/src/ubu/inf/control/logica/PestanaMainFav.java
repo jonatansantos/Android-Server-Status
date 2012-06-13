@@ -93,7 +93,8 @@ public class PestanaMainFav extends Activity {
 
 		super.onPause();
 		Log.i("control", "onResume ssh");
-
+		cantidad.setText("servicios :"
+				+ SingletonServicios.getConexion().getHosts().size());
 	}
 
 	/**
@@ -126,7 +127,7 @@ public class PestanaMainFav extends Activity {
 		}
 		// actualizmamos el textview.
 		cantidad.setText("servicios :"
-				+ SingletonEmail.getConexion().getHosts().size());
+				+ SingletonServicios.getConexion().getHosts().size());
 
 	}
 
@@ -492,11 +493,11 @@ public class PestanaMainFav extends Activity {
 			}
 			if (datos.get(position).isInicio()) {
 				estado.setTextColor(Color.GREEN);
-				estado.setText("autoarranque SI");
+				estado.setText("auto SI");
 
 			} else {
 				estado.setTextColor(Color.RED);
-				estado.setText("autoarranque NO");
+				estado.setText("auto NO");
 
 			}
 			return (item);

@@ -1768,3 +1768,540 @@ HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
 
 !ENTRY org.eclipse.ui 4 4 2012-06-12 01:09:15.232
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-06-12 09:42:16.709 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-12 09:42:37.737
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 09:42:37.737
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3d6721bd),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3d6721bd)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3d6721bd),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3d6721bd)),sourcePriority=16640)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 09:42:37.737
+!MESSAGE Conflict for 'com.soyatec.uml.ui.navigate.open.diagram':
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3d6721bd),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3d6721bd)),sourcePriority=16640)
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3d6721bd),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3d6721bd)),sourcePriority=16640)
+
+!ENTRY org.eclipse.ui 4 0 2012-06-12 14:20:21.849
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ddmuilib.logcat.LogCatReceiver.clearMessages(LogCatReceiver.java:173)
+	at com.android.ddmuilib.logcat.LogCatPanel$10.widgetSelected(LogCatPanel.java:554)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui 4 0 2012-06-12 14:20:23.627
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ddmuilib.logcat.LogCatReceiver.clearMessages(LogCatReceiver.java:173)
+	at com.android.ddmuilib.logcat.LogCatPanel$10.widgetSelected(LogCatPanel.java:554)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui 4 0 2012-06-12 14:20:27.003
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ddmuilib.logcat.LogCatReceiver.clearMessages(LogCatReceiver.java:173)
+	at com.android.ddmuilib.logcat.LogCatPanel$10.widgetSelected(LogCatPanel.java:554)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui 4 0 2012-06-12 14:20:27.569
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ddmuilib.logcat.LogCatReceiver.clearMessages(LogCatReceiver.java:173)
+	at com.android.ddmuilib.logcat.LogCatPanel$10.widgetSelected(LogCatPanel.java:554)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui 4 0 2012-06-12 14:20:34.431
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ddmuilib.logcat.LogCatReceiver.clearMessages(LogCatReceiver.java:173)
+	at com.android.ddmuilib.logcat.LogCatPanel$10.widgetSelected(LogCatPanel.java:554)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui 4 0 2012-06-12 14:20:34.819
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ddmuilib.logcat.LogCatReceiver.clearMessages(LogCatReceiver.java:173)
+	at com.android.ddmuilib.logcat.LogCatPanel$10.widgetSelected(LogCatPanel.java:554)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui 4 0 2012-06-12 14:20:35.032
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ddmuilib.logcat.LogCatReceiver.clearMessages(LogCatReceiver.java:173)
+	at com.android.ddmuilib.logcat.LogCatPanel$10.widgetSelected(LogCatPanel.java:554)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui 4 4 2012-06-12 14:20:50.284
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-06-12 14:20:51.192 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-12 14:21:08.914
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 14:21:08.914
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=16640)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 14:21:08.914
+!MESSAGE Conflict for 'com.soyatec.uml.ui.navigate.open.diagram':
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=16640)
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=16640)
+
+!ENTRY org.eclipse.ui 4 4 2012-06-12 15:03:43.567
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-06-12 17:22:56.347 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-12 17:23:46.956
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 17:23:46.956
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=16640)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 17:23:46.956
+!MESSAGE Conflict for 'com.soyatec.uml.ui.navigate.open.diagram':
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=16640)
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=16640)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-12 17:38:03.831
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 17:38:03.831
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.inheritance.explorer':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.inheritance.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenInheritanceDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=-2147467264)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.inheritance.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenInheritanceDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=-2147467264)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 17:38:03.832
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.association.explorer':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.association.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenAssociationDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=-2147467264)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.association.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenAssociationDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=-2147467264)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-12 17:38:03.832
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.dependence.explorer':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.dependence.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenDependencyDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=-2147467264)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.dependence.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenDependencyDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@2a4bd173),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2a4bd173)),sourcePriority=-2147467264)
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-06-13 13:59:03.494
+!MESSAGE login.xml: Couldn't resolve resource @string/david
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-06-13 13:59:23.729
+!MESSAGE login.xml: Couldn't resolve resource @string/jonatan
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-06-13 13:59:45.539
+!MESSAGE login.xml: Couldn't resolve resource @string/version
+
+!ENTRY org.eclipse.ui 4 4 2012-06-13 14:12:01.516
+!MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-06-13 14:14:59.575
+!MESSAGE Failed to load properties file for project 'test'
+!SESSION 2012-06-13 17:54:39.858 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-13 17:55:34.324
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 17:55:34.324
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@66869470),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@66869470)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@66869470),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@66869470)),sourcePriority=16640)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 17:55:34.324
+!MESSAGE Conflict for 'com.soyatec.uml.ui.navigate.open.diagram':
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@66869470),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@66869470)),sourcePriority=16640)
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@66869470),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@66869470)),sourcePriority=16640)
+
+!ENTRY org.eclipse.osgi 2 0 2012-06-13 17:55:43.988
+!MESSAGE While loading class "com.android.ide.eclipse.adt.internal.project.AndroidClasspathContainerInitializer", thread "Thread[Worker-0,5,main]" timed out waiting (5009ms) for thread "Thread[Worker-3,5,main]" to finish starting bundle "com.android.ide.eclipse.adt_18.0.0.v201203301601-306762 [199]". To avoid deadlock, thread "Thread[Worker-0,5,main]" is proceeding but "com.android.ide.eclipse.adt.internal.project.AndroidClasspathContainerInitializer" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/com.android.ide.eclipse.adt_18.0.0.v201203301601-306762.jar" by thread "Worker-3".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1087)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:297)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:268)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:463)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:400)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:476)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:429)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:345)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1207)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.jdt.core.JavaCore.computeClasspathContainerInitializer(JavaCore.java:2858)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainerInitializer(JavaCore.java:2834)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:2822)
+	at org.eclipse.jdt.internal.core.JavaModelManager$11.run(JavaModelManager.java:2747)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeAllContainers(JavaModelManager.java:2787)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:1871)
+	at org.eclipse.jdt.core.JavaCore.initializeAfterLoad(JavaCore.java:3569)
+	at org.eclipse.jdt.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:36)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 30 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1087)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:297)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:268)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:463)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:400)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:476)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:429)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:345)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1207)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.jdt.core.JavaCore.computeClasspathContainerInitializer(JavaCore.java:2858)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainerInitializer(JavaCore.java:2834)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:2822)
+	at org.eclipse.jdt.internal.core.JavaModelManager$11.run(JavaModelManager.java:2747)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeAllContainers(JavaModelManager.java:2787)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:1871)
+	at org.eclipse.jdt.core.JavaCore.initializeAfterLoad(JavaCore.java:3569)
+	at org.eclipse.jdt.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:36)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui 4 4 2012-06-13 19:14:44.573
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-06-13 19:18:03.877 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-13 19:18:20.114
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 19:18:20.115
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=16640)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 19:18:20.115
+!MESSAGE Conflict for 'com.soyatec.uml.ui.navigate.open.diagram':
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=16640)
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=16640)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-13 19:28:10.526
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 19:28:10.526
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.inheritance.explorer':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.inheritance.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenInheritanceDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=-2147467264)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.inheritance.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenInheritanceDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=-2147467264)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 19:28:10.526
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.association.explorer':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.association.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenAssociationDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=-2147467264)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.association.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenAssociationDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=-2147467264)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 19:28:10.526
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.dependence.explorer':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.dependence.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenDependencyDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=-2147467264)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.editor.popmenu/com.soyatec.uml.jdt.open.dependence.explorer,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.JavaEditorOpenDependencyDiagramActionDelegate),
+	expression=AndExpression(ViewerContributionExpression(#CompilationUnitEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@3160e069),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3160e069)),sourcePriority=-2147467264)
+
+!ENTRY org.eclipse.ui 4 4 2012-06-13 19:34:29.854
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-06-13 19:43:57.541 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-06-13 19:44:06.974
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-13 19:44:18.952
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 19:44:18.952
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@72cc5002),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@72cc5002)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@72cc5002),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@72cc5002)),sourcePriority=16640)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-13 19:44:18.952
+!MESSAGE Conflict for 'com.soyatec.uml.ui.navigate.open.diagram':
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@72cc5002),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@72cc5002)),sourcePriority=16640)
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@72cc5002),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@72cc5002)),sourcePriority=16640)
+
+!ENTRY org.eclipse.ui 4 4 2012-06-13 19:44:47.614
+!MESSAGE Invalid preference page path: XML Syntax

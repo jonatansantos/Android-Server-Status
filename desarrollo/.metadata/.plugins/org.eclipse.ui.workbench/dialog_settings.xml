@@ -12,8 +12,9 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="com.soyatec.uml.ClassDiagramNewWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="com.android.ide.eclipse.adt.project.NewTestProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="com.android.ide.eclipse.wizards.category"/>
 			<item value="com.soyatec.uml"/>
 		</list>
 	</section>

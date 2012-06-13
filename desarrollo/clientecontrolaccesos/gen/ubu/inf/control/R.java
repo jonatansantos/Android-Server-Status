@@ -51,6 +51,7 @@ public final class R {
         public static final int actualizar_not=0x7f080040;
         public static final int ajustes_fav=0x7f08003c;
         public static final int ajustes_not=0x7f08003f;
+        public static final int borrar_not=0x7f080042;
         public static final int bt_filtro_Cancel=0x7f080011;
         public static final int bt_filtro_OK=0x7f080010;
         public static final int bt_formulario_cancel=0x7f08001c;

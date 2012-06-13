@@ -223,7 +223,7 @@ public class ServicioEmail extends Service {
 		Notification notification = new Notification(R.drawable.ic_email,
 				resultado+" nuevos avisos", System.currentTimeMillis());
 		notification.setLatestEventInfo(this, "Servicio Email",
-				"Hay "+resultado2+" nuevos avisos de"+s.getIp(), PendingIntent.getActivity(
+				"Hay "+resultado2+" nuevos avisos de "+s.getIp(), PendingIntent.getActivity(
 						this.getBaseContext(), 0, intentNot,
 						PendingIntent.FLAG_CANCEL_CURRENT));
 
