@@ -34,14 +34,14 @@ public class ScanLog implements Daemon{
 	 * Timer para controlar el tiempo.
 	 * 
 	 */
-    private static Timer timer = null;
+    private Timer timer = null;
 
 	/**
 	 * 
 	 * Conexión con la base de datos.
 	 * 
 	 */
-	private static Connection conexion;
+	private Connection conexion;
 	
 	/**
 	 * 
@@ -76,14 +76,14 @@ public class ScanLog implements Daemon{
 	 * Cadena de conexión para la base de datos.
 	 * 
 	 */
-	private String cadena;
+	private String cadenaConexion;
 	
 	/**
 	 * 
 	 * Lector de buffer.
 	 * 
 	 */
-	private static BufferedReader is;
+	private BufferedReader bufferIn;
 	
 	/**
 	 * 
@@ -97,7 +97,7 @@ public class ScanLog implements Daemon{
 	 * Socket de escucha.
 	 * 
 	 */
-	private Socket client;
+	private Socket listenSocket;
 	
 	/**
 	 * 
@@ -111,19 +111,49 @@ public class ScanLog implements Daemon{
 	 * Tiempo de comprobación de nuevos mensajes.
 	 * 
 	 */
-	private static int time;
-    
+	private int tiempoComprobacion;
+	
 	/**
-	 * Crea una tarea repetitiva, .
+	 * 
+	 * Numero de mails por minuto que se considera spam.
 	 * 
 	 */
-    private static void asignarTarea() {
-        //Obtener el tiempo
-    	timer = new Timer();
-    	//Configurar la tarea repetitiva
-        timer.schedule(new Analisis(conexion, is), 0, time);
-    }
-
+	private int numeroMails;
+	
+	/**
+	 * 
+	 * Ultimo mensaje considerado como posible spam.
+	 * 
+	 */
+	private String mensajeSpam;
+    
+	/**
+	 * 
+	 * Contador de mensaje considerados como posible spam.
+	 * 
+	 */
+	private int contadorSpam;
+	
+	/**
+	 * 
+	 * Numero de conexiones fallidas al correo por minuto que se considera ataque.
+	 * 
+	 */
+	private int numeroAtaque;
+	
+	/**
+	 * 
+	 * Ultimo mensaje considerado como posible ataque.
+	 * 
+	 */
+	private String mensajeAtaque;
+    
+	/**
+	 * 
+	 * Contador de mensaje considerados como posible ataque.
+	 * 
+	 */
+	private int contadorAtaque;
     
     /**
      * Tareas a realizar al inicializar el demonio.
@@ -138,14 +168,14 @@ public class ScanLog implements Daemon{
     		 lecturaFicheroPropiedades();
     		 
      		//Crear la conexion con base de datos
- 	    	conexion = DriverManager.getConnection(cadena,user,password);
+ 	    	conexion = DriverManager.getConnection(cadenaConexion,user,password);
  	    	
  	    	//Crear el servidor socket y el socket de escucha
  	    	serverSocket = new ServerSocket(portIn);
- 	    	client = serverSocket.accept();
+ 	    	listenSocket = serverSocket.accept();
  	    	
  	    	//Crear el lector de buffer
-			is = new BufferedReader( new InputStreamReader(client.getInputStream()));
+			bufferIn = new BufferedReader( new InputStreamReader(listenSocket.getInputStream()));
  	    	
  	    	System.out.println(new Date().toString() + " Iniciado el demonio");
  	    	
@@ -162,8 +192,11 @@ public class ScanLog implements Daemon{
      */
 	@Override
     public void start() {
-        //Crear la tarea repetitiva
-        asignarTarea();
+		//Crear tarea repetitiva de comprobar spam
+		crearTareaComprobarSpamYAtaque();
+		
+        //Crear la tarea repetitiva de analisis
+        crearTareaAnalisis();
     }
 
     /**
@@ -178,8 +211,8 @@ public class ScanLog implements Daemon{
         	timer.cancel();
         }
     	//Cerrar buffer, sockets y conexion.
-    	is.close();
-        client.close();
+    	bufferIn.close();
+        listenSocket.close();
         serverSocket.close();
         conexion.close();
         
@@ -219,9 +252,11 @@ public class ScanLog implements Daemon{
     	    password = propiedades.getProperty("dataBasePassword");
     	    
     	    portIn = Integer.parseInt(propiedades.getProperty("portIn"));
-    	    time = Integer.parseInt(propiedades.getProperty("time"));
+    	    tiempoComprobacion = Integer.parseInt(propiedades.getProperty("tiempoComprobacion"));
+    	    numeroMails = Integer.parseInt(propiedades.getProperty("numeroMails"));
+    	    numeroAtaque = Integer.parseInt(propiedades.getProperty("numeroAtaque"));
     	    
-    	    cadena="jdbc:mysql://" + server + "/" + bd;
+    	    cadenaConexion="jdbc:mysql://" + server + "/" + bd;
     	    
     	    System.out.println(new Date().toString() + " Leido archivo de configuración.");
     	    
@@ -230,6 +265,136 @@ public class ScanLog implements Daemon{
     	}
     	
 	}
+    
+    /**
+	 * Crea una tarea repetitiva, de analisis.
+	 * 
+	 */
+    private void crearTareaAnalisis() {
+        //Obtener el tiempo
+    	timer = new Timer();
+    	//Configurar la tarea repetitiva
+        timer.schedule(new Analisis(this), 0, tiempoComprobacion);
+    }
+
+    /**
+	 * Crea una tarea repetitiva, de comprobar si es spam.
+	 * 
+	 */
+    private void crearTareaComprobarSpamYAtaque() {
+        //Obtener el tiempo
+    	timer = new Timer();
+    	//Configurar la tarea repetitiva
+        timer.schedule(new ComprobarSpamYAtaque(this), 0, 60000);
+    } 
+    
+    /**
+     * Devuelve la conexion de la base de datos.
+     * 
+     * @return Connection Conexion de la base de datos.
+     */
+    public Connection getConexion(){
+    	return conexion;
+    }
+    
+    /**
+     * Devuelve el buffer de lectura.
+     * 
+     * @return BufferedReader Buffer de lectura.
+     */
+    public BufferedReader getBufferedReader(){
+    	return bufferIn;
+    }
+    
+    /**
+     * Devuelve el numero de mails por minutos que son considerados spam.
+     * 
+     * @return int Numero de mails/minuto.
+     */
+    public int getNumeroMails(){
+    	return numeroMails;
+    }
+    
+    /**
+     * Devuelve el numero de mails contados considerados spam en el ultimo minuto.
+     * 
+     * @return int Numero de mails contados.
+     */
+    public int getContadorSpam(){
+    	return contadorSpam;
+    }
+    
+    /**
+     * Establece el numero de mails contados considerados spam en el ultimo minuto.
+     * 
+     * @param numero int Numero de mails contados.
+     */
+    public void setContadorSpam(int numero){
+    	contadorSpam = numero;
+    }
+    
+    /**
+     * Devuelve el ultimo mensaje considerado spam.
+     * 
+     * @return String Mensaje spam.
+     */
+    public String getMensajeSpam(){
+    	return mensajeSpam;
+    }
+    
+    /**
+     * Establece el ultimo mensaje considerado spam.
+     * 
+     * @param mensaje String Mensaje spam.
+     */
+    public void setMensajeSpam(String mensaje){
+    	mensajeSpam = mensaje;
+    }
+    
+   /**
+    * Devuelve el numero de conexiones fallidas por minutos que son considerados ataque.
+    * 
+    * @return int Numero de mails/minuto.
+    */
+   public int getNumeroAtaque(){
+   		return numeroAtaque;
+   }
+   
+   /**
+    * Devuelve el numero de conexiones fallidas contadas considerados ataque en el ultimo minuto.
+    * 
+    * @return int Numero de mails contados.
+    */
+   public int getContadorAtaque(){
+   		return contadorAtaque;
+   }
+   
+   /**
+    * Establece el numero de conexiones fallidas contados considerados ataque en el ultimo minuto.
+    * 
+    * @param numero int Numero de mails contados.
+    */
+   public void setContadorAtaque(int numero){
+   		contadorAtaque = numero;
+   }
+   
+   /**
+    * Devuelve el ultimo mensaje considerado ataque.
+    * 
+    * @return String Mensaje spam.
+    */
+   public String getMensajeAtaque(){
+   		return mensajeAtaque;
+   }
+   
+   /**
+    * Establece el ultimo mensaje considerado ataque.
+    * 
+    * @param mensaje String Mensaje spam.
+    */
+   public void setMensajeAtaque(String mensaje){
+   		mensajeAtaque = mensaje;
+   }
     
  }
 
@@ -245,17 +410,11 @@ class Analisis extends TimerTask {
 	
 	/**
 	 * 
-	 * Conexion con la base de datos.
+	 * ScanLog que llama a la tarea repetitiva.
 	 * 
 	 */
-	private static Connection conexion;
-	
-	/**
-	 * 
-	 * Lector del buffer.
-	 * 
-	 */
-	private BufferedReader is;
+	private ScanLog scanLog;
+
 
 	/**
 	 * Constructor de la tarea repetitiva.
@@ -263,9 +422,8 @@ class Analisis extends TimerTask {
 	 * @param conexion Conexion con la base de datos.
 	 * @param is Lector de buffer de entrada.
 	 */
-	public Analisis(Connection conexion, BufferedReader is) {
-		Analisis.conexion = conexion;
-		this.is = is;
+	public Analisis(ScanLog log) {
+		scanLog = log;
 	}
 
 	/**
@@ -281,7 +439,7 @@ class Analisis extends TimerTask {
 			String inputLine;
 			
 			//Comprobar si hay lineas que leer
-			while (is.ready() && (inputLine = is.readLine())!= "") {
+			while (scanLog.getBufferedReader().ready() && (inputLine = scanLog.getBufferedReader().readLine())!= "") {
 				String linea;
 				
 				//Obtener la linea
@@ -311,7 +469,7 @@ class Analisis extends TimerTask {
 
 		//Obtener la parte del mensaje de la linea
 		mensaje = linea.substring(16);
-		mensaje = mensaje.substring(linea.indexOf(":") + 2);
+		mensaje = mensaje.substring(mensaje.indexOf(":") + 2);
 
 		//Comprobar si es un mensaje de la conexión ssh o de email
 		if(linea.indexOf("sshd") > -1){
@@ -327,7 +485,7 @@ class Analisis extends TimerTask {
 			urgencia = obtenerUrgenciaCorreo(mensaje);
 			if (urgencia != -1){
 				System.out.println(new Date().toString() + " Grabando notificacion: " + linea);
-				grabarNotificacion(fecha, 1, urgencia, mensaje);
+				grabarNotificacion(fecha, 1, urgencia, mensaje);				
 			}
 		}		
 	}
@@ -348,6 +506,12 @@ class Analisis extends TimerTask {
 			tipo = 0;
 		} else if (mensaje.indexOf("Accepted password") > -1){
 			tipo = 2;
+		} else if (mensaje.indexOf("not receive identification string") > -1){
+			tipo = 0;
+		} else if (mensaje.indexOf("check pass; user unknown") > -1){
+			tipo = 0;
+		} else if (mensaje.indexOf("subsystem request for sftp") > -1){
+			tipo = 2;
 		}
 
 		return tipo;
@@ -364,9 +528,13 @@ class Analisis extends TimerTask {
 
 		//Comprobamos si es uno de los mensajes a notificar
 		if(mensaje.indexOf("SASL LOGIN authentication failed: authentication failure") > -1){
-			tipo = 0;
+			scanLog.setContadorAtaque(scanLog.getContadorAtaque()+1);
+			scanLog.setMensajeAtaque(mensaje);
+			tipo = 1;
 		} else if (mensaje.indexOf("status=sent") > -1){
-			tipo = 2;
+			scanLog.setContadorSpam(scanLog.getContadorSpam()+1);
+			scanLog.setMensajeSpam(mensaje);
+			tipo = 1;
 		}
 
 		return tipo;
@@ -458,14 +626,20 @@ class Analisis extends TimerTask {
 	 * @param urgencia int Urgencia de la notificacion.
 	 * @param mensaje String Mensaje de la notificacion.
 	 */
-	private static void grabarNotificacion(Calendar fecha, int tipoMensaje, int urgencia, String mensaje){
+	private void grabarNotificacion(Calendar fecha, int tipoMensaje, int urgencia, String mensaje){
 		//Pasar la fecha a fecha SQL
 		java.sql.Timestamp horaSql = new java.sql.Timestamp(fecha.getTime().getTime());
 
+		//Comprobamos el tipo de mensaje y decidimos si debe ser descarga o no la notificación
+		int descargada = 0;
+		if(tipoMensaje == 1){
+			descargada = 1;
+		}
+		
 		try {
 			//Crear objetos Statement
-			Statement st = conexion.createStatement();
-			Statement st1 = conexion.createStatement();
+			Statement st = scanLog.getConexion().createStatement();
+			Statement st1 = scanLog.getConexion().createStatement();
 			
 			//Crear la notificacion
 			String sql = "INSERT INTO Notificaciones (fecha, tipoMensaje, urgencia, mensaje) " +
@@ -490,8 +664,8 @@ class Analisis extends TimerTask {
 			//Recorrer los dispositivos
 			while(rsDispositivos.next()){
 				//Crear la relacion DispositivoNotificacion
-				sql = "INSERT INTO DispositivosNotificaciones (idDispositivo, idNotificacion) " +
-						" VALUES (" + rsDispositivos.getInt("idDispositivo") + ", " + idNotificacion + ");";
+				sql = "INSERT INTO DispositivosNotificaciones (idDispositivo, idNotificacion, descargada) " +
+						" VALUES (" + rsDispositivos.getInt("idDispositivo") + ", " + idNotificacion + ", " + descargada + ");";
 
 				st1.executeUpdate(sql);
 			}
@@ -504,3 +678,107 @@ class Analisis extends TimerTask {
 		}
 	}
 }
+	
+	/**
+	 * Clase correspondiente a la tarea repetitiva de comprobar si se considera spam.
+	 * 
+	 * @author David Herrero de la Peña.
+	 * @author Jonatan Santos Barrios.
+	 * @version 1.0
+	 *
+	 */
+	class ComprobarSpamYAtaque extends TimerTask {
+		
+		/**
+		 * 
+		 * ScanLog que llama a la tarea repetitiva.
+		 * 
+		 */
+		private ScanLog scanLog;
+
+		/**
+		 * Constructor de la tarea repetitiva.
+		 * 
+		 * @param conexion Conexion con la base de datos.
+		 * @param numeroMails int Numero de mails por minuto que se consideran spam.
+		 * @param contadorSpam int Numero de mails que se han enviado en el ultimo minuto.
+		 * @param spam String con el ultimo mensaje de correo enviado, considerado como posible spam.
+		 */
+		public ComprobarSpamYAtaque(ScanLog log) {
+			scanLog = log;
+		}
+		
+		
+		@Override
+		public void run() {
+			//Comprobamos si hay spam
+			if(scanLog.getContadorSpam() >= scanLog.getNumeroMails()){
+				System.out.println(new Date().toString() + " Grabando notificacion de spam: " + scanLog.getMensajeSpam());
+				grabarNotificacion(Calendar.getInstance(), 1, 2, scanLog.getMensajeSpam());
+			}
+			
+			//Comprobamos si hay ataque
+			if(scanLog.getContadorSpam() >= scanLog.getNumeroMails()){
+				System.out.println(new Date().toString() + " Grabando notificacion de ataque: " + scanLog.getMensajeAtaque());
+				grabarNotificacion(Calendar.getInstance(), 1, 0, scanLog.getMensajeAtaque());
+			}
+			
+			//Ponemos a 0 los contadores
+			scanLog.setContadorSpam(0);
+			scanLog.setContadorAtaque(0);
+		}
+		
+		/**
+		 * Graba en base de datos la información correspondiente de la notificación.
+		 * 
+		 * @param fecha Calendar Fecha y hora de la notificacion.
+		 * @param tipoMensaje int Tipo de mensaje de la notificacion.
+		 * @param urgencia int Urgencia de la notificacion.
+		 * @param mensaje String Mensaje de la notificacion.
+		 */
+		private void grabarNotificacion(Calendar fecha, int tipoMensaje, int urgencia, String mensaje){
+			//Pasar la fecha a fecha SQL
+			java.sql.Timestamp horaSql = new java.sql.Timestamp(fecha.getTime().getTime());
+
+			try {
+				//Crear objetos Statement
+				Statement st = scanLog.getConexion().createStatement();
+				Statement st1 = scanLog.getConexion().createStatement();
+				
+				//Crear la notificacion
+				String sql = "INSERT INTO Notificaciones (fecha, tipoMensaje, urgencia, mensaje) " +
+						"VALUES ('" + horaSql + "', " + tipoMensaje +", " + urgencia + ", '" + mensaje + "');";
+
+				st.executeUpdate(sql);
+
+				//Obtener el id de la notificacion creada anteriormente
+				sql = "SELECT MAX(idNotificacion) AS Notificacion FROM Notificaciones;";
+
+				ResultSet rsIdNotificacion = st.executeQuery(sql);
+
+				rsIdNotificacion.next();
+
+				int idNotificacion = rsIdNotificacion.getInt("Notificacion");
+
+				//Obtener los todos los dispositivos
+				sql = "SELECT idDispositivo FROM Dispositivos;";
+
+				ResultSet rsDispositivos = st.executeQuery(sql);
+
+				//Recorrer los dispositivos
+				while(rsDispositivos.next()){
+					//Crear la relacion DispositivoNotificacion
+					sql = "INSERT INTO DispositivosNotificaciones (idDispositivo, idNotificacion) " +
+							" VALUES (" + rsDispositivos.getInt("idDispositivo") + ", " + idNotificacion + ");";
+
+					st1.executeUpdate(sql);
+				}
+				//Cerrar los Statement
+				st1.close();
+				st.close();
+
+			} catch (SQLException e) {
+				System.err.println(new Date().toString() + " Excepción SQL registrada: " + e.getMessage());
+			}
+		}
+	}
