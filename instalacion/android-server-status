@@ -1,0 +1,4 @@
+#!/bin/sh -e
+sudo /usr/share/apache-tomcat-7.0.27/bin/startup.sh
+sudo sh /usr/share/ScanLog/ScanLog.sh start
+exit 0
