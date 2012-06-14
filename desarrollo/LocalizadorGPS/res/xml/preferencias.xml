@@ -3,6 +3,7 @@
     <PreferenceCategory android:title="Servicio de GPS">
           <CheckBoxPreference 
           android:key="seguirencencido"
+          android:defaultValue="true"
           android:title="Seguir activo siempre"
           android:summary="El servicio seguirá activo aunque se apague el teléfono"/>
     </PreferenceCategory>

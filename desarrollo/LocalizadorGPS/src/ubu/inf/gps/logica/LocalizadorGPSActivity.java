@@ -156,8 +156,14 @@ public class LocalizadorGPSActivity extends Activity {
 					boolean isChecked) {
 				if (isChecked && !isMyServiceRunning()) {// si lo hemos puesto a
 															// on y no estaba el
-															// servicio
+							
+					// servicio
 					// iniciamos todo
+					// obtenemos las preferencias
+					
+					SharedPreferences.Editor editor = pref.edit();
+					editor.putBoolean("run", true);
+					editor.commit();
 					boolean sms = pref.getBoolean("avisosms", false);
 					boolean email = pref.getBoolean("avisoemail", false);
 					Intent i = new Intent();
@@ -178,6 +184,9 @@ public class LocalizadorGPSActivity extends Activity {
 															// y estaba el
 															// servicio
 					// paramos
+					SharedPreferences.Editor editor = pref.edit();
+					editor.putBoolean("run", false);
+					editor.commit();
 					Intent i = new Intent();
 					i.setAction("ServicioGPS");
 					stopService(i);

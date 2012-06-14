@@ -111,7 +111,7 @@ public class PestanaMainNotificaciones extends Activity {
 				tipo.setBackgroundResource(R.drawable.ic_email);
 			}
 			// construimos la cadena con la fecha
-			String fechaaux = datos.get(position).getFecha().toGMTString();
+			String fechaaux = datos.get(position).getFecha().toLocaleString();
 
 			String stringfecha = fechaaux.substring(0, 11);
 			fecha.setText(stringfecha);
@@ -611,22 +611,23 @@ public class PestanaMainNotificaciones extends Activity {
 		barra.setCancelable(false);
 		// creamos el array y la pila.
 		datos = new ArrayList<Notificacion>();
-		// /metemos datos de prueba
-		// Servidor sas = new Servidor("10.10.10.10", "ninguna", false, 1,
-		// 12345,
-		// 22);
-		// Notificacion aux = new Notificacion("1", new Date(), 1, 1, sas, 1);
-		// datos.add(aux);
-		//
-		// aux = new Notificacion("2", new Date(), 2, 2, sas, 2);
-		// datos.add(aux);
-		// aux = new Notificacion("3", new Date(), 1, 2, sas, 3);
-		// datos.add(aux);
-		// aux = new Notificacion("4", new Date(), 2, 1, sas, 4);
-		// datos.add(aux);
-		// aux = new Notificacion("5", new Date(), 1, 1, sas, 5);
-		// datos.add(aux);
-		// /
+		 //metemos datos de prueba
+//		 Servidor sas = new Servidor("10.10.10.10", "ninguna", false, 1,
+//		 12345,
+//		 22);
+//		 Notificacion aux = new Notificacion("1", new Date(), 1, 1, sas, 1);
+//		 datos.add(aux);
+//		Date d = new Date();
+//		d.setDate(2);
+//		 aux = new Notificacion("2", d, 2, 2, sas, 2);
+//		 datos.add(aux);
+//		 aux = new Notificacion("3", new Date(), 1, 2, sas, 3);
+//		 datos.add(aux);
+//		 aux = new Notificacion("4", new Date(), 2, 1, sas, 4);
+//		 datos.add(aux);
+//		 aux = new Notificacion("5", new Date(), 1, 1, sas, 5);
+//		 datos.add(aux);
+		 
 		pila = new Stack<ArrayList<Notificacion>>();
 		borrados = new ArrayList<Notificacion>();
 

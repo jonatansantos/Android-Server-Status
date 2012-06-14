@@ -57,6 +57,7 @@ public class LectorSMS extends BroadcastReceiver {
 								+ "  " + messages[0].getDisplayMessageBody());
 				if (messages[0].getDisplayMessageBody().equals(cadenaa)) {
 					editor.putBoolean("run", true);
+					
 					Log.i("gps", "arrancar");
 					abortBroadcast();
 					Intent i = new Intent();

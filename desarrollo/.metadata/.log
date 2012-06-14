@@ -2305,3 +2305,31 @@ HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
 
 !ENTRY org.eclipse.ui 4 4 2012-06-13 19:44:47.614
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-06-14 11:47:22.054 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui.workbench 2 0 2012-06-14 11:48:08.662
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-14 11:48:08.663
+!MESSAGE Conflict for 'AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown':
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@2482c23d),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2482c23d)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.soyatec.uml.UMLElementCreationActionSet/com.soyatec.uml.NewDiagramDropDown,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.NewDiagramDropDownAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@2482c23d),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2482c23d)),sourcePriority=16640)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2012-06-14 11:48:08.663
+!MESSAGE Conflict for 'com.soyatec.uml.ui.navigate.open.diagram':
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@2482c23d),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2482c23d)),sourcePriority=16640)
+HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
+	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
+	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@2482c23d),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2482c23d)),sourcePriority=16640)
+
+!ENTRY org.eclipse.ui 4 4 2012-06-14 15:25:54.591
+!MESSAGE Invalid preference page path: XML Syntax

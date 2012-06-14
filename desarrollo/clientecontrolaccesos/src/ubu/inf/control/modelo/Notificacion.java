@@ -38,7 +38,7 @@ public class Notificacion {
 	 */
 	private int tipo;
 	/**
-	 * Tipo de urgencia: 0 grave, 1 normal, 0 info.
+	 * Tipo de urgencia: 0 grave, 1 normal, 2 info.
 	 * 
 	 * @uml.property name="urgencia"
 	 */
