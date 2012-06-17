@@ -6,13 +6,32 @@
     android:background="@drawable/fondo"
     android:orientation="vertical" >
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/version"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:src="@drawable/ic_servidor" />
+
     <LinearLayout
-        android:id="@+id/linear1"
+        android:id="@+id/linear1_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageView1"
         android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/borde"
         android:orientation="vertical" >
 
@@ -31,10 +50,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:ems="10" />
+            android:ems="10" >
 
+            <requestFocus />
+        </EditText>
+
         <LinearLayout
-            android:id="@+id/linear2"
+            android:id="@+id/linear2_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -49,23 +71,5 @@
                 android:text="@string/aceptar" />
         </LinearLayout>
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp"
-        android:src="@drawable/ic_servidor" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/version"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

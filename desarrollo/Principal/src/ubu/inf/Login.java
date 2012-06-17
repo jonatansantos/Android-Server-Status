@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 /**
  * Actividad en la que introducir la contraseña para poder entrar en la aplicación.
@@ -21,7 +22,7 @@ public class Login extends Activity{
 	/**
 	 * Campo donde introducir la contraseña.
 	 */
-	private TextView pass;
+	private EditText pass;
 	/**
 	 * Boton para aceptar.
 	 */
@@ -52,7 +53,7 @@ public class Login extends Activity{
 		pref = PreferenceManager.getDefaultSharedPreferences(this);
 		passguardada=pref.getString("pass", "");
 		
-		pass= (TextView) findViewById(R.id.et_login_pass);
+		pass= (EditText) findViewById(R.id.et_login_pass);
 		ok = (Button) findViewById(R.id.bt_login_ok);
 		ok.setOnClickListener(new OnClickListener() {
 			
