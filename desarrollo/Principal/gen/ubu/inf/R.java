@@ -22,16 +22,16 @@ public final class R {
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f070000;
-        public static final int bt_login_ok=0x7f07000a;
+        public static final int bt_login_ok=0x7f07000b;
         public static final int bt_menu_gps=0x7f07000f;
         public static final int bt_menu_servidor=0x7f070011;
         public static final int bt_menu_terminal=0x7f07000d;
-        public static final int et_login_pass=0x7f070008;
-        public static final int imageView1=0x7f07000b;
+        public static final int et_login_pass=0x7f070009;
+        public static final int imageView1=0x7f070007;
         public static final int iv_falsa_google=0x7f070002;
         public static final int iv_falsa_play=0x7f070001;
-        public static final int linear1=0x7f070007;
-        public static final int linear2=0x7f070009;
+        public static final int linear1_login=0x7f070008;
+        public static final int linear2_login=0x7f07000a;
         public static final int preferencias=0x7f070016;
         public static final int scroll=0x7f07000c;
         public static final int textView1=0x7f070004;

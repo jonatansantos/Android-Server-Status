@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="18" version="2.0">
+<workbench progressCount="35" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="929" x="-3" y="-22">
 <fastViewData fastViewLocation="1024">
@@ -21,7 +21,7 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
@@ -34,7 +34,7 @@
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -45,12 +45,17 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="login.xml" partName="login.xml" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/res/layout/login.xml" title="login.xml" tooltip="Principal/res/layout/login.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/res/layout/login.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" partName="Login.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/src/ubu/inf/Login.java" title="Login.java" tooltip="Principal/src/ubu/inf/Login.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/src/ubu/inf/Login.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="52" selectionOffset="1519" selectionTopPixel="570"/>
 </editor>
 </editors>
 <views>
@@ -251,8 +256,8 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@57730f82" ratio="0.7145161" ratioLeft="443" ratioRight="177" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@57730f82" ratio="0.61290324" ratioLeft="380" ratioRight="240" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
@@ -541,8 +546,6 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainNotificaciones.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" path="/clientecontrolaccesos/ubu.inf.control.logica_notificaciones.ucd"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/CopyOfPestanaMainNotificaciones.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioEmail.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/Filtro.java"/>
@@ -555,147 +558,142 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LocalizadorGPS/res/xml/preferencias.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/logica/LocalizadorGPSActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Principal/res/layout/login.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Principal/src/ubu/inf/Login.java"/>
 </editors>
-<item historyLabel="PestanaMainNotificaciones.java" index="0">
-<position info="not_deleted" x="5510" y="21"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="0">
-<position info="not_deleted" x="5699" y="0"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="0">
-<position info="not_deleted" x="8557" y="16"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="0">
-<position info="not_deleted" x="4782" y="7"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="0">
-<position info="not_deleted" x="5212" y="0"/>
-</item>
-<item historyLabel="ubu.inf.control.logica_notificaciones.ucd" index="1"/>
-<item historyLabel="PestanaMainNotificaciones.java" index="0">
-<position info="not_deleted" x="93" y="0"/>
-</item>
-<item historyLabel="CopyOfPestanaMainNotificaciones.java" index="2">
-<position info="not_deleted" x="2288" y="0"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="0">
-<position info="not_deleted" x="93" y="0"/>
-</item>
 <item historyLabel="PestanaMainNotificaciones.java" index="0">
 <position info="not_deleted" x="476" y="77"/>
 </item>
-<item historyLabel="Main.java" index="3">
+<item historyLabel="Main.java" index="1">
 <position info="not_deleted" x="1251" y="0"/>
 </item>
-<item historyLabel="ServicioEmail.java" index="4">
+<item historyLabel="ServicioEmail.java" index="2">
 <position info="not_deleted" x="6281" y="0"/>
 </item>
-<item historyLabel="Filtro.java" index="5">
+<item historyLabel="Filtro.java" index="3">
 <position info="not_deleted" x="12193" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="6">
+<item historyLabel="PestanaMainNotificaciones.java" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="6">
+<item historyLabel="PestanaMainNotificaciones.java" index="4">
 <position info="not_deleted" x="2537" y="15"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="6">
+<item historyLabel="PestanaMainNotificaciones.java" index="4">
 <position info="not_deleted" x="4031" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="6">
+<item historyLabel="PestanaMainNotificaciones.java" index="4">
 <position info="not_deleted" x="28123" y="8"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="6">
+<item historyLabel="PestanaMainNotificaciones.java" index="4">
 <position info="not_deleted" x="17594" y="10"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="6">
+<item historyLabel="PestanaMainNotificaciones.java" index="4">
 <position info="not_deleted" x="17937" y="537"/>
 </item>
-<item historyLabel="Consola.java" index="7">
+<item historyLabel="Consola.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="7">
+<item historyLabel="Consola.java" index="5">
 <position info="not_deleted" x="1801" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="7">
+<item historyLabel="Consola.java" index="5">
 <position info="not_deleted" x="12626" y="14"/>
 </item>
-<item historyLabel="Consola.java" index="7">
+<item historyLabel="Consola.java" index="5">
 <position info="not_deleted" x="13055" y="14"/>
 </item>
-<item historyLabel="Consola.java" index="7">
+<item historyLabel="Consola.java" index="5">
 <position info="not_deleted" x="13292" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="7">
+<item historyLabel="Consola.java" index="5">
 <position info="not_deleted" x="14179" y="0"/>
 </item>
-<item historyLabel="AutoArranque.java" index="8">
+<item historyLabel="AutoArranque.java" index="6">
 <position info="not_deleted" x="797" y="0"/>
 </item>
-<item historyLabel="ServicioGPS.java" index="9">
+<item historyLabel="ServicioGPS.java" index="7">
 <position info="not_deleted" x="843" y="0"/>
 </item>
-<item historyLabel="AutoArranque.java" index="8">
+<item historyLabel="AutoArranque.java" index="6">
 <position info="not_deleted" x="797" y="0"/>
 </item>
-<item historyLabel="LectorSMS.java" index="10">
+<item historyLabel="LectorSMS.java" index="8">
 <position/>
 </item>
-<item historyLabel="AutoArranque.java" index="8">
+<item historyLabel="AutoArranque.java" index="6">
 <position info="not_deleted" x="1234" y="0"/>
 </item>
-<item historyLabel="Preferencias.java" index="11">
+<item historyLabel="Preferencias.java" index="9">
 <position info="not_deleted" x="429" y="0"/>
 </item>
-<item historyLabel="AutoArranque.java" index="8">
+<item historyLabel="AutoArranque.java" index="6">
 <position info="not_deleted" x="1234" y="0"/>
 </item>
-<item historyLabel="preferencias.xml" index="12"/>
-<item historyLabel="AutoArranque.java" index="8">
+<item historyLabel="preferencias.xml" index="10"/>
+<item historyLabel="AutoArranque.java" index="6">
 <position info="not_deleted" x="1234" y="0"/>
 </item>
-<item historyLabel="LectorSMS.java" index="10">
+<item historyLabel="LectorSMS.java" index="8">
 <position info="not_deleted" x="2261" y="6"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="13">
+<item historyLabel="LocalizadorGPSActivity.java" index="11">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="13">
+<item historyLabel="LocalizadorGPSActivity.java" index="11">
 <position info="not_deleted" x="4305" y="23"/>
 </item>
-<item historyLabel="LectorSMS.java" index="10">
+<item historyLabel="LectorSMS.java" index="8">
 <position info="not_deleted" x="1298" y="175"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="13">
+<item historyLabel="LocalizadorGPSActivity.java" index="11">
 <position info="not_deleted" x="4305" y="23"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="13">
+<item historyLabel="LocalizadorGPSActivity.java" index="11">
 <position info="not_deleted" x="4736" y="0"/>
 </item>
-<item historyLabel="LectorSMS.java" index="10">
+<item historyLabel="LectorSMS.java" index="8">
 <position info="not_deleted" x="1298" y="175"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="13">
+<item historyLabel="LocalizadorGPSActivity.java" index="11">
 <position info="not_deleted" x="5346" y="0"/>
 </item>
-<item historyLabel="preferencias.xml" index="12"/>
-<item historyLabel="PestanaMainNotificaciones.java" index="6">
+<item historyLabel="preferencias.xml" index="10"/>
+<item historyLabel="PestanaMainNotificaciones.java" index="4">
 <position info="not_deleted" x="17937" y="537"/>
 </item>
-<item historyLabel="preferencias.xml" index="12"/>
-<item historyLabel="LocalizadorGPSActivity.java" index="13">
+<item historyLabel="preferencias.xml" index="10"/>
+<item historyLabel="LocalizadorGPSActivity.java" index="11">
 <position info="not_deleted" x="5346" y="0"/>
 </item>
-<item historyLabel="LectorSMS.java" index="10">
+<item historyLabel="LectorSMS.java" index="8">
 <position info="not_deleted" x="1298" y="175"/>
 </item>
-<item historyLabel="AutoArranque.java" index="8">
+<item historyLabel="AutoArranque.java" index="6">
 <position info="not_deleted" x="1234" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="7">
+<item historyLabel="Consola.java" index="5">
 <position info="not_deleted" x="14179" y="0"/>
 </item>
-<item active="true" historyLabel="login.xml" index="14"/>
+<item historyLabel="login.xml" index="12"/>
+<item historyLabel="Login.java" index="13">
+<position info="not_deleted" x="1519" y="52"/>
+</item>
+<item historyLabel="login.xml" index="12"/>
+<item historyLabel="Login.java" index="13">
+<position info="not_deleted" x="1536" y="0"/>
+</item>
+<item historyLabel="Login.java" index="13">
+<position info="not_deleted" x="806" y="0"/>
+</item>
+<item historyLabel="login.xml" index="12"/>
+<item historyLabel="Login.java" index="13">
+<position info="not_deleted" x="1519" y="52"/>
+</item>
+<item historyLabel="login.xml" index="12"/>
+<item historyLabel="Login.java" index="13">
+<position info="not_deleted" x="1519" y="52"/>
+</item>
+<item active="true" historyLabel="login.xml" index="12"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -713,6 +711,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" tooltip="Principal/src/ubu/inf/Login.java">
+<persistable path="/Principal/src/ubu/inf/Login.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="login.xml" tooltip="Principal/res/layout/login.xml">
 <persistable path="/Principal/res/layout/login.xml"/>
 </file>
@@ -754,9 +755,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/Main.java">
 <persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainFav.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainFav.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainFav.java"/>
 </file>
 </mruList>
 </workbench>
