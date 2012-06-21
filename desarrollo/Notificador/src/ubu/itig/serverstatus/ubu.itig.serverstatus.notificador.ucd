@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="805,353" id="ubu.itig.serverstatus.notificador" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030204E6F746966696361646F722F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" name="Notificador" location="50,50" size="207,283" id="ubu.itig.serverstatus.notificador/Notificador" runTimeClassModel="obtenerNotificacionesAntiguas,hayNotificaciones,cadena,password,obtenerNotificacionesNuevas,conexion,logger,borrarNotificacion,server,lecturaFicheroPropiedades(),user,Notificador(),bd">
+    <children xsi:type="editmodel:CompartmentEditModel" size="75,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="bd" id="ubu.itig.serverstatus.notificador/Notificador#bd"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cadena" id="ubu.itig.serverstatus.notificador/Notificador#cadena"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="conexion" id="ubu.itig.serverstatus.notificador/Notificador#conexion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="logger" id="ubu.itig.serverstatus.notificador/Notificador#logger"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="password" id="ubu.itig.serverstatus.notificador/Notificador#password"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="server" id="ubu.itig.serverstatus.notificador/Notificador#server"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="user" id="ubu.itig.serverstatus.notificador/Notificador#user"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="184,108">
+      <children xsi:type="editmodel:MethodEditModel" name="Notificador" id="ubu.itig.serverstatus.notificador/Notificador#Notificador()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borrarNotificacion" id="ubu.itig.serverstatus.notificador/Notificador#borrarNotificacion"/>
+      <children xsi:type="editmodel:MethodEditModel" name="hayNotificaciones" id="ubu.itig.serverstatus.notificador/Notificador#hayNotificaciones"/>
+      <children xsi:type="editmodel:MethodEditModel" name="lecturaFicheroPropiedades" id="ubu.itig.serverstatus.notificador/Notificador#lecturaFicheroPropiedades()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="obtenerNotificacionesAntiguas" id="ubu.itig.serverstatus.notificador/Notificador#obtenerNotificacionesAntiguas"/>
+      <children xsi:type="editmodel:MethodEditModel" name="obtenerNotificacionesNuevas" id="ubu.itig.serverstatus.notificador/Notificador#obtenerNotificacionesNuevas"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="805,938" id="ubu.itig.serverstatus.scanlog" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030205363616E4C6F672F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0" name="Analisis" location="165,45" size="251,211" id="ubu.itig.serverstatus.scanlog/Analisis" runTimeClassModel="obtenerUrgenciaSSH(Ljava.lang.String;),obtenerUrgenciaCorreo(Ljava.lang.String;),run(),Analisis(Lubu.itig.serverstatus.scanlog.ScanLog;),obtenerFecha(Ljava.lang.String;),scanLog,analizarLinea(Ljava.lang.String;),obtenerMes(Ljava.lang.String;),grabarNotificacion(Ljava.util.Calendar;IILjava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="scanLog" id="ubu.itig.serverstatus.scanlog/ScanLog@scanLog+ubu.itig.serverstatus.scanlog/Analisis@|ubu.itig.serverstatus.scanlog/ScanLog#scanLog"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="228,144">
+      <children xsi:type="editmodel:MethodEditModel" name="Analisis" id="ubu.itig.serverstatus.scanlog/Analisis#Analisis(Lubu.itig.serverstatus.scanlog.ScanLog;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="analizarLinea" id="ubu.itig.serverstatus.scanlog/Analisis#analizarLinea(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="grabarNotificacion" id="ubu.itig.serverstatus.scanlog/Analisis#grabarNotificacion(Ljava.util.Calendar;IILjava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="obtenerFecha" id="ubu.itig.serverstatus.scanlog/Analisis#obtenerFecha(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="obtenerMes" id="ubu.itig.serverstatus.scanlog/Analisis#obtenerMes(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="obtenerUrgenciaCorreo" id="ubu.itig.serverstatus.scanlog/Analisis#obtenerUrgenciaCorreo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="obtenerUrgenciaSSH" id="ubu.itig.serverstatus.scanlog/Analisis#obtenerUrgenciaSSH(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" id="ubu.itig.serverstatus.scanlog/Analisis#run()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="ComprobarSpamYAtaque" location="810,45" size="251,121" id="ubu.itig.serverstatus.scanlog/ComprobarSpamYAtaque" runTimeClassModel="ComprobarSpamYAtaque(Lubu.itig.serverstatus.scanlog.ScanLog;),run(),scanLog,grabarNotificacion(Ljava.util.Calendar;IILjava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="scanLog" id="ubu.itig.serverstatus.scanlog/ScanLog@scanLog+ubu.itig.serverstatus.scanlog/ComprobarSpamYAtaque@|ubu.itig.serverstatus.scanlog/ScanLog#scanLog"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="228,54">
+      <children xsi:type="editmodel:MethodEditModel" name="ComprobarSpamYAtaque" id="ubu.itig.serverstatus.scanlog/ComprobarSpamYAtaque#ComprobarSpamYAtaque(Lubu.itig.serverstatus.scanlog.ScanLog;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="grabarNotificacion" id="ubu.itig.serverstatus.scanlog/ComprobarSpamYAtaque#grabarNotificacion(Ljava.util.Calendar;IILjava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" id="ubu.itig.serverstatus.scanlog/ComprobarSpamYAtaque#run()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ScanLog" location="495,45" size="230,715" id="ubu.itig.serverstatus.scanlog/ScanLog" runTimeClassModel="destroy(),cadenaConexion,getConexion(),portIn,getBufferedReader(),password,setMensajeSpam(Ljava.lang.String;),stop(),conexion,timer,contadorSpam,getMensajeSpam(),bd,numeroMails,getContadorAtaque(),setMensajeAtaque(Ljava.lang.String;),numeroAtaque,setContadorAtaque(I),mensajeAtaque,start(),mensajeSpam,getNumeroMails(),getContadorSpam(),contadorAtaque,listenSocket,crearTareaAnalisis(),tiempoComprobacion,serverSocket,bufferIn,getNumeroAtaque(),setContadorSpam(I),server,lecturaFicheroPropiedades(),init(Lorg.apache.commons.daemon.DaemonContext;),crearTareaComprobarSpamYAtaque(),user,getMensajeAtaque()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="156,324">
+      <children xsi:type="editmodel:AttributeEditModel" name="bd" id="ubu.itig.serverstatus.scanlog/ScanLog#bd"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bufferIn" id="ubu.itig.serverstatus.scanlog/ScanLog#bufferIn"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cadenaConexion" id="ubu.itig.serverstatus.scanlog/ScanLog#cadenaConexion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="conexion" id="ubu.itig.serverstatus.scanlog/ScanLog#conexion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="contadorAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#contadorAtaque"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="contadorSpam" id="ubu.itig.serverstatus.scanlog/ScanLog#contadorSpam"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="listenSocket" id="ubu.itig.serverstatus.scanlog/ScanLog#listenSocket"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mensajeAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#mensajeAtaque"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mensajeSpam" id="ubu.itig.serverstatus.scanlog/ScanLog#mensajeSpam"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numeroAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#numeroAtaque"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numeroMails" id="ubu.itig.serverstatus.scanlog/ScanLog#numeroMails"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="password" id="ubu.itig.serverstatus.scanlog/ScanLog#password"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="portIn" id="ubu.itig.serverstatus.scanlog/ScanLog#portIn"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="server" id="ubu.itig.serverstatus.scanlog/ScanLog#server"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="serverSocket" id="ubu.itig.serverstatus.scanlog/ScanLog#serverSocket"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tiempoComprobacion" id="ubu.itig.serverstatus.scanlog/ScanLog#tiempoComprobacion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="timer" id="ubu.itig.serverstatus.scanlog/ScanLog#timer"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="user" id="ubu.itig.serverstatus.scanlog/ScanLog#user"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="207,342">
+      <children xsi:type="editmodel:MethodEditModel" name="crearTareaAnalisis" id="ubu.itig.serverstatus.scanlog/ScanLog#crearTareaAnalisis()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="crearTareaComprobarSpamYAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#crearTareaComprobarSpamYAtaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="destroy" id="ubu.itig.serverstatus.scanlog/ScanLog#destroy()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getBufferedReader" id="ubu.itig.serverstatus.scanlog/ScanLog#getBufferedReader()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConexion" id="ubu.itig.serverstatus.scanlog/ScanLog#getConexion()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getContadorAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#getContadorAtaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getContadorSpam" id="ubu.itig.serverstatus.scanlog/ScanLog#getContadorSpam()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMensajeAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#getMensajeAtaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMensajeSpam" id="ubu.itig.serverstatus.scanlog/ScanLog#getMensajeSpam()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumeroAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#getNumeroAtaque()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumeroMails" id="ubu.itig.serverstatus.scanlog/ScanLog#getNumeroMails()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="init" id="ubu.itig.serverstatus.scanlog/ScanLog#init(Lorg.apache.commons.daemon.DaemonContext;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="lecturaFicheroPropiedades" id="ubu.itig.serverstatus.scanlog/ScanLog#lecturaFicheroPropiedades()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setContadorAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#setContadorAtaque(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setContadorSpam" id="ubu.itig.serverstatus.scanlog/ScanLog#setContadorSpam(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setMensajeAtaque" id="ubu.itig.serverstatus.scanlog/ScanLog#setMensajeAtaque(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setMensajeSpam" id="ubu.itig.serverstatus.scanlog/ScanLog#setMensajeSpam(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="start" id="ubu.itig.serverstatus.scanlog/ScanLog#start()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="stop" id="ubu.itig.serverstatus.scanlog/ScanLog#stop()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.itig.serverstatus.scanlog/ScanLog-Standard::Instantiate->ubu.itig.serverstatus.scanlog/Analisis" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.0/@children.1" label="//@children.2/@sourceConnections.0/@children.2" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,105" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="251,105"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.itig.serverstatus.scanlog/ScanLog-Standard::Instantiate->ubu.itig.serverstatus.scanlog/ComprobarSpamYAtaque" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.1/@children.1" label="//@children.2/@sourceConnections.1/@children.2" sourceEnd="//@children.2/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="230,60" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="58,60"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

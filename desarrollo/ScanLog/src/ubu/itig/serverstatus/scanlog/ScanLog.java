@@ -21,12 +21,12 @@ import org.apache.commons.daemon.*;
 
 /**
  * Clase correspondiente al Daemon ScanLog.
- * 
- * @author David Herrero de la Peña.
- * @author Jonatan Santos Barrios.
- * @version 1.0
- * 
- * */
+ * @author      David Herrero de la Peña.
+ * @author      Jonatan Santos Barrios.
+ * @version      1.0
+ * @uml.dependency   supplier="ubu.itig.serverstatus.scanlog.Analisis"
+ * @uml.dependency   supplier="ubu.itig.serverstatus.scanlog.ComprobarSpamYAtaque"
+ */
 public class ScanLog implements Daemon{
 
 	/**
@@ -37,9 +37,8 @@ public class ScanLog implements Daemon{
     private Timer timer = null;
 
 	/**
-	 * 
 	 * Conexión con la base de datos.
-	 * 
+	 * @uml.property  name="conexion"
 	 */
 	private Connection conexion;
 	
@@ -114,44 +113,38 @@ public class ScanLog implements Daemon{
 	private int tiempoComprobacion;
 	
 	/**
-	 * 
 	 * Numero de mails por minuto que se considera spam.
-	 * 
+	 * @uml.property  name="numeroMails"
 	 */
 	private int numeroMails;
 	
 	/**
-	 * 
 	 * Ultimo mensaje considerado como posible spam.
-	 * 
+	 * @uml.property  name="mensajeSpam"
 	 */
 	private String mensajeSpam;
     
 	/**
-	 * 
 	 * Contador de mensaje considerados como posible spam.
-	 * 
+	 * @uml.property  name="contadorSpam"
 	 */
 	private int contadorSpam;
 	
 	/**
-	 * 
 	 * Numero de conexiones fallidas al correo por minuto que se considera ataque.
-	 * 
+	 * @uml.property  name="numeroAtaque"
 	 */
 	private int numeroAtaque;
 	
 	/**
-	 * 
 	 * Ultimo mensaje considerado como posible ataque.
-	 * 
+	 * @uml.property  name="mensajeAtaque"
 	 */
 	private String mensajeAtaque;
     
 	/**
-	 * 
 	 * Contador de mensaje considerados como posible ataque.
-	 * 
+	 * @uml.property  name="contadorAtaque"
 	 */
 	private int contadorAtaque;
     
@@ -289,13 +282,13 @@ public class ScanLog implements Daemon{
     } 
     
     /**
-     * Devuelve la conexion de la base de datos.
-     * 
-     * @return Connection Conexion de la base de datos.
-     */
+	 * Devuelve la conexion de la base de datos.
+	 * @return  Connection Conexion de la base de datos.
+	 * @uml.property  name="conexion"
+	 */
     public Connection getConexion(){
-    	return conexion;
-    }
+		return conexion;
+	}
     
     /**
      * Devuelve el buffer de lectura.
@@ -307,111 +300,109 @@ public class ScanLog implements Daemon{
     }
     
     /**
-     * Devuelve el numero de mails por minutos que son considerados spam.
-     * 
-     * @return int Numero de mails/minuto.
-     */
+	 * Devuelve el numero de mails por minutos que son considerados spam.
+	 * @return  int Numero de mails/minuto.
+	 * @uml.property  name="numeroMails"
+	 */
     public int getNumeroMails(){
-    	return numeroMails;
-    }
+		return numeroMails;
+	}
     
     /**
-     * Devuelve el numero de mails contados considerados spam en el ultimo minuto.
-     * 
-     * @return int Numero de mails contados.
-     */
+	 * Devuelve el numero de mails contados considerados spam en el ultimo minuto.
+	 * @return  int Numero de mails contados.
+	 * @uml.property  name="contadorSpam"
+	 */
     public int getContadorSpam(){
-    	return contadorSpam;
-    }
+		return contadorSpam;
+	}
     
     /**
-     * Establece el numero de mails contados considerados spam en el ultimo minuto.
-     * 
-     * @param numero int Numero de mails contados.
-     */
+	 * Establece el numero de mails contados considerados spam en el ultimo minuto.
+	 * @param numero  int Numero de mails contados.
+	 * @uml.property  name="contadorSpam"
+	 */
     public void setContadorSpam(int numero){
-    	contadorSpam = numero;
-    }
+		contadorSpam = numero;
+	}
     
     /**
-     * Devuelve el ultimo mensaje considerado spam.
-     * 
-     * @return String Mensaje spam.
-     */
+	 * Devuelve el ultimo mensaje considerado spam.
+	 * @return  String Mensaje spam.
+	 * @uml.property  name="mensajeSpam"
+	 */
     public String getMensajeSpam(){
-    	return mensajeSpam;
-    }
+		return mensajeSpam;
+	}
     
     /**
-     * Establece el ultimo mensaje considerado spam.
-     * 
-     * @param mensaje String Mensaje spam.
-     */
+	 * Establece el ultimo mensaje considerado spam.
+	 * @param mensaje  String Mensaje spam.
+	 * @uml.property  name="mensajeSpam"
+	 */
     public void setMensajeSpam(String mensaje){
-    	mensajeSpam = mensaje;
-    }
+		mensajeSpam = mensaje;
+	}
     
    /**
-    * Devuelve el numero de conexiones fallidas por minutos que son considerados ataque.
-    * 
-    * @return int Numero de mails/minuto.
-    */
+ * Devuelve el numero de conexiones fallidas por minutos que son considerados ataque.
+ * @return  int Numero de mails/minuto.
+ * @uml.property  name="numeroAtaque"
+ */
    public int getNumeroAtaque(){
-   		return numeroAtaque;
-   }
+	return numeroAtaque;
+}
    
    /**
-    * Devuelve el numero de conexiones fallidas contadas considerados ataque en el ultimo minuto.
-    * 
-    * @return int Numero de mails contados.
-    */
+ * Devuelve el numero de conexiones fallidas contadas considerados ataque en el ultimo minuto.
+ * @return  int Numero de mails contados.
+ * @uml.property  name="contadorAtaque"
+ */
    public int getContadorAtaque(){
-   		return contadorAtaque;
-   }
+	return contadorAtaque;
+}
    
    /**
-    * Establece el numero de conexiones fallidas contados considerados ataque en el ultimo minuto.
-    * 
-    * @param numero int Numero de mails contados.
-    */
+ * Establece el numero de conexiones fallidas contados considerados ataque en el ultimo minuto.
+ * @param numero  int Numero de mails contados.
+ * @uml.property  name="contadorAtaque"
+ */
    public void setContadorAtaque(int numero){
-   		contadorAtaque = numero;
-   }
+	contadorAtaque = numero;
+}
    
    /**
-    * Devuelve el ultimo mensaje considerado ataque.
-    * 
-    * @return String Mensaje spam.
-    */
+ * Devuelve el ultimo mensaje considerado ataque.
+ * @return  String Mensaje spam.
+ * @uml.property  name="mensajeAtaque"
+ */
    public String getMensajeAtaque(){
-   		return mensajeAtaque;
-   }
+	return mensajeAtaque;
+}
    
    /**
-    * Establece el ultimo mensaje considerado ataque.
-    * 
-    * @param mensaje String Mensaje spam.
-    */
+ * Establece el ultimo mensaje considerado ataque.
+ * @param mensaje  String Mensaje spam.
+ * @uml.property  name="mensajeAtaque"
+ */
    public void setMensajeAtaque(String mensaje){
-   		mensajeAtaque = mensaje;
-   }
+	mensajeAtaque = mensaje;
+}
     
  }
 
 /**
  * Clase correspondiente a la tarea repetitiva de Analizar el buffer.
- * 
- * @author David Herrero de la Peña.
- * @author Jonatan Santos Barrios.
- * @version 1.0
- *
+ * @author  David Herrero de la Peña.
+ * @author  Jonatan Santos Barrios.
+ * @version  1.0
  */
 class Analisis extends TimerTask {
 	
 	/**
-	 * 
 	 * ScanLog que llama a la tarea repetitiva.
-	 * 
+	 * @uml.property  name="scanLog"
+	 * @uml.associationEnd  
 	 */
 	private ScanLog scanLog;
 
@@ -681,18 +672,16 @@ class Analisis extends TimerTask {
 	
 	/**
 	 * Clase correspondiente a la tarea repetitiva de comprobar si se considera spam.
-	 * 
-	 * @author David Herrero de la Peña.
-	 * @author Jonatan Santos Barrios.
-	 * @version 1.0
-	 *
+	 * @author  David Herrero de la Peña.
+	 * @author  Jonatan Santos Barrios.
+	 * @version  1.0
 	 */
 	class ComprobarSpamYAtaque extends TimerTask {
 		
 		/**
-		 * 
 		 * ScanLog que llama a la tarea repetitiva.
-		 * 
+		 * @uml.property  name="scanLog"
+		 * @uml.associationEnd  
 		 */
 		private ScanLog scanLog;
 
