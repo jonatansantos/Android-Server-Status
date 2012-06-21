@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="35" version="2.0">
+<workbench progressCount="25" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="929" x="-3" y="-22">
+<window height="728" maximized="true" width="929" x="1509" y="-17">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
 </fastViewData>
@@ -27,7 +27,7 @@
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="com.soyatec.uml.ClassDiagramEditor" itemType="typePlaceholder" x="287" y="22"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.compare.CompareEditor" itemType="typePlaceholder" x="84" y="22"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -50,15 +50,19 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="login.xml" partName="login.xml" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/res/layout/login.xml" title="login.xml" tooltip="Principal/res/layout/login.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/res/layout/login.xml"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaServidores.java" partName="FachadaServidores.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java" title="FachadaServidores.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="270"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" partName="Login.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Principal/src/ubu/inf/Login.java" title="Login.java" tooltip="Principal/src/ubu/inf/Login.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Principal/src/ubu/inf/Login.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="52" selectionOffset="1519" selectionTopPixel="570"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServidoresSQLiteHelper.java" partName="ServidoresSQLiteHelper.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java" title="ServidoresSQLiteHelper.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="899" selectionTopPixel="90"/>
 </editor>
 </editors>
 <views>
+<view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
+<viewState failuresOnly="false" layout="1" orientation="2" ratio="500" scroll="false" time="true"/>
+</view>
 <view id="org.eclipse.ui.views.ProgressView" partName="Progress">
 <viewState/>
 </view>
@@ -141,7 +145,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.android.ide.eclipse.editors.CommonXmlEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -207,6 +211,7 @@
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.junit.ResultView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
@@ -218,14 +223,15 @@
 <info folder="true" part="left">
 <folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="JUnit"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
-<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
 <page content="org.eclipse.wb.core.StructureView" label="LabelNotFound"/>
 <page content="org.eclipse.wb.core.PaletteView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -545,155 +551,173 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainNotificaciones.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioEmail.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/Filtro.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainNotificaciones.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/modelo/Notificacion.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/modelo/Servidor.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/modelo/SingletonEmail.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ComandosSQLiteHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/accesodatos/CoordenadasSQLiteHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testssh/src/ubu/inf/terminal/test/testaccesodatos.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ComandosSQLiteHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testssh/src/ubu/inf/terminal/test/testaccesodatosservidores.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/logica/ComandosEjecutados.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/logica/ComandosFavoritos.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/logica/Consola.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/logica/AutoArranque.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/logica/ServicioGPS.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/logica/LectorSMS.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/logica/Preferencias.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LocalizadorGPS/res/xml/preferencias.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/logica/LocalizadorGPSActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Principal/res/layout/login.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Principal/src/ubu/inf/Login.java"/>
 </editors>
-<item historyLabel="PestanaMainNotificaciones.java" index="0">
-<position info="not_deleted" x="476" y="77"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="1251" y="0"/>
-</item>
-<item historyLabel="ServicioEmail.java" index="2">
-<position info="not_deleted" x="6281" y="0"/>
-</item>
-<item historyLabel="Filtro.java" index="3">
-<position info="not_deleted" x="12193" y="0"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="4">
+<item historyLabel="Servidor.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="4">
-<position info="not_deleted" x="2537" y="15"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="4">
-<position info="not_deleted" x="4031" y="0"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="4">
-<position info="not_deleted" x="28123" y="8"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="4">
-<position info="not_deleted" x="17594" y="10"/>
-</item>
-<item historyLabel="PestanaMainNotificaciones.java" index="4">
-<position info="not_deleted" x="17937" y="537"/>
-</item>
-<item historyLabel="Consola.java" index="5">
+<item historyLabel="SingletonEmail.java" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="5">
-<position info="not_deleted" x="1801" y="0"/>
+<item historyLabel="FachadaServidores.java" index="3">
+<position info="not_deleted" x="699" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="5">
-<position info="not_deleted" x="12626" y="14"/>
+<item historyLabel="SingletonEmail.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="5">
-<position info="not_deleted" x="13055" y="14"/>
+<item historyLabel="ServidoresSQLiteHelper.java" index="4">
+<position info="not_deleted" x="775" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="5">
-<position info="not_deleted" x="13292" y="0"/>
+<item historyLabel="SingletonEmail.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Consola.java" index="5">
-<position info="not_deleted" x="14179" y="0"/>
+<item historyLabel="ComandosSQLiteHelper.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="AutoArranque.java" index="6">
-<position info="not_deleted" x="797" y="0"/>
+<item historyLabel="SingletonEmail.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="ServicioGPS.java" index="7">
-<position info="not_deleted" x="843" y="0"/>
-</item>
-<item historyLabel="AutoArranque.java" index="6">
-<position info="not_deleted" x="797" y="0"/>
-</item>
-<item historyLabel="LectorSMS.java" index="8">
+<item historyLabel="CoordenadasSQLiteHelper.java" index="6">
 <position/>
 </item>
-<item historyLabel="AutoArranque.java" index="6">
-<position info="not_deleted" x="1234" y="0"/>
-</item>
-<item historyLabel="Preferencias.java" index="9">
-<position info="not_deleted" x="429" y="0"/>
-</item>
-<item historyLabel="AutoArranque.java" index="6">
-<position info="not_deleted" x="1234" y="0"/>
-</item>
-<item historyLabel="preferencias.xml" index="10"/>
-<item historyLabel="AutoArranque.java" index="6">
-<position info="not_deleted" x="1234" y="0"/>
-</item>
-<item historyLabel="LectorSMS.java" index="8">
-<position info="not_deleted" x="2261" y="6"/>
-</item>
-<item historyLabel="LocalizadorGPSActivity.java" index="11">
+<item historyLabel="SingletonEmail.java" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="11">
-<position info="not_deleted" x="4305" y="23"/>
+<item historyLabel="Servidor.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="LectorSMS.java" index="8">
-<position info="not_deleted" x="1298" y="175"/>
+<item historyLabel="Notificacion.java" index="0">
+<position info="not_deleted" x="1022" y="1"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="11">
-<position info="not_deleted" x="4305" y="23"/>
+<item historyLabel="CoordenadasSQLiteHelper.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="11">
-<position info="not_deleted" x="4736" y="0"/>
+<item historyLabel="ServidoresSQLiteHelper.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="LectorSMS.java" index="8">
-<position info="not_deleted" x="1298" y="175"/>
+<item historyLabel="testaccesodatos.java" index="8">
+<position info="not_deleted" x="330" y="0"/>
 </item>
-<item historyLabel="LocalizadorGPSActivity.java" index="11">
-<position info="not_deleted" x="5346" y="0"/>
+<item historyLabel="ComandosSQLiteHelper.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="preferencias.xml" index="10"/>
-<item historyLabel="PestanaMainNotificaciones.java" index="4">
-<position info="not_deleted" x="17937" y="537"/>
+<item historyLabel="FachadaServidores.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="preferencias.xml" index="10"/>
-<item historyLabel="LocalizadorGPSActivity.java" index="11">
-<position info="not_deleted" x="5346" y="0"/>
+<item historyLabel="testaccesodatos.java" index="8">
+<position info="not_deleted" x="330" y="0"/>
 </item>
-<item historyLabel="LectorSMS.java" index="8">
-<position info="not_deleted" x="1298" y="175"/>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position/>
 </item>
-<item historyLabel="AutoArranque.java" index="6">
-<position info="not_deleted" x="1234" y="0"/>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position/>
 </item>
-<item historyLabel="Consola.java" index="5">
-<position info="not_deleted" x="14179" y="0"/>
+<item historyLabel="ComandosSQLiteHelper.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="login.xml" index="12"/>
-<item historyLabel="Login.java" index="13">
-<position info="not_deleted" x="1519" y="52"/>
+<item historyLabel="FachadaServidores.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="login.xml" index="12"/>
-<item historyLabel="Login.java" index="13">
-<position info="not_deleted" x="1536" y="0"/>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position/>
 </item>
-<item historyLabel="Login.java" index="13">
-<position info="not_deleted" x="806" y="0"/>
+<item historyLabel="FachadaServidores.java" index="10">
+<position info="not_deleted" x="755" y="72"/>
 </item>
-<item historyLabel="login.xml" index="12"/>
-<item historyLabel="Login.java" index="13">
-<position info="not_deleted" x="1519" y="52"/>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position/>
 </item>
-<item historyLabel="login.xml" index="12"/>
-<item historyLabel="Login.java" index="13">
-<position info="not_deleted" x="1519" y="52"/>
+<item historyLabel="FachadaServidores.java" index="10">
+<position info="not_deleted" x="1073" y="0"/>
 </item>
-<item active="true" historyLabel="login.xml" index="12"/>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position/>
+</item>
+<item historyLabel="FachadaServidores.java" index="10">
+<position info="not_deleted" x="1073" y="0"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position/>
+</item>
+<item historyLabel="FachadaServidores.java" index="10">
+<position info="not_deleted" x="1073" y="0"/>
+</item>
+<item historyLabel="ComandosEjecutados.java" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="FachadaServidores.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position info="not_deleted" x="528" y="0"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position info="not_deleted" x="953" y="0"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position info="not_deleted" x="953" y="0"/>
+</item>
+<item historyLabel="FachadaServidores.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ServidoresSQLiteHelper.java" index="13">
+<position info="not_deleted" x="899" y="0"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position info="not_deleted" x="953" y="0"/>
+</item>
+<item historyLabel="ComandosEjecutados.java" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ComandosEjecutados.java" index="12">
+<position info="not_deleted" x="4831" y="8"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position info="not_deleted" x="953" y="0"/>
+</item>
+<item historyLabel="ComandosFavoritos.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position info="not_deleted" x="953" y="0"/>
+</item>
+<item historyLabel="Consola.java" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Consola.java" index="15">
+<position info="not_deleted" x="8057" y="16"/>
+</item>
+<item historyLabel="Consola.java" index="15">
+<position info="not_deleted" x="8660" y="0"/>
+</item>
+<item historyLabel="Consola.java" index="15">
+<position info="not_deleted" x="9641" y="12"/>
+</item>
+<item historyLabel="testaccesodatosservidores.java" index="11">
+<position info="not_deleted" x="953" y="0"/>
+</item>
+<item active="true" historyLabel="ServidoresSQLiteHelper.java" index="13">
+<position info="not_deleted" x="899" y="0"/>
+</item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -711,50 +735,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" tooltip="Principal/src/ubu/inf/Login.java">
-<persistable path="/Principal/src/ubu/inf/Login.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="login.xml" tooltip="Principal/res/layout/login.xml">
-<persistable path="/Principal/res/layout/login.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="preferencias.xml" tooltip="LocalizadorGPS/res/xml/preferencias.xml">
-<persistable path="/LocalizadorGPS/res/xml/preferencias.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocalizadorGPSActivity.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/logica/LocalizadorGPSActivity.java">
-<persistable path="/LocalizadorGPS/src/ubu/inf/gps/logica/LocalizadorGPSActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LectorSMS.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/logica/LectorSMS.java">
-<persistable path="/LocalizadorGPS/src/ubu/inf/gps/logica/LectorSMS.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Preferencias.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/logica/Preferencias.java">
-<persistable path="/LocalizadorGPS/src/ubu/inf/gps/logica/Preferencias.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioGPS.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/logica/ServicioGPS.java">
-<persistable path="/LocalizadorGPS/src/ubu/inf/gps/logica/ServicioGPS.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AutoArranque.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/logica/AutoArranque.java">
-<persistable path="/LocalizadorGPS/src/ubu/inf/gps/logica/AutoArranque.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Consola.java" tooltip="ModuloSSH/src/ubu/inf/terminal/logica/Consola.java">
 <persistable path="/ModuloSSH/src/ubu/inf/terminal/logica/Consola.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComandosFavoritos.java" tooltip="ModuloSSH/src/ubu/inf/terminal/logica/ComandosFavoritos.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/logica/ComandosFavoritos.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServidoresSQLiteHelper.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="testaccesodatosservidores.java" tooltip="testssh/src/ubu/inf/terminal/test/testaccesodatosservidores.java">
+<persistable path="/testssh/src/ubu/inf/terminal/test/testaccesodatosservidores.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaServidores.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComandosEjecutados.java" tooltip="ModuloSSH/src/ubu/inf/terminal/logica/ComandosEjecutados.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/logica/ComandosEjecutados.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComandosSQLiteHelper.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/ComandosSQLiteHelper.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ComandosSQLiteHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="testaccesodatos.java" tooltip="testssh/src/ubu/inf/terminal/test/testaccesodatos.java">
+<persistable path="/testssh/src/ubu/inf/terminal/test/testaccesodatos.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServidoresSQLiteHelper.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CoordenadasSQLiteHelper.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/accesodatos/CoordenadasSQLiteHelper.java">
+<persistable path="/LocalizadorGPS/src/ubu/inf/gps/accesodatos/CoordenadasSQLiteHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingletonEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/modelo/SingletonEmail.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/modelo/SingletonEmail.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Servidor.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/modelo/Servidor.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/modelo/Servidor.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingletonConexion.java" tooltip="ModuloSSH/src/ubu/inf/terminal/modelo/SingletonConexion.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/modelo/SingletonConexion.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainNotificaciones.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainNotificaciones.java">
 <persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainNotificaciones.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CopyOfPestanaMainNotificaciones.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/CopyOfPestanaMainNotificaciones.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/CopyOfPestanaMainNotificaciones.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.inf.control.logica_notificaciones.ucd" tooltip="clientecontrolaccesos/ubu.inf.control.logica_notificaciones.ucd">
-<persistable path="/clientecontrolaccesos/ubu.inf.control.logica_notificaciones.ucd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Filtro.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/Filtro.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/Filtro.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/ServicioEmail.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioEmail.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/Main.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Notificacion.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/modelo/Notificacion.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/modelo/Notificacion.java"/>
 </file>
 </mruList>
 </workbench>

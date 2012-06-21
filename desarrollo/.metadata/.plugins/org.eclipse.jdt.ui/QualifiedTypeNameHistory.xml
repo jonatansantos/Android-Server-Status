@@ -8,8 +8,6 @@
 <fullyQualifiedTypeName name="android.content.ComponentName"/>
 <fullyQualifiedTypeName name="android.content.pm.PackageManager"/>
 <fullyQualifiedTypeName name="ubu.inf.terminal.R"/>
-<fullyQualifiedTypeName name="ubu.inf.terminal.modelo.Servidor"/>
-<fullyQualifiedTypeName name="ubu.inf.terminal.accesodatos.FachadaServidores"/>
 <fullyQualifiedTypeName name="ubu.inf.terminal.modelo.SingletonConexion"/>
 <fullyQualifiedTypeName name="android.content.ActivityNotFoundException"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
@@ -48,7 +46,6 @@
 <fullyQualifiedTypeName name="java.security.acl.NotOwnerException"/>
 <fullyQualifiedTypeName name="java.util.TreeSet"/>
 <fullyQualifiedTypeName name="ubu.inf.control.modelo.Servidor"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="ubu.inf.control.logica.PestanaMainNotificaciones.MyHandlerDialog"/>
 <fullyQualifiedTypeName name="android.app.ProgressDialog"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="ubu.inf.control.logica.PestanaMainNotificaciones.MyHandlerBorrarError"/>
 <fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="ubu.inf.terminal.accesodatos.FachadaServidores"/>
+<fullyQualifiedTypeName name="ubu.inf.terminal.modelo.Servidor"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
