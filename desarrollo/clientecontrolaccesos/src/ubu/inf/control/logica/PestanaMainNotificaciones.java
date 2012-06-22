@@ -22,7 +22,7 @@ import ubu.inf.control.modelo.ComparatorUrgencia;
 import ubu.inf.control.modelo.Notificacion;
 import ubu.inf.control.modelo.Servidor;
 import ubu.inf.control.modelo.SingletonEmail;
-import ubu.inf.control.modelo.SingletonServicios;
+import ubu.inf.control.modelo.SingletonSSH;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -300,7 +300,7 @@ public class PestanaMainNotificaciones extends Activity {
 			borrados.clear();
 			// calculamos la cantidad de servidores
 			int max = SingletonEmail.getConexion().getHosts().size()
-					+ SingletonServicios.getConexion().getHosts().size();
+					+ SingletonSSH.getConexion().getHosts().size();
 			// creamos la barra de progreso y la mostramos
 			barra.setMax(max);
 			barra.show();
@@ -312,7 +312,7 @@ public class PestanaMainNotificaciones extends Activity {
 					// notificaciones
 					ArrayList<Servidor> email = SingletonEmail.getConexion()
 							.getHosts();
-					ArrayList<Servidor> ssh = SingletonServicios.getConexion()
+					ArrayList<Servidor> ssh = SingletonSSH.getConexion()
 							.getHosts();
 
 					Log.i("control", "hemos vaciado el array");
@@ -472,7 +472,7 @@ public class PestanaMainNotificaciones extends Activity {
 
 			// calculamos la cantidad de servidores
 			int max = SingletonEmail.getConexion().getHosts().size()
-					+ SingletonServicios.getConexion().getHosts().size();
+					+ SingletonSSH.getConexion().getHosts().size();
 			// creamos la barra de progreso y la mostramos
 			barra.setMax(max);
 			barra.show();
@@ -484,7 +484,7 @@ public class PestanaMainNotificaciones extends Activity {
 					// notificaciones
 					ArrayList<Servidor> email = SingletonEmail.getConexion()
 							.getHosts();
-					ArrayList<Servidor> ssh = SingletonServicios.getConexion()
+					ArrayList<Servidor> ssh = SingletonSSH.getConexion()
 							.getHosts();
 
 					Log.i("control", "hemos vaciado el array");

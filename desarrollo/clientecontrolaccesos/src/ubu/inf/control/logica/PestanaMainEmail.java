@@ -7,7 +7,7 @@ import ubu.inf.control.R;
 import ubu.inf.control.accesodatos.FachadaEmail;
 import ubu.inf.control.modelo.Servidor;
 import ubu.inf.control.modelo.SingletonEmail;
-import ubu.inf.control.modelo.SingletonServicios;
+import ubu.inf.control.modelo.SingletonSSH;
 
 
 

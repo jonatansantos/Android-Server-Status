@@ -3,10 +3,10 @@ package ubu.inf.control.logica;
 import java.util.ArrayList;
 
 import ubu.inf.control.accesodatos.FachadaEmail;
-import ubu.inf.control.accesodatos.FachadaServidores;
+import ubu.inf.control.accesodatos.FachadaSSH;
 import ubu.inf.control.modelo.Servidor;
 import ubu.inf.control.modelo.SingletonEmail;
-import ubu.inf.control.modelo.SingletonServicios;
+import ubu.inf.control.modelo.SingletonSSH;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -51,10 +51,10 @@ public class ServicioAutoarranque extends Service {
 		super.onStart(intent, startId);
 
 		if (ssh) {
-			datos = FachadaServidores.getInstance(this).loadServidores();
+			datos = FachadaSSH.getInstance(this).loadServidores();
 			for (int i = 0; i < datos.size(); ++i) {
 				if (datos.get(i).isInicio())
-					SingletonServicios.getConexion().getHosts()
+					SingletonSSH.getConexion().getHosts()
 							.add(datos.get(i));
 			}
 
