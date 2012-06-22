@@ -39,21 +39,21 @@ public class Main extends TabActivity {
         //obtenemos la referencia a los recursos
         res = getResources(); 
        
-        creaTabFav();
+        creaTabSSH();
         creaTabEmail();
         creaTabNotificaciones();
       
     }
     /**
      * Función que crea la pestaña de  servidores favoritos ssh, se encarga de crear el intent y de añadirlo al tabhost.
-     * @see PestanaMainFav
+     * @see PestanaMainSSH
      */
-    private void creaTabFav(){
+    private void creaTabSSH(){
   	  TabHost.TabSpec spec;
         Intent intent;
   	 //pestaña favoritos
      //creamos el intent específico para esa activity
-      intent = new Intent().setClass(this, PestanaMainFav.class);
+      intent = new Intent().setClass(this, PestanaMainSSH.class);
       //creamos las especificaciones, nombre e icono
       spec = tabHost.newTabSpec("pestanamainfav").setIndicator("SSH", res.getDrawable(R.drawable.pestanamainfav));
       //añadimos las especificaciones al intent
@@ -64,7 +64,7 @@ public class Main extends TabActivity {
   }
     /**
      * Función que crea la pestaña de servidores favoritos email, se encarga de crear el intent y de añadirlo al tabhost.
-     * @see PestanaMainFav
+     * @see PestanaMainSSH
      */
     private void creaTabEmail(){   	
     	  TabHost.TabSpec spec;
@@ -82,7 +82,7 @@ public class Main extends TabActivity {
     }
     /**
      * Función que crea la pestaña de notificaciones, se encarga de crear el intent y de añadirlo al tabhost.
-     * @see PestanaMainFav
+     * @see PestanaMainSSH
      */
   private void creaTabNotificaciones(){
   	TabHost.TabSpec spec;

@@ -30,7 +30,7 @@
              </intent-filter>
         </receiver>
         <activity android:name=".logica.Preferencias"></activity>
-        <activity android:name=".logica.PestanaMainFav"></activity>
+        <activity android:name=".logica.PestanaMainSSH"></activity>
          <activity android:name=".logica.Filtro"></activity>
         <activity android:name=".logica.PestanaMainEmail"></activity>
          <activity android:name=".logica.PestanaMainNotificaciones"></activity>

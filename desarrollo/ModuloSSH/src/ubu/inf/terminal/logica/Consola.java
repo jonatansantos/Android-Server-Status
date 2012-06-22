@@ -45,8 +45,8 @@ import android.widget.Toast;
 
 /**
  * Actividad que imita la apariencia de una terminal de comandos para poder comunicarse con el servidor via ssh.
- * @author           David Herrero de la Peña
- * @author           Jonatan Santos Barrios
+ * @author               David Herrero de la Peña
+ * @author               Jonatan Santos Barrios
  * @uml.dependency   supplier="ubu.inf.terminal.logica.ComandosEjecutados"
  * @uml.dependency   supplier="ubu.inf.terminal.logica.ComandosFavoritos"
  */

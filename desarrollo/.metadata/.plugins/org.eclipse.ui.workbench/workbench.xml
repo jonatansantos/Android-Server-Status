@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="26" version="2.0">
+<workbench progressCount="15" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="929" x="0" y="0">
+<window height="728" maximized="true" width="929" x="1599" y="-21">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
 </fastViewData>
@@ -34,7 +34,7 @@
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -43,10 +43,26 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java" title="Main.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1270" selectionTopPixel="390"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Notificador.java" partName="Notificador.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java" title="Notificador.java" tooltip="Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="568" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScanLog.java" partName="ScanLog.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java" title="ScanLog.java" tooltip="ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
@@ -538,18 +554,42 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Principal/src/ubu/inf/Login.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioSSH.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
+</editors>
+<item historyLabel="Login.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ServicioSSH.java" index="1">
+<position info="not_deleted" x="2515" y="0"/>
+</item>
+<item historyLabel="PestanaMainEmail.java" index="2">
+<position info="not_deleted" x="2155" y="0"/>
+</item>
+<item historyLabel="Main.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Main.java" index="3">
+<position info="not_deleted" x="1270" y="0"/>
+</item>
+<item historyLabel="Notificador.java" index="4">
+<position info="not_deleted" x="568" y="0"/>
+</item>
+<item active="true" historyLabel="ScanLog.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="right"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -557,11 +597,31 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@57730f82"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScanLog.java" tooltip="ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java">
+<persistable path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Notificador.java" tooltip="Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java">
+<persistable path="/Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/Main.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioSSH.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/ServicioSSH.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioSSH.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="ubu.inf.jpg" tooltip="Principal/ubu.inf.jpg">
+<persistable path="/Principal/ubu.inf.jpg"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" tooltip="Principal/src/ubu/inf/Login.java">
+<persistable path="/Principal/src/ubu/inf/Login.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.itig.serverstatus.notificador.ucd" tooltip="Notificador/ubu.itig.serverstatus.notificador.ucd">
 <persistable path="/Notificador/ubu.itig.serverstatus.notificador.ucd"/>
 </file>
@@ -585,27 +645,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaServidores.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java">
 <persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComandosEjecutados.java" tooltip="ModuloSSH/src/ubu/inf/terminal/logica/ComandosEjecutados.java">
-<persistable path="/ModuloSSH/src/ubu/inf/terminal/logica/ComandosEjecutados.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComandosSQLiteHelper.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/ComandosSQLiteHelper.java">
-<persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ComandosSQLiteHelper.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="testaccesodatos.java" tooltip="testssh/src/ubu/inf/terminal/test/testaccesodatos.java">
-<persistable path="/testssh/src/ubu/inf/terminal/test/testaccesodatos.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServidoresSQLiteHelper.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/accesodatos/ServidoresSQLiteHelper.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CoordenadasSQLiteHelper.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/accesodatos/CoordenadasSQLiteHelper.java">
-<persistable path="/LocalizadorGPS/src/ubu/inf/gps/accesodatos/CoordenadasSQLiteHelper.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingletonEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/modelo/SingletonEmail.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/modelo/SingletonEmail.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Servidor.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/modelo/Servidor.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/modelo/Servidor.java"/>
 </file>
 </mruList>
 </workbench>

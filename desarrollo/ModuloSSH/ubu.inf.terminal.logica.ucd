@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="2086,1994" id="ubu.inf.terminal.logica" metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledY="-16" tag="1000" key="32303037303533312D31303030204D6F64756C6F5353482F6461766964">
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="ComandosEjecutados" location="615,1154" size="178,247" id="ubu.inf.terminal.logica/ComandosEjecutados" runTimeClassModel="ejecutar(),guardar,guardar(),inicializa(),com,onCreate(Landroid.os.Bundle;),lista,bandera,seleccionar(),ejecutar,all">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="2526,1994" id="ubu.inf.terminal.logica" metadata="uml2-1.0" initialized="true" zoom="0.5" scrolledY="-11" tag="1000" key="32303037303533312D31303030204D6F64756C6F5353482F6461766964">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="ComandosEjecutados" location="725,1570" size="178,247" id="ubu.inf.terminal.logica/ComandosEjecutados" runTimeClassModel="ejecutar(),guardar,guardar(),inicializa(),com,onCreate(Landroid.os.Bundle;),lista,bandera,seleccionar(),ejecutar,all">
     <children xsi:type="editmodel:CompartmentEditModel" size="104,108">
       <children xsi:type="editmodel:AttributeEditModel" name="guardar" id="ubu.inf.terminal.logica/ComandosEjecutados#guardar"/>
       <children xsi:type="editmodel:AttributeEditModel" name="ejecutar" id="ubu.inf.terminal.logica/ComandosEjecutados#ejecutar"/>
@@ -60,12 +60,12 @@
     </children>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.terminal.logica/ComandosFavoritos-Standard::Call->ubu.inf.terminal.accesodatos/FachadaComandos" source="//@children.1" target="//@children.12" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="341,92" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,132"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="192,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="132,225"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.5 //@children.6/@sourceConnections.3" name="Consola" location="1016,1065" size="252,893" id="ubu.inf.terminal.logica/Consola" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),result,inicializa(),dIALOG_TEXT_ENTRY,onCreate(Landroid.os.Bundle;),run,fromServer,toServer,finalizaConexion(),auxnombre,nombre,comandoguardar,ubu.inf.terminal.logica.Consola.LectorBuffered,añadirUltimo(),ejecutarFavorito(),onDestroy(),onCreateDialog(I),ubu.inf.terminal.logica.Consola.listenerComando,reconectar(),ubu.inf.terminal.logica.Consola.ListenerKey,onActivityResult(IILandroid.content.Intent;),comandos,comando,jsch,onOptionsItemSelected(Landroid.view.MenuItem;),añadirVarios(),session,rEQUEST_TEXT4,rEQUEST_TEXT3,borrar(),ubu.inf.terminal.logica.Consola.MyHandler,channelShell,ejecutaComando(Ljava.lang.String;),lector,handler">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.5 //@children.6/@sourceConnections.3" name="Consola" location="1016,1065" size="252,893" id="ubu.inf.terminal.logica/Consola" runTimeClassModel="result,onCreateOptionsMenu(Landroid.view.Menu;),inicializa(),dIALOG_TEXT_ENTRY,onCreate(Landroid.os.Bundle;),run,fromServer,toServer,finalizaConexion(),auxnombre,nombre,comandoguardar,ubu.inf.terminal.logica.Consola.LectorBuffered,añadirUltimo(),ejecutarFavorito(),onDestroy(),onCreateDialog(I),ubu.inf.terminal.logica.Consola.listenerComando,reconectar(),ubu.inf.terminal.logica.Consola.ListenerKey,onActivityResult(IILandroid.content.Intent;),comandos,comando,jsch,onOptionsItemSelected(Landroid.view.MenuItem;),añadirVarios(),session,rEQUEST_TEXT4,rEQUEST_TEXT3,borrar(),ubu.inf.terminal.logica.Consola.MyHandler,channelShell,ejecutaComando(Ljava.lang.String;),lector,handler">
     <children xsi:type="editmodel:CompartmentEditModel" size="159,270">
       <children xsi:type="editmodel:AttributeEditModel" name="auxnombre" id="ubu.inf.terminal.logica/Consola#auxnombre"/>
       <children xsi:type="editmodel:AttributeEditModel" name="channelShell" id="ubu.inf.terminal.logica/Consola#channelShell"/>
@@ -142,7 +142,7 @@
       <children xsi:type="editmodel:AssociationEndEditModel" location="103,207"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.terminal.logica/Consola->ubu.inf.terminal.logica/ComandosEjecutados" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.1/@children.1" label="//@children.2/@sourceConnections.1/@children.2" sourceEnd="//@children.2/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,212" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,628" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="178,123"/>
       <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
     </sourceConnections>
@@ -153,7 +153,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.2" name="Formulario" location="195,269" size="169,359" id="ubu.inf.terminal.logica/Formulario" runTimeClassModel="port,ubu.inf.terminal.logica.Formulario.listenerCancelar,inicializa(),host,desc,onCreate(Landroid.os.Bundle;),cancel,ubu.inf.terminal.logica.Formulario.listenerOK,oK,user,pass">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.2" name="Formulario" location="419,1185" size="169,359" id="ubu.inf.terminal.logica/Formulario" runTimeClassModel="port,ubu.inf.terminal.logica.Formulario.listenerCancelar,inicializa(),host,desc,onCreate(Landroid.os.Bundle;),cancel,ubu.inf.terminal.logica.Formulario.listenerOK,oK,user,pass">
     <children xsi:type="editmodel:CompartmentEditModel" size="88,126">
       <children xsi:type="editmodel:AttributeEditModel" name="cancel" id="ubu.inf.terminal.logica/Formulario#cancel"/>
       <children xsi:type="editmodel:AttributeEditModel" name="desc" id="ubu.inf.terminal.logica/Formulario#desc"/>
@@ -187,7 +187,7 @@
     </children>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="MainSSH" location="1097,285" size="130,139" id="ubu.inf.terminal.logica/MainSSH" runTimeClassModel="res,tabHost,creaTabFav(),onCreate(Landroid.os.Bundle;),creaTabManual()">
+  <children xsi:type="editmodel:ClassEditModel" name="MainSSH" location="1097,285" size="130,139" id="ubu.inf.terminal.logica/MainSSH" runTimeClassModel="res,tabHost,onCreate(Landroid.os.Bundle;),creaTabFav(),creaTabManual()">
     <children xsi:type="editmodel:CompartmentEditModel" size="101,36">
       <children xsi:type="editmodel:AttributeEditModel" name="res" id="ubu.inf.terminal.logica/MainSSH#res"/>
       <children xsi:type="editmodel:AttributeEditModel" name="tabHost" id="ubu.inf.terminal.logica/MainSSH#tabHost"/>
@@ -214,7 +214,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1" name="PestanaMainFav" location="554,172" size="341,839" id="ubu.inf.terminal.logica/PestanaMainFav" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),ubu.inf.terminal.logica.PestanaMainFav.ListenerListView,inicializa(),onCreate(Landroid.os.Bundle;),ubu.inf.terminal.logica.PestanaMainFav.ArrayAdapterServidor,limpiar(),add,borrar(Landroid.widget.AdapterView.AdapterContextMenuInfo;),ubu.inf.terminal.logica.PestanaMainFav.ListenerAdd,enviaIntent(),onContextItemSelected(Landroid.view.MenuItem;),ubu.inf.terminal.logica.PestanaMainFav.MyHandler,onDestroy(),dialog,onActivityResult(IILandroid.content.Intent;),jsch,onOptionsItemSelected(Landroid.view.MenuItem;),idedit,rEQUEST_TEXT,list,adapter,onCreateContextMenu(Landroid.view.ContextMenu;Landroid.view.View;Landroid.view.ContextMenu.ContextMenuInfo;),rEQUEST_TEXT2,session,fachada,editar(Landroid.widget.AdapterView.AdapterContextMenuInfo;),datos,handler">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1" name="PestanaMainFav" location="554,172" size="341,839" id="ubu.inf.terminal.logica/PestanaMainFav" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),ubu.inf.terminal.logica.PestanaMainFav.ListenerListView,inicializa(),onCreate(Landroid.os.Bundle;),ubu.inf.terminal.logica.PestanaMainFav.ArrayAdapterServidor,limpiar(),add,borrar(Landroid.widget.AdapterView.AdapterContextMenuInfo;),ubu.inf.terminal.logica.PestanaMainFav.ListenerAdd,onContextItemSelected(Landroid.view.MenuItem;),enviaIntent(),ubu.inf.terminal.logica.PestanaMainFav.MyHandler,onDestroy(),dialog,onActivityResult(IILandroid.content.Intent;),jsch,onOptionsItemSelected(Landroid.view.MenuItem;),idedit,rEQUEST_TEXT,list,adapter,onCreateContextMenu(Landroid.view.ContextMenu;Landroid.view.View;Landroid.view.ContextMenu.ContextMenuInfo;),rEQUEST_TEXT2,session,fachada,editar(Landroid.widget.AdapterView.AdapterContextMenuInfo;),datos,handler">
     <children xsi:type="editmodel:CompartmentEditModel" size="181,216">
       <children xsi:type="editmodel:AttributeEditModel" name="adapter" id="ubu.inf.terminal.logica/PestanaMainFav#adapter"/>
       <children xsi:type="editmodel:AttributeEditModel" name="add" id="ubu.inf.terminal.logica/PestanaMainFav#add"/>
@@ -244,7 +244,7 @@
       <children xsi:type="editmodel:MethodEditModel" name="onOptionsItemSelected" id="ubu.inf.terminal.logica/PestanaMainFav#onOptionsItemSelected(Landroid.view.MenuItem;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="298,348">
-      <children xsi:type="editmodel:ClassEditModel" name="ArrayAdapterServidor" size="298,121" id="ubu.inf.terminal.logica/PestanaMainFav$ArrayAdapterServidor" runTimeClassModel="getView(ILandroid.view.View;Landroid.view.ViewGroup;),ArrayAdapterServidor(Landroid.app.Activity;Ljava.util.ArrayList;),context,datos">
+      <children xsi:type="editmodel:ClassEditModel" name="ArrayAdapterServidor" size="298,121" id="ubu.inf.terminal.logica/PestanaMainFav$ArrayAdapterServidor" runTimeClassModel="ArrayAdapterServidor(Landroid.app.Activity;Ljava.util.ArrayList;),getView(ILandroid.view.View;Landroid.view.ViewGroup;),context,datos">
         <children xsi:type="editmodel:CompartmentEditModel" size="149,36">
           <children xsi:type="editmodel:AttributeEditModel" name="context" id="ubu.inf.terminal.logica/PestanaMainFav$ArrayAdapterServidor#context"/>
           <children xsi:type="editmodel:AttributeEditModel" name="datos" id="ubu.inf.terminal.logica/PestanaMainFav$ArrayAdapterServidor#datos"/>
@@ -286,8 +286,8 @@
       <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="341,33" id="ubu.inf.terminal.logica/PestanaMainFav$MyHandler@handler+ubu.inf.terminal.logica/PestanaMainFav@|ubu.inf.terminal.logica/PestanaMainFav#" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" name="handler" location="173,33" id="ubu.inf.terminal.logica/PestanaMainFav$MyHandler@handler+ubu.inf.terminal.logica/PestanaMainFav@|ubu.inf.terminal.logica/PestanaMainFav$MyHandler#handler" multiplicityLabel="//@children.5/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.2/@children.0" navigable="true">
-        <children xsi:type="editmodel:LabelEditModel" name=" - handler" location="888,973" size="46,14" anchorKind="LastPart"/>
-        <children xsi:type="editmodel:LabelEditModel" name="1" location="888,945" size="6,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name=" - handler" location="889,973" size="46,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="889,945" size="6,14" anchorKind="LastPart"/>
       </children>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.terminal.logica/PestanaMainFav-Standard::Call->ubu.inf.terminal.modelo/SingletonConexion" source="//@children.5" target="//@children.9" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
@@ -296,8 +296,8 @@
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,103"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.5" target="//@children.3" targetEnd="//@children.5/@sourceConnections.2/@children.1" label="//@children.5/@sourceConnections.2/@children.2" sourceEnd="//@children.5/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,276" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="169,179"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="16,839" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="151,0"/>
       <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.5" target="//@children.7" targetEnd="//@children.5/@sourceConnections.3/@children.1" label="//@children.5/@sourceConnections.3/@children.2" sourceEnd="//@children.5/@sourceConnections.3/@children.0" connectionRouterKind="Manual">
@@ -307,8 +307,8 @@
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ubu.inf.terminal.logica/PestanaMainFav-Standard::Call->ubu.inf.terminal.accesodatos/FachadaServidores" source="//@children.5" target="//@children.11" targetEnd="//@children.5/@sourceConnections.4/@children.2" label="//@children.5/@sourceConnections.4/@children.0" sourceEnd="//@children.5/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,730" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="266,107"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="233,839" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="106,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.5" target="//@children.2" targetEnd="//@children.5/@sourceConnections.5/@children.1" label="//@children.5/@sourceConnections.5/@children.2" sourceEnd="//@children.5/@sourceConnections.5/@children.0" connectionRouterKind="Manual">
       <children xsi:type="editmodel:AssociationEndEditModel" location="341,795" attachSource="true"/>
@@ -396,7 +396,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="TabActivity" location="1019,-16" size="263,243" id="android.app/TabActivity" runTimeClassModel="onPostCreate(Landroid.os.Bundle;),TabActivity(),onContentChanged(),onRestoreInstanceState(Landroid.os.Bundle;),getTabHost(),getTabWidget(),onChildTitleChanged(Landroid.app.Activity;Ljava.lang.CharSequence;),setDefaultTab(I),setDefaultTab(Ljava.lang.String;),onSaveInstanceState(Landroid.os.Bundle;)">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="TabActivity" location="1019,-16" size="263,243" id="android.app/TabActivity" runTimeClassModel="onPostCreate(Landroid.os.Bundle;),TabActivity(),onRestoreInstanceState(Landroid.os.Bundle;),onContentChanged(),getTabWidget(),getTabHost(),onChildTitleChanged(Landroid.app.Activity;Ljava.lang.CharSequence;),setDefaultTab(I),setDefaultTab(Ljava.lang.String;),onSaveInstanceState(Landroid.os.Bundle;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="240,180">
       <children xsi:type="editmodel:MethodEditModel" name="TabActivity" id="android.app/TabActivity#TabActivity()"/>
@@ -429,8 +429,8 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;Call>>" location="433,431" size="41,14" fontInfo="Arial-8-0"/>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.4" name="FachadaServidores" location="135,795" size="266,243" id="ubu.inf.terminal.accesodatos/FachadaServidores" runTimeClassModel="FachadaServidores(Landroid.content.Context;),deleteServidor(Ljava.util.ArrayList;I),closeFachada(),borraTabla(),editServidor(Ljava.util.ArrayList;Lubu.inf.terminal.modelo.Servidor;),dBservidores,getInstance(Landroid.content.Context;),loadServidores(),insertServidor(Ljava.util.ArrayList;Lubu.inf.terminal.modelo.Servidor;),context,helperservidores,myFachada">
+  <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;Call>>" location="569,1091" size="41,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.4" name="FachadaServidores" location="681,1185" size="266,243" id="ubu.inf.terminal.accesodatos/FachadaServidores" runTimeClassModel="deleteServidor(Ljava.util.ArrayList;I),FachadaServidores(Landroid.content.Context;),editServidor(Ljava.util.ArrayList;Lubu.inf.terminal.modelo.Servidor;),closeFachada(),borraTabla(),dBservidores,getInstance(Landroid.content.Context;),loadServidores(),insertServidor(Ljava.util.ArrayList;Lubu.inf.terminal.modelo.Servidor;),context,helperservidores,myFachada">
     <children xsi:type="editmodel:CompartmentEditModel" size="169,36">
       <children xsi:type="editmodel:AttributeEditModel" name="context" id="ubu.inf.terminal.accesodatos/FachadaServidores#context"/>
       <children xsi:type="editmodel:AttributeEditModel" name="dBservidores" id="ubu.inf.terminal.accesodatos/FachadaServidores#dBservidores"/>
@@ -448,14 +448,14 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="FachadaComandos" location="1800,1065" size="266,225" id="ubu.inf.terminal.accesodatos/FachadaComandos" runTimeClassModel="closeFachada(),FachadaComandos(Landroid.content.Context;),borraTabla(),deleteComando(I),dBcomandos,getInstance(Landroid.content.Context;),helpercomandos,context,loadComandos(),insertComandos(Ljava.lang.String;ILjava.util.ArrayList;),myFachada">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="FachadaComandos" location="1484,767" size="266,225" id="ubu.inf.terminal.accesodatos/FachadaComandos" runTimeClassModel="closeFachada(),FachadaComandos(Landroid.content.Context;),borraTabla(),deleteComando(I),dBcomandos,getInstance(Landroid.content.Context;),helpercomandos,context,loadComandos(),insertComandos(Ljava.lang.String;ILjava.util.ArrayList;),myFachada">
     <children xsi:type="editmodel:CompartmentEditModel" size="167,36">
       <children xsi:type="editmodel:AttributeEditModel" name="context" id="ubu.inf.terminal.accesodatos/FachadaComandos#context"/>
       <children xsi:type="editmodel:AttributeEditModel" name="dBcomandos" id="ubu.inf.terminal.accesodatos/FachadaComandos#dBcomandos"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="243,126">
       <children xsi:type="editmodel:MethodEditModel" name="FachadaComandos" id="ubu.inf.terminal.accesodatos/FachadaComandos#FachadaComandos(Landroid.content.Context;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="borraTabla" id="ubu.inf.terminal.accesodatos/FachadaComandos#borraTabla()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="borraTabla" location="1465,842" id="ubu.inf.terminal.accesodatos/FachadaComandos#borraTabla()"/>
       <children xsi:type="editmodel:MethodEditModel" name="closeFachada" id="ubu.inf.terminal.accesodatos/FachadaComandos#closeFachada()"/>
       <children xsi:type="editmodel:MethodEditModel" name="deleteComando" id="ubu.inf.terminal.accesodatos/FachadaComandos#deleteComando(I)"/>
       <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="ubu.inf.terminal.accesodatos/FachadaComandos#getInstance(Landroid.content.Context;)"/>
@@ -467,7 +467,7 @@
   </children>
   <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;Call>>" location="1365,873" size="41,14" fontInfo="Arial-8-0"/>
   <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;Call>>" location="891,1105" size="41,14" fontInfo="Arial-8-0"/>
-  <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;Call>>" location="863,1278" size="41,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;Call>>" location="945,1680" size="41,14" fontInfo="Arial-8-0"/>
   <children xsi:type="editmodel:LabelObjectEditModel" name="&lt;&lt;Call>>" location="1334,1319" size="41,14" fontInfo="Arial-8-0"/>
   <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eUML2" autoName="false"/>
   <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">

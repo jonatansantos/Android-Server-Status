@@ -22,7 +22,7 @@ import android.widget.Toast;
  * 
  * @version 1.0
  * 
- *@see PestanaMainFav
+ *@see PestanaMainSSH
  *@see PestanaMainEmail
  */
 public class Formulario extends Activity {

@@ -23,7 +23,7 @@ public class ServicioBorrado extends Service{
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		FachadaServidores.getInstance(this).borraTabla();
+		FachadaSSH.getInstance(this).borraTabla();
 		FachadaEmail.getInstance(this).borraTabla();
 		this.stopSelf();
 	}

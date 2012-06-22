@@ -13,7 +13,7 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import ubu.inf.control.R;
 import ubu.inf.control.modelo.Servidor;
-import ubu.inf.control.modelo.SingletonServicios;
+import ubu.inf.control.modelo.SingletonSSH;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -81,12 +81,12 @@ public class ServicioSSH extends Service {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
-				for (int i = 0; i < SingletonServicios.getConexion().getHosts()
+				for (int i = 0; i < SingletonSSH.getConexion().getHosts()
 						.size(); ++i) {
 					Log.i("control", "mmiramos el desde ssh "
-							+ SingletonServicios.getConexion().getHosts()
+							+ SingletonSSH.getConexion().getHosts()
 									.get(i).getIp());
-					conectaServidor(SingletonServicios.getConexion().getHosts()
+					conectaServidor(SingletonSSH.getConexion().getHosts()
 							.get(i));
 
 				}
@@ -94,76 +94,7 @@ public class ServicioSSH extends Service {
 		}, 0, segundos * 1000);
 	}
 
-	/**
-	 * Metodo del hilo asincrono.
-	 */
-	// private void ejecutar() {
-	// resultado = "";
-	//
-	// // obtenemos el SoapObject
-	// SoapObject request = new SoapObject(NAMESPACE, METHOD);
-	//
-	//
-	// // objeto de propiedades
-	// PropertyInfo FahrenheitProp = new PropertyInfo();
-	// // nombre
-	// FahrenheitProp.setName("Fahrenheit");
-	// // valor que
-	// FahrenheitProp.setValue(10);
-	// // tipo de valor
-	// FahrenheitProp.setType(String.class);
-	//
-	// // añadimos las propiedades a la pregunta
-	// request.addProperty(FahrenheitProp);
-	// // creamos el objeto http para conectarnos con el webservice
-	// final SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-	// SoapEnvelope.VER11);
-	//
-	// envelope.dotNet = true;
-	//
-	// envelope.setOutputSoapObject(request);
-	//
-	// final HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
-	//
-	// timer.scheduleAtFixedRate(new TimerTask() {
-	//
-	// @Override
-	// public void run() {
-	//
-	// try
-	//
-	// {
-	// //hacer la primera petición par aver is hay notificaciones(con id y
-	// dispositivo), si hay enviar la notificación,
-	// //en el intent enviar cantidad y el servidor.
-	// androidHttpTransport.call(SOAPACTION, envelope);
-	//
-	// SoapPrimitive response = (SoapPrimitive) envelope
-	// .getResponse();
-	//
-	// resultado = response.toString();
-	// Log.e("alarmChecker", "resultado ssh: " + resultado);
-	// for (int i = 0; i < SingletonServicios.getConexion()
-	// .getHosts().size(); ++i) {
-	// Log.i("control", "mmiramos el desde ssh "
-	// + SingletonServicios.getConexion().getHosts()
-	// .get(i).getIp());
-	// conectaServidor(SingletonServicios.getConexion().getHosts().get(i));
-	//
-	//
-	// }
-	// Notificar();
-	//
-	// } catch (Exception e) {
-	//
-	// e.printStackTrace();
-	// NotificarError();
-	//
-	// }
-	// }
-	// }, 0, segundos * 1000);
-	//
-	// }
+	
 	/**
 	 * Función para notificar cuando ha ocurrido un error de comunicación con el
 	 * web service.
