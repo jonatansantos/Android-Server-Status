@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="35" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="929" x="1599" y="-21">
+<window height="728" maximized="true" width="929" x="433" y="-10">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
 </fastViewData>
@@ -46,22 +46,17 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java" title="Main.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/Main.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1270" selectionTopPixel="390"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LectorSMS.java" partName="LectorSMS.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/LocalizadorGPS/src/ubu/inf/gps/vista/LectorSMS.java" title="LectorSMS.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/vista/LectorSMS.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocalizadorGPS/src/ubu/inf/gps/vista/LectorSMS.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="3699" selectionTopPixel="1174"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Notificador.java" partName="Notificador.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java" title="Notificador.java" tooltip="Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="568" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScanLog.java" partName="ScanLog.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java" title="ScanLog.java" tooltip="ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioGPS.java" partName="ServicioGPS.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/LocalizadorGPS/src/ubu/inf/gps/vista/ServicioGPS.java" title="ServicioGPS.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/vista/ServicioGPS.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocalizadorGPS/src/ubu/inf/gps/vista/ServicioGPS.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2534" selectionTopPixel="510"/>
 </editor>
 </editors>
 <views>
@@ -150,7 +145,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -215,13 +210,13 @@
 <perspective_action id="com.android.ide.eclipse.hierarchyviewer.TreeViewPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
-<view id="org.eclipse.jdt.junit.ResultView"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
 <view id="org.eclipse.pde.runtime.LogView"/>
 <view id="org.eclipse.ui.views.ProgressView"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.junit.ResultView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -267,8 +262,8 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@57730f82" ratio="0.8294314" ratioLeft="496" ratioRight="102" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@57730f82" ratio="0.9387097" ratioLeft="582" ratioRight="38" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
@@ -556,33 +551,164 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Principal/src/ubu/inf/Login.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioSSH.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/vista/PestanaMainFav.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/vista/Consola.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/vista/ComandosFavoritos.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/vista/PestanaMainFav.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/vista/ComandosEjecutados.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaComandos.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/vista/LectorSMS.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocalizadorGPS/src/ubu/inf/gps/vista/ServicioGPS.java"/>
 </editors>
-<item historyLabel="Login.java" index="0">
+<item historyLabel="PestanaMainFav.java" index="0">
+<position info="not_deleted" x="6133" y="16"/>
+</item>
+<item historyLabel="PestanaMainFav.java" index="0">
+<position info="not_deleted" x="2359" y="0"/>
+</item>
+<item historyLabel="PestanaMainFav.java" index="0">
+<position info="not_deleted" x="2379" y="4"/>
+</item>
+<item historyLabel="PestanaMainFav.java" index="0">
+<position info="not_deleted" x="7719" y="0"/>
+</item>
+<item historyLabel="PestanaMainFav.java" index="0">
+<position info="not_deleted" x="11014" y="11"/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="ComandosFavoritos.java" index="2">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="PestanaMainFav.java" index="3">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="PestanaMainFav.java" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="ServicioSSH.java" index="1">
-<position info="not_deleted" x="2515" y="0"/>
+<item historyLabel="Consola.java" index="1">
+<position/>
 </item>
-<item historyLabel="PestanaMainEmail.java" index="2">
-<position info="not_deleted" x="2155" y="0"/>
+<item historyLabel="Consola.java" index="1">
+<position/>
 </item>
-<item historyLabel="Main.java" index="3">
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="ComandosEjecutados.java" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="3">
-<position info="not_deleted" x="1270" y="0"/>
+<item historyLabel="ComandosEjecutados.java" index="4">
+<position/>
 </item>
-<item historyLabel="Notificador.java" index="4">
-<position info="not_deleted" x="568" y="0"/>
+<item historyLabel="Consola.java" index="1">
+<position/>
 </item>
-<item active="true" historyLabel="ScanLog.java" index="5">
+<item historyLabel="ComandosEjecutados.java" index="4">
+<position/>
+</item>
+<item historyLabel="ComandosEjecutados.java" index="4">
+<position/>
+</item>
+<item historyLabel="FachadaComandos.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="FachadaComandos.java" index="5">
+<position info="not_deleted" x="3429" y="14"/>
+</item>
+<item historyLabel="ComandosEjecutados.java" index="4">
+<position/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position/>
+</item>
+<item historyLabel="ComandosFavoritos.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position info="not_deleted" x="8066" y="16"/>
+</item>
+<item historyLabel="ComandosFavoritos.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ComandosFavoritos.java" index="2">
+<position info="not_deleted" x="3047" y="6"/>
+</item>
+<item historyLabel="ComandosFavoritos.java" index="2">
+<position info="not_deleted" x="2607" y="21"/>
+</item>
+<item historyLabel="ComandosFavoritos.java" index="2">
+<position info="not_deleted" x="4084" y="24"/>
+</item>
+<item historyLabel="Consola.java" index="1">
+<position info="not_deleted" x="8066" y="16"/>
+</item>
+<item historyLabel="LectorSMS.java" index="6">
+<position info="not_deleted" x="3699" y="6"/>
+</item>
+<item historyLabel="ServicioGPS.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ServicioGPS.java" index="7">
+<position info="not_deleted" x="1095" y="0"/>
+</item>
+<item historyLabel="ServicioGPS.java" index="7">
+<position info="not_deleted" x="3101" y="18"/>
+</item>
+<item historyLabel="ServicioGPS.java" index="7">
+<position info="not_deleted" x="3174" y="0"/>
+</item>
+<item active="true" historyLabel="ServicioGPS.java" index="7">
+<position info="not_deleted" x="1418" y="8"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -590,6 +716,13 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+<trimItem IMemento.internal.id="right"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -601,50 +734,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScanLog.java" tooltip="ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java">
-<persistable path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioGPS.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/vista/ServicioGPS.java">
+<persistable path="/LocalizadorGPS/src/ubu/inf/gps/vista/ServicioGPS.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Notificador.java" tooltip="Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java">
-<persistable path="/Notificador/src/ubu/itig/serverstatus/notificador/Notificador.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LectorSMS.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/vista/LectorSMS.java">
+<persistable path="/LocalizadorGPS/src/ubu/inf/gps/vista/LectorSMS.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/Main.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Consola.java" tooltip="ModuloSSH/src/ubu/inf/terminal/vista/Consola.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/vista/Consola.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/PestanaMainEmail.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComandosFavoritos.java" tooltip="ModuloSSH/src/ubu/inf/terminal/vista/ComandosFavoritos.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/vista/ComandosFavoritos.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioSSH.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/logica/ServicioSSH.java">
-<persistable path="/clientecontrolaccesos/src/ubu/inf/control/logica/ServicioSSH.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaComandos.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaComandos.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaComandos.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="ubu.inf.jpg" tooltip="Principal/ubu.inf.jpg">
-<persistable path="/Principal/ubu.inf.jpg"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComandosEjecutados.java" tooltip="ModuloSSH/src/ubu/inf/terminal/vista/ComandosEjecutados.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/vista/ComandosEjecutados.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainFav.java" tooltip="ModuloSSH/src/ubu/inf/terminal/vista/PestanaMainFav.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/vista/PestanaMainFav.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaServidores.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Formulario.java" tooltip="ModuloSSH/src/ubu/inf/terminal/vista/Formulario.java">
+<persistable path="/ModuloSSH/src/ubu/inf/terminal/vista/Formulario.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Login.java" tooltip="Principal/src/ubu/inf/Login.java">
 <persistable path="/Principal/src/ubu/inf/Login.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.itig.serverstatus.notificador.ucd" tooltip="Notificador/ubu.itig.serverstatus.notificador.ucd">
-<persistable path="/Notificador/ubu.itig.serverstatus.notificador.ucd"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="pestanamainmanual.xml" tooltip="ModuloSSH/res/layout/pestanamainmanual.xml">
+<persistable path="/ModuloSSH/res/layout/pestanamainmanual.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.itig.serverstatus.scanlog.ucd" tooltip="ScanLog/ubu.itig.serverstatus.scanlog.ucd">
-<persistable path="/ScanLog/ubu.itig.serverstatus.scanlog.ucd"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity.xml" tooltip="LocalizadorGPS/res/layout/activity.xml">
+<persistable path="/LocalizadorGPS/res/layout/activity.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.soyatec.uml.ClassDiagramEditor" name="ubu.itig.serverstatus.notificador.ucd" tooltip="Notificador/src/ubu/itig/serverstatus/ubu.itig.serverstatus.notificador.ucd">
-<persistable path="/Notificador/src/ubu/itig/serverstatus/ubu.itig.serverstatus.notificador.ucd"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioEnvioEmail.java" tooltip="LocalizadorGPS/src/ubu/inf/gps/vista/ServicioEnvioEmail.java">
+<persistable path="/LocalizadorGPS/src/ubu/inf/gps/vista/ServicioEnvioEmail.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Consola.java" tooltip="ModuloSSH/src/ubu/inf/terminal/logica/Consola.java">
-<persistable path="/ModuloSSH/src/ubu/inf/terminal/logica/Consola.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioSSH.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/vista/ServicioSSH.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/vista/ServicioSSH.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComandosFavoritos.java" tooltip="ModuloSSH/src/ubu/inf/terminal/logica/ComandosFavoritos.java">
-<persistable path="/ModuloSSH/src/ubu/inf/terminal/logica/ComandosFavoritos.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServidoresSQLiteHelper.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java">
-<persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/ServidoresSQLiteHelper.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="testaccesodatosservidores.java" tooltip="testssh/src/ubu/inf/terminal/test/testaccesodatosservidores.java">
-<persistable path="/testssh/src/ubu/inf/terminal/test/testaccesodatosservidores.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FachadaServidores.java" tooltip="ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java">
-<persistable path="/ModuloSSH/src/ubu/inf/terminal/accesodatos/FachadaServidores.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioEmail.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/vista/ServicioEmail.java">
+<persistable path="/clientecontrolaccesos/src/ubu/inf/control/vista/ServicioEmail.java"/>
 </file>
 </mruList>
 </workbench>

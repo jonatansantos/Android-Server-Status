@@ -14,7 +14,7 @@
         android:icon="@drawable/ic_ssh"
         android:label="@string/app_name" >
         <activity
-            android:name=".logica.Main"
+            android:name=".vista.Main"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,20 +24,20 @@
             
            
         </activity>
-        <receiver android:name=".logica.AutoArranque">
+        <receiver android:name=".vista.AutoArranque">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
              </intent-filter>
         </receiver>
-        <activity android:name=".logica.Preferencias"></activity>
-        <activity android:name=".logica.PestanaMainSSH"></activity>
-         <activity android:name=".logica.Filtro"></activity>
-        <activity android:name=".logica.PestanaMainEmail"></activity>
-         <activity android:name=".logica.PestanaMainNotificaciones"></activity>
-         <activity android:name=".logica.Formulario"></activity>
-         <service android:name=".logica.ServicioSSH"></service>
-          <service android:name=".logica.ServicioEmail"></service>
-          <service android:name=".logica.ServicioAutoarranque">
+        <activity android:name=".vista.Preferencias"></activity>
+        <activity android:name=".vista.PestanaMainSSH"></activity>
+         <activity android:name=".vista.Filtro"></activity>
+        <activity android:name=".vista.PestanaMainEmail"></activity>
+         <activity android:name=".vista.PestanaMainNotificaciones"></activity>
+         <activity android:name=".vista.Formulario"></activity>
+         <service android:name=".vista.ServicioSSH"></service>
+          <service android:name=".vista.ServicioEmail"></service>
+          <service android:name=".vista.ServicioAutoarranque">
               <intent-filter >
                   <action android:name="ServicioAutoarranque"/>
               </intent-filter>
