@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="ubu.inf.control.modelo.SingletonEmail"/>
 <fullyQualifiedTypeName name="org.ksoap2.serialization.PropertyInfo"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="ubu.inf.terminal.accesodatos.FachadaServidores"/>
 <fullyQualifiedTypeName name="ubu.inf.terminal.modelo.Servidor"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="ubu.inf.terminal.vista.PestanaMainFav"/>
 </qualifiedTypeNameHistroy>

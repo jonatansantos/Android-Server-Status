@@ -121,7 +121,7 @@ public class Main extends Activity {
 				try {
 					Intent intent = new Intent(Intent.ACTION_MAIN);
 					intent.setComponent(new ComponentName("ubu.inf.control",
-							"ubu.inf.control.logica.Main"));
+							"ubu.inf.control.vista.Main"));
 					startActivity(intent);
 				} catch (ActivityNotFoundException e) {
 					e.printStackTrace();
@@ -138,7 +138,7 @@ public class Main extends Activity {
 				try {
 					Intent intent = new Intent(Intent.ACTION_MAIN);
 					intent.setComponent(new ComponentName("ubu.inf.gps",
-							"ubu.inf.gps.logica.LocalizadorGPSActivity"));
+							"ubu.inf.gps.vista.LocalizadorGPSActivity"));
 					startActivity(intent);
 				} catch (ActivityNotFoundException e) {
 					e.printStackTrace();
@@ -154,7 +154,7 @@ public class Main extends Activity {
 				try {
 					Intent intent = new Intent(Intent.ACTION_MAIN);
 					intent.setComponent(new ComponentName("ubu.inf.terminal",
-							"ubu.inf.terminal.logica.MainSSH"));
+							"ubu.inf.terminal.vista.MainSSH"));
 					startActivity(intent);
 				} catch (ActivityNotFoundException e) {
 					e.printStackTrace();
@@ -176,7 +176,7 @@ public class Main extends Activity {
 		for (RunningServiceInfo service : manager
 				.getRunningServices(Integer.MAX_VALUE)) {
 			
-			if ("ubu.inf.gps.logica.ServicioGPS".equals(service.service
+			if ("ubu.inf.gps.vista.ServicioGPS".equals(service.service
 					.getClassName())) {
 				
 				return true;
@@ -194,7 +194,7 @@ public class Main extends Activity {
 		ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
 		for (RunningServiceInfo service : manager
 				.getRunningServices(Integer.MAX_VALUE)) {
-			if ("ubu.inf.control.logica.ServicioEmail".equals(service.service
+			if ("ubu.inf.control.vista.ServicioEmail".equals(service.service
 					.getClassName())) {
 				return true;
 			}
@@ -211,7 +211,7 @@ public class Main extends Activity {
 		ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
 		for (RunningServiceInfo service : manager
 				.getRunningServices(Integer.MAX_VALUE)) {
-			if ("ubu.inf.control.logica.ServicioSSH".equals(service.service
+			if ("ubu.inf.control.vista.ServicioSSH".equals(service.service
 					.getClassName())) {
 				return true;
 			}
