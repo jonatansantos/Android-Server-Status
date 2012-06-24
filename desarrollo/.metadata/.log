@@ -2871,3 +2871,6 @@ HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
 HandlerActivation(commandId=com.soyatec.uml.ui.navigate.open.diagram,
 	handler=ActionDelegateHandlerProxy(null,com.soyatec.uml.OpenDiagramAction),
 	expression=AndExpression(ActionSetExpression(com.soyatec.uml.UMLElementCreationActionSet,org.eclipse.ui.internal.WorkbenchWindow@5ee771f3),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@5ee771f3)),sourcePriority=16640)
+
+!ENTRY org.eclipse.ui 4 4 2012-06-24 20:36:37.576
+!MESSAGE Invalid preference page path: XML Syntax
