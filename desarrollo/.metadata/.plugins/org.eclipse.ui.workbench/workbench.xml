@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="19" version="2.0">
+<workbench progressCount="25" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="929" x="433" y="-10">
 <fastViewData fastViewLocation="1024">
@@ -45,18 +45,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainSSH.java" partName="PestanaMainSSH.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/clientecontrolaccesos/src/ubu/inf/control/vista/PestanaMainSSH.java" title="PestanaMainSSH.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/vista/PestanaMainSSH.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/clientecontrolaccesos/src/ubu/inf/control/vista/PestanaMainSSH.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="14" selectionOffset="7892" selectionTopPixel="3615"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServicioSSH.java" partName="ServicioSSH.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/clientecontrolaccesos/src/ubu/inf/control/vista/ServicioSSH.java" title="ServicioSSH.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/vista/ServicioSSH.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/clientecontrolaccesos/src/ubu/inf/control/vista/ServicioSSH.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="6051" selectionTopPixel="2745"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScanLog.java" partName="ScanLog.java" path="C:/Users/david/Desktop/universidad/PFC/repositorio/Android-Server-Status/desarrollo/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java" title="ScanLog.java" tooltip="ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="15219" selectionTopPixel="7920"/>
 </editor>
 </editors>
 <views>
@@ -262,7 +257,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@57730f82" ratio="0.9387097" ratioLeft="582" ratioRight="38" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@57730f82" ratio="0.7306452" ratioLeft="453" ratioRight="167" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
@@ -554,150 +549,154 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ModuloSSH/res/layout/consola.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ModuloSSH/res/layout/formulario.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ModuloSSH/res/layout/list_comandos.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ModuloSSH/res/layout/list_servers.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ModuloSSH/res/layout/main.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/clientecontrolaccesos/res/layout/list_notificaciones.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/clientecontrolaccesos/res/layout/list_servers.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/vista/PestanaMainSSH.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/vista/ServicioSSH.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/vista/PestanaMainNotificaciones.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/vista/PestanaMainSSH.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/clientecontrolaccesos/src/ubu/inf/control/vista/ServicioSSH.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
 </editors>
-<item historyLabel="main.xml" index="4"/>
-<item historyLabel="list_servers.xml" index="3"/>
 <item historyLabel="list_comandos.xml" index="2"/>
 <item historyLabel="formulario.xml" index="1"/>
 <item historyLabel="consola.xml" index="0"/>
-<item historyLabel="list_notificaciones.xml" index="5"/>
-<item historyLabel="list_servers.xml" index="6"/>
-<item historyLabel="PestanaMainSSH.java" index="7">
+<item historyLabel="list_notificaciones.xml" index="3"/>
+<item historyLabel="list_servers.xml" index="4"/>
+<item historyLabel="PestanaMainSSH.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="PestanaMainSSH.java" index="7">
+<item historyLabel="PestanaMainSSH.java" index="5">
 <position info="not_deleted" x="4250" y="11"/>
 </item>
-<item historyLabel="PestanaMainSSH.java" index="7">
+<item historyLabel="PestanaMainSSH.java" index="5">
 <position info="not_deleted" x="11233" y="16"/>
 </item>
-<item historyLabel="PestanaMainSSH.java" index="7">
+<item historyLabel="PestanaMainSSH.java" index="5">
 <position info="not_deleted" x="11623" y="20"/>
 </item>
-<item historyLabel="PestanaMainSSH.java" index="7">
+<item historyLabel="PestanaMainSSH.java" index="5">
 <position info="not_deleted" x="13352" y="0"/>
 </item>
-<item historyLabel="PestanaMainSSH.java" index="7">
+<item historyLabel="PestanaMainSSH.java" index="5">
 <position info="not_deleted" x="7892" y="14"/>
 </item>
-<item historyLabel="ServicioSSH.java" index="8">
+<item historyLabel="ServicioSSH.java" index="6">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="ServicioSSH.java" index="8">
+<item historyLabel="ServicioSSH.java" index="6">
 <position info="not_deleted" x="1207" y="0"/>
 </item>
-<item historyLabel="ServicioSSH.java" index="8">
+<item historyLabel="ServicioSSH.java" index="6">
 <position info="not_deleted" x="2095" y="8"/>
 </item>
-<item historyLabel="ServicioSSH.java" index="8">
+<item historyLabel="ServicioSSH.java" index="6">
 <position info="not_deleted" x="3788" y="15"/>
 </item>
-<item historyLabel="ServicioSSH.java" index="8">
+<item historyLabel="ServicioSSH.java" index="6">
 <position info="not_deleted" x="2648" y="14"/>
 </item>
-<item historyLabel="ServicioSSH.java" index="8">
+<item historyLabel="ServicioSSH.java" index="6">
 <position info="not_deleted" x="6051" y="9"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="4085" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="13930" y="18"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="23965" y="25"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="7829" y="10"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="7630" y="15"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="8829" y="9"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="20721" y="20"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="23965" y="25"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="24323" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="23965" y="25"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="13930" y="18"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="14545" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="15701" y="7"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="28666" y="19"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="28841" y="21"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="15701" y="7"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="16130" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="31602" y="12"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="12667" y="25"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="10736" y="18"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="7563" y="12"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="12667" y="25"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="10736" y="18"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="12667" y="25"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="13272" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="6042" y="15"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="12667" y="25"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="13291" y="0"/>
 </item>
-<item historyLabel="PestanaMainNotificaciones.java" index="9">
+<item historyLabel="PestanaMainNotificaciones.java" index="7">
 <position info="not_deleted" x="6042" y="15"/>
 </item>
-<item active="true" historyLabel="PestanaMainSSH.java" index="10">
+<item historyLabel="PestanaMainSSH.java" index="8">
 <position info="not_deleted" x="7892" y="14"/>
+</item>
+<item historyLabel="ServicioSSH.java" index="9">
+<position info="not_deleted" x="6051" y="9"/>
+</item>
+<item active="true" historyLabel="ScanLog.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -716,6 +715,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScanLog.java" tooltip="ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java">
+<persistable path="/ScanLog/src/ubu/itig/serverstatus/scanlog/ScanLog.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PestanaMainNotificaciones.java" tooltip="clientecontrolaccesos/src/ubu/inf/control/vista/PestanaMainNotificaciones.java">
 <persistable path="/clientecontrolaccesos/src/ubu/inf/control/vista/PestanaMainNotificaciones.java"/>
 </file>
@@ -757,9 +759,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="formulario.xml" tooltip="ModuloSSH/res/layout/formulario.xml">
 <persistable path="/ModuloSSH/res/layout/formulario.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="consola.xml" tooltip="ModuloSSH/res/layout/consola.xml">
-<persistable path="/ModuloSSH/res/layout/consola.xml"/>
 </file>
 </mruList>
 </workbench>

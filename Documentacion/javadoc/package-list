@@ -1,0 +1,15 @@
+ubu.inf
+ubu.inf.control
+ubu.inf.control.accesodatos
+ubu.inf.control.modelo
+ubu.inf.control.vista
+ubu.inf.gps
+ubu.inf.gps.accesodatos
+ubu.inf.gps.modelo
+ubu.inf.gps.vista
+ubu.inf.terminal
+ubu.inf.terminal.accesodatos
+ubu.inf.terminal.modelo
+ubu.inf.terminal.vista
+ubu.itig.serverstatus.notificador
+ubu.itig.serverstatus.scanlog

@@ -549,7 +549,7 @@ class Analisis extends TimerTask {
 		String cadenaSegundo = lineaComprobar.substring(13,15);
 
 		//Pasar los datos a integer
-		int año = calendario.get(Calendar.YEAR);
+		int anno = calendario.get(Calendar.YEAR);
 		int mes = obtenerMes(cadenaMes);
 		int dia;
 		//Comprobar si es un dia con un digito o dos
@@ -564,7 +564,7 @@ class Analisis extends TimerTask {
 		int segundo = Integer.parseInt(cadenaSegundo);
 
 		//Establecer fecha y hora de la linea
-		calendario.set(año, mes, dia, hora, minuto, segundo);
+		calendario.set(anno, mes, dia, hora, minuto, segundo);
 
 		return calendario;
 	}
