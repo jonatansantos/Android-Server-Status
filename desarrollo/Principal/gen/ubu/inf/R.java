@@ -22,6 +22,7 @@ public final class R {
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f070000;
+        public static final int about=0x7f070017;
         public static final int bt_login_ok=0x7f07000b;
         public static final int bt_menu_gps=0x7f07000f;
         public static final int bt_menu_servidor=0x7f070011;
