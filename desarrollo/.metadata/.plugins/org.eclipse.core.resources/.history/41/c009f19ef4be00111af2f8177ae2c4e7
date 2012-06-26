@@ -110,8 +110,7 @@ public class Main extends Activity {
 				"Tutores:" +'\n'+'\n'+
 				"Carlos López Nozal" +'\n'+
 				"Rubén Arribas Barrio" +'\n'+'\n'+
-				"Licencia:" +'\n'+'\n'+
-				"EULA, Licencia de usuario final.");
+				"Licencia:");
 		builder.create();
 		builder.show();
 	}

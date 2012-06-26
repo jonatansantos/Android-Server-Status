@@ -104,14 +104,12 @@ public class Main extends Activity {
 		AlertDialog.Builder builder = new Builder(this);
 		builder.setTitle("Información");
 		builder.setIcon(android.R.drawable.ic_dialog_info);
-		builder.setMessage("Autores:" +'\n'+'\n'+
+		builder.setMessage("Autores:" +'\n'+
 				"David Herrero de la Peña" + '\n'+
-				"Jonatan Santos Barrios" +'\n'+'\n'+
-				"Tutores:" +'\n'+'\n'+
+				"Jonatan Santos Barrios" +'\n'+
+				"Tutores" +'\n'+
 				"Carlos López Nozal" +'\n'+
-				"Rubén Arribas Barrio" +'\n'+'\n'+
-				"Licencia:" +'\n'+'\n'+
-				"EULA, Licencia de usuario final.");
+				"Rubén Arribas Barrio");
 		builder.create();
 		builder.show();
 	}
