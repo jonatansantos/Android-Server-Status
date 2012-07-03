@@ -148,6 +148,8 @@ public class PestanaMainManual extends Activity {
 						jsch = null;
 						handler.sendEmptyMessage(0);
 						
+					}catch (Exception e){
+						e.printStackTrace();
 					}
 					
 				}
