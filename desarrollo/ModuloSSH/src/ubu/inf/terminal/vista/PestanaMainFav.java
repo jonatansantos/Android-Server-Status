@@ -273,6 +273,8 @@ public class PestanaMainFav extends Activity {
 					} catch (JSchException e) {
 						handler.sendEmptyMessage(0);
 					
+					} catch (Exception e){
+						e.printStackTrace();
 					}
 				}
 				
